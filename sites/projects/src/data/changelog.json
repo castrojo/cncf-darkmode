@@ -1,5 +1,2475 @@
 [
   {
+    "id": "a2e4df61-3e69-495b-a7f9-171d625d9caf",
+    "type": "accepted",
+    "projectName": "Kairos",
+    "projectSlug": "kairos",
+    "logoUrl": "https://landscape.cncf.io/logos/3d27e1a349b4cfbf20f7b6bcc1117473c2978df5a26ca44f31df9aa9c9d19afe.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Kairos joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "383ebde3-1401-4f16-871c-8a4e206015ed",
+    "type": "accepted",
+    "projectName": "Virtual Kubelet",
+    "projectSlug": "virtual-kubelet",
+    "logoUrl": "https://landscape.cncf.io/logos/32434541b5d6f489da28f8b8e6d5d95280d5c7e94e873e37c1fa92ec4f8c407d.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Virtual Kubelet joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "f5160395-d3bc-4f74-abf0-a97b0a40fbee",
+    "type": "accepted",
+    "projectName": "Krkn",
+    "projectSlug": "krkn",
+    "logoUrl": "https://landscape.cncf.io/logos/523015b3923b22b1ad39b1baa6ccc6388db069bd5312827ddbca4c50d650a37b.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Krkn joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "bb0fa4f0-dc88-4685-8ad0-706bf95ba4e9",
+    "type": "accepted",
+    "projectName": "cert-manager",
+    "projectSlug": "cert-manager",
+    "logoUrl": "https://landscape.cncf.io/logos/781162dfd40606ace7e76f727bb24f3222ac6878f7bdb129a1082b533f3f8be7.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "cert-manager joined the CNCF as a graduated project"
+  },
+  {
+    "id": "1fda652b-49f1-4d5a-bb6c-2c938dbea23c",
+    "type": "accepted",
+    "projectName": "SlimToolkit",
+    "projectSlug": "slimtoolkit",
+    "logoUrl": "https://landscape.cncf.io/logos/437280b6310fe58523ee668e1306dfab7b9c91c7c79fa40da2458e53a58184ca.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "SlimToolkit joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "ff98a0b0-5b74-4df7-8fba-e0ff093cb10f",
+    "type": "accepted",
+    "projectName": "kcp",
+    "projectSlug": "kcp",
+    "logoUrl": "https://landscape.cncf.io/logos/37c0ef00d5c87478489e3e8649ddc5718cb277e4208f0280872c99010cd777fa.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "kcp joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "e6e00c7e-035e-4f88-9057-2ee0bb19336f",
+    "type": "accepted",
+    "projectName": "Emissary-Ingress",
+    "projectSlug": "emissary-ingress",
+    "logoUrl": "https://landscape.cncf.io/logos/19518469b70b8e3e3789e07a400f80d60e89bdb23c8017b04515515bbda4f64e.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Emissary-Ingress joined the CNCF as a incubating project"
+  },
+  {
+    "id": "aa78cd92-77e2-4e8d-8807-cd2700ce43ce",
+    "type": "accepted",
+    "projectName": "Krator",
+    "projectSlug": "krator",
+    "logoUrl": "https://landscape.cncf.io/logos/0b56c8fc8b544995f3812568e10756441c545c8ad53a2138dbf6c6803cae692d.svg",
+    "maturity": "archived",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Krator joined the CNCF as a archived project"
+  },
+  {
+    "id": "6d17f64e-e8ce-45d6-a2e4-b8c877fc012f",
+    "type": "accepted",
+    "projectName": "Flux",
+    "projectSlug": "flux",
+    "logoUrl": "https://landscape.cncf.io/logos/c513f673e1c90ff7826a7aa6065452b4bade9bd731db2e05675b74d6f5940d49.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Flux joined the CNCF as a graduated project"
+  },
+  {
+    "id": "9cf3cfd9-045c-4cfc-a8ed-2a2162ec36b5",
+    "type": "accepted",
+    "projectName": "Inspektor Gadget",
+    "projectSlug": "inspektor-gadget",
+    "logoUrl": "https://landscape.cncf.io/logos/12fdeff1f5f9750559f4844b21edbdcb159b3797f2fd51e3e5b33293a07432dc.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Inspektor Gadget joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "70176925-fcac-4b36-9aee-5e602aa263bc",
+    "type": "accepted",
+    "projectName": "KCL",
+    "projectSlug": "kcl",
+    "logoUrl": "https://landscape.cncf.io/logos/27aeb92e8d042666da9414aee158cef08859faf7b7743a0f3bb53e0d6fe85ba3.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "KCL joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "b9eb319d-dc5e-4e61-a029-2847b8d02540",
+    "type": "accepted",
+    "projectName": "OpenGitOps",
+    "projectSlug": "opengitops",
+    "logoUrl": "https://landscape.cncf.io/logos/0467938e71483d7b6fd46333527eb95ffd377bd90f8a9109ec172b45a1227d7e.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "OpenGitOps joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "1adb9094-25f2-43c5-a17b-0560f0452e63",
+    "type": "accepted",
+    "projectName": "Cadence Workflow",
+    "projectSlug": "cadence-workflow",
+    "logoUrl": "https://landscape.cncf.io/logos/5ae3118f76940f72c9fcf6933543a5b317a68899b1a55794111da25b07070ba0.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Cadence Workflow joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "83fb3c50-3dc8-43ef-966e-29ee3920c618",
+    "type": "accepted",
+    "projectName": "KubeDL",
+    "projectSlug": "kubedl",
+    "logoUrl": "https://landscape.cncf.io/logos/881d9cc5ca616a8480d03ced71af70d02577bdd52d71a9bd64aaa62639830b09.svg",
+    "maturity": "archived",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "KubeDL joined the CNCF as a archived project"
+  },
+  {
+    "id": "338dbf64-5735-4753-8125-a6aae242eef8",
+    "type": "accepted",
+    "projectName": "OpenFGA",
+    "projectSlug": "openfga",
+    "logoUrl": "https://landscape.cncf.io/logos/6b3198ff27cd0a30adf0aa5412cb0d56f273c052a141b8bc6e6e35d2b0d8bb6d.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "OpenFGA joined the CNCF as a incubating project"
+  },
+  {
+    "id": "58928edc-4da1-4b47-adc3-365a59459312",
+    "type": "accepted",
+    "projectName": "Konveyor",
+    "projectSlug": "konveyor",
+    "logoUrl": "https://landscape.cncf.io/logos/715ad140019608b9c66f808d41b05ced59f203baa0400704b8e52330966901fa.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Konveyor joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "8ac2bac0-f757-481d-83f0-8e705048251b",
+    "type": "accepted",
+    "projectName": "Curiefense",
+    "projectSlug": "curiefense",
+    "logoUrl": "https://landscape.cncf.io/logos/0f6f7217f874928606894d925440e0cebcffda2fcac1f2882d9118c4a910ed0b.svg",
+    "maturity": "archived",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Curiefense joined the CNCF as a archived project"
+  },
+  {
+    "id": "15bb2039-b15c-4e12-9f53-bdcfb1fd06ca",
+    "type": "accepted",
+    "projectName": "SOPS",
+    "projectSlug": "sops",
+    "logoUrl": "https://landscape.cncf.io/logos/c66ce7dd7b0c311213090978cdfaafe1041dd7805a5b73bf5b3aca228594d68c.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "SOPS joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "ebcde90b-b4f8-47d2-9adb-225c230342bc",
+    "type": "accepted",
+    "projectName": "Karmada",
+    "projectSlug": "karmada",
+    "logoUrl": "https://landscape.cncf.io/logos/57df0a733577a27787ef3a7a8544dc52e4c65a87a10c8d9705083429d599b0a8.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Karmada joined the CNCF as a incubating project"
+  },
+  {
+    "id": "3e0e217d-4fc6-4519-b84e-d369354e5b30",
+    "type": "accepted",
+    "projectName": "MetalLB",
+    "projectSlug": "metallb",
+    "logoUrl": "https://landscape.cncf.io/logos/d19371232c839420223f96327f99332bce52962724a113bd61f3eef10a0bc637.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "MetalLB joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "91509960-4568-4031-a88e-5f9bb37c42c7",
+    "type": "accepted",
+    "projectName": "Telepresence",
+    "projectSlug": "telepresence",
+    "logoUrl": "https://landscape.cncf.io/logos/49d1b965379ff7dc49fa486fa044829ce231a1cd08d5a345cc16ec49046ab9b3.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Telepresence joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "f8b990d5-ce9f-401f-b48f-e994b3dec36e",
+    "type": "accepted",
+    "projectName": "Kepler",
+    "projectSlug": "kepler",
+    "logoUrl": "https://landscape.cncf.io/logos/6df80d6b2985ade2f7bf259fb8cb1c9379ef50ae6ecdea6a5763b0b1db2d6437.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Kepler joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "d4ead911-173f-4e73-8f11-2c1189060bdf",
+    "type": "accepted",
+    "projectName": "Kanister",
+    "projectSlug": "kanister",
+    "logoUrl": "https://landscape.cncf.io/logos/84ee6ae1df9138287c84d02bb7f9d6961e9ac332b179dbabe4b14804cac2107c.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Kanister joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "b2006fe3-4d39-43f3-b15d-be1e80566cff",
+    "type": "accepted",
+    "projectName": "Service Mesh Interface (SMI)",
+    "projectSlug": "service-mesh-interface-smi",
+    "logoUrl": "https://landscape.cncf.io/logos/9f3232b4431e5ae500bc9931df575a388c93c36f394089426e57125f31e5ee67.svg",
+    "maturity": "archived",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Service Mesh Interface (SMI) joined the CNCF as a archived project"
+  },
+  {
+    "id": "58a02abd-e99f-4b63-898b-27579f59aa03",
+    "type": "accepted",
+    "projectName": "CoreDNS",
+    "projectSlug": "coredns",
+    "logoUrl": "https://landscape.cncf.io/logos/9f366c2d009f0fc6fa4dd5fbfc4dbb462f3d20a09c534d3e4ced67dcb9b092b1.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "CoreDNS joined the CNCF as a graduated project"
+  },
+  {
+    "id": "4a63f3f4-92f6-4a25-bf8c-e1f490126ee2",
+    "type": "accepted",
+    "projectName": "Strimzi",
+    "projectSlug": "strimzi",
+    "logoUrl": "https://landscape.cncf.io/logos/7d10ac8a7224e5d1cce99d7e0c16ea0f48b434c0461139c48a4f8b1477b5400a.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Strimzi joined the CNCF as a incubating project"
+  },
+  {
+    "id": "617054fe-a9f6-4508-9f57-3d8dd7c44565",
+    "type": "accepted",
+    "projectName": "CDK for Kubernetes (CDK8s)",
+    "projectSlug": "cdk-for-kubernetes-cdk8s",
+    "logoUrl": "https://landscape.cncf.io/logos/78aa70cc04d6f96cb70231a23f4579a49da200065b86f8e868ff8304c5f1bd1c.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "CDK for Kubernetes (CDK8s) joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "d9af036d-1534-43ff-a4a9-2d00417a3666",
+    "type": "accepted",
+    "projectName": "OpenTofu",
+    "projectSlug": "opentofu",
+    "logoUrl": "https://landscape.cncf.io/logos/6526b49341f73e9ce99f4c13a3f51197dd1898cdf027864e91d276b427bfda01.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "OpenTofu joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "eef2d262-85a4-4503-91a7-1f56c03378c9",
+    "type": "accepted",
+    "projectName": "ContainerSSH",
+    "projectSlug": "containerssh",
+    "logoUrl": "https://landscape.cncf.io/logos/adc1c159aef3ffe90437f3f435f3cec31111192a24a11893d90ff5a5971b9a8e.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "ContainerSSH joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "326bf9ab-8cb2-46cf-970d-b0fc6e02ffd8",
+    "type": "accepted",
+    "projectName": "The Update Framework (TUF)",
+    "projectSlug": "the-update-framework-tuf",
+    "logoUrl": "https://landscape.cncf.io/logos/1f67f5f8e6c2f0064cac313ffacde8d4cd8e31e1277ac2cc940bd8b8e8e2b5dc.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "The Update Framework (TUF) joined the CNCF as a graduated project"
+  },
+  {
+    "id": "78ccd97e-66d2-48ab-ad41-5573bcd29e25",
+    "type": "accepted",
+    "projectName": "Rook",
+    "projectSlug": "rook",
+    "logoUrl": "https://landscape.cncf.io/logos/d08d5a49647bd660e74f90a4ff4f46524f35a4463b65090f4bcc513e577922b2.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Rook joined the CNCF as a graduated project"
+  },
+  {
+    "id": "d2b685a2-9de0-4654-8648-aa618ecbb2b9",
+    "type": "accepted",
+    "projectName": "composefs",
+    "projectSlug": "composefs",
+    "logoUrl": "https://landscape.cncf.io/logos/2121ac233715cffe4a7d3c1debc815f2b3f2d6920ebd37be8a5b17298e4bd0a4.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "composefs joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "e898a3f2-709c-4265-ad72-4226e012a6b5",
+    "type": "accepted",
+    "projectName": "PipeCD",
+    "projectSlug": "pipecd",
+    "logoUrl": "https://landscape.cncf.io/logos/4e43b8893004036ccb89a0916acfd45d9d278b4423ef1a9e8cdb1233b8328372.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "PipeCD joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "1b2b2864-6781-47e5-88e5-878e31d1e0a4",
+    "type": "accepted",
+    "projectName": "Kmesh",
+    "projectSlug": "kmesh",
+    "logoUrl": "https://landscape.cncf.io/logos/7a6797f45399b0a78b94d7cafdde473862b600264e2fb52aa297d42cbc62c2d8.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Kmesh joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "cbbd97c6-d38d-4402-a768-d2446047fca7",
+    "type": "accepted",
+    "projectName": "KUDO",
+    "projectSlug": "kudo",
+    "logoUrl": "https://landscape.cncf.io/logos/fddba880f4b7e06e4e99ded1c46c3f19a40d6918c3cbd41356ebb255d500ab11.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "KUDO joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "1501e52c-d665-4381-9ec8-f2552dac8b27",
+    "type": "accepted",
+    "projectName": "ModelPack",
+    "projectSlug": "modelpack",
+    "logoUrl": "https://landscape.cncf.io/logos/2121ac233715cffe4a7d3c1debc815f2b3f2d6920ebd37be8a5b17298e4bd0a4.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "ModelPack joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "e760f1a3-4045-42ee-99cc-9c7a47dec1b8",
+    "type": "accepted",
+    "projectName": "Fonio",
+    "projectSlug": "fonio",
+    "logoUrl": "https://landscape.cncf.io/logos/4775bdce8cad12d64380217cecb91e38d2c6570aff67e800600baf3473ff0896.svg",
+    "maturity": "archived",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Fonio joined the CNCF as a archived project"
+  },
+  {
+    "id": "f9743861-e98b-4184-890b-776f0666c2a8",
+    "type": "accepted",
+    "projectName": "Piraeus Datastore",
+    "projectSlug": "piraeus-datastore",
+    "logoUrl": "https://landscape.cncf.io/logos/02d11d8d325ab2543fe2eeca18554d390e6d7f40b1c2a12b255969ef2f12b8ad.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Piraeus Datastore joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "3878f387-29b1-464b-aed9-1b7c0276b939",
+    "type": "accepted",
+    "projectName": "hami",
+    "projectSlug": "hami",
+    "logoUrl": "https://landscape.cncf.io/logos/83f6fa5c64fe08918331cb71cdeac645adedf0f70b6123186e03ff0caf21e201.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "hami joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "03150993-8785-4612-abfd-aa8ff03520f7",
+    "type": "accepted",
+    "projectName": "Kubeflow",
+    "projectSlug": "kubeflow",
+    "logoUrl": "https://landscape.cncf.io/logos/7d633b3edfff267c99e5cb38c875ca2b842b3b371fd13dfad598dcc07c24a62b.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Kubeflow joined the CNCF as a incubating project"
+  },
+  {
+    "id": "e822a12d-f8ee-4819-b69c-529da77a2256",
+    "type": "accepted",
+    "projectName": "Network Service Mesh",
+    "projectSlug": "network-service-mesh",
+    "logoUrl": "https://landscape.cncf.io/logos/a59f790ab063e80517b70fbc950c7ef9bf30a31261f0de0ddd38a2076801c502.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Network Service Mesh joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "6d940ee4-05b2-4ba1-8baa-187a961bfc26",
+    "type": "accepted",
+    "projectName": "Tinkerbell",
+    "projectSlug": "tinkerbell",
+    "logoUrl": "https://landscape.cncf.io/logos/e4bfbb052ae2cfb520110a83ffa06c8e8850c04663634e0718dc2637d7657b96.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Tinkerbell joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "5a7d4a0b-7897-4d7d-a802-4bb2204d7429",
+    "type": "accepted",
+    "projectName": "Contour",
+    "projectSlug": "contour",
+    "logoUrl": "https://landscape.cncf.io/logos/11e886c3866c61ad5b90421f878ce2ea25c98c3951084d935c5f079074330daf.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Contour joined the CNCF as a incubating project"
+  },
+  {
+    "id": "670ee921-a018-49b2-9dc8-3881d52fe755",
+    "type": "accepted",
+    "projectName": "Notary Project",
+    "projectSlug": "notary-project",
+    "logoUrl": "https://landscape.cncf.io/logos/cd7295bb0d3dc7a30047b5b6af1759512da642e9b6a89adf71503e098f2c1ebf.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Notary Project joined the CNCF as a incubating project"
+  },
+  {
+    "id": "bf7a318d-91f4-4d52-8a11-a3344d8e7e0a",
+    "type": "accepted",
+    "projectName": "Artifact Hub",
+    "projectSlug": "artifact-hub",
+    "logoUrl": "https://landscape.cncf.io/logos/07c63442d3e8608cbfe2ef02894d00fc4daf3f66ca4083addb5f62c7ad58cb9e.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Artifact Hub joined the CNCF as a incubating project"
+  },
+  {
+    "id": "58e73d61-b90a-4289-bcd3-be1b3d858b65",
+    "type": "accepted",
+    "projectName": "ORAS",
+    "projectSlug": "oras",
+    "logoUrl": "https://landscape.cncf.io/logos/9fb94960a820a4ca1851097501a745b3e8c66b8a263c1e800e2c2adac2e04cd9.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "ORAS joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "020d31bc-3a28-4eb2-836c-9fc69c0bf209",
+    "type": "accepted",
+    "projectName": "werf",
+    "projectSlug": "werf",
+    "logoUrl": "https://landscape.cncf.io/logos/c2af80744abaa2cfedfcf10e3b0b84db36099f12310e900f50b4c436165b1658.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "werf joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "1d34a57f-065c-4254-b95d-c59284434658",
+    "type": "accepted",
+    "projectName": "Flatcar Container Linux",
+    "projectSlug": "flatcar-container-linux",
+    "logoUrl": "https://landscape.cncf.io/logos/0e5b4c979e798905f5bb26c892beffdd489dc56701347a802b0698257ca6bb24.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Flatcar Container Linux joined the CNCF as a incubating project"
+  },
+  {
+    "id": "597760ef-dae3-46a8-b5d4-086bf0919058",
+    "type": "accepted",
+    "projectName": "SPIFFE",
+    "projectSlug": "spiffe",
+    "logoUrl": "https://landscape.cncf.io/logos/e649cd82385a7f0758eb272631b7d9148b3a9211493001b6864a6538b73cbee6.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "SPIFFE joined the CNCF as a graduated project"
+  },
+  {
+    "id": "8da53486-7c56-48a2-9227-dcbff9bc9bf8",
+    "type": "accepted",
+    "projectName": "Cilium",
+    "projectSlug": "cilium",
+    "logoUrl": "https://landscape.cncf.io/logos/6b052d96054bbe311b0429d2267d60b92b1c5e6527e6646c0bf2fc06a55e2f43.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Cilium joined the CNCF as a graduated project"
+  },
+  {
+    "id": "2be646b8-7df2-47e5-ac55-46111e7cd4db",
+    "type": "accepted",
+    "projectName": "Kubernetes",
+    "projectSlug": "kubernetes",
+    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Kubernetes joined the CNCF as a graduated project"
+  },
+  {
+    "id": "ad60cdff-22e4-4b26-a3f5-6ccff4603eb8",
+    "type": "accepted",
+    "projectName": "Devfile",
+    "projectSlug": "devfile",
+    "logoUrl": "https://landscape.cncf.io/logos/ee1c46664342421b96fad24e0d31e3c0f0df443b277410448a30e94f713e2bc3.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Devfile joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "e36d9400-a7ca-4d66-bfb5-abcf38a67bc3",
+    "type": "accepted",
+    "projectName": "Clusterpedia",
+    "projectSlug": "clusterpedia",
+    "logoUrl": "https://landscape.cncf.io/logos/becd751ec856f5d795091be283487e119702e66bbf1db2ae3a289149bba730a0.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Clusterpedia joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "e1665b08-55da-48fa-99ee-6ca4f6a7d7b9",
+    "type": "accepted",
+    "projectName": "bpfman",
+    "projectSlug": "bpfman",
+    "logoUrl": "https://landscape.cncf.io/logos/36cc7c278c13fbec758fb4a37eadf77c23bffac45131103f569678dc38b2eae2.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "bpfman joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "1ea2883e-1d55-497b-9ff2-680cd9cd0383",
+    "type": "accepted",
+    "projectName": "Falco",
+    "projectSlug": "falco",
+    "logoUrl": "https://landscape.cncf.io/logos/4b03a845c7d926abfb00df4ed9c16fc5a024b700fa1aea4984b1d8393550d46d.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Falco joined the CNCF as a graduated project"
+  },
+  {
+    "id": "857bced1-97e9-4189-a0d8-fe49ee80b385",
+    "type": "accepted",
+    "projectName": "containerd",
+    "projectSlug": "containerd",
+    "logoUrl": "https://landscape.cncf.io/logos/f26381b645b2f14293a2a597bc98b5bbe1e5e086029de41830ba7c667353bf3e.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "containerd joined the CNCF as a graduated project"
+  },
+  {
+    "id": "b3029a38-7643-474c-b57d-841f69fa36ce",
+    "type": "accepted",
+    "projectName": "SPIRE",
+    "projectSlug": "spire",
+    "logoUrl": "https://landscape.cncf.io/logos/8cbfe9bcfba18cc9712bda70565c8598eee930663533395b6cc350618c3e5b02.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "SPIRE joined the CNCF as a graduated project"
+  },
+  {
+    "id": "f8371e3b-ef92-49c2-b28d-b4e482d4fb6a",
+    "type": "accepted",
+    "projectName": "Volcano",
+    "projectSlug": "volcano",
+    "logoUrl": "https://landscape.cncf.io/logos/45984434efdb609308838359d65422b44b2c60579df44a3f56c642b4161660d1.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Volcano joined the CNCF as a incubating project"
+  },
+  {
+    "id": "763e40e6-c4e0-44f1-a047-9b0286285ec8",
+    "type": "accepted",
+    "projectName": "BFE",
+    "projectSlug": "bfe",
+    "logoUrl": "https://landscape.cncf.io/logos/053074ec34daa20c8ff44a7be91dce6116639375f3f48c9b55cfd2d18362a675.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "BFE joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "8227e50f-de89-4e98-b4a3-961ffc0831e3",
+    "type": "accepted",
+    "projectName": "metal3-io",
+    "projectSlug": "metal3-io",
+    "logoUrl": "https://landscape.cncf.io/logos/5c18560e3c06e682845b6daccc58e55fe161c73dccf15e3b106021bcdef7006d.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "metal3-io joined the CNCF as a incubating project"
+  },
+  {
+    "id": "e93784f6-4ea1-461c-af2e-9353aafa2d89",
+    "type": "accepted",
+    "projectName": "Cedar",
+    "projectSlug": "cedar",
+    "logoUrl": "https://landscape.cncf.io/logos/86477490a2670f3b7cb7e89ac64d76e66bf7c4516daf3e69c8cf742632d0f664.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Cedar joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "a9240950-0d97-4565-9131-ee4ab70a5515",
+    "type": "accepted",
+    "projectName": "Hexa",
+    "projectSlug": "hexa",
+    "logoUrl": "https://landscape.cncf.io/logos/96d137a40757bda05f6992d6586e41de3b2366bc6c0938955332fee20ced2535.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Hexa joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "cf05035d-97ce-40a2-9549-18f6ca7e1ffd",
+    "type": "accepted",
+    "projectName": "Chaosblade",
+    "projectSlug": "chaosblade",
+    "logoUrl": "https://landscape.cncf.io/logos/caa1f058080a24732f722144452f3a67dcb0dd541457197ef20b523321a74f30.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Chaosblade joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "3926c655-e707-4520-9ddd-b99e771f993e",
+    "type": "accepted",
+    "projectName": "Akri",
+    "projectSlug": "akri",
+    "logoUrl": "https://landscape.cncf.io/logos/429e9e900a264b7748ccb5c19e52fd46b729e89776c318f7f04c3db07bb470db.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Akri joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "98a483c4-82f9-4dae-801b-90fd669a6a5e",
+    "type": "accepted",
+    "projectName": "Keptn",
+    "projectSlug": "keptn",
+    "logoUrl": "https://landscape.cncf.io/logos/4f47e9ff27a7943d9a6c4ab76eee79909d37c300af890a1d283d8ea9f6895aae.svg",
+    "maturity": "archived",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Keptn joined the CNCF as a archived project"
+  },
+  {
+    "id": "949574c0-43a8-4a06-ad52-f4d1c361446c",
+    "type": "accepted",
+    "projectName": "SuperEdge",
+    "projectSlug": "superedge",
+    "logoUrl": "https://landscape.cncf.io/logos/2f48b1c99f890bacb69db33625dcd274f55c07a653a82c778d2ac46f2a780e92.svg",
+    "maturity": "archived",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "SuperEdge joined the CNCF as a archived project"
+  },
+  {
+    "id": "30964ca6-5517-41a1-899d-2c17376a2537",
+    "type": "accepted",
+    "projectName": "bootc",
+    "projectSlug": "bootc",
+    "logoUrl": "https://landscape.cncf.io/logos/a703ff53acb6fd7ffb9e19709c76c14351ed9f88604b922a656ed6519695e48f.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "bootc joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "ebfdeb69-ad06-48a0-962d-48856aecca6b",
+    "type": "accepted",
+    "projectName": "Submariner",
+    "projectSlug": "submariner",
+    "logoUrl": "https://landscape.cncf.io/logos/58ee5bb2fb1d6492724bbc8926162b64c52a7d05d539733affdbec839da55c0b.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Submariner joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "9e8b772c-2789-4fe1-aa75-40928d5e5d1a",
+    "type": "accepted",
+    "projectName": "k0s",
+    "projectSlug": "k0s",
+    "logoUrl": "https://landscape.cncf.io/logos/0e94de71769e23e77ed9548409355396bd7407fde0e973ca60be0978bc8d4713.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "k0s joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "d88115d2-8eac-4aae-af1b-120d18fe35c8",
+    "type": "accepted",
+    "projectName": "Radius",
+    "projectSlug": "radius",
+    "logoUrl": "https://landscape.cncf.io/logos/7b57eafa88dba3fed85862b1fb967a6e0b49c477c07cf13c09af2d2ee94176af.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Radius joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "2c500828-bf6f-4552-9358-4167168da452",
+    "type": "accepted",
+    "projectName": "Kube-burner",
+    "projectSlug": "kube-burner",
+    "logoUrl": "https://landscape.cncf.io/logos/994a5fdc1fbd3f3723646d0dcdd73a29e3e6f4719c763a67b18106231f26faa1.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Kube-burner joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "6e1a3c11-79d6-4d9d-969c-8cf79255d36c",
+    "type": "accepted",
+    "projectName": "OpenFeature",
+    "projectSlug": "openfeature",
+    "logoUrl": "https://landscape.cncf.io/logos/031998d76ffa95ddcc5777968611c88a82b3ca43a771d2448b6535c0e31ab168.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "OpenFeature joined the CNCF as a incubating project"
+  },
+  {
+    "id": "9ab34242-33f8-430a-a005-25ed45288ba5",
+    "type": "accepted",
+    "projectName": "Atlantis",
+    "projectSlug": "atlantis",
+    "logoUrl": "https://landscape.cncf.io/logos/6de39e7bb7438d23d45a8e32727f1b082040b38832bb533c747f2ba7c8ce6203.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Atlantis joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "f1307342-b8a8-449c-9830-d3a77c2478c4",
+    "type": "accepted",
+    "projectName": "Runme Notebooks",
+    "projectSlug": "runme-notebooks",
+    "logoUrl": "https://landscape.cncf.io/logos/2121ac233715cffe4a7d3c1debc815f2b3f2d6920ebd37be8a5b17298e4bd0a4.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Runme Notebooks joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "91513ea8-704b-4901-ae18-026a5f0a82fb",
+    "type": "accepted",
+    "projectName": "OpenChoreo",
+    "projectSlug": "openchoreo",
+    "logoUrl": "https://landscape.cncf.io/logos/e3c2aa3a2d8188f0ff296cd58786e9d366de42eda6cdfa71a2aee61efcafd606.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "OpenChoreo joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "069fea31-ccae-457a-9724-210b1d4c4c83",
+    "type": "accepted",
+    "projectName": "Headlamp",
+    "projectSlug": "headlamp",
+    "logoUrl": "https://landscape.cncf.io/logos/6a9599e47f2d58683902cdcfaba7a0309aa7c300d83a033e28194cb3a23c8163.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Headlamp joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "2acc8304-0f94-4a13-af4b-65bfba1bcbe2",
+    "type": "accepted",
+    "projectName": "OpenTelemetry",
+    "projectSlug": "opentelemetry",
+    "logoUrl": "https://landscape.cncf.io/logos/52818595352a47637721976b546e0a2a1d0da186a0eb97ec203bd7e5248eb4fc.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "OpenTelemetry joined the CNCF as a incubating project"
+  },
+  {
+    "id": "e7af342a-ab72-453b-b4e4-ec061d972f64",
+    "type": "accepted",
+    "projectName": "Kyverno",
+    "projectSlug": "kyverno",
+    "logoUrl": "https://landscape.cncf.io/logos/cd16e4a1d4b1b2b785530124b090d2fe64cbe2ce0f4d80e1bb968c45bb35af0b.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Kyverno joined the CNCF as a graduated project"
+  },
+  {
+    "id": "96600554-f056-4c5f-9a4b-7f4a25cdb8a4",
+    "type": "accepted",
+    "projectName": "rkt",
+    "projectSlug": "rkt",
+    "logoUrl": "https://landscape.cncf.io/logos/7c7f4c8246797f7c0e315e0d2100ef692212b74cb60db28367ef90121718f310.svg",
+    "maturity": "archived",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "rkt joined the CNCF as a archived project"
+  },
+  {
+    "id": "afdb0f26-d4eb-4e96-8b17-d2d82bbdbb2b",
+    "type": "accepted",
+    "projectName": "DevSpace",
+    "projectSlug": "devspace",
+    "logoUrl": "https://landscape.cncf.io/logos/bc17b5df55cbd2a4609896aa766ea2e39d1368858443b83357602c9802bcb9a3.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "DevSpace joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "9034fd45-33b1-4f05-b4ae-97ccba59a002",
+    "type": "accepted",
+    "projectName": "Nocalhost",
+    "projectSlug": "nocalhost",
+    "logoUrl": "https://landscape.cncf.io/logos/027cc3339ab724ddae203edbdabe23ea7ee0acd60fde10cfa58fa3b2e6eaab47.svg",
+    "maturity": "archived",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Nocalhost joined the CNCF as a archived project"
+  },
+  {
+    "id": "31d2b9ab-bb39-4ee8-af5c-d63492ba17eb",
+    "type": "accepted",
+    "projectName": "Serverless Workflow",
+    "projectSlug": "serverless-workflow",
+    "logoUrl": "https://landscape.cncf.io/logos/e1fb02c3ed744f72910725fa7fc1b97b875ed12603b71996533cb084c916abb4.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Serverless Workflow joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "d02b9ba1-9e08-4648-911c-cbd7e16bf1c9",
+    "type": "accepted",
+    "projectName": "Litmus",
+    "projectSlug": "litmus",
+    "logoUrl": "https://landscape.cncf.io/logos/d747c683685135f700a988978741a4e8b3f1c74ba20bd3d2bc5e741eff762a3d.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Litmus joined the CNCF as a incubating project"
+  },
+  {
+    "id": "0a947025-d4a3-428b-94cd-ca6efe8cb25f",
+    "type": "accepted",
+    "projectName": "OSCAL-COMPASS",
+    "projectSlug": "oscal-compass",
+    "logoUrl": "https://landscape.cncf.io/logos/8cd09905b32d41ed529878ec92840eb7008bf8e9ca933340cd1b1370de013554.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "OSCAL-COMPASS joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "68b4ec01-9063-46b7-9037-e2725df2ce46",
+    "type": "accepted",
+    "projectName": "KubeStellar",
+    "projectSlug": "kubestellar",
+    "logoUrl": "https://landscape.cncf.io/logos/e99ca164b6ec177f6e5f447e7e45918ffee752f0985e4fff60fcde5f1b57cc3b.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "KubeStellar joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "e8786df1-2f2b-4770-bbb6-0945d86b0887",
+    "type": "accepted",
+    "projectName": "Dapr",
+    "projectSlug": "dapr",
+    "logoUrl": "https://landscape.cncf.io/logos/5b3a3f211aae4c129ca1aa9bf3cf52cf12fc7fe5a3c6bc44744ca45ccd697597.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Dapr joined the CNCF as a graduated project"
+  },
+  {
+    "id": "74d51fad-b897-491a-9d7d-74bce4a0573c",
+    "type": "accepted",
+    "projectName": "KubeVirt",
+    "projectSlug": "kubevirt",
+    "logoUrl": "https://landscape.cncf.io/logos/1cfd7bf84e118cc66f4e80cb112b330a46c260e9dced9258e1d7832949584461.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "KubeVirt joined the CNCF as a incubating project"
+  },
+  {
+    "id": "4e1c923d-1b4b-443c-b885-e32ab5064e8b",
+    "type": "accepted",
+    "projectName": "KAITO",
+    "projectSlug": "kaito",
+    "logoUrl": "https://landscape.cncf.io/logos/7610dbb5780998013ac510c29ee9fbd21d3ace7cd5bb86937eb022106d1f8ac6.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "KAITO joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "f4df1b76-e9df-46e2-9805-edcef89f434f",
+    "type": "accepted",
+    "projectName": "DevStream",
+    "projectSlug": "devstream",
+    "logoUrl": "https://landscape.cncf.io/logos/a2e9c14bfd2fef2b9e3d2c137197674635d061c7457e154ae73889f56cb1979a.svg",
+    "maturity": "archived",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "DevStream joined the CNCF as a archived project"
+  },
+  {
+    "id": "fcbe46f0-02e8-4185-83db-184fd2360672",
+    "type": "accepted",
+    "projectName": "Meshery",
+    "projectSlug": "meshery",
+    "logoUrl": "https://landscape.cncf.io/logos/ae1a930d506efbc2b8ff75b0772e97af8b943c621bed7925d32312f3766f7390.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Meshery joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "73b43905-22dc-4dba-a681-eaa9bb5fd500",
+    "type": "accepted",
+    "projectName": "Curve",
+    "projectSlug": "curve",
+    "logoUrl": "https://landscape.cncf.io/logos/9f899a29e23cdcf3ddd66eb51e7bf402e8d8899fe3e645ddc552bf5dc81b155e.svg",
+    "maturity": "archived",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Curve joined the CNCF as a archived project"
+  },
+  {
+    "id": "98652ba8-c842-43e9-aa38-b2d3674819a8",
+    "type": "accepted",
+    "projectName": "Cozystack",
+    "projectSlug": "cozystack",
+    "logoUrl": "https://landscape.cncf.io/logos/809db8520950218cd32f7865a0eda3c2ace9902d9b2c8d2b13461ac8f4ac6d65.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Cozystack joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "31966212-ea7f-4e0c-8ea7-f61c1119b39b",
+    "type": "accepted",
+    "projectName": "Open Cluster Management",
+    "projectSlug": "open-cluster-management",
+    "logoUrl": "https://landscape.cncf.io/logos/edc23c541bb05197cefcf51eb9bfa7edaf5d53435b752d6436baf1c21db63de2.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Open Cluster Management joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "ff7854f6-5b66-4292-8d11-c17ddc410b4f",
+    "type": "accepted",
+    "projectName": "Keycloak",
+    "projectSlug": "keycloak",
+    "logoUrl": "https://landscape.cncf.io/logos/e7ec76aed9cec7e65927f9f8cf4e675d49e79154c45c504a5cd6da1fdaecfc2d.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Keycloak joined the CNCF as a incubating project"
+  },
+  {
+    "id": "3fc8f39e-d393-46b4-ab38-6f29c03f0f47",
+    "type": "accepted",
+    "projectName": "Container Network Interface (CNI)",
+    "projectSlug": "container-network-interface-cni",
+    "logoUrl": "https://landscape.cncf.io/logos/bd68f9ae32a75e7a125d5950df8caa2d50b7b9230aace569b9f2c5032cab41f6.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Container Network Interface (CNI) joined the CNCF as a incubating project"
+  },
+  {
+    "id": "a7e7c442-ce30-410e-9423-d6a8143b587f",
+    "type": "accepted",
+    "projectName": "Clusternet",
+    "projectSlug": "clusternet",
+    "logoUrl": "https://landscape.cncf.io/logos/6d3bc10948133ab516e83603c54bdce1a5e1624e1bedd8797006bcf782cccebd.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Clusternet joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "d0bc6d17-00a5-4001-9f82-6c831c8b4acc",
+    "type": "accepted",
+    "projectName": "CloudEvents",
+    "projectSlug": "cloudevents",
+    "logoUrl": "https://landscape.cncf.io/logos/bf6283eac7e14f6e3a119e9276a5215e47cd79f8971eb6d32e99b8d601f05e23.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "CloudEvents joined the CNCF as a graduated project"
+  },
+  {
+    "id": "de16f79c-5c67-4daa-9ee4-1491c238e6f9",
+    "type": "accepted",
+    "projectName": "OpenEBS",
+    "projectSlug": "openebs",
+    "logoUrl": "https://landscape.cncf.io/logos/340b36e26fb0aad744cc65b296b96cddb95d44e3f9b8aa814e35d0010db0d6b8.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "OpenEBS joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "5dd7065b-54f8-430b-a90d-361ef4fe61aa",
+    "type": "accepted",
+    "projectName": "Krustlet",
+    "projectSlug": "krustlet",
+    "logoUrl": "https://landscape.cncf.io/logos/0b50e20cf2dfe72c5129f006a8a9ba4d103e58ca9a54af0907f99f043d8bb353.svg",
+    "maturity": "archived",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Krustlet joined the CNCF as a archived project"
+  },
+  {
+    "id": "af080f55-14e8-4822-94ab-ce3f6798fa6f",
+    "type": "accepted",
+    "projectName": "Eraser",
+    "projectSlug": "eraser",
+    "logoUrl": "https://landscape.cncf.io/logos/04f4bfa23a348de5db052e180a52a2031a3272e09f9b6d3f0081e3121fd03614.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Eraser joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "5a979537-3fd5-458f-b3bb-b89b6e627d20",
+    "type": "accepted",
+    "projectName": "Backstage",
+    "projectSlug": "backstage",
+    "logoUrl": "https://landscape.cncf.io/logos/041229aa6e716c8d0beb5752747b4789f42dc3239c245c6cf3af8d5cf651b1ee.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Backstage joined the CNCF as a incubating project"
+  },
+  {
+    "id": "db5d1f86-ef83-4477-b125-cd8151403724",
+    "type": "accepted",
+    "projectName": "Open Policy Agent (OPA)",
+    "projectSlug": "open-policy-agent-opa",
+    "logoUrl": "https://landscape.cncf.io/logos/c6d473cc6a37ca7850f1f787e5e1eefd1c898c0b288b1c895e663561aa3de387.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Open Policy Agent (OPA) joined the CNCF as a graduated project"
+  },
+  {
+    "id": "b33a7a6d-e51d-46ee-89b7-08650f28750d",
+    "type": "accepted",
+    "projectName": "gRPC",
+    "projectSlug": "grpc",
+    "logoUrl": "https://landscape.cncf.io/logos/91304b6bc0ca2e9107c18c43a5732879d478909b6d2761b62af2beb445829d48.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "gRPC joined the CNCF as a incubating project"
+  },
+  {
+    "id": "f1bc81a9-6be9-4162-98cd-8a78a7e3e727",
+    "type": "accepted",
+    "projectName": "Kubean",
+    "projectSlug": "kubean",
+    "logoUrl": "https://landscape.cncf.io/logos/af0dfa3a78be5051115370ffd93e2aa59bb1b740ed086b96c02d2ff697f51b87.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Kubean joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "1702a791-736e-41d8-ae7e-bd38d3f204c0",
+    "type": "accepted",
+    "projectName": "kube-rs",
+    "projectSlug": "kube-rs",
+    "logoUrl": "https://landscape.cncf.io/logos/3fd24fb604916cf198ce47b362d659c36b3836a7d0652c88cf19f4a6abac3516.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "kube-rs joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "3f42b8aa-0ef6-4219-9672-a7345799cbb7",
+    "type": "accepted",
+    "projectName": "Easegress",
+    "projectSlug": "easegress",
+    "logoUrl": "https://landscape.cncf.io/logos/75fd964c6b66d1555d09ee0f1942b9698c1a64e9de6f1d66218c6a1b6bc06c94.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Easegress joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "8505910b-650e-40ea-bc94-f8e9c60973a5",
+    "type": "accepted",
+    "projectName": "Kuma",
+    "projectSlug": "kuma",
+    "logoUrl": "https://landscape.cncf.io/logos/0da973ff2e1bf921136027a4ea3ff8bbc78a984652119fe23ffadebe7c8b7a33.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Kuma joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "a5f30f57-f87d-4d4e-9c54-5db1fa7aef49",
+    "type": "accepted",
+    "projectName": "OpenEverest",
+    "projectSlug": "openeverest",
+    "logoUrl": "https://landscape.cncf.io/logos/676b57388cb912a08ae638796747d228adc59f342980a854e1c30cd877c586d5.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "OpenEverest joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "6185e10f-1215-4aa1-918d-5bf06d9cfbd4",
+    "type": "accepted",
+    "projectName": "ko",
+    "projectSlug": "ko",
+    "logoUrl": "https://landscape.cncf.io/logos/506d1052b7a0edcbc8e2e43438661dd16937d1a06b064ddab7d27862414e979f.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "ko joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "0b4f84aa-96e5-4605-afa0-42f702cac473",
+    "type": "accepted",
+    "projectName": "KubeClipper",
+    "projectSlug": "kubeclipper",
+    "logoUrl": "https://landscape.cncf.io/logos/773de8297c26e5c1d0e92762b076be894e56dd58d5a50cff50cde111c585fbb9.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "KubeClipper joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "ea96c02d-4af8-4f8a-b276-0066f2e79762",
+    "type": "accepted",
+    "projectName": "Thanos",
+    "projectSlug": "thanos",
+    "logoUrl": "https://landscape.cncf.io/logos/0246c435a220238574280479dfd919e033309178693f308b8c14bbb088eb0ac1.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Thanos joined the CNCF as a incubating project"
+  },
+  {
+    "id": "b6e3e7d7-8fdc-40dc-84dd-f7b7f9251cab",
+    "type": "accepted",
+    "projectName": "external-secrets",
+    "projectSlug": "external-secrets",
+    "logoUrl": "https://landscape.cncf.io/logos/07686e3ac9335c6071c003bba42cc984b1bbef6feaa1b6ed02626937968d6e3b.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "external-secrets joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "20cc0ff7-2a6a-4afe-bb2f-498a5905c6b4",
+    "type": "accepted",
+    "projectName": "Kgateway",
+    "projectSlug": "kgateway",
+    "logoUrl": "https://landscape.cncf.io/logos/563eeabb73cb8fa1d567f965ccf820dd9abecfada55a1e5cc9c45d5c587f40e6.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Kgateway joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "21c06194-a2d9-4efc-8dde-beaabd8aa59e",
+    "type": "accepted",
+    "projectName": "K8sGPT",
+    "projectSlug": "k8sgpt",
+    "logoUrl": "https://landscape.cncf.io/logos/f9e682e95b478ecfbc73c3aab054432908b1df1eadba2fb96866bf73afeb276e.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "K8sGPT joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "a6d320f1-957d-4bda-b7c3-eced2d1ac677",
+    "type": "accepted",
+    "projectName": "kube-vip",
+    "projectSlug": "kube-vip",
+    "logoUrl": "https://landscape.cncf.io/logos/90651bb18b79d9e32a2e302080236d9f43ce638f4c6fe53787b4dfb7f178fd11.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "kube-vip joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "198d62ac-18c6-47e0-8410-0ddbffe4c169",
+    "type": "accepted",
+    "projectName": "Score",
+    "projectSlug": "score",
+    "logoUrl": "https://landscape.cncf.io/logos/a55fa31e0c14909b8a568e2a7bdf7e77650f0e99a91cbdab8e567a8bcfa1b4c6.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Score joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "c8981a98-5679-4d85-ae86-e91384e85a47",
+    "type": "accepted",
+    "projectName": "Trickster",
+    "projectSlug": "trickster",
+    "logoUrl": "https://landscape.cncf.io/logos/83ff713795a58b7f0b7dea6f9c9a2ddf010b1e1e93f30c21cbd934bb542661a3.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Trickster joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "08e1ad80-c7ec-4806-a797-5a5083b450c8",
+    "type": "accepted",
+    "projectName": "NATS",
+    "projectSlug": "nats",
+    "logoUrl": "https://landscape.cncf.io/logos/96862eb7542174f9ffeca0d2965f0c30d45675896983d9c4e17e9b8f4306f2c5.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "NATS joined the CNCF as a incubating project"
+  },
+  {
+    "id": "a72e1f76-da91-419e-bec3-35422a72b9e0",
+    "type": "accepted",
+    "projectName": "HolmesGPT",
+    "projectSlug": "holmesgpt",
+    "logoUrl": "https://landscape.cncf.io/logos/2bda751ff2f6b416792b8438f1604ee3ed767a03f58eb1f6460e1ac4ae20229a.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "HolmesGPT joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "8abc0717-e014-4e44-ae34-052b0c0599de",
+    "type": "accepted",
+    "projectName": "Kured",
+    "projectSlug": "kured",
+    "logoUrl": "https://landscape.cncf.io/logos/1065d39ce8d0b879ca2cfba54b936a3e8a7ebc0ec51467a3486de122d2d3f84b.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Kured joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "b4033d2f-bddc-441b-a453-b85d9adde900",
+    "type": "accepted",
+    "projectName": "Cortex",
+    "projectSlug": "cortex",
+    "logoUrl": "https://landscape.cncf.io/logos/bf5fe4e2ef7bdef74a70cd072991171e5afb5c4153245109e706bc4b0cb8a7b7.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Cortex joined the CNCF as a incubating project"
+  },
+  {
+    "id": "d51c7419-43b5-47ce-ae6c-1670975a9597",
+    "type": "accepted",
+    "projectName": "Copa",
+    "projectSlug": "copa",
+    "logoUrl": "https://landscape.cncf.io/logos/012ec2df51a4bfd3fb65ede4c16c4dd2a79c585bbd057a30fadf7e233d4f5238.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Copa joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "68c40401-9010-4ee2-b8b9-94f4243ae924",
+    "type": "accepted",
+    "projectName": "Teller",
+    "projectSlug": "teller",
+    "logoUrl": "https://landscape.cncf.io/logos/97ffb54efaf5560b55604717adae400c1063c0bdfc8f3b0c6e5088c1105817ff.svg",
+    "maturity": "archived",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Teller joined the CNCF as a archived project"
+  },
+  {
+    "id": "89253305-0105-4e31-9a92-4ad17c9f7d67",
+    "type": "accepted",
+    "projectName": "KubeFleet",
+    "projectSlug": "kubefleet",
+    "logoUrl": "https://landscape.cncf.io/logos/26deccd15dfef9b5878217767670ecaf50b66be199b451c1bb4caf2ab5a801f9.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "KubeFleet joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "ecc5e223-314b-4f9f-87e5-2b40781495e0",
+    "type": "accepted",
+    "projectName": "etcd",
+    "projectSlug": "etcd",
+    "logoUrl": "https://landscape.cncf.io/logos/0d8c081f2c074582caafefe4b135388d3e62c6e64ca1faf2058743c9d784f14f.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "etcd joined the CNCF as a graduated project"
+  },
+  {
+    "id": "8e5af641-9e5b-49cf-be57-5a420a7af314",
+    "type": "accepted",
+    "projectName": "Perses",
+    "projectSlug": "perses",
+    "logoUrl": "https://landscape.cncf.io/logos/256e187cba8a0dbfe209fecebe387e3c66cb0ddcf25a281e7048e945f063c215.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Perses joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "575e9d90-ed60-45e7-b6f8-2da0c90984d9",
+    "type": "accepted",
+    "projectName": "Distribution",
+    "projectSlug": "distribution",
+    "logoUrl": "https://landscape.cncf.io/logos/f0e83028922be6f2bc6d810c0df6bbb9103189d412830e1c079e993fb12d9c93.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Distribution joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "4be6a8b4-add7-4e1d-a8b6-e2b603852cd4",
+    "type": "accepted",
+    "projectName": "youki",
+    "projectSlug": "youki",
+    "logoUrl": "https://landscape.cncf.io/logos/fad7f44283db62418a1be700f867dc6d563f6349e7a08b60f2832855d3b33d44.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "youki joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "ce1173ba-e2a3-42ce-a062-46fa30188915",
+    "type": "accepted",
+    "projectName": "OVN-Kubernetes",
+    "projectSlug": "ovn-kubernetes",
+    "logoUrl": "https://landscape.cncf.io/logos/2a67fb52c5a35b36cc411c124934d565d6c525778a3afbb5ca1116f7cad63c52.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "OVN-Kubernetes joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "2d01e86a-c3f4-4b5b-8ed8-0e910c87b56f",
+    "type": "accepted",
+    "projectName": "CoHDI",
+    "projectSlug": "cohdi",
+    "logoUrl": "https://landscape.cncf.io/logos/2121ac233715cffe4a7d3c1debc815f2b3f2d6920ebd37be8a5b17298e4bd0a4.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "CoHDI joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "fccbeb54-77f2-4720-bff2-87d4efb19a25",
+    "type": "accepted",
+    "projectName": "Pixie",
+    "projectSlug": "pixie",
+    "logoUrl": "https://landscape.cncf.io/logos/1784bec667c9669cc0ab5f6986aa60a9ad4f086cc8d76ec13cc02a143595a2b1.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Pixie joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "456534c0-0444-41e7-87a9-36d7f20528eb",
+    "type": "accepted",
+    "projectName": "CubeFS",
+    "projectSlug": "cubefs",
+    "logoUrl": "https://landscape.cncf.io/logos/b92a57819da9dd521189017d84cbf4d4405c55355fbe7bb7137f5f5b38305c0e.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "CubeFS joined the CNCF as a graduated project"
+  },
+  {
+    "id": "b9876bc5-bb98-4f9e-baff-1ce779c8e627",
+    "type": "accepted",
+    "projectName": "Vineyard",
+    "projectSlug": "vineyard",
+    "logoUrl": "https://landscape.cncf.io/logos/56b0b5b743b3ef7b5366e800c6ce92d935aa8a7cede0f69e0cd89425d098b438.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Vineyard joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "2e02d4cc-159f-4855-8616-947ca4abb7d8",
+    "type": "accepted",
+    "projectName": "Vitess",
+    "projectSlug": "vitess",
+    "logoUrl": "https://landscape.cncf.io/logos/0400b55699049b5048a7121585c90a40310a3e98b07193c259ead4945aba9a38.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Vitess joined the CNCF as a graduated project"
+  },
+  {
+    "id": "325f3b2a-ef6c-4de5-a168-bf78283005c3",
+    "type": "accepted",
+    "projectName": "Dalec",
+    "projectSlug": "dalec",
+    "logoUrl": "https://landscape.cncf.io/logos/1442bd0f7dff9827b4d8c83d795ae3d225d555ff8a7a3d17b97ecef9138fe4fd.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Dalec joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "36e1f96a-14fb-4c37-a11e-a4147d9314f3",
+    "type": "accepted",
+    "projectName": "KusionStack",
+    "projectSlug": "kusionstack",
+    "logoUrl": "https://landscape.cncf.io/logos/fa634199c51ed59a4083e4eedee3c4a339135376d6f70b68777dd9d4daaa46fa.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "KusionStack joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "4a0466e5-8aed-4946-a96b-608d5fdc6757",
+    "type": "accepted",
+    "projectName": "TiKV",
+    "projectSlug": "tikv",
+    "logoUrl": "https://landscape.cncf.io/logos/9e6b263505fe51ce980697b6dc0e1624e618d6f493072fd50d5ce8a592f0d547.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "TiKV joined the CNCF as a graduated project"
+  },
+  {
+    "id": "808cc5a5-6503-4e8a-bbb7-c06830d69c5c",
+    "type": "accepted",
+    "projectName": "Drasi",
+    "projectSlug": "drasi",
+    "logoUrl": "https://landscape.cncf.io/logos/cbc0511992a87f558ac91796ce05f9b46249ab44d87d0f7ee15be93f06bf9513.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Drasi joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "8282affb-137f-400a-ac24-2aefbaa88a17",
+    "type": "accepted",
+    "projectName": "Chaos Mesh",
+    "projectSlug": "chaos-mesh",
+    "logoUrl": "https://landscape.cncf.io/logos/b82c99a89900481623bd5963490dcda6c2c8955286bdf60a13e6aa422536d562.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Chaos Mesh joined the CNCF as a incubating project"
+  },
+  {
+    "id": "ae4e37a7-425c-49a2-9946-29bc77f3bbde",
+    "type": "accepted",
+    "projectName": "KitOps",
+    "projectSlug": "kitops",
+    "logoUrl": "https://landscape.cncf.io/logos/1310be0288a309eb4cab60321f9f26b5dc8aacc109567146e043b990608aa7da.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "KitOps joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "174b4144-dba5-424e-83b1-bd027ecbfaf6",
+    "type": "accepted",
+    "projectName": "KubeArmor",
+    "projectSlug": "kubearmor",
+    "logoUrl": "https://landscape.cncf.io/logos/84b3f34dd8fc2721ec69b0fb1b0d536b76f95a537c2db369144f9474fc5c388b.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "KubeArmor joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "1737fc57-409d-41fa-bb16-ac455207d546",
+    "type": "accepted",
+    "projectName": "Ratify",
+    "projectSlug": "ratify",
+    "logoUrl": "https://landscape.cncf.io/logos/801882e50abbab1253117fea0a5e3ac4aec6a64a82fd675cd8068fb7ef1f1713.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Ratify joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "6a890835-037f-4a6a-bed5-0f81f633f91b",
+    "type": "accepted",
+    "projectName": "OpenELB",
+    "projectSlug": "openelb",
+    "logoUrl": "https://landscape.cncf.io/logos/7ec2896e2b9f2dd3f4fe74986c2c5970861635819ae956268fc681fe99d12185.svg",
+    "maturity": "archived",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "OpenELB joined the CNCF as a archived project"
+  },
+  {
+    "id": "8ca840f8-85e8-4161-95f4-578a7c4f21fd",
+    "type": "accepted",
+    "projectName": "KubeEdge",
+    "projectSlug": "kubeedge",
+    "logoUrl": "https://landscape.cncf.io/logos/cfb665dc9a024771b54107c3ebcd0802bfdfc74c65ea00892516bf36a3a4dc8a.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "KubeEdge joined the CNCF as a graduated project"
+  },
+  {
+    "id": "346c0883-321d-451f-97ba-1e0ff3018f99",
+    "type": "accepted",
+    "projectName": "Kubescape",
+    "projectSlug": "kubescape",
+    "logoUrl": "https://landscape.cncf.io/logos/7204e2871a12ace755704a770c9d68b5e9cb8c8ddba6b8f94de1d8f63597cebb.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Kubescape joined the CNCF as a incubating project"
+  },
+  {
+    "id": "935a83ea-4be1-4008-94a4-931b76dcc40c",
+    "type": "accepted",
+    "projectName": "KAI Scheduler",
+    "projectSlug": "kai-scheduler",
+    "logoUrl": "https://landscape.cncf.io/logos/2121ac233715cffe4a7d3c1debc815f2b3f2d6920ebd37be8a5b17298e4bd0a4.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "KAI Scheduler joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "c6545d66-0b0f-4c90-8313-c71eb642d675",
+    "type": "accepted",
+    "projectName": "Serverless Devs",
+    "projectSlug": "serverless-devs",
+    "logoUrl": "https://landscape.cncf.io/logos/3f9d546a8a86b01fef093d25fec246375834377148925fc790b8468e827fe474.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Serverless Devs joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "3a73fe0e-d202-4021-98cd-e63464d9414c",
+    "type": "accepted",
+    "projectName": "SchemaHero",
+    "projectSlug": "schemahero",
+    "logoUrl": "https://landscape.cncf.io/logos/4286704f686b959bef9fc6bee3df9aa9c8043a9208e8e7271967fa2c340c8bf7.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "SchemaHero joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "ddfa6fb9-e1d1-4770-a4b5-f63ab8ea9f90",
+    "type": "accepted",
+    "projectName": "Keylime",
+    "projectSlug": "keylime",
+    "logoUrl": "https://landscape.cncf.io/logos/e3ea8e4fb9046a5165fb38d7983d1d6c40e9a40dbee668e056b9ef6c77224650.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Keylime joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "604ee05d-00e0-4a1d-9351-2963046e4b9a",
+    "type": "accepted",
+    "projectName": "Interlink",
+    "projectSlug": "interlink",
+    "logoUrl": "https://landscape.cncf.io/logos/ca5e8b15e8513fd7a1a9b0e118f203cdad235be4ac0ba17100fde6bbd3d2ef72.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Interlink joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "8d452b7b-a3f8-4f70-ac6b-f2e9e4c6ea8d",
+    "type": "accepted",
+    "projectName": "Fluid",
+    "projectSlug": "fluid",
+    "logoUrl": "https://landscape.cncf.io/logos/4153a534fe04862877884ff19ae25134e010ca59ca1eed3cfb0dba83e42be98b.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Fluid joined the CNCF as a incubating project"
+  },
+  {
+    "id": "b0e26b4d-5bfc-4e67-8aca-c24a48782e1b",
+    "type": "accepted",
+    "projectName": "Open Policy Containers",
+    "projectSlug": "open-policy-containers",
+    "logoUrl": "https://landscape.cncf.io/logos/e008056fcb724697b3677ae277dd6d7ea03d0023eec2e840e78aede55c1db39a.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Open Policy Containers joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "394ac6d0-6056-4470-ab64-3cf8a96bfb41",
+    "type": "accepted",
+    "projectName": "Pravega",
+    "projectSlug": "pravega",
+    "logoUrl": "https://landscape.cncf.io/logos/3623fe8b38cd9b1e41d8e675050e370a2947856190e5328ad90ec13292def314.svg",
+    "maturity": "archived",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Pravega joined the CNCF as a archived project"
+  },
+  {
+    "id": "197e5b9c-7541-4879-bf53-75ff0c0bbf8b",
+    "type": "accepted",
+    "projectName": "OAuth2 Proxy",
+    "projectSlug": "oauth2-proxy",
+    "logoUrl": "https://landscape.cncf.io/logos/dd5c6b80a40645c5a1a8eacffef99ff554073cfb9a9fc48a14fb43adf07691db.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "OAuth2 Proxy joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "e754d363-c862-4de6-8f57-7c306512afbc",
+    "type": "accepted",
+    "projectName": "urunc",
+    "projectSlug": "urunc",
+    "logoUrl": "https://landscape.cncf.io/logos/82936cde1ab5a35df66396bac2f0fa5ce22bcc61288c525900d75d6bfa9267b1.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "urunc joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "13c6a5b3-69eb-4128-ba21-406ea32e0cc8",
+    "type": "accepted",
+    "projectName": "Kube-OVN",
+    "projectSlug": "kube-ovn",
+    "logoUrl": "https://landscape.cncf.io/logos/bf1cf997cd6f278ec603c61bd1b471e9f6f8874861dca08a6a55258a6bb87f78.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Kube-OVN joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "7920aa4d-7b2e-42b9-a2da-be44e1932097",
+    "type": "accepted",
+    "projectName": "Koordinator",
+    "projectSlug": "koordinator",
+    "logoUrl": "https://landscape.cncf.io/logos/e87455bdd8e4b982eb0969b60ae5972d1299a1665ed900227758940399301466.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Koordinator joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "77af6967-af71-4daa-a1ec-86307846f835",
+    "type": "accepted",
+    "projectName": "Oxia",
+    "projectSlug": "oxia",
+    "logoUrl": "",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Oxia joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "cada6b37-359c-4c0f-837c-3a0d97379106",
+    "type": "accepted",
+    "projectName": "Cloud Custodian",
+    "projectSlug": "cloud-custodian",
+    "logoUrl": "https://landscape.cncf.io/logos/38807f329f5a2088305013eceb5b6fe8349c808aae92aac700fc2b50f8d03921.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Cloud Custodian joined the CNCF as a incubating project"
+  },
+  {
+    "id": "7202c846-3311-49b8-963a-22f5c70f9c53",
+    "type": "accepted",
+    "projectName": "Operator Framework",
+    "projectSlug": "operator-framework",
+    "logoUrl": "https://landscape.cncf.io/logos/31185d07fe99edfa77fdadb1bf9de41fddcbe97a5fd4cf28dea07d1cea170213.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Operator Framework joined the CNCF as a incubating project"
+  },
+  {
+    "id": "854a3216-7121-4e84-a02d-ddd31c5cbe99",
+    "type": "accepted",
+    "projectName": "Stacker",
+    "projectSlug": "stacker",
+    "logoUrl": "https://landscape.cncf.io/logos/f8bb728c02223ed0efa0dbb58ae1e940a5590c950c350c3421bcd53990add1ec.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Stacker joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "4ea22d46-0c14-45f5-a469-1130789e393e",
+    "type": "accepted",
+    "projectName": "Hyperlight",
+    "projectSlug": "hyperlight",
+    "logoUrl": "https://landscape.cncf.io/logos/ca0d1ad3d52426f714318fb26a8410c476b1391bdfa7dcda1e8e16cb71d5e4b9.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Hyperlight joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "55df91c3-7a73-4d6b-b812-d91d8b6c5355",
+    "type": "accepted",
+    "projectName": "OpenFunction",
+    "projectSlug": "openfunction",
+    "logoUrl": "https://landscape.cncf.io/logos/eec49b43a5d92bd4b19cbad9a4007e88d16c46f1b15d6d47ff4800c6dce36076.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "OpenFunction joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "9b3cb734-b010-48b3-ae4f-144dfbc6a121",
+    "type": "accepted",
+    "projectName": "Kuadrant",
+    "projectSlug": "kuadrant",
+    "logoUrl": "https://landscape.cncf.io/logos/4be4dfdc7c156747f9043a33139f7aa08a6c14e0cfa2e35e85d9bd0a43d553f7.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Kuadrant joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "bc84a43c-f70f-44a2-af81-50d5167c51cc",
+    "type": "accepted",
+    "projectName": "Shipwright",
+    "projectSlug": "shipwright",
+    "logoUrl": "https://landscape.cncf.io/logos/934337f3dfc22110ed0f59267e234dc815e912fc75e18c541ba21961b779b882.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Shipwright joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "9b9f5fd1-cc4f-42dc-b142-48099a2a8e32",
+    "type": "accepted",
+    "projectName": "Brigade",
+    "projectSlug": "brigade",
+    "logoUrl": "https://landscape.cncf.io/logos/3b8a7f02adb7f4bd7c860c871419bf83ed2b92bcf5aab9475e34c247e060ffd3.svg",
+    "maturity": "archived",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Brigade joined the CNCF as a archived project"
+  },
+  {
+    "id": "0b55f254-173b-46bb-a659-a0ab48385e76",
+    "type": "accepted",
+    "projectName": "xRegistry",
+    "projectSlug": "xregistry",
+    "logoUrl": "https://landscape.cncf.io/logos/ebd4efb7d8f59713c6fa8ca0432087d52ec9c58313d3055b9c097f3527de957d.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "xRegistry joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "96c9f565-2fa4-4d92-b2e0-64c0af17db80",
+    "type": "accepted",
+    "projectName": "Argo",
+    "projectSlug": "argo",
+    "logoUrl": "https://landscape.cncf.io/logos/ba71fd50cbc06c7bad3554de23cbca4298593141df3842003a94065c209610f4.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Argo joined the CNCF as a graduated project"
+  },
+  {
+    "id": "2a0317f0-be1e-4815-b8c6-4b718370764e",
+    "type": "accepted",
+    "projectName": "kpt",
+    "projectSlug": "kpt",
+    "logoUrl": "https://landscape.cncf.io/logos/cb639ab39b9500664c25a0d1b45cde89770aa4dc050514d7572d4cfb09196143.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "kpt joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "5d27b13f-12c0-4437-89c9-d065e4d8b2d1",
+    "type": "accepted",
+    "projectName": "Paralus",
+    "projectSlug": "paralus",
+    "logoUrl": "https://landscape.cncf.io/logos/a81b2c55fb19e52355b3b0eb674f8a292d740b628cf067a2156644668fa06ef0.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Paralus joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "4c5ddcd9-2101-48cc-99d7-603caa7ad9dd",
+    "type": "accepted",
+    "projectName": "OpenMetrics",
+    "projectSlug": "openmetrics",
+    "logoUrl": "https://landscape.cncf.io/logos/1509d805cf552290ba0723bf85ebea8e0d85eb2e2d4a0eb5c62a3b776a324f4b.svg",
+    "maturity": "archived",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "OpenMetrics joined the CNCF as a archived project"
+  },
+  {
+    "id": "c3120b19-656f-4394-a7c2-86709bb9b74c",
+    "type": "accepted",
+    "projectName": "kagent",
+    "projectSlug": "kagent",
+    "logoUrl": "https://landscape.cncf.io/logos/c6cdce37ac9d6d8482f90b573a41d57bc03d3b31e39e79e409fb5c914f5967ff.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "kagent joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "35a11e31-dfe2-4a57-90f8-b4c7fe94de0c",
+    "type": "accepted",
+    "projectName": "HwameiStor",
+    "projectSlug": "hwameistor",
+    "logoUrl": "https://landscape.cncf.io/logos/7aa08d84022b7307134dbe2c6fd04e032d77ebe3ecfffd7b5fbcc0ea2dcc994b.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "HwameiStor joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "85835589-c7ff-4315-a315-5fa432b1f74a",
+    "type": "accepted",
+    "projectName": "Longhorn",
+    "projectSlug": "longhorn",
+    "logoUrl": "https://landscape.cncf.io/logos/acd3d31cbdf0aa2ef2d695fa4a3571e6d232a96214ec33fe0b2022b9719c244c.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Longhorn joined the CNCF as a incubating project"
+  },
+  {
+    "id": "63009b83-f957-47e9-bea3-b112233cfe09",
+    "type": "accepted",
+    "projectName": "wasmCloud",
+    "projectSlug": "wasmcloud",
+    "logoUrl": "https://landscape.cncf.io/logos/2db2c27b8fd1ce0818a450bd1952c18b2ca72ca8f7c47e06c426f676e9094b17.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "wasmCloud joined the CNCF as a incubating project"
+  },
+  {
+    "id": "7720a3b7-bd05-405f-a53a-c8939ab1cb22",
+    "type": "accepted",
+    "projectName": "Xline",
+    "projectSlug": "xline",
+    "logoUrl": "https://landscape.cncf.io/logos/e8ee0f7f6031ef05e73dea6ffa37c0268fed7feee3b04840e50c936f0a11e704.svg",
+    "maturity": "archived",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Xline joined the CNCF as a archived project"
+  },
+  {
+    "id": "e9631262-a384-4ad0-810e-4f657e46301c",
+    "type": "accepted",
+    "projectName": "Service Mesh Performance",
+    "projectSlug": "service-mesh-performance",
+    "logoUrl": "https://landscape.cncf.io/logos/2317d17b50e40d3c9618e79a9b0017ff5293e0caffa751fb20c752ca0d6c74ff.svg",
+    "maturity": "archived",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Service Mesh Performance joined the CNCF as a archived project"
+  },
+  {
+    "id": "e8e670f2-54c3-41ed-aa56-976c05653937",
+    "type": "accepted",
+    "projectName": "container2wasm",
+    "projectSlug": "container2wasm",
+    "logoUrl": "https://landscape.cncf.io/logos/b4f04abe6e4bed4849aaac94d3b0a71ca09c67bc671e8e32dcf9cba6ef79e18d.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "container2wasm joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "dd8e8085-5b78-4b33-9075-2e7813486a33",
+    "type": "accepted",
+    "projectName": "OpenYurt",
+    "projectSlug": "openyurt",
+    "logoUrl": "https://landscape.cncf.io/logos/3c216efe174d53c58cb2f7209a0ebcbf7f709ca5808322e44dadd2819598a7a7.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "OpenYurt joined the CNCF as a incubating project"
+  },
+  {
+    "id": "698162e4-7316-4f96-91af-edea0de92450",
+    "type": "accepted",
+    "projectName": "Cartography",
+    "projectSlug": "cartography",
+    "logoUrl": "https://landscape.cncf.io/logos/0fba24c5464a917464cc33194e151c2de051f268d54acd89c5dfa2ec7df0f05d.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Cartography joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "d1eae644-a9fd-4080-aac2-a483aa89dd5b",
+    "type": "accepted",
+    "projectName": "Podman Container Tools",
+    "projectSlug": "podman-container-tools",
+    "logoUrl": "https://landscape.cncf.io/logos/88ebb2077819b6779ed4ef164a09694f8688785964c5f85a1515e247f18256fe.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Podman Container Tools joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "bddfbf9a-6b55-42a5-b8a2-6dad62d21e86",
+    "type": "accepted",
+    "projectName": "Istio",
+    "projectSlug": "istio",
+    "logoUrl": "https://landscape.cncf.io/logos/2d881599f6faed0a16840a675049bd10ce7096134d93df3f533aaf91972a9689.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Istio joined the CNCF as a graduated project"
+  },
+  {
+    "id": "709b6c82-2401-4026-928e-68d5af57ee4d",
+    "type": "accepted",
+    "projectName": "Microcks",
+    "projectSlug": "microcks",
+    "logoUrl": "https://landscape.cncf.io/logos/068ee3f89e14ab699d5e1000de95d9540c9a18f512859c72dfc15feba4f20b93.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Microcks joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "37d47151-4194-442b-8a5a-3ae69a435142",
+    "type": "accepted",
+    "projectName": "OpenKruise",
+    "projectSlug": "openkruise",
+    "logoUrl": "https://landscape.cncf.io/logos/0d5940504889e46c3de7eab60f4b1c6b3504406880d2e0af177d1476b5a77ee4.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "OpenKruise joined the CNCF as a incubating project"
+  },
+  {
+    "id": "e3c68bf2-7964-494e-b5ae-269eda9eaa5d",
+    "type": "accepted",
+    "projectName": "Dex",
+    "projectSlug": "dex",
+    "logoUrl": "https://landscape.cncf.io/logos/9c1cf9ce283448caa24a3c992a56b5bbc2e162d1f72256910874687a5e7a2f05.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Dex joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "dd6adc80-436b-473d-8b87-e7a57247f53d",
+    "type": "accepted",
+    "projectName": "Antrea",
+    "projectSlug": "antrea",
+    "logoUrl": "https://landscape.cncf.io/logos/d8528944fdea1aec892cdd2c83cded24a2b7474bd574d12bc14dc4b9da33363c.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Antrea joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "63747293-32e6-400d-9229-8ec6dc83ac2a",
+    "type": "accepted",
+    "projectName": "Higress",
+    "projectSlug": "higress",
+    "logoUrl": "https://landscape.cncf.io/logos/3bfcf728193c733b68ebea17899885b1c2375f85b98bf53ea01fd769f1c1db77.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Higress joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "d1e66725-2da7-4218-a928-c81f85fa4391",
+    "type": "accepted",
+    "projectName": "sealer",
+    "projectSlug": "sealer",
+    "logoUrl": "https://landscape.cncf.io/logos/477106e014c25a2c6be8ca69b85b554cf123f43b8c81c5c174ecc81aafbec743.svg",
+    "maturity": "archived",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "sealer joined the CNCF as a archived project"
+  },
+  {
+    "id": "a6e89ff8-b87c-4400-9f55-06878e235319",
+    "type": "accepted",
+    "projectName": "SlimFaaS",
+    "projectSlug": "slimfaas",
+    "logoUrl": "https://landscape.cncf.io/logos/82953b0ea55c6cd004574614fe52d25ee9b8a53deffe6992862d68944feb5ac1.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "SlimFaaS joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "f895564b-1cf7-44af-8ad3-00a6ca43c1bd",
+    "type": "accepted",
+    "projectName": "Confidential Containers",
+    "projectSlug": "confidential-containers",
+    "logoUrl": "https://landscape.cncf.io/logos/3b94e1452f9b3887866a31042c2f972a5f6f2c884a6336a3d787a35abcbb0c04.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Confidential Containers joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "6cc8953a-91cd-47d5-80f0-e41a9e46b062",
+    "type": "accepted",
+    "projectName": "Parsec",
+    "projectSlug": "parsec",
+    "logoUrl": "https://landscape.cncf.io/logos/18ba5f7f3b70c20179103d103dea1bb8085305101aef19183e8c6f367290742e.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Parsec joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "0ff3e316-4d5b-4e9c-afd4-e30250f9e624",
+    "type": "accepted",
+    "projectName": "Tokenetes",
+    "projectSlug": "tokenetes",
+    "logoUrl": "https://landscape.cncf.io/logos/82cac92f98d09949807ab298740c015755561715d02e9fb1aeaf7d75ceec2733.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Tokenetes joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "4541cca5-43a4-4429-a5f4-56501cc861ab",
+    "type": "accepted",
+    "projectName": "Capsule",
+    "projectSlug": "capsule",
+    "logoUrl": "https://landscape.cncf.io/logos/acbee93893f2179ee51ed414b284284cd9f5663afa2e5908043dc130b09461e6.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Capsule joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "555552be-6725-4bc6-b738-4bf6e6fb7919",
+    "type": "accepted",
+    "projectName": "Envoy",
+    "projectSlug": "envoy",
+    "logoUrl": "https://landscape.cncf.io/logos/1cb1ec893e39b60f7d14dc76c6cc1e597b24be0161c0bdf9f97442fcb8d331f9.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Envoy joined the CNCF as a graduated project"
+  },
+  {
+    "id": "af7c5543-a400-471b-bda8-49c036f2a059",
+    "type": "accepted",
+    "projectName": "Open Service Mesh",
+    "projectSlug": "open-service-mesh",
+    "logoUrl": "https://landscape.cncf.io/logos/6e13df957b2be61dc662af1bf312afe4840c2f7a7c566c9975b84010b4a0c746.svg",
+    "maturity": "archived",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Open Service Mesh joined the CNCF as a archived project"
+  },
+  {
+    "id": "051a09b9-4409-41d1-9296-c0af8a423f9c",
+    "type": "accepted",
+    "projectName": "Buildpacks",
+    "projectSlug": "buildpacks",
+    "logoUrl": "https://landscape.cncf.io/logos/90290bef758df2bd10485616a6445e240b903ecbaee96a8cc844d1c3ed6591ba.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Buildpacks joined the CNCF as a incubating project"
+  },
+  {
+    "id": "e7968b69-0b51-411a-a95e-bed982d4bc2e",
+    "type": "accepted",
+    "projectName": "KubeVela",
+    "projectSlug": "kubevela",
+    "logoUrl": "https://landscape.cncf.io/logos/c914016d15f6336269e2a3a7cb8e2483ec859282707766a16065e0d3560c5831.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "KubeVela joined the CNCF as a incubating project"
+  },
+  {
+    "id": "e57658f2-a2bd-467c-b3b0-4afe30dc8dfd",
+    "type": "accepted",
+    "projectName": "K8up",
+    "projectSlug": "k8up",
+    "logoUrl": "https://landscape.cncf.io/logos/9625e4ed1f66baeedc6cfeb225aa984a5e4f51ba7adee8d9b82525d4d05598b8.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "K8up joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "5dd363be-f0fe-41ee-abfd-0a6ca5061ead",
+    "type": "accepted",
+    "projectName": "Crossplane",
+    "projectSlug": "crossplane",
+    "logoUrl": "https://landscape.cncf.io/logos/c43855293d114dcad77461e7e5af20cf26023e365619f5d4abb54942b51ffc8a.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Crossplane joined the CNCF as a graduated project"
+  },
+  {
+    "id": "fbca157a-095f-4f92-a178-83b62a5d8274",
+    "type": "accepted",
+    "projectName": "KServe",
+    "projectSlug": "kserve",
+    "logoUrl": "https://landscape.cncf.io/logos/c15e376e2f22f76445c233b8bd51d34e40c32e62e009cb8044dd4f2baf8e7c4a.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "KServe joined the CNCF as a incubating project"
+  },
+  {
+    "id": "29b94d85-a5d3-4950-947d-3f55e0c4c028",
+    "type": "accepted",
+    "projectName": "Kuasar",
+    "projectSlug": "kuasar",
+    "logoUrl": "https://landscape.cncf.io/logos/4bd193701e529754d6eb52cdae5e9adca6b1e8d2b5e54e5ae92cfb6789c888fa.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Kuasar joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "bd72a430-105d-4602-a331-8ab27855e689",
+    "type": "accepted",
+    "projectName": "Fluentd",
+    "projectSlug": "fluentd",
+    "logoUrl": "https://landscape.cncf.io/logos/af80830c567373db3566d11fc8f42f7a2648a58db4f11163fa143042ce515b04.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Fluentd joined the CNCF as a graduated project"
+  },
+  {
+    "id": "00e11ba0-ba21-434d-9d33-474f39fb00fb",
+    "type": "accepted",
+    "projectName": "Skooner",
+    "projectSlug": "skooner",
+    "logoUrl": "https://landscape.cncf.io/logos/0c21b8d8adf3261cbbe0495f3d5c724a0a5672418ff9ca6d3ef6143fecaab2f4.svg",
+    "maturity": "archived",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Skooner joined the CNCF as a archived project"
+  },
+  {
+    "id": "c76432a2-3cb9-47a0-a1cb-203edd477d9a",
+    "type": "accepted",
+    "projectName": "Harbor",
+    "projectSlug": "harbor",
+    "logoUrl": "https://landscape.cncf.io/logos/de4f2dfd628db72e7d482ff0d9d22f0615f800a222ce7c8d6d2b5a147da77883.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Harbor joined the CNCF as a graduated project"
+  },
+  {
+    "id": "be6e8d22-aac7-4c75-bf4d-e3091976fa80",
+    "type": "accepted",
+    "projectName": "zot",
+    "projectSlug": "zot",
+    "logoUrl": "https://landscape.cncf.io/logos/e247ac93d0f20080fee02573fef04d5b1c5914cf07bbed0cbcd2b9ec1e0419ed.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "zot joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "9081bcf1-c46a-4670-b987-a73f81c38192",
+    "type": "accepted",
+    "projectName": "k3s",
+    "projectSlug": "k3s",
+    "logoUrl": "https://landscape.cncf.io/logos/6fc4d4394f933b66196684183a6d138a3a8fc83d8d4f711028a80cba81c10397.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "k3s joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "c6a08752-13a9-4769-a7f2-15253a5df91b",
+    "type": "accepted",
+    "projectName": "OpenCost",
+    "projectSlug": "opencost",
+    "logoUrl": "https://landscape.cncf.io/logos/ba27e92ddd22f942dde50f20b6d6d3f2ac7a0b78baf2471bdd89eb5d105c708f.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "OpenCost joined the CNCF as a incubating project"
+  },
+  {
+    "id": "4346c914-6f59-4fa9-ab99-4f8b53b13602",
+    "type": "accepted",
+    "projectName": "Athenz",
+    "projectSlug": "athenz",
+    "logoUrl": "https://landscape.cncf.io/logos/41cff29df3b272f1ecd9b304e6289454f008885f809bd575ab8591619aff07f8.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Athenz joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "9c31520c-10bc-474d-9086-c0e2ba434ca9",
+    "type": "accepted",
+    "projectName": "Inclavare Containers",
+    "projectSlug": "inclavare-containers",
+    "logoUrl": "https://landscape.cncf.io/logos/e41968c9c34b53beccc0c7e7f92ecb814a07f7001c566c0f37be208dfa778fbf.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Inclavare Containers joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "c3b184e3-8bc1-44d7-974e-7db33b275c52",
+    "type": "accepted",
+    "projectName": "FabEdge",
+    "projectSlug": "fabedge",
+    "logoUrl": "https://landscape.cncf.io/logos/ce938a89bb99f23e70e8140214fd0067a62aed038a0cccf70f93c64a3ca3186e.svg",
+    "maturity": "archived",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "FabEdge joined the CNCF as a archived project"
+  },
+  {
+    "id": "854c6ed3-eb6f-4809-89f2-5285430a8ab0",
+    "type": "accepted",
+    "projectName": "Spiderpool",
+    "projectSlug": "spiderpool",
+    "logoUrl": "https://landscape.cncf.io/logos/c1c69ab1f326025a4cf737fa1667983aa259490ca1c4131dcd1db60b739f7a6c.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Spiderpool joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "ba56d804-7b3f-4d23-94ff-c3233a37f161",
+    "type": "accepted",
+    "projectName": "KubeSlice",
+    "projectSlug": "kubeslice",
+    "logoUrl": "https://landscape.cncf.io/logos/617015ee744f973d20a309a1da340f8d4a35d173b988617e5225a9a9776dfd94.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "KubeSlice joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "c5e1ef44-85bd-43bb-b662-3c746e675ce2",
+    "type": "accepted",
+    "projectName": "Connect RPC",
+    "projectSlug": "connect-rpc",
+    "logoUrl": "https://landscape.cncf.io/logos/5f1172e8694f236bc53c0f25b1cf6255941c46d4d079ee480927d00afa731306.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Connect RPC joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "1ab9679e-8645-46ac-b4c0-b5f53b26973a",
+    "type": "accepted",
+    "projectName": "Aeraki Mesh",
+    "projectSlug": "aeraki-mesh",
+    "logoUrl": "https://landscape.cncf.io/logos/59c6f1bd9eef9221d44e07e22b383a835d1f0af878803761ee3c3883a8e32112.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Aeraki Mesh joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "bb063f12-3422-4e7f-8f14-5c0abe02e089",
+    "type": "accepted",
+    "projectName": "in-toto",
+    "projectSlug": "in-toto",
+    "logoUrl": "https://landscape.cncf.io/logos/78e76c8e6d3f6113e84431123f1f6642056727871828f76130b573c500aafd08.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "in-toto joined the CNCF as a graduated project"
+  },
+  {
+    "id": "d2dd80bd-2369-44cf-9cdb-5071f5b9e0c3",
+    "type": "accepted",
+    "projectName": "CRI-O",
+    "projectSlug": "cri-o",
+    "logoUrl": "https://landscape.cncf.io/logos/710f6a5529c3084bf79e0584c92e2334ffd011714df93de4beb6de5af7f7b3ee.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "CRI-O joined the CNCF as a graduated project"
+  },
+  {
+    "id": "ea1db1cf-562f-4bd7-97e3-95011262dd52",
+    "type": "accepted",
+    "projectName": "openGemini",
+    "projectSlug": "opengemini",
+    "logoUrl": "https://landscape.cncf.io/logos/e4c5ddc4904699b26450cf6b472864fb6eaefd4e78b6885cef2372ef1dec7cc6.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "openGemini joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "bd3c6a3a-7dfe-4205-88cb-5ea35e2b1682",
+    "type": "accepted",
+    "projectName": "Helm",
+    "projectSlug": "helm",
+    "logoUrl": "https://landscape.cncf.io/logos/caf58dcdb373502573c954e0aa3e03e725c12ffec5f8fe183c7f174b71357dd5.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Helm joined the CNCF as a graduated project"
+  },
+  {
+    "id": "4e9502be-add5-4a1f-b3c3-94de2c4cdb39",
+    "type": "accepted",
+    "projectName": "Logging Operator (Kube Logging)",
+    "projectSlug": "logging-operator-kube-logging",
+    "logoUrl": "https://landscape.cncf.io/logos/092a16d595c7f92d1a10e5f823eefe2619c6ba22dc20e1086c74a8d5627737c8.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Logging Operator (Kube Logging) joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "e1a10f89-f408-43a8-ad2f-6d02a9e3e07c",
+    "type": "accepted",
+    "projectName": "OpenTracing",
+    "projectSlug": "opentracing",
+    "logoUrl": "https://landscape.cncf.io/logos/b0d00dd2dfd851136b114f137fb22d192a5666c6fe96dfd5631d22c31c181c1a.svg",
+    "maturity": "archived",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "OpenTracing joined the CNCF as a archived project"
+  },
+  {
+    "id": "c984aaa0-2504-46fb-83ce-d3d73e0f74c0",
+    "type": "accepted",
+    "projectName": "Spin",
+    "projectSlug": "spin",
+    "logoUrl": "https://landscape.cncf.io/logos/b4e3dbe472df8213d38abf11ba003aa48599ce97b247521840ebee0443eebfe8.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Spin joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "4591d60d-491d-4daa-bf8d-0a0f28220848",
+    "type": "accepted",
+    "projectName": "Knative",
+    "projectSlug": "knative",
+    "logoUrl": "https://landscape.cncf.io/logos/6a1b7572490f95cada1836b3e0f932e5ff10c683bc1167b08ff868fb7867cfd5.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Knative joined the CNCF as a graduated project"
+  },
+  {
+    "id": "7a9f0478-d97c-46cb-9807-3aab3d9417ca",
+    "type": "accepted",
+    "projectName": "Linkerd",
+    "projectSlug": "linkerd",
+    "logoUrl": "https://landscape.cncf.io/logos/f1940543e59719e7ce1929d7bf6004b9fc56db3a6a59a2dc6f0db16c789b28ac.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Linkerd joined the CNCF as a graduated project"
+  },
+  {
+    "id": "d08e97c2-4172-43c7-ad11-f9c4bd05cae5",
+    "type": "accepted",
+    "projectName": "Merbridge",
+    "projectSlug": "merbridge",
+    "logoUrl": "https://landscape.cncf.io/logos/d3867e62efeb0127b98a26909b977d027004f1ad55a98c7507dc730c673a4ad9.svg",
+    "maturity": "archived",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Merbridge joined the CNCF as a archived project"
+  },
+  {
+    "id": "aaff4ddb-0a35-4a07-b60a-a23d6356c32d",
+    "type": "accepted",
+    "projectName": "CloudNativePG",
+    "projectSlug": "cloudnativepg",
+    "logoUrl": "https://landscape.cncf.io/logos/d795f87b2810954c88802c0b4bd6b3eee5a840c32cbee7276b25831cfb09e1cd.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "CloudNativePG joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "3e698c3f-7328-4936-bcda-6bbe17cfe755",
+    "type": "accepted",
+    "projectName": "Carina",
+    "projectSlug": "carina",
+    "logoUrl": "https://landscape.cncf.io/logos/a280fd929d8ab8f546c80cadaec8500fce7ea3e6acb3af8ab0f741ad58c3a41a.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Carina joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "4cee066a-9190-4dde-a304-be399a6f4a6f",
+    "type": "accepted",
+    "projectName": "Lima",
+    "projectSlug": "lima",
+    "logoUrl": "https://landscape.cncf.io/logos/f5c2adc9a6645771cdbf17782a45fb4a97db3d007de6523c7682b27f7c35ae2d.svg",
+    "maturity": "incubating",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Lima joined the CNCF as a incubating project"
+  },
+  {
+    "id": "5f80b357-ce6c-4b4a-b210-6e606f0b719b",
+    "type": "accepted",
+    "projectName": "LoxiLB",
+    "projectSlug": "loxilb",
+    "logoUrl": "https://landscape.cncf.io/logos/8ca028123a89625aa57bd9ec2e0a8d950d3fc17a86e012b2a0672a82fdc14949.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "LoxiLB joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "77c2646f-8094-491d-830c-f5c88b59cec9",
+    "type": "accepted",
+    "projectName": "Porter",
+    "projectSlug": "porter",
+    "logoUrl": "https://landscape.cncf.io/logos/ab188affd9c3f10bb4bc9e21c393c4798d2c001db36d397a5e1c2d09525a9799.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Porter joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "6070927e-82d6-4afb-880b-244b728452fb",
+    "type": "accepted",
+    "projectName": "CNI-Genie",
+    "projectSlug": "cni-genie",
+    "logoUrl": "https://landscape.cncf.io/logos/4e517cb098ea2e47ff1c36d5b66e8780e998a1053d08ea7864e6438477764949.svg",
+    "maturity": "archived",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "CNI-Genie joined the CNCF as a archived project"
+  },
+  {
+    "id": "61070a1f-9103-441d-a767-9d44a1da5833",
+    "type": "accepted",
+    "projectName": "Dragonfly",
+    "projectSlug": "dragonfly",
+    "logoUrl": "https://landscape.cncf.io/logos/60b07adb6812ca92688c7a1c33b13001022b0dd73cd3b8e64a415e4f003cde16.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Dragonfly joined the CNCF as a graduated project"
+  },
+  {
+    "id": "c749eaaf-b302-45f8-adc1-09bb2f24d33b",
+    "type": "accepted",
+    "projectName": "WasmEdge Runtime",
+    "projectSlug": "wasmedge-runtime",
+    "logoUrl": "https://landscape.cncf.io/logos/6cdfd38b5fb9f4a31370a6ad4cd495c875775e018c371b6d598114174371fbb3.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "WasmEdge Runtime joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "ae60f002-7911-4203-9826-951ed2d47ea3",
+    "type": "accepted",
+    "projectName": "Armada",
+    "projectSlug": "armada",
+    "logoUrl": "https://landscape.cncf.io/logos/1f12143884500137fdb0944a60ee6bf3bf4fb71ac7ad76adeb75ada1d63c27c2.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Armada joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "239989a3-ffe1-4042-8052-ac185dc651de",
+    "type": "accepted",
+    "projectName": "KEDA",
+    "projectSlug": "keda",
+    "logoUrl": "https://landscape.cncf.io/logos/c87a77d52e0b19e58b98012864dbd5d963a4c4d97c767b15e074d30077104b12.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "KEDA joined the CNCF as a graduated project"
+  },
+  {
+    "id": "fc53d057-9441-42a7-a9fd-4f37eaf59203",
+    "type": "accepted",
+    "projectName": "Podman Desktop",
+    "projectSlug": "podman-desktop",
+    "logoUrl": "https://landscape.cncf.io/logos/dd3df851f5c992f8f9add9f09a0b9103b14939cc58fd99b6a8ab5bea00909d75.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Podman Desktop joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "2e3bedea-c59a-4e8c-9f01-a0dd644c8bf8",
+    "type": "accepted",
+    "projectName": "Visual Studio Code Kubernetes Tools",
+    "projectSlug": "visual-studio-code-kubernetes-tools",
+    "logoUrl": "https://landscape.cncf.io/logos/9fc5ecf86161883a18f1453e76a196023c0062939875cba877fdf30e8db5f66f.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Visual Studio Code Kubernetes Tools joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "eddc8fe6-d708-456f-8e3f-803a28c4e3e1",
+    "type": "accepted",
+    "projectName": "Jaeger",
+    "projectSlug": "jaeger",
+    "logoUrl": "https://landscape.cncf.io/logos/5877af58428f6cd35e6dc2df2afe82af3b90853bd191670a60111e6e8c01ea54.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Jaeger joined the CNCF as a graduated project"
+  },
+  {
+    "id": "a968845f-7f09-4e62-a5ee-28209bcfa61f",
+    "type": "accepted",
+    "projectName": "Prometheus",
+    "projectSlug": "prometheus",
+    "logoUrl": "https://landscape.cncf.io/logos/4d6a2b87a6c9a01ed1b82cef5db978e273adb99fda44d47e5dae48f75207147c.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Prometheus joined the CNCF as a graduated project"
+  },
+  {
+    "id": "068a7084-b8a9-411e-9bdb-98c511780fc7",
+    "type": "accepted",
+    "projectName": "Bank-Vaults",
+    "projectSlug": "bank-vaults",
+    "logoUrl": "https://landscape.cncf.io/logos/97457cc0305276dd071eea4d1a272154cb8fa75b540acc25655eb833ae6dd088.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Bank-Vaults joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "24357580-26e2-473a-ba13-ac67cf2807d8",
+    "type": "accepted",
+    "projectName": "Sermant",
+    "projectSlug": "sermant",
+    "logoUrl": "https://landscape.cncf.io/logos/f4255f32ec6577f151f9a0335017ecd36dcf2e8b1656a558a401088eac810218.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Sermant joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "7b0bdf0a-3bec-4e3e-b2c8-82022148092b",
+    "type": "accepted",
+    "projectName": "KubeElasti",
+    "projectSlug": "kubeelasti",
+    "logoUrl": "https://landscape.cncf.io/logos/2121ac233715cffe4a7d3c1debc815f2b3f2d6920ebd37be8a5b17298e4bd0a4.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "KubeElasti joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "4cd80f81-689f-4b09-bb7a-b1d8374e0d12",
+    "type": "accepted",
+    "projectName": "Kuberhealthy",
+    "projectSlug": "kuberhealthy",
+    "logoUrl": "https://landscape.cncf.io/logos/e19559135e0079fa79a1ac5f8227307afe3482481ae9367951e13ca097231abd.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Kuberhealthy joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "9945f90c-0394-436b-8f65-12ee659146b4",
+    "type": "accepted",
+    "projectName": "SpinKube",
+    "projectSlug": "spinkube",
+    "logoUrl": "https://landscape.cncf.io/logos/ec9d486c4984b877eeb47189a8c77530b0a637f8f014b7c951c8f895f9f777c1.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "SpinKube joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "cb61f2a1-45ff-4c24-b866-f26ee9db913a",
+    "type": "accepted",
+    "projectName": "Kubewarden",
+    "projectSlug": "kubewarden",
+    "logoUrl": "https://landscape.cncf.io/logos/24207e926905a8f8a35dce3be43c4da4f8d9e8edea46b2beb3c319d6857b8e7a.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Kubewarden joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "3927d635-ec5c-4dfe-b74a-586529f9c192",
+    "type": "accepted",
+    "projectName": "k8gb",
+    "projectSlug": "k8gb",
+    "logoUrl": "https://landscape.cncf.io/logos/9de62179208dd12679c30b0569ac95769659282f04dafc19ff176b33a7356f72.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "k8gb joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "e162f26d-0fdf-41cd-92a5-2df22bf698a2",
+    "type": "accepted",
+    "projectName": "Tremor",
+    "projectSlug": "tremor",
+    "logoUrl": "https://landscape.cncf.io/logos/8535eb997cdb6b8695cfb82ad366a7a0fac8feac342fd7a65bb66161b2f300aa.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Tremor joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "8861f9e1-7ea2-4169-a998-b7d02e5e1537",
+    "type": "accepted",
+    "projectName": "Carvel",
+    "projectSlug": "carvel",
+    "logoUrl": "https://landscape.cncf.io/logos/f5624184479b62b33ca36846db70ba4fba5a113df47082951fc477d0f0700122.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-22T11:35:55Z",
+    "description": "Carvel joined the CNCF as a sandbox project"
+  },
+  {
     "id": "a86c988f-d01b-4a98-bff0-8480cce5d068",
     "type": "accepted",
     "projectName": "KAI Scheduler",
@@ -10,24 +2480,24 @@
     "description": "KAI Scheduler joined the CNCF as a sandbox project"
   },
   {
-    "id": "defcb3be-d72c-4b9e-824d-3fbc9617cbfb",
+    "id": "1c44f56b-1831-40c3-a4db-a28bcb47ffb2",
     "type": "accepted",
-    "projectName": "OSCAL-COMPASS",
-    "projectSlug": "oscal-compass",
-    "logoUrl": "https://landscape.cncf.io/logos/8cd09905b32d41ed529878ec92840eb7008bf8e9ca933340cd1b1370de013554.svg",
+    "projectName": "ORAS",
+    "projectSlug": "oras",
+    "logoUrl": "https://landscape.cncf.io/logos/9fb94960a820a4ca1851097501a745b3e8c66b8a263c1e800e2c2adac2e04cd9.svg",
     "maturity": "sandbox",
     "timestamp": "2026-03-16T01:58:56Z",
-    "description": "OSCAL-COMPASS joined the CNCF as a sandbox project"
+    "description": "ORAS joined the CNCF as a sandbox project"
   },
   {
-    "id": "f7c89cb4-8916-40a2-b5fc-22ec589af9be",
+    "id": "93bc89fb-3810-48a3-bc76-e79de07a7fbd",
     "type": "accepted",
-    "projectName": "Helm",
-    "projectSlug": "helm",
-    "logoUrl": "https://landscape.cncf.io/logos/caf58dcdb373502573c954e0aa3e03e725c12ffec5f8fe183c7f174b71357dd5.svg",
-    "maturity": "graduated",
+    "projectName": "KubeFleet",
+    "projectSlug": "kubefleet",
+    "logoUrl": "https://landscape.cncf.io/logos/26deccd15dfef9b5878217767670ecaf50b66be199b451c1bb4caf2ab5a801f9.svg",
+    "maturity": "sandbox",
     "timestamp": "2026-03-16T01:58:56Z",
-    "description": "Helm joined the CNCF as a graduated project"
+    "description": "KubeFleet joined the CNCF as a sandbox project"
   },
   {
     "id": "9127d77d-ab6b-4cb3-bf2e-12cbcb6c83f2",
@@ -48,6 +2518,76 @@
     "maturity": "sandbox",
     "timestamp": "2026-03-16T01:58:56Z",
     "description": "Pixie joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "a3345573-284f-450c-8c6e-ac9d01baf0f4",
+    "type": "accepted",
+    "projectName": "Atlantis",
+    "projectSlug": "atlantis",
+    "logoUrl": "https://landscape.cncf.io/logos/6de39e7bb7438d23d45a8e32727f1b082040b38832bb533c747f2ba7c8ce6203.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-16T01:58:56Z",
+    "description": "Atlantis joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "6b86658e-ed34-465a-b633-8a9bd313bd76",
+    "type": "accepted",
+    "projectName": "Porter",
+    "projectSlug": "porter",
+    "logoUrl": "https://landscape.cncf.io/logos/ab188affd9c3f10bb4bc9e21c393c4798d2c001db36d397a5e1c2d09525a9799.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-16T01:58:56Z",
+    "description": "Porter joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "11312ab1-9caa-4f7d-9333-1ac5aff3c6e4",
+    "type": "accepted",
+    "projectName": "Kured",
+    "projectSlug": "kured",
+    "logoUrl": "https://landscape.cncf.io/logos/1065d39ce8d0b879ca2cfba54b936a3e8a7ebc0ec51467a3486de122d2d3f84b.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-16T01:58:56Z",
+    "description": "Kured joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "97a6009e-ba8c-4f10-a5d1-75aded701d7e",
+    "type": "accepted",
+    "projectName": "containerd",
+    "projectSlug": "containerd",
+    "logoUrl": "https://landscape.cncf.io/logos/f26381b645b2f14293a2a597bc98b5bbe1e5e086029de41830ba7c667353bf3e.svg",
+    "maturity": "graduated",
+    "timestamp": "2026-03-16T01:58:56Z",
+    "description": "containerd joined the CNCF as a graduated project"
+  },
+  {
+    "id": "29c54df2-57da-434b-9773-eef1bb4ca7f6",
+    "type": "accepted",
+    "projectName": "Spin",
+    "projectSlug": "spin",
+    "logoUrl": "https://landscape.cncf.io/logos/b4e3dbe472df8213d38abf11ba003aa48599ce97b247521840ebee0443eebfe8.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-16T01:58:56Z",
+    "description": "Spin joined the CNCF as a sandbox project"
+  },
+  {
+    "id": "1ad613fd-a20d-45bf-99bf-886284ab3f77",
+    "type": "accepted",
+    "projectName": "Curve",
+    "projectSlug": "curve",
+    "logoUrl": "https://landscape.cncf.io/logos/9f899a29e23cdcf3ddd66eb51e7bf402e8d8899fe3e645ddc552bf5dc81b155e.svg",
+    "maturity": "archived",
+    "timestamp": "2026-03-16T01:58:56Z",
+    "description": "Curve joined the CNCF as a archived project"
+  },
+  {
+    "id": "8620251a-2ce2-4934-8013-afffd94d45be",
+    "type": "accepted",
+    "projectName": "Visual Studio Code Kubernetes Tools",
+    "projectSlug": "visual-studio-code-kubernetes-tools",
+    "logoUrl": "https://landscape.cncf.io/logos/9fc5ecf86161883a18f1453e76a196023c0062939875cba877fdf30e8db5f66f.svg",
+    "maturity": "sandbox",
+    "timestamp": "2026-03-16T01:58:56Z",
+    "description": "Visual Studio Code Kubernetes Tools joined the CNCF as a sandbox project"
   },
   {
     "id": "ed88f7bf-69a6-4dfe-b63a-543d25944428",
@@ -1380,34 +3920,34 @@
     "description": "LoxiLB joined the CNCF as a sandbox project"
   },
   {
-    "id": "51a926bf-2fe9-4cbd-9554-bd16db25724d",
+    "id": "b0816cb5-2bcd-4eaa-87d8-923638c5a45d",
     "type": "accepted",
-    "projectName": "Kgateway",
-    "projectSlug": "kgateway",
-    "logoUrl": "https://landscape.cncf.io/logos/563eeabb73cb8fa1d567f965ccf820dd9abecfada55a1e5cc9c45d5c587f40e6.svg",
-    "maturity": "sandbox",
+    "projectName": "Longhorn",
+    "projectSlug": "longhorn",
+    "logoUrl": "https://landscape.cncf.io/logos/acd3d31cbdf0aa2ef2d695fa4a3571e6d232a96214ec33fe0b2022b9719c244c.svg",
+    "maturity": "incubating",
     "timestamp": "2026-03-16T01:58:56Z",
-    "description": "Kgateway joined the CNCF as a sandbox project"
+    "description": "Longhorn joined the CNCF as a incubating project"
   },
   {
-    "id": "1c44f56b-1831-40c3-a4db-a28bcb47ffb2",
+    "id": "f7c89cb4-8916-40a2-b5fc-22ec589af9be",
     "type": "accepted",
-    "projectName": "ORAS",
-    "projectSlug": "oras",
-    "logoUrl": "https://landscape.cncf.io/logos/9fb94960a820a4ca1851097501a745b3e8c66b8a263c1e800e2c2adac2e04cd9.svg",
-    "maturity": "sandbox",
+    "projectName": "Helm",
+    "projectSlug": "helm",
+    "logoUrl": "https://landscape.cncf.io/logos/caf58dcdb373502573c954e0aa3e03e725c12ffec5f8fe183c7f174b71357dd5.svg",
+    "maturity": "graduated",
     "timestamp": "2026-03-16T01:58:56Z",
-    "description": "ORAS joined the CNCF as a sandbox project"
+    "description": "Helm joined the CNCF as a graduated project"
   },
   {
-    "id": "8620251a-2ce2-4934-8013-afffd94d45be",
+    "id": "00567344-7345-4b01-bde5-49c4cbfd60f5",
     "type": "accepted",
-    "projectName": "Visual Studio Code Kubernetes Tools",
-    "projectSlug": "visual-studio-code-kubernetes-tools",
-    "logoUrl": "https://landscape.cncf.io/logos/9fc5ecf86161883a18f1453e76a196023c0062939875cba877fdf30e8db5f66f.svg",
-    "maturity": "sandbox",
+    "projectName": "SuperEdge",
+    "projectSlug": "superedge",
+    "logoUrl": "https://landscape.cncf.io/logos/2f48b1c99f890bacb69db33625dcd274f55c07a653a82c778d2ac46f2a780e92.svg",
+    "maturity": "archived",
     "timestamp": "2026-03-16T01:58:56Z",
-    "description": "Visual Studio Code Kubernetes Tools joined the CNCF as a sandbox project"
+    "description": "SuperEdge joined the CNCF as a archived project"
   },
   {
     "id": "752d07b2-2d90-4b35-80e6-5720d719ffed",
@@ -1850,14 +4390,14 @@
     "description": "cert-manager joined the CNCF as a graduated project"
   },
   {
-    "id": "b0816cb5-2bcd-4eaa-87d8-923638c5a45d",
+    "id": "51a926bf-2fe9-4cbd-9554-bd16db25724d",
     "type": "accepted",
-    "projectName": "Longhorn",
-    "projectSlug": "longhorn",
-    "logoUrl": "https://landscape.cncf.io/logos/acd3d31cbdf0aa2ef2d695fa4a3571e6d232a96214ec33fe0b2022b9719c244c.svg",
-    "maturity": "incubating",
+    "projectName": "Kgateway",
+    "projectSlug": "kgateway",
+    "logoUrl": "https://landscape.cncf.io/logos/563eeabb73cb8fa1d567f965ccf820dd9abecfada55a1e5cc9c45d5c587f40e6.svg",
+    "maturity": "sandbox",
     "timestamp": "2026-03-16T01:58:56Z",
-    "description": "Longhorn joined the CNCF as a incubating project"
+    "description": "Kgateway joined the CNCF as a sandbox project"
   },
   {
     "id": "6601a07a-1893-4ce3-aad3-9232588d5c35",
@@ -2020,14 +4560,14 @@
     "description": "Trickster joined the CNCF as a sandbox project"
   },
   {
-    "id": "93bc89fb-3810-48a3-bc76-e79de07a7fbd",
+    "id": "defcb3be-d72c-4b9e-824d-3fbc9617cbfb",
     "type": "accepted",
-    "projectName": "KubeFleet",
-    "projectSlug": "kubefleet",
-    "logoUrl": "https://landscape.cncf.io/logos/26deccd15dfef9b5878217767670ecaf50b66be199b451c1bb4caf2ab5a801f9.svg",
+    "projectName": "OSCAL-COMPASS",
+    "projectSlug": "oscal-compass",
+    "logoUrl": "https://landscape.cncf.io/logos/8cd09905b32d41ed529878ec92840eb7008bf8e9ca933340cd1b1370de013554.svg",
     "maturity": "sandbox",
     "timestamp": "2026-03-16T01:58:56Z",
-    "description": "KubeFleet joined the CNCF as a sandbox project"
+    "description": "OSCAL-COMPASS joined the CNCF as a sandbox project"
   },
   {
     "id": "32bbd341-4501-4e0b-b540-7f3296da1366",
@@ -2380,74 +4920,14 @@
     "description": "Kanister joined the CNCF as a sandbox project"
   },
   {
-    "id": "00567344-7345-4b01-bde5-49c4cbfd60f5",
-    "type": "accepted",
-    "projectName": "SuperEdge",
-    "projectSlug": "superedge",
-    "logoUrl": "https://landscape.cncf.io/logos/2f48b1c99f890bacb69db33625dcd274f55c07a653a82c778d2ac46f2a780e92.svg",
-    "maturity": "archived",
-    "timestamp": "2026-03-16T01:58:56Z",
-    "description": "SuperEdge joined the CNCF as a archived project"
-  },
-  {
-    "id": "1ad613fd-a20d-45bf-99bf-886284ab3f77",
-    "type": "accepted",
-    "projectName": "Curve",
-    "projectSlug": "curve",
-    "logoUrl": "https://landscape.cncf.io/logos/9f899a29e23cdcf3ddd66eb51e7bf402e8d8899fe3e645ddc552bf5dc81b155e.svg",
-    "maturity": "archived",
-    "timestamp": "2026-03-16T01:58:56Z",
-    "description": "Curve joined the CNCF as a archived project"
-  },
-  {
-    "id": "29c54df2-57da-434b-9773-eef1bb4ca7f6",
-    "type": "accepted",
-    "projectName": "Spin",
-    "projectSlug": "spin",
-    "logoUrl": "https://landscape.cncf.io/logos/b4e3dbe472df8213d38abf11ba003aa48599ce97b247521840ebee0443eebfe8.svg",
-    "maturity": "sandbox",
-    "timestamp": "2026-03-16T01:58:56Z",
-    "description": "Spin joined the CNCF as a sandbox project"
-  },
-  {
-    "id": "97a6009e-ba8c-4f10-a5d1-75aded701d7e",
-    "type": "accepted",
-    "projectName": "containerd",
-    "projectSlug": "containerd",
-    "logoUrl": "https://landscape.cncf.io/logos/f26381b645b2f14293a2a597bc98b5bbe1e5e086029de41830ba7c667353bf3e.svg",
-    "maturity": "graduated",
-    "timestamp": "2026-03-16T01:58:56Z",
-    "description": "containerd joined the CNCF as a graduated project"
-  },
-  {
-    "id": "11312ab1-9caa-4f7d-9333-1ac5aff3c6e4",
-    "type": "accepted",
-    "projectName": "Kured",
-    "projectSlug": "kured",
-    "logoUrl": "https://landscape.cncf.io/logos/1065d39ce8d0b879ca2cfba54b936a3e8a7ebc0ec51467a3486de122d2d3f84b.svg",
-    "maturity": "sandbox",
-    "timestamp": "2026-03-16T01:58:56Z",
-    "description": "Kured joined the CNCF as a sandbox project"
-  },
-  {
-    "id": "6b86658e-ed34-465a-b633-8a9bd313bd76",
-    "type": "accepted",
-    "projectName": "Porter",
-    "projectSlug": "porter",
-    "logoUrl": "https://landscape.cncf.io/logos/ab188affd9c3f10bb4bc9e21c393c4798d2c001db36d397a5e1c2d09525a9799.svg",
-    "maturity": "sandbox",
-    "timestamp": "2026-03-16T01:58:56Z",
-    "description": "Porter joined the CNCF as a sandbox project"
-  },
-  {
-    "id": "a3345573-284f-450c-8c6e-ac9d01baf0f4",
-    "type": "accepted",
-    "projectName": "Atlantis",
-    "projectSlug": "atlantis",
-    "logoUrl": "https://landscape.cncf.io/logos/6de39e7bb7438d23d45a8e32727f1b082040b38832bb533c747f2ba7c8ce6203.svg",
-    "maturity": "sandbox",
-    "timestamp": "2026-03-16T01:58:56Z",
-    "description": "Atlantis joined the CNCF as a sandbox project"
+    "id": "78e1261e-8a6a-42f9-af7c-4c335afbc8e8",
+    "type": "newsletter",
+    "logoUrl": "https://lwcn.dev/images/logo.svg",
+    "timestamp": "2026-03-16T00:00:00Z",
+    "description": "This week: 52 releases, 200 news items.",
+    "lwcnIssueUrl": "https://lwcn.dev/newsletter/2026-week-12/",
+    "lwcnTitle": "Week 12 - March 2026",
+    "lwcnWelcome": "This week in Cloud Native brought a flurry of activity across the ecosystem, with a strong focus on security, AI integration, and core infrastructure stability. We saw numerous critical patch releases, especially for service meshes and container runtimes, alongside significant discussions about the evolving role of AI in development and operations. KubeCon + CloudNativeCon event schedules were also announced, highlighting upcoming community gatherings."
   },
   {
     "id": "3612931d-2d26-454d-a83a-7cd57471de87",
@@ -2479,6 +4959,25 @@
     "lwcnTitle": "Week 12 - March 2026"
   },
   {
+    "id": "1d27407e-215f-4420-8688-4ed7b40b0899",
+    "type": "newsletter",
+    "logoUrl": "https://lwcn.dev/images/logo.svg",
+    "timestamp": "2026-03-09T00:00:00Z",
+    "description": "This week: 47 releases, 183 news items.",
+    "lwcnIssueUrl": "https://lwcn.dev/newsletter/2026-week-11/",
+    "lwcnTitle": "Week 11 - March 2026"
+  },
+  {
+    "id": "2aa057c9-6291-4306-8931-56525cdce50e",
+    "type": "newsletter",
+    "logoUrl": "https://lwcn.dev/images/logo.svg",
+    "timestamp": "2026-03-09T00:00:00Z",
+    "description": "This week: 47 releases, 183 news items.",
+    "lwcnIssueUrl": "https://lwcn.dev/newsletter/2026-week-11/",
+    "lwcnTitle": "Week 11 - March 2026",
+    "lwcnWelcome": "This week in Cloud Native saw a strong focus on the evolving relationship between AI and Kubernetes, with discussions around AI platform convergence and agent-based development. Preparations for KubeCon + CloudNativeCon Europe 2026 are ramping up, highlighting key co-located events and community engagement. Meanwhile, a series of important security updates and critical infrastructure news underscored the ongoing need for vigilance in our rapidly advancing ecosystem."
+  },
+  {
     "id": "52649174-77d1-4c6a-8eba-c664e94f80d0",
     "type": "newsletter",
     "logoUrl": "https://lwcn.dev/images/logo.svg",
@@ -2499,23 +4998,13 @@
     "lwcnWelcome": "This week in Cloud Native saw a strong focus on the evolving relationship between AI and Kubernetes, with discussions around AI platform convergence and agent-based development. Preparations for KubeCon + CloudNativeCon Europe 2026 are ramping up, highlighting key co-located events and community engagement. Meanwhile, a series of important security updates and critical infrastructure news underscored the ongoing need for vigilance in our rapidly advancing ecosystem."
   },
   {
-    "id": "1d27407e-215f-4420-8688-4ed7b40b0899",
-    "type": "newsletter",
-    "logoUrl": "https://lwcn.dev/images/logo.svg",
-    "timestamp": "2026-03-09T00:00:00Z",
-    "description": "This week: 47 releases, 183 news items.",
-    "lwcnIssueUrl": "https://lwcn.dev/newsletter/2026-week-11/",
-    "lwcnTitle": "Week 11 - March 2026"
-  },
-  {
-    "id": "e53d016f-8367-477b-9dfd-615748caa839",
+    "id": "61979306-32a8-4947-bfa8-bed9bcd8d1e1",
     "type": "newsletter",
     "logoUrl": "https://lwcn.dev/images/logo.svg",
     "timestamp": "2026-03-02T00:00:00Z",
     "description": "This week: 58 releases, 184 news items.",
     "lwcnIssueUrl": "https://lwcn.dev/newsletter/2026-week-10/",
-    "lwcnTitle": "Week 10 - March 2026",
-    "lwcnWelcome": "This week in Cloud Native saw a flurry of activity, particularly around the intersection of AI and core infrastructure, alongside crucial security updates across the ecosystem. Kubernetes continues to evolve as a key platform for AI workloads, while community events and new tools underscore the vibrant innovation within the cloud native space."
+    "lwcnTitle": "Week 10 - March 2026"
   },
   {
     "id": "97482e81-bb6b-4602-87b0-14ba88261ca7",
@@ -2528,13 +5017,33 @@
     "lwcnWelcome": "This week in Cloud Native saw a flurry of activity, particularly around the intersection of AI and core infrastructure, alongside crucial security updates across the ecosystem. Kubernetes continues to evolve as a key platform for AI workloads, while community events and new tools underscore the vibrant innovation within the cloud native space."
   },
   {
-    "id": "61979306-32a8-4947-bfa8-bed9bcd8d1e1",
+    "id": "e53d016f-8367-477b-9dfd-615748caa839",
     "type": "newsletter",
     "logoUrl": "https://lwcn.dev/images/logo.svg",
     "timestamp": "2026-03-02T00:00:00Z",
     "description": "This week: 58 releases, 184 news items.",
     "lwcnIssueUrl": "https://lwcn.dev/newsletter/2026-week-10/",
-    "lwcnTitle": "Week 10 - March 2026"
+    "lwcnTitle": "Week 10 - March 2026",
+    "lwcnWelcome": "This week in Cloud Native saw a flurry of activity, particularly around the intersection of AI and core infrastructure, alongside crucial security updates across the ecosystem. Kubernetes continues to evolve as a key platform for AI workloads, while community events and new tools underscore the vibrant innovation within the cloud native space."
+  },
+  {
+    "id": "a64b4550-f26d-40ff-9321-8985d59af798",
+    "type": "newsletter",
+    "logoUrl": "https://lwcn.dev/images/logo.svg",
+    "timestamp": "2026-03-02T00:00:00Z",
+    "description": "This week: 58 releases, 184 news items.",
+    "lwcnIssueUrl": "https://lwcn.dev/newsletter/2026-week-10/",
+    "lwcnTitle": "Week 10 - March 2026",
+    "lwcnWelcome": "This week in Cloud Native saw a flurry of activity, particularly around the intersection of AI and core infrastructure, alongside crucial security updates across the ecosystem. Kubernetes continues to evolve as a key platform for AI workloads, while community events and new tools underscore the vibrant innovation within the cloud native space."
+  },
+  {
+    "id": "a9bc4383-30eb-4a41-af43-344516986213",
+    "type": "newsletter",
+    "logoUrl": "https://lwcn.dev/images/logo.svg",
+    "timestamp": "2026-02-23T00:00:00Z",
+    "description": "This week: 45 releases, 176 news items.",
+    "lwcnIssueUrl": "https://lwcn.dev/newsletter/2026-week-09/",
+    "lwcnTitle": "Week 9 - February 2026"
   },
   {
     "id": "d801d59b-e7de-497e-a4e6-d1cbd645a80d",
@@ -2557,13 +5066,32 @@
     "lwcnWelcome": "This week in Cloud Native brought a flurry of activity, with significant updates across core projects and a strong focus on the evolving landscape of AI agents. We saw numerous stable releases enhancing GitOps, observability, networking, and security, alongside deep discussions about integrating AI into cloud native workflows and the critical role of developer experience."
   },
   {
-    "id": "a9bc4383-30eb-4a41-af43-344516986213",
+    "id": "f8f352d0-20b5-4ef2-ae67-f80c53b21ef3",
     "type": "newsletter",
     "logoUrl": "https://lwcn.dev/images/logo.svg",
     "timestamp": "2026-02-23T00:00:00Z",
     "description": "This week: 45 releases, 176 news items.",
     "lwcnIssueUrl": "https://lwcn.dev/newsletter/2026-week-09/",
-    "lwcnTitle": "Week 9 - February 2026"
+    "lwcnTitle": "Week 9 - February 2026",
+    "lwcnWelcome": "This week in Cloud Native brought a flurry of activity, with significant updates across core projects and a strong focus on the evolving landscape of AI agents. We saw numerous stable releases enhancing GitOps, observability, networking, and security, alongside deep discussions about integrating AI into cloud native workflows and the critical role of developer experience."
+  },
+  {
+    "id": "043d6c60-98c2-4ab6-9829-491a53acb5a7",
+    "type": "newsletter",
+    "logoUrl": "https://lwcn.dev/images/logo.svg",
+    "timestamp": "2026-02-16T00:00:00Z",
+    "description": "This week: 63 releases, 170 news items. Notable: trickster v2.0.0.",
+    "lwcnIssueUrl": "https://lwcn.dev/newsletter/2026-week-08/",
+    "lwcnTitle": "Week 8 - February 2026",
+    "lwcnWelcome": "This week in Cloud Native saw a flurry of activity, particularly with numerous patch releases across core Kubernetes, K3s, and various ecosystem projects, ensuring stability and security. The community also engaged in significant discussions around the evolving role of AI in development workflows and renewed focus on cloud native security initiatives.",
+    "mentionedProjects": [
+      {
+        "name": "Trickster",
+        "slug": "trickster",
+        "logoUrl": "https://landscape.cncf.io/logos/83ff713795a58b7f0b7dea6f9c9a2ddf010b1e1e93f30c21cbd934bb542661a3.svg",
+        "maturity": "sandbox"
+      }
+    ]
   },
   {
     "id": "5e911296-cf56-42a8-ba55-505f1aecf6b2",
@@ -2619,7 +5147,7 @@
     ]
   },
   {
-    "id": "4ffb432a-253d-412a-b6cc-5380f9fa488e",
+    "id": "a742ab71-76ee-48ff-b41d-8918cc5d73c3",
     "type": "newsletter",
     "logoUrl": "https://lwcn.dev/images/logo.svg",
     "timestamp": "2026-02-09T00:00:00Z",
@@ -2628,12 +5156,6 @@
     "lwcnTitle": "Week 7 - February 2026",
     "lwcnWelcome": "This week in Cloud Native brought a robust wave of innovation and essential updates. We saw significant advancements in AI’s integration with developer tooling, critical security patches across multiple projects, and continuous enhancements to core Kubernetes components and its surrounding ecosystem. From major releases in networking and observability to a strong focus on AI agent security and productivity, the community remains dynamic and forward-looking.",
     "mentionedProjects": [
-      {
-        "name": "Kubescape",
-        "slug": "kubescape",
-        "logoUrl": "https://landscape.cncf.io/logos/7204e2871a12ace755704a770c9d68b5e9cb8c8ddba6b8f94de1d8f63597cebb.svg",
-        "maturity": "incubating"
-      },
       {
         "name": "external-secrets",
         "slug": "external-secrets",
@@ -2645,6 +5167,42 @@
         "slug": "helm",
         "logoUrl": "https://landscape.cncf.io/logos/caf58dcdb373502573c954e0aa3e03e725c12ffec5f8fe183c7f174b71357dd5.svg",
         "maturity": "graduated"
+      },
+      {
+        "name": "Kubescape",
+        "slug": "kubescape",
+        "logoUrl": "https://landscape.cncf.io/logos/7204e2871a12ace755704a770c9d68b5e9cb8c8ddba6b8f94de1d8f63597cebb.svg",
+        "maturity": "incubating"
+      }
+    ]
+  },
+  {
+    "id": "1a5ef5e0-276a-4c95-ac21-33108672472a",
+    "type": "newsletter",
+    "logoUrl": "https://lwcn.dev/images/logo.svg",
+    "timestamp": "2026-02-09T00:00:00Z",
+    "description": "This week: 59 releases, 172 news items. Notable: external-secrets v2.0.0, external-secrets helm-chart-2.0.0, kubescape v4.0.0.",
+    "lwcnIssueUrl": "https://lwcn.dev/newsletter/2026-week-07/",
+    "lwcnTitle": "Week 7 - February 2026",
+    "lwcnWelcome": "This week in Cloud Native brought a robust wave of innovation and essential updates. We saw significant advancements in AI’s integration with developer tooling, critical security patches across multiple projects, and continuous enhancements to core Kubernetes components and its surrounding ecosystem. From major releases in networking and observability to a strong focus on AI agent security and productivity, the community remains dynamic and forward-looking.",
+    "mentionedProjects": [
+      {
+        "name": "external-secrets",
+        "slug": "external-secrets",
+        "logoUrl": "https://landscape.cncf.io/logos/07686e3ac9335c6071c003bba42cc984b1bbef6feaa1b6ed02626937968d6e3b.svg",
+        "maturity": "sandbox"
+      },
+      {
+        "name": "Helm",
+        "slug": "helm",
+        "logoUrl": "https://landscape.cncf.io/logos/caf58dcdb373502573c954e0aa3e03e725c12ffec5f8fe183c7f174b71357dd5.svg",
+        "maturity": "graduated"
+      },
+      {
+        "name": "Kubescape",
+        "slug": "kubescape",
+        "logoUrl": "https://landscape.cncf.io/logos/7204e2871a12ace755704a770c9d68b5e9cb8c8ddba6b8f94de1d8f63597cebb.svg",
+        "maturity": "incubating"
       }
     ]
   },
@@ -2678,7 +5236,7 @@
     ]
   },
   {
-    "id": "a742ab71-76ee-48ff-b41d-8918cc5d73c3",
+    "id": "4ffb432a-253d-412a-b6cc-5380f9fa488e",
     "type": "newsletter",
     "logoUrl": "https://lwcn.dev/images/logo.svg",
     "timestamp": "2026-02-09T00:00:00Z",
@@ -2687,6 +5245,12 @@
     "lwcnTitle": "Week 7 - February 2026",
     "lwcnWelcome": "This week in Cloud Native brought a robust wave of innovation and essential updates. We saw significant advancements in AI’s integration with developer tooling, critical security patches across multiple projects, and continuous enhancements to core Kubernetes components and its surrounding ecosystem. From major releases in networking and observability to a strong focus on AI agent security and productivity, the community remains dynamic and forward-looking.",
     "mentionedProjects": [
+      {
+        "name": "Kubescape",
+        "slug": "kubescape",
+        "logoUrl": "https://landscape.cncf.io/logos/7204e2871a12ace755704a770c9d68b5e9cb8c8ddba6b8f94de1d8f63597cebb.svg",
+        "maturity": "incubating"
+      },
       {
         "name": "external-secrets",
         "slug": "external-secrets",
@@ -2698,14 +5262,18 @@
         "slug": "helm",
         "logoUrl": "https://landscape.cncf.io/logos/caf58dcdb373502573c954e0aa3e03e725c12ffec5f8fe183c7f174b71357dd5.svg",
         "maturity": "graduated"
-      },
-      {
-        "name": "Kubescape",
-        "slug": "kubescape",
-        "logoUrl": "https://landscape.cncf.io/logos/7204e2871a12ace755704a770c9d68b5e9cb8c8ddba6b8f94de1d8f63597cebb.svg",
-        "maturity": "incubating"
       }
     ]
+  },
+  {
+    "id": "053e07b2-87df-480d-b266-f57fc7480a4d",
+    "type": "newsletter",
+    "logoUrl": "https://lwcn.dev/images/logo.svg",
+    "timestamp": "2026-02-02T00:00:00Z",
+    "description": "This week: 49 releases, 172 news items.",
+    "lwcnIssueUrl": "https://lwcn.dev/newsletter/2026-week-06/",
+    "lwcnTitle": "Week 6 - February 2026",
+    "lwcnWelcome": "This week in Cloud Native brought significant shifts and updates across the ecosystem. A major announcement from the Kubernetes Steering and Security Response Committees regarding the archival of Ingress NGINX has sparked critical discussions on migration strategies. Meanwhile, the integration of AI continues to accelerate, with new projects emerging for LLM inference and a strong focus on the security and operational implications of AI agents."
   },
   {
     "id": "101f96db-39be-4636-a633-955e240d5868",
@@ -2737,6 +5305,16 @@
     "lwcnTitle": "Week 6 - February 2026"
   },
   {
+    "id": "ffcf402a-742e-4532-a07b-7bdf95965b19",
+    "type": "newsletter",
+    "logoUrl": "https://lwcn.dev/images/logo.svg",
+    "timestamp": "2026-01-26T00:00:00Z",
+    "description": "This week: 50 releases, 182 news items.",
+    "lwcnIssueUrl": "https://lwcn.dev/newsletter/2026-week-05/",
+    "lwcnTitle": "Week 5 - January 2026",
+    "lwcnWelcome": "This week in Cloud Native was heavily influenced by the deepening integration of AI, with new survey data highlighting Kubernetes’ pivotal role as the foundational infrastructure for AI workloads. We also saw a strong focus on platform engineering best practices and a steady stream of updates across critical projects in GitOps, observability, and security."
+  },
+  {
     "id": "ea0e5d30-a15a-4dae-891d-53f66f97192f",
     "type": "newsletter",
     "logoUrl": "https://lwcn.dev/images/logo.svg",
@@ -2764,6 +5342,16 @@
     "description": "This week: 50 releases, 182 news items.",
     "lwcnIssueUrl": "https://lwcn.dev/newsletter/2026-week-05/",
     "lwcnTitle": "Week 5 - January 2026"
+  },
+  {
+    "id": "ed5ea86c-4387-4890-91f0-c0779e719fb0",
+    "type": "newsletter",
+    "logoUrl": "https://lwcn.dev/images/logo.svg",
+    "timestamp": "2026-01-20T00:00:00Z",
+    "description": "This week: 50 releases, 165 news items.",
+    "lwcnIssueUrl": "https://lwcn.dev/newsletter/2026-week-04/",
+    "lwcnTitle": "Week 4 - January 2026",
+    "lwcnWelcome": "This week in Cloud Native saw a flurry of activity, with a strong focus on the burgeoning intersection of AI and cloud native technologies. We celebrate the graduation of a key project within the CNCF, alongside significant updates across a wide array of cloud native tools, from service meshes to security frameworks. Performance, efficiency, and enhanced developer experience were also prominent themes in the latest releases and news."
   },
   {
     "id": "3c662a48-fe9b-4c16-8546-7f67264e62b0",
@@ -2795,6 +5383,16 @@
     "lwcnWelcome": "This week in Cloud Native saw a flurry of activity, with a strong focus on the burgeoning intersection of AI and cloud native technologies. We celebrate the graduation of a key project within the CNCF, alongside significant updates across a wide array of cloud native tools, from service meshes to security frameworks. Performance, efficiency, and enhanced developer experience were also prominent themes in the latest releases and news."
   },
   {
+    "id": "de31902c-21af-4a92-b3e7-df14133d7aea",
+    "type": "newsletter",
+    "logoUrl": "https://lwcn.dev/images/logo.svg",
+    "timestamp": "2026-01-12T00:00:00Z",
+    "description": "This week: 51 releases from the Cloud Native ecosystem.",
+    "lwcnIssueUrl": "https://lwcn.dev/newsletter/2026-week-03/",
+    "lwcnTitle": "Week 3 - January 2026",
+    "lwcnWelcome": "This week saw a flurry of activity across the Cloud Native landscape, with a strong focus on stability, security, and incremental enhancements to core projects. We observed numerous patch releases addressing critical bug fixes and security vulnerabilities, alongside notable feature additions in areas like networking and service mesh."
+  },
+  {
     "id": "3ab29fb9-4189-4c09-9dba-a8bdc8817cdd",
     "type": "newsletter",
     "logoUrl": "https://lwcn.dev/images/logo.svg",
@@ -2824,6 +5422,16 @@
     "lwcnTitle": "Week 3 - January 2026"
   },
   {
+    "id": "f99f5da8-c954-4f20-b806-c3fa4b719138",
+    "type": "newsletter",
+    "logoUrl": "https://lwcn.dev/images/logo.svg",
+    "timestamp": "2026-01-05T00:00:00Z",
+    "description": "This week: 41 releases from the Cloud Native ecosystem.",
+    "lwcnIssueUrl": "https://lwcn.dev/newsletter/2026-week-02/",
+    "lwcnTitle": "Week 2 - January 2026",
+    "lwcnWelcome": "This week in Cloud Native brought a flurry of activity, particularly in the areas of security, observability, and core infrastructure components. We saw significant updates addressing critical vulnerabilities, enhancing operational reliability, and pushing forward key features like Prometheus’s Native Histograms."
+  },
+  {
     "id": "0b14ddc2-86ad-4563-9690-415d2f5ec599",
     "type": "newsletter",
     "logoUrl": "https://lwcn.dev/images/logo.svg",
@@ -2851,6 +5459,16 @@
     "description": "This week: 41 releases from the Cloud Native ecosystem.",
     "lwcnIssueUrl": "https://lwcn.dev/newsletter/2026-week-02/",
     "lwcnTitle": "Week 2 - January 2026"
+  },
+  {
+    "id": "eacc81b5-b530-4d70-a3c7-0a4accd18ba3",
+    "type": "newsletter",
+    "logoUrl": "https://lwcn.dev/images/logo.svg",
+    "timestamp": "2025-12-29T00:00:00Z",
+    "description": "This week: 21 releases from the Cloud Native ecosystem.",
+    "lwcnIssueUrl": "https://lwcn.dev/newsletter/2026-week-01/",
+    "lwcnTitle": "Week 1 - December 2025",
+    "lwcnWelcome": "This week in Cloud Native saw a flurry of updates across key projects, enhancing everything from observability and security to multi-cluster management and developer experience. Notable releases focused on refining existing features, improving performance, and bolstering security, alongside continued discussions on the evolving landscape of cloud infrastructure."
   },
   {
     "id": "49743da6-be4b-44fb-ab74-cf8ee7e2c865",
