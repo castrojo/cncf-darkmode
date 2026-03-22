@@ -1,0 +1,70 @@
+[
+  {
+    "name": "Apple",
+    "slug": "apple",
+    "tier": "Platinum",
+    "isEndUser": true,
+    "description": "Apple is a Platinum End User",
+    "logoUrl": "https://raw.githubusercontent.com/cncf/artwork/main/enduser/apple/icon/color/apple-icon-color.svg",
+    "homepageUrl": "https://www.apple.com",
+    "industries": ["Technology"],
+    "country": "United States",
+    "joinedAt": "2019-01-01",
+    "employeesMin": 100000,
+    "ticker": "AAPL",
+    "stockExchange": "NASDAQ",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "name": "Adidas",
+    "slug": "adidas",
+    "tier": "Gold",
+    "isEndUser": true,
+    "description": "Adidas is a Gold End User",
+    "logoUrl": "https://raw.githubusercontent.com/cncf/artwork/main/enduser/adidas/icon/color/adidas-icon-color.svg",
+    "homepageUrl": "https://www.adidas.com",
+    "industries": ["Retail"],
+    "country": "Germany",
+    "joinedAt": "2020-03-15",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "name": "Spotify",
+    "slug": "spotify",
+    "tier": "Silver",
+    "isEndUser": true,
+    "description": "Spotify is a Silver End User",
+    "logoUrl": "https://raw.githubusercontent.com/cncf/artwork/main/enduser/spotify/icon/color/spotify-icon-color.svg",
+    "homepageUrl": "https://www.spotify.com",
+    "industries": ["Media"],
+    "country": "Sweden",
+    "joinedAt": "2021-06-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "name": "MIT",
+    "slug": "mit",
+    "tier": "Academic",
+    "isEndUser": true,
+    "description": "MIT is an Academic End User",
+    "logoUrl": "",
+    "homepageUrl": "https://www.mit.edu",
+    "industries": ["Education"],
+    "country": "United States",
+    "joinedAt": "2022-01-01",
+    "updatedAt": "2024-01-01"
+  },
+  {
+    "name": "Beta Corp",
+    "slug": "beta-corp",
+    "tier": "Silver",
+    "isEndUser": true,
+    "description": "Beta Corp is a Silver End User",
+    "logoUrl": "",
+    "homepageUrl": "https://www.betacorp.example.com",
+    "industries": ["Software"],
+    "country": "Canada",
+    "joinedAt": "2023-03-01",
+    "updatedAt": "2024-01-01"
+  }
+]

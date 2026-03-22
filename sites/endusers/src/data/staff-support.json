@@ -1,0 +1,28 @@
+{
+  "maintainers": [
+    {
+      "handle": "krook",
+      "name": "Daniel Krook",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/daniel-krook.jpg"
+    },
+    {
+      "handle": "castrojo",
+      "name": "Jorge O. Castro",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/jorge-castro.jpg"
+    },
+    {
+      "handle": "jeefy",
+      "name": "Jeffrey Sica",
+      "imageUrl": "https://www.cncf.io/wp-content/uploads/2019/12/1553737099718.jpg"
+    },
+    {
+      "handle": "nate-double-u",
+      "name": "Nate Waddington",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/nate-waddington.jpg"
+    },
+    {
+      "name": "Shellea Williams",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/Shellea_Williams.jpeg"
+    }
+  ]
+}
