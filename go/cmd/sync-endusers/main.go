@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"log"
+
+	"github.com/castrojo/cncf-darkmode/internal/endusers"
+)
 
 func main() {
-	fmt.Println("sync-endusers: Phase 2 implementation pending")
+	if err := endusers.Sync(); err != nil {
+		log.Fatalf("sync-endusers: %v", err)
+	}
 }

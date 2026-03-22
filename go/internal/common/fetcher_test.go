@@ -1,11 +1,9 @@
-package common_test
+package common
 
 import (
 	"net/http"
 	"net/http/httptest"
 	"testing"
-
-	"github.com/castrojo/cncf-darkmode/go/internal/common"
 )
 
 func TestFetcherETag304(t *testing.T) {
@@ -21,7 +19,7 @@ func TestFetcherETag304(t *testing.T) {
 	}))
 	defer srv.Close()
 
-	f := common.NewFetcher()
+	f := NewFetcher()
 
 	// First fetch — gets the data
 	result, err := f.Fetch(srv.URL, "")
@@ -51,7 +49,7 @@ func TestFetcherNon200Error(t *testing.T) {
 	}))
 	defer srv.Close()
 
-	f := common.NewFetcher()
+	f := NewFetcher()
 	_, err := f.Fetch(srv.URL, "")
 	if err == nil {
 		t.Error("expected error for non-200 response")
@@ -66,7 +64,7 @@ func TestFetcherReturnsBody(t *testing.T) {
 	}))
 	defer srv.Close()
 
-	f := common.NewFetcher()
+	f := NewFetcher()
 	result, err := f.Fetch(srv.URL, "")
 	if err != nil {
 		t.Fatal(err)

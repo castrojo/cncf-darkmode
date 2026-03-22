@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"log"
+
+	"github.com/castrojo/cncf-darkmode/internal/people"
+)
 
 func main() {
-	fmt.Println("sync-people: Phase 2 implementation pending")
+	if err := people.Sync(); err != nil {
+		log.Fatalf("sync-people: %v", err)
+	}
 }
