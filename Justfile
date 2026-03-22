@@ -50,6 +50,16 @@ test-e2e-projects:
 test-e2e-endusers:
     npm run test:e2e --workspace=sites/endusers
 
+# Run cross-site integration tests (requires both dev servers running)
+test-cross-site:
+    npx playwright test tests/cross-site/ --config tests/cross-site/playwright.config.ts
+
+# Run performance budget and fixture audit (no servers needed, requires built dist/)
+test-perf:
+    just build-projects
+    just build-endusers
+    npx playwright test tests/cross-site/performance.spec.ts tests/cross-site/fixtures-audit.spec.ts --config tests/cross-site/playwright.config.ts
+
 # Dev server: projects (port 4322)
 dev-projects:
     npm run dev --workspace=sites/projects

@@ -5,6 +5,9 @@
     "packages/*",
     "sites/*"
   ],
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0"
+  },
   "scripts": {
     "build:kit": "npm run build --workspace=packages/site-kit",
     "build:projects": "npm run build --workspace=sites/projects",
