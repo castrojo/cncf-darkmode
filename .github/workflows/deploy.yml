@@ -1,8 +1,8 @@
-name: Deploy Endusers Site
+name: Deploy
 
 on:
   schedule:
-    - cron: '0 8 * * *'
+    - cron: '0 7 * * *'
   workflow_dispatch:
 
 permissions:
@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   sync:
-    name: "Sync endusers data"
+    name: "Sync data"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,28 +22,53 @@ jobs:
         with:
           go-version: '1.22'
           cache-dependency-path: go/go.sum
+      - name: Run sync-projects
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: cd go && go run ./cmd/sync-projects/
       - name: Run sync-endusers
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: cd go && go run ./cmd/sync-endusers/
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: sync data [skip ci]"
+            git push
+          fi
 
   build:
-    name: "Build endusers site"
+    name: "Build all sites"
     runs-on: ubuntu-latest
     needs: [sync]
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
           cache: 'npm'
       - run: npm ci
+      - name: Build site-kit
+        run: npm run build --workspace=packages/site-kit
+      - name: Build projects site
+        run: npm run build --workspace=sites/projects
       - name: Build endusers site
         run: npm run build --workspace=sites/endusers
+      - name: Combine into single artifact
+        run: |
+          mkdir -p dist
+          cp -r sites/projects/dist/. dist/
+          mkdir -p dist/endusers-website
+          cp -r sites/endusers/dist/. dist/endusers-website/
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: sites/endusers/dist
+          path: dist
 
   deploy:
     name: "Deploy to GitHub Pages"
