@@ -1,0 +1,22 @@
+{
+  "name": "@cncf/projects-site",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev --port 4322",
+    "build": "astro build",
+    "preview": "astro preview --port 4322",
+    "test": "vitest run",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@cncf/site-kit": "*",
+    "astro": "^6.0.5"
+  },
+  "devDependencies": {
+    "vitest": "^4.1.0",
+    "@vitest/coverage-v8": "^4.1.0",
+    "jsdom": "^26.0.0",
+    "@playwright/test": "^1.58.2"
+  }
+}

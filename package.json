@@ -1,0 +1,20 @@
+{
+  "name": "cncf-darkmode",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "sites/*"
+  ],
+  "scripts": {
+    "build:kit": "npm run build --workspace=packages/site-kit",
+    "build:projects": "npm run build --workspace=sites/projects",
+    "build:endusers": "npm run build --workspace=sites/endusers",
+    "test:kit": "npm run test --workspace=packages/site-kit",
+    "test:projects": "npm run test --workspace=sites/projects",
+    "test:endusers": "npm run test --workspace=sites/endusers",
+    "test:all": "npm run test:kit && npm run test:projects && npm run test:endusers"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

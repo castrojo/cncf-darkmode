@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.astro/
+*.sync-cache/
+.sync-cache/
+coverage/
+playwright-report/
+test-results/
+.env
+.env.local
