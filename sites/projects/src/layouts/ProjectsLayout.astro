@@ -1,0 +1,230 @@
+---
+import ThemeToggle from '@cncf/site-kit/components/ThemeToggle.astro';
+import KeyboardHelp from '@cncf/site-kit/components/KeyboardHelp.astro';
+import SiteSwitcher from '@cncf/site-kit/components/SiteSwitcher.astro';
+import KubeConBanner from '@cncf/site-kit/components/KubeConBanner.astro';
+import InfoBox from '@cncf/site-kit/components/InfoBox.astro';
+import { getActiveBanners } from '../lib/banners';
+
+interface Props {
+  title?: string;
+  stats?: {
+    total: number;
+    graduated: number;
+    incubating: number;
+    sandbox: number;
+    archived: number;
+    totalStars?: number;
+  };
+  categories?: string[];
+}
+
+const { title = 'CNCF Projects', stats, categories } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const banners = await getActiveBanners();
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content="Discover CNCF cloud native projects — graduated, incubating, sandbox, and archived." />
+  <link rel="alternate" type="application/rss+xml" title="CNCF Projects Feed" href={`${base}/feed.xml`} />
+  <link rel="icon" href={`${base}/cncf-icon-color.svg`} type="image/svg+xml" />
+  <script is:inline>
+    (function() {
+      const getTheme = () => {
+        const stored = localStorage.getItem('theme');
+        if (stored === 'light' || stored === 'dark') return stored;
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
+        return 'light';
+      };
+      document.documentElement.setAttribute('data-theme', getTheme());
+    })();
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <div class="header-left">
+          <div class="logo-title">
+            <span class="cncf-logo-wrapper" aria-hidden="true">
+              <img src={`${base}/cncf-icon-color.svg`} alt="CNCF" class="logo-light" width="42" height="42" />
+              <img src={`${base}/cncf-icon-white.svg`} alt="CNCF" class="logo-dark" width="42" height="42" />
+            </span>
+            <div class="title-block">
+              <h1 class="site-title"><a href={base || '/'} class="home-link">CNCF Projects</a></h1>
+            </div>
+          </div>
+        </div>
+        <div class="nav-group">
+          <SiteSwitcher activeSite="projects" />
+          <div class="search-wrapper">
+            <input type="search" id="search-input" class="search-input" placeholder="Search projects... (/)" aria-label="Search projects" />
+            <span class="search-count" id="search-count"></span>
+            <button id="search-clear" class="search-clear" aria-label="Clear search" title="Clear search">✕</button>
+          </div>
+        </div>
+        <div class="header-actions">
+          <ThemeToggle />
+          <button id="help-button" class="icon-button" aria-label="Keyboard shortcuts (?)" title="Keyboard shortcuts (?)">?</button>
+        </div>
+      </div>
+      <nav class="section-nav" aria-label="Project maturity tabs">
+        <button class="section-link active" data-tab="everyone">Everything</button>
+        <button class="section-link" data-tab="graduated">Graduated</button>
+        <button class="section-link" data-tab="incubating">Incubating</button>
+        <button class="section-link" data-tab="sandbox">Sandbox</button>
+        <button class="section-link" data-tab="archived">Archived</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-layout">
+      <aside class="sidebar">
+        <InfoBox
+          title="About our Projects"
+          description="CNCF projects powering cloud native infrastructure worldwide."
+          links={[
+            { text: "RSS Feed", url: `${base}/feed.xml`, rss: true },
+            { text: "CNCF Landscape", url: "https://landscape.cncf.io", external: true },
+            { text: "People Site", url: "https://castrojo.github.io/people-website/", external: true },
+            { text: "Report an issue", url: "https://github.com/castrojo/projects-website/issues", external: true },
+          ]}
+        />
+        {banners.length > 0 && <KubeConBanner banners={banners} />}
+        {stats && categories && categories.length > 0 && (
+          <div class="filter-box">
+            <h2 class="sidebar-heading">Filter by Category</h2>
+            <select id="category-filter" class="category-select" aria-label="Filter by landscape category">
+              <option value="">All categories</option>
+              {categories.map(cat => <option value={cat}>{cat}</option>)}
+            </select>
+          </div>
+        )}
+        {stats && (
+          <div class="stats-box">
+            <h2 class="sidebar-heading">Projects</h2>
+            <div class="stat-row"><span class="stat-label">Total CNCF</span><span class="stat-value">{stats.total}</span></div>
+            <div class="stat-row stat-graduated"><span class="stat-label">Graduated</span><span class="stat-value">{stats.graduated}</span></div>
+            <div class="stat-row stat-incubating"><span class="stat-label">Incubating</span><span class="stat-value">{stats.incubating}</span></div>
+            <div class="stat-row stat-sandbox"><span class="stat-label">Sandbox</span><span class="stat-value">{stats.sandbox}</span></div>
+            <div class="stat-row stat-archived"><span class="stat-label">Archived</span><span class="stat-value">{stats.archived}</span></div>
+            {stats.totalStars && stats.totalStars > 0 && (
+              <div class="stat-row"><span class="stat-label">GitHub Stars</span><span class="stat-value">{(stats.totalStars / 1000).toFixed(0)}k</span></div>
+            )}
+          </div>
+        )}
+      </aside>
+      <div class="main-content">
+        <slot />
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Data from <a href="https://landscape.cncf.io" target="_blank" rel="noopener">landscape.cncf.io</a> — updated daily. Built for the love of the game. Welcome to indie cloud native.</p>
+  </footer>
+
+  <KeyboardHelp />
+  <div id="kbd-live-region" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+
+  <script>
+    const searchInput = document.getElementById('search-input') as HTMLInputElement | null;
+    const searchClear = document.getElementById('search-clear') as HTMLButtonElement | null;
+    if (searchInput && searchClear) {
+      searchInput.addEventListener('input', () => {
+        searchClear.style.display = searchInput.value ? 'flex' : 'none';
+      });
+      searchClear.addEventListener('click', () => {
+        searchInput.value = '';
+        searchClear.style.display = 'none';
+        searchInput.dispatchEvent(new Event('input'));
+        searchInput.focus();
+      });
+    }
+  </script>
+</body>
+</html>
+
+<style is:global>
+  @import '../styles/variables.css';
+  @import '../styles/layout.css';
+
+  .logo-light { display: block; }
+  .logo-dark  { display: none; }
+  [data-theme="dark"] .logo-light { display: none; }
+  [data-theme="dark"] .logo-dark  { display: block; }
+
+  .icon-button {
+    background: none;
+    border: 1px solid var(--color-border-default);
+    border-radius: 6px;
+    padding: 0.4rem 0.75rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+  }
+
+  .stats-box {
+    background: var(--color-bg-default);
+    border: 1px solid var(--color-border-default);
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+
+  .sidebar-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border-default);
+  }
+
+  .stat-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.375rem 0;
+    font-size: 0.875rem;
+  }
+
+  .stat-label { color: var(--color-text-secondary); }
+  .stat-value { font-weight: 600; }
+  .stat-graduated .stat-value { color: var(--color-graduated, #FFB300); }
+  .stat-incubating .stat-value { color: var(--color-incubating, #0086FF); }
+  .stat-sandbox .stat-value { color: var(--color-sandbox, #8b949e); }
+  .stat-archived .stat-value { color: var(--color-archived, #6b7280); }
+
+  .filter-box {
+    background: var(--color-bg-default);
+    border: 1px solid var(--color-border-default);
+    border-radius: 6px;
+    padding: 1.25rem;
+  }
+
+  .category-select {
+    width: 100%;
+    padding: 0.375rem 0.5rem;
+    border: 1px solid var(--color-border-default);
+    border-radius: 6px;
+    background: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+    font-size: 0.875rem;
+    cursor: pointer;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>

@@ -1,13 +1,725 @@
 ---
-// Phase 3: Full implementation to be ported from projects-website
+import ProjectsLayout from '../layouts/ProjectsLayout.astro';
+import { formatRelativeDate } from '../lib/project-renderer';
+import type { SafeProject } from '../lib/project-renderer';
+import { selectHeroSets } from '../lib/heroes';
+import type { ChangelogEvent } from '../lib/tabs';
+import staffSupportData from '../data/staff-support.json';
+import fs from 'node:fs';
+
+interface StaffMember { handle?: string; name: string; imageUrl?: string; }
+const staffList = staffSupportData.maintainers as StaffMember[];
+
+const base = import.meta.env.BASE_URL;
+
+let projects: SafeProject[] = [];
+let stats = { total: 0, graduated: 0, incubating: 0, sandbox: 0, archived: 0, totalStars: 0 };
+
+try {
+  const raw = fs.readFileSync('src/data/projects.json', 'utf-8');
+  projects = JSON.parse(raw) as SafeProject[];
+  stats.total = projects.filter(p => p.maturity !== 'archived').length;
+  for (const p of projects) {
+    const key = p.maturity as keyof typeof stats;
+    if (key in stats && key !== 'totalStars') (stats as any)[key]++;
+    if (p.stars) stats.totalStars += p.stars;
+  }
+} catch {
+  console.warn('projects.json not found — run just sync-projects first');
+}
+
+// Latest LWCN newsletter — pinned card on Everything tab, rendered at build time
+let pinnedNewsletter: ChangelogEvent | null = null;
+try {
+  const changelogRaw = fs.readFileSync('src/data/changelog.json', 'utf-8');
+  const allEvents = JSON.parse(changelogRaw) as ChangelogEvent[];
+  const newsletters = allEvents.filter(e => e.type === 'newsletter');
+  if (newsletters.length > 0) {
+    pinnedNewsletter = newsletters.sort((a, b) => b.timestamp.localeCompare(a.timestamp))[0];
+  }
+} catch {
+  // changelog.json not yet generated — pinned newsletter won't show on first build
+}
+
+// Derive display title: "Last Week in Cloud Native - March 2026" from "Week 12 - March 2026"
+const lwcnMonth = pinnedNewsletter?.lwcnTitle?.replace(/^Week \d+ - /, '') ?? '';
+const pinnedTitle = lwcnMonth ? `Last Week in Cloud Native - ${lwcnMonth}` : 'Last Week in Cloud Native';
+
+const categories = [...new Set(projects.filter(p => p.maturity !== 'archived').map(p => p.category).filter(Boolean))].sort();
+
+const heroSets = selectHeroSets(projects);
+
+const MATURITY_COLORS: Record<string, string> = {
+  graduated: '#FFB300', incubating: '#0086FF', sandbox: '#8b949e', archived: '#6b7280',
+};
+
+function formatNumber(n: number): string {
+  if (n >= 1000) return (n / 1000).toFixed(1) + 'k';
+  return String(n);
+}
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>CNCF Projects</title>
-</head>
-<body>
-  <h1>CNCF Projects (scaffold)</h1>
-</body>
-</html>
+<ProjectsLayout stats={stats} categories={categories}>
+  <section class="heroes-section">
+    {(Object.entries(heroSets) as [string, SafeProject[]][]).map(([tabKey, heroes]) => (
+      <div class="heroes-grid" data-heroes-tab={tabKey} style={tabKey !== 'everyone' ? 'display:none' : ''}>
+        {heroes.map(p => {
+          const color = MATURITY_COLORS[p.maturity] ?? '#8b949e';
+          const label = p.maturity.charAt(0).toUpperCase() + p.maturity.slice(1);
+          return (
+            <div class="hero-card" style={`--hero-color:${color}`} data-slug={p.slug}>
+              <span class="hero-label">{label}</span>
+              {p.logoUrl && (
+                <div class="hero-logo-wrap">
+                  <img src={p.logoUrl} alt={`${p.name} logo`} width="96" height="96" loading="lazy"
+                    style="width:96px;height:96px;object-fit:contain;filter:drop-shadow(0 2px 6px rgba(0,0,0,0.25))" />
+                </div>
+              )}
+              <div class="hero-info">
+                <a class="hero-name" href={p.homepageUrl || p.repoUrl || '#'} target="_blank" rel="noopener">{p.name}</a>
+                <span class="hero-category">{p.category}</span>
+                {(p.stars || p.forks || p.contributors) && (
+                  <div class="hero-stats">
+                    {p.stars && <span>{formatNumber(p.stars)} stars</span>}
+                    {p.forks && <span>{formatNumber(p.forks)} forks</span>}
+                    {p.contributors && <span>{formatNumber(p.contributors)} contrib</span>}
+                  </div>
+                )}
+                {p.lastReleaseDate && <span class="hero-release">Released {formatRelativeDate(p.lastReleaseDate)}</span>}
+                {(p.summary || p.description) && <p class="hero-desc">{(p.summary || p.description)?.substring(0, 100)}</p>}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    ))}
+  </section>
+
+  <section class="staff-support-section">
+    <h2 class="staff-support-heading">CNCF Staff providing Support</h2>
+    <div class="staff-support-list">
+      {staffList.map(m => (
+        <a href={m.handle ? `https://github.com/${m.handle}` : '#'} target="_blank" rel="noopener noreferrer" class="staff-support-card">
+          <img
+            src={m.handle ? `https://avatars.githubusercontent.com/${m.handle}` : (m.imageUrl ?? '')}
+            alt={m.name}
+            class="staff-support-avatar"
+            loading="lazy"
+          />
+          <div class="staff-support-info">
+            <span class="staff-support-name">{m.name}</span>
+            {m.handle && <span class="staff-support-handle">@{m.handle}</span>}
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  {projects.length === 0 && (
+    <div class="empty-state">
+      <p>No project data found. Run <code>just sync-projects</code> to fetch data from the CNCF landscape.</p>
+    </div>
+  )}
+
+  <!-- Pinned LWCN newsletter — static, build-time rendered, visible only on Everything tab -->
+  {pinnedNewsletter && (
+    <div id="pinned-newsletter" class="pinned-newsletter-section">
+      <div class="pinned-newsletter-label">
+        <span class="pinned-badge">📌 Latest Newsletter</span>
+      </div>
+      <a
+        href={pinnedNewsletter.lwcnIssueUrl ?? 'https://lwcn.dev/newsletter/'}
+        target="_blank"
+        rel="noopener"
+        class="pinned-newsletter-card"
+        aria-label={`Read LWCN newsletter: ${pinnedTitle}`}
+      >
+        <img
+          src={pinnedNewsletter.logoUrl}
+          alt="Last Week in Cloud Native logo"
+          width="56"
+          height="56"
+          loading="eager"
+          class="pinned-newsletter-logo"
+        />
+        <div class="pinned-newsletter-body">
+          <div class="pinned-newsletter-title">{pinnedTitle}</div>
+          {pinnedNewsletter.description && (
+            <p class="pinned-newsletter-desc">{pinnedNewsletter.description}</p>
+          )}
+          {pinnedNewsletter.lwcnWelcome && (
+            <details class="pinned-newsletter-welcome">
+              <summary class="pinned-newsletter-welcome-summary">This week's overview</summary>
+              <p class="pinned-newsletter-welcome-text">{pinnedNewsletter.lwcnWelcome}</p>
+            </details>
+          )}
+          <span class="pinned-newsletter-cta">Read issue →</span>
+        </div>
+        <div class="pinned-newsletter-curator">
+          <span class="curator-label">Curated by</span>
+          <img
+            src="https://avatars.githubusercontent.com/mfahlandt"
+            alt="@mfahlandt avatar"
+            width="36"
+            height="36"
+            loading="eager"
+            class="curator-avatar"
+          />
+          <span class="curator-handle">@mfahlandt</span>
+        </div>
+      </a>
+    </div>
+  )}
+
+  <h2 id="changelog-heading" class="changelog-heading">Changelog</h2>
+  <div id="cards-container" class="cards-list" data-tab="everyone"></div>
+
+  <div id="archived-container" style="display:none"></div>
+  <div id="no-results" class="empty-state" style="display:none">No projects match your search.</div>
+</ProjectsLayout>
+
+<script>
+  import type { SafeProject } from '../lib/project-renderer';
+  import { renderTimeline } from '../lib/archived-timeline';
+  import { initTabs, filterChangelogByTab, type TabId, type ChangelogEvent } from '../lib/tabs';
+  import { renderChangelogEvent } from '../lib/changelog-renderer';
+  import { initSearch, searchProjects } from '../lib/search';
+  import { initKeyboard, tabFromNumber } from '../lib/keyboard';
+  import { fireFountain, preloadOnHover, fireHearts } from '../lib/confetti';
+
+  const base = import.meta.env.BASE_URL;
+  let allProjects: SafeProject[] = [];
+  let allChangelog: ChangelogEvent[] = [];
+  let currentQuery = '';
+  let currentTab: TabId = 'everyone';
+  let currentCategory = '';
+  let archivedRendered = false;
+
+  async function loadProjects(): Promise<void> {
+    const res = await fetch(`${base}/data/projects.json`);
+    if (!res.ok) return;
+    allProjects = await res.json();
+    archivedRendered = false;
+    initSearch(allProjects);
+  }
+
+  async function loadChangelog(): Promise<void> {
+    const res = await fetch(`${base}/data/changelog.json`);
+    if (!res.ok) return;
+    allChangelog = await res.json();
+  }
+
+  function renderCurrentView(): void {
+    const container = document.getElementById('cards-container')!;
+    const archivedContainer = document.getElementById('archived-container')!;
+    const changelogHeading = document.getElementById('changelog-heading');
+    const noResults = document.getElementById('no-results')!;
+
+    if (currentTab === 'archived') {
+      container.style.display = 'none';
+      archivedContainer.style.display = 'block';
+      if (changelogHeading) changelogHeading.style.display = 'none';
+      if (!archivedRendered) {
+        const archived = allProjects.filter(p => p.maturity === 'archived');
+        archivedContainer.innerHTML = renderTimeline(archived);
+        archivedRendered = true;
+      }
+      return;
+    }
+
+    container.style.display = '';
+    archivedContainer.style.display = 'none';
+    if (changelogHeading) changelogHeading.style.display = '';
+
+    // Resolve which changelog events to show (newsletter events excluded from project feed)
+    let events = filterChangelogByTab(allChangelog, currentTab)
+      .filter(e => e.type !== 'newsletter');
+
+    // Build project lookup for rich card rendering
+    const projectsBySlug = new Map(allProjects.map(p => [p.slug, p]));
+
+    // Apply category filter
+    if (currentCategory) {
+      const slugsInCategory = new Set(
+        allProjects.filter(p => p.category === currentCategory).map(p => p.slug)
+      );
+      events = events.filter(e => slugsInCategory.has(e.projectSlug ?? ''));
+    }
+
+    // Apply search filter
+    if (currentQuery) {
+      const results = searchProjects(currentQuery);
+      const matchedSlugs = new Set(results.map(r => r.slug));
+      events = events.filter(e => matchedSlugs.has(e.projectSlug ?? ''));
+    }
+
+    const hasResults = events.length > 0;
+    noResults.style.display = hasResults ? 'none' : 'block';
+    container.innerHTML = hasResults
+      ? events.map(e => renderChangelogEvent(e, e.projectSlug ? projectsBySlug.get(e.projectSlug) : undefined)).join('')
+      : '';
+
+    const countEl = document.getElementById('search-count');
+    if (countEl) {
+      countEl.textContent = currentQuery ? String(events.length) : '';
+    }
+    wireCardEvents();
+  }
+
+  function wireCardEvents(): void {
+    document.querySelectorAll<HTMLElement>('.changelog-event-card, .newsletter-card').forEach(card => {
+      preloadOnHover(card);
+      card.addEventListener('click', () => fireFountain(card));
+    });
+    document.querySelectorAll<HTMLElement>('.hero-card').forEach(card => {
+      preloadOnHover(card);
+      card.addEventListener('click', () => fireHearts(card));
+    });
+  }
+
+  // Card focus via CSS class
+  const visibleCards = () =>
+    Array.from(document.querySelectorAll<HTMLElement>('.changelog-event-card, .newsletter-card, .hero-card'))
+      .filter(c => c.offsetParent !== null && c.style.display !== 'none');
+
+  let focusedIdx = -1;
+
+  function resetFocus() {
+    document.querySelectorAll('.keyboard-focused')
+      .forEach(c => c.classList.remove('keyboard-focused'));
+    focusedIdx = -1;
+  }
+
+  function focusCard(idx: number) {
+    const all = visibleCards();
+    if (all.length === 0) return;
+    focusedIdx = Math.max(0, Math.min(idx, all.length - 1));
+    all.forEach((c, i) => c.classList.toggle('keyboard-focused', i === focusedIdx));
+    all[focusedIdx].scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    const liveRegion = document.getElementById('kbd-live-region');
+    if (liveRegion) {
+      const name = all[focusedIdx].querySelector('.card-name, .project-name, h3, h4')?.textContent ?? '';
+      liveRegion.textContent = `Focused: ${name}`;
+    }
+  }
+
+  Promise.all([loadProjects(), loadChangelog()]).then(() => renderCurrentView());
+
+  function showHeroesForTab(tab: string) {
+    const heroesSection = document.querySelector<HTMLElement>('.heroes-section');
+    const staffSection = document.querySelector<HTMLElement>('.staff-support-section, .maintainers-section');
+    const changelogHeading = document.getElementById('changelog-heading');
+    const pinnedNewsletter = document.getElementById('pinned-newsletter');
+    if (tab === 'archived') {
+      if (heroesSection) heroesSection.style.display = 'none';
+      if (staffSection) staffSection.style.display = 'none';
+      if (changelogHeading) changelogHeading.style.display = 'none';
+      if (pinnedNewsletter) pinnedNewsletter.style.display = 'none';
+      return;
+    }
+    if (heroesSection) heroesSection.style.display = '';
+    if (staffSection) staffSection.style.display = '';
+    if (changelogHeading) changelogHeading.style.display = '';
+    // Pinned newsletter only on Everything tab
+    if (pinnedNewsletter) pinnedNewsletter.style.display = tab === 'everyone' ? '' : 'none';
+    const heroKey = ['graduated','incubating','sandbox'].includes(tab) ? tab : 'everyone';
+    document.querySelectorAll<HTMLElement>('.heroes-grid[data-heroes-tab]').forEach(grid => {
+      grid.style.display = grid.dataset.heroesTab === heroKey ? 'grid' : 'none';
+    });
+  }
+
+  initTabs((tab) => {
+    currentTab = tab;
+    showHeroesForTab(tab);
+    renderCurrentView();
+  });
+
+  // Reset focus on tab change
+  document.querySelectorAll('.section-link[data-tab]').forEach(btn => {
+    btn.addEventListener('click', resetFocus);
+  });
+
+  document.getElementById('category-filter')?.addEventListener('change', (e) => {
+    currentCategory = (e.target as HTMLSelectElement).value;
+    renderCurrentView();
+  });
+
+  const searchInput = document.getElementById('search-input') as HTMLInputElement;
+  searchInput?.addEventListener('input', () => {
+    currentQuery = searchInput.value;
+    renderCurrentView();
+  });
+
+  initKeyboard({
+    searchInput,
+    onSearch: () => searchInput?.focus(),
+    onHelp: () => {
+      document.getElementById('keyboard-help-modal')?.classList.add('visible');
+      document.getElementById('keyboard-help-backdrop')?.classList.add('visible');
+    },
+    onTheme: () => {
+      document.getElementById('theme-toggle')?.click();
+      const liveRegion = document.getElementById('kbd-live-region');
+      if (liveRegion) liveRegion.textContent = 'Theme toggled';
+    },
+    onTab: (n) => {
+      const tab = tabFromNumber(n);
+      document.querySelector<HTMLElement>(`.section-link[data-tab="${tab}"]`)?.click();
+    },
+    onEscape: () => {
+      searchInput.value = '';
+      currentQuery = '';
+      renderCurrentView();
+      document.getElementById('keyboard-help-modal')?.classList.remove('visible');
+      document.getElementById('keyboard-help-backdrop')?.classList.remove('visible');
+    },
+    onNext: () => focusCard(focusedIdx + 1),
+    onPrev: () => focusCard(focusedIdx - 1),
+    onScrollTop: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
+    onPageDown: () => window.scrollBy({ top: window.innerHeight * 0.85, behavior: 'smooth' }),
+    onPageUp: () => window.scrollBy({ top: -window.innerHeight * 0.85, behavior: 'smooth' }),
+    onTabCycle: (reverse) => {
+      const tabBtns = Array.from(document.querySelectorAll<HTMLElement>('.section-link[data-tab]'));
+      if (tabBtns.length === 0) return;
+      const activeBtn = tabBtns.find(b => b.classList.contains('active'));
+      const cur = activeBtn ? tabBtns.indexOf(activeBtn) : 0;
+      const next = reverse
+        ? (cur - 1 + tabBtns.length) % tabBtns.length
+        : (cur + 1) % tabBtns.length;
+      tabBtns[next].click();
+      tabBtns[next].scrollIntoView({ inline: 'nearest', block: 'nearest' });
+    },
+    onOpen: () => {
+      const all = visibleCards();
+      const card = all[focusedIdx];
+      const link = card?.querySelector<HTMLAnchorElement>('a[href]');
+      if (link) { window.open(link.href, '_blank', 'noopener'); return true; }
+      return false;
+    },
+    onResetFocus: resetFocus,
+    onSitePrev: () => {
+      const isLocal = window.location.hostname === 'localhost';
+      window.location.href = isLocal
+        ? 'http://localhost:4323/people-website/'
+        : 'https://castrojo.github.io/people-website/';
+    },
+    onSiteNext: () => {
+      const isLocal = window.location.hostname === 'localhost';
+      window.location.href = isLocal
+        ? 'http://localhost:4324/endusers-website/'
+        : 'https://castrojo.github.io/endusers-website/';
+    },
+  });
+
+  document.getElementById('help-button')?.addEventListener('click', () => {
+    document.getElementById('keyboard-help-modal')?.classList.add('visible');
+    document.getElementById('keyboard-help-backdrop')?.classList.add('visible');
+  });
+
+  wireCardEvents();
+</script>
+
+<style is:global>
+  @import '../styles/cards.css';
+
+  .changelog-heading {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 2rem 0 1.5rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-accent-emphasis);
+  }
+
+  #lwcn-container {
+    margin-bottom: 1rem;
+  }
+
+  .changelog-event-card.keyboard-focused,
+  .newsletter-card.keyboard-focused,
+  .hero-card.keyboard-focused {
+    outline: 2px solid var(--color-accent-emphasis);
+    outline-offset: 2px;
+  }
+
+  .archived-subtitle {
+    font-size: 0.9375rem;
+    font-style: italic;
+    color: var(--color-text-secondary);
+    margin: 0 0 1.5rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border-default);
+  }
+
+  .pinned-newsletter-section {
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  .pinned-newsletter-label {
+    margin-bottom: 0.5rem;
+  }
+
+  .pinned-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-secondary);
+  }
+
+  .pinned-newsletter-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: color-mix(in srgb, #0086FF 6%, var(--color-bg-secondary));
+    border: 1px solid color-mix(in srgb, #0086FF 25%, var(--color-border-default));
+    border-left: 4px solid #0086FF;
+    border-radius: 0 8px 8px 0;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.15s ease, transform 0.1s ease;
+    cursor: pointer;
+  }
+
+  .pinned-newsletter-card:hover {
+    background: color-mix(in srgb, #0086FF 12%, var(--color-bg-secondary));
+    transform: translateX(2px);
+  }
+
+  .pinned-newsletter-logo {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .pinned-newsletter-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .pinned-newsletter-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--color-text-primary);
+    margin-bottom: 0.25rem;
+  }
+
+  .pinned-newsletter-desc {
+    margin: 0 0 0.375rem;
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .pinned-newsletter-cta {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #0086FF;
+  }
+
+  .pinned-newsletter-welcome {
+    margin: 0.25rem 0 0.375rem;
+  }
+
+  .pinned-newsletter-welcome-summary {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .pinned-newsletter-welcome-summary::before {
+    content: '▶';
+    font-size: 0.6rem;
+    transition: transform 0.15s ease;
+  }
+
+  .pinned-newsletter-welcome[open] .pinned-newsletter-welcome-summary::before {
+    transform: rotate(90deg);
+  }
+
+  .pinned-newsletter-welcome-text {
+    margin: 0.375rem 0 0;
+    font-size: 0.82rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+
+  .pinned-newsletter-curator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    flex-shrink: 0;
+    min-width: 72px;
+  }
+
+  .curator-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+  }
+
+  .curator-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid color-mix(in srgb, #0086FF 40%, var(--color-border-default));
+    flex-shrink: 0;
+  }
+
+  .curator-handle {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #0086FF;
+    white-space: nowrap;
+  }
+
+  .heroes-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .heroes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-card {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background: linear-gradient(135deg, color-mix(in srgb, var(--hero-color) 18%, transparent), color-mix(in srgb, var(--hero-color) 6%, transparent));
+    border: 1px solid var(--color-border-default);
+    border-top: 4px solid var(--hero-color, #0086FF);
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    text-align: center;
+  }
+  .hero-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+  .hero-label {
+    align-self: flex-start;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: var(--hero-color);
+    color: #fff;
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+  }
+  .hero-logo-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0;
+  }
+  .hero-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  .hero-name {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--color-text-primary);
+    text-decoration: none;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .hero-name:hover { text-decoration: underline; }
+  .hero-category {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: var(--color-text-secondary);
+  }
+  .hero-release {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+  }
+  .hero-desc {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    margin: 0.25rem 0 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .staff-support-section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border-default);
+  }
+  .staff-support-heading {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 1rem;
+  }
+  .staff-support-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .staff-support-card {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.625rem 1rem;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border-default);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--color-text-primary);
+    transition: border-color 0.15s;
+  }
+  .staff-support-card:hover { border-color: var(--color-accent-emphasis); }
+  .staff-support-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .staff-support-info { display: flex; flex-direction: column; gap: 0.1rem; }
+  .staff-support-name  { font-size: 0.875rem; font-weight: 600; }
+  .staff-support-handle { font-size: 0.75rem; color: var(--color-text-secondary); }
+</style>
