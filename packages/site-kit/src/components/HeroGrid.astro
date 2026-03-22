@@ -1,0 +1,89 @@
+---
+// HeroGrid.astro — 8-slot rotating hero card grid
+// Expects items with slug, name, and logoUrl (or logoLight/logoDark).
+// Actual item data comes from the calling site — this is just the layout shell.
+
+export interface HeroGridItem {
+  slug: string;
+  name: string;
+  logoUrl?: string;
+  logoLight?: string;
+  logoDark?: string;
+  url?: string;
+}
+
+interface Props {
+  items: HeroGridItem[];
+  columns?: 4 | 2;
+}
+
+const { items, columns = 4 } = Astro.props;
+---
+
+<div class:list={['hero-grid', `cols-${columns}`]}>
+  {items.map(item => (
+    <a
+      href={item.url ?? `#${item.slug}`}
+      class="hero-card"
+      title={item.name}
+      aria-label={item.name}
+    >
+      {item.logoLight && item.logoDark ? (
+        <>
+          <img src={item.logoLight} alt={item.name} class="hero-logo logo-light" loading="lazy" />
+          <img src={item.logoDark}  alt={item.name} class="hero-logo logo-dark"  loading="lazy" />
+        </>
+      ) : (
+        <img src={item.logoUrl} alt={item.name} class="hero-logo" loading="lazy" />
+      )}
+    </a>
+  ))}
+</div>
+
+<style>
+  .hero-grid {
+    display: grid;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .cols-2 { grid-template-columns: repeat(2, 1fr); }
+
+  @media (max-width: 900px) {
+    .cols-4 { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 480px) {
+    .hero-grid { gap: 0.5rem; }
+  }
+
+  .hero-card {
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    background: var(--color-surface, #f8f9fa);
+    border: 1px solid var(--color-border, #dee2e6);
+  }
+
+  .hero-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  }
+
+  .hero-logo {
+    max-width: 70%;
+    max-height: 70%;
+    object-fit: contain;
+  }
+
+  /* Theme-aware logo swap */
+  .logo-dark { display: none; }
+  [data-theme="dark"] .logo-light { display: none; }
+  [data-theme="dark"] .logo-dark  { display: block; }
+</style>
