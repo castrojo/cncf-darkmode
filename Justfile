@@ -79,6 +79,14 @@ verify:
     @npm run test --workspace=packages/site-kit && echo "site-kit: OK" || echo "site-kit: FAIL"
     @echo "Done."
 
-# Lint CI workflows (actionlint required)
+# Lint CI workflow files (requires actionlint)
 lint-ci:
-    @which actionlint > /dev/null && actionlint .github/workflows/*.yml || echo "actionlint not installed, skipping"
+    @which actionlint > /dev/null 2>&1 || (echo "actionlint not installed: go install github.com/rhysd/actionlint/cmd/actionlint@latest" && exit 1)
+    actionlint .github/workflows/*.yml
+
+# Commit and push (gates: verify, lint-ci if actionlint available)
+sync:
+    just verify
+    @which actionlint > /dev/null 2>&1 && just lint-ci || echo "Skipping actionlint (not installed)"
+    git add -A
+    git status

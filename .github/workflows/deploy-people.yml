@@ -1,0 +1,33 @@
+name: Deploy People Site
+
+on:
+  workflow_dispatch:
+
+# Phase 5 pending — people site not yet migrated
+# Pre-migration gates must all pass before this workflow is activated:
+# G1: PersonCard.astro consolidated into person-renderer.ts
+# G2: Keyboard extracted from index.astro into keyboard.ts
+# G3: 21 JSON files inventoried
+# G4: Automated privacy guard in CI
+# G5: @vitest/coverage-v8 installed at 70%
+# G6: localStorage key prefixed (cncf-people-tab)
+# G7: index.astro under 500 lines
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  check-gates:
+    name: "Verify Phase 5 pre-migration gates"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check people site exists
+        run: |
+          if [ ! -f "sites/people/src/pages/index.astro" ]; then
+            echo "Phase 5 not yet implemented. Complete pre-migration gates first."
+            exit 1
+          fi
+          echo "People site found — proceeding"

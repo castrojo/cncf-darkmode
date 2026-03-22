@@ -8,7 +8,7 @@ on:
 
 jobs:
   site-kit:
-    name: Test @cncf/site-kit
+    name: "Test @cncf/site-kit"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -17,20 +17,25 @@ jobs:
           node-version: '22'
           cache: 'npm'
       - run: npm ci
-      - run: npm run test --workspace=packages/site-kit
+      - name: Run site-kit unit tests
+        run: npm run test --workspace=packages/site-kit
 
   go:
-    name: Test Go backend
+    name: "Test Go backend"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
         with:
           go-version: '1.22'
-      - run: cd go && go test -race ./...
+          cache-dependency-path: go/go.sum
+      - name: Build all binaries
+        run: cd go && go build ./...
+      - name: Run tests with race detector
+        run: cd go && go test -race -count=1 ./...
 
   projects:
-    name: Build projects site
+    name: "Build & Test projects site"
     runs-on: ubuntu-latest
     needs: [site-kit]
     steps:
@@ -40,10 +45,13 @@ jobs:
           node-version: '22'
           cache: 'npm'
       - run: npm ci
-      - run: npm run build --workspace=sites/projects
+      - name: Run projects unit tests
+        run: npm run test --workspace=sites/projects
+      - name: Build projects site
+        run: npm run build --workspace=sites/projects
 
   endusers:
-    name: Build endusers site
+    name: "Build & Test endusers site"
     runs-on: ubuntu-latest
     needs: [site-kit]
     steps:
@@ -53,4 +61,32 @@ jobs:
           node-version: '22'
           cache: 'npm'
       - run: npm ci
-      - run: npm run build --workspace=sites/endusers
+      - name: Run endusers unit tests
+        run: npm run test --workspace=sites/endusers
+      - name: Build endusers site
+        run: npm run build --workspace=sites/endusers
+
+  privacy-guard:
+    name: "Privacy guard (no PII in people output)"
+    runs-on: ubuntu-latest
+    needs: [go]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+          cache-dependency-path: go/go.sum
+      - name: Build sync-people binary
+        run: cd go && go build ./cmd/sync-people/
+      - name: Check for PII fields in people data
+        run: |
+          if [ -d "sites/people/src/data" ]; then
+            if grep -rE '"email"|"wechat"' sites/people/src/data/ 2>/dev/null; then
+              echo "PRIVACY VIOLATION: email or wechat field found in people data output"
+              exit 1
+            fi
+            echo "Privacy check passed"
+          else
+            echo "sites/people/src/data not present yet (Phase 5 pending) - skipping"
+          fi
