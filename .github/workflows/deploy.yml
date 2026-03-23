@@ -55,6 +55,15 @@ jobs:
       - run: npm ci
       - name: Build site-kit
         run: npm run build --workspace=packages/site-kit
+      - name: Copy data to public/ (required for client-side fetch)
+        run: |
+          mkdir -p sites/projects/public/data
+          cp sites/projects/src/data/projects.json sites/projects/public/data/
+          cp sites/projects/src/data/changelog.json sites/projects/public/data/
+          mkdir -p sites/endusers/public/data
+          cp sites/endusers/src/data/members.json sites/endusers/public/data/
+          cp sites/endusers/src/data/changelog.json sites/endusers/public/data/
+          cp sites/endusers/src/data/architectures.json sites/endusers/public/data/
       - name: Build projects site
         run: npm run build --workspace=sites/projects
       - name: Build endusers site

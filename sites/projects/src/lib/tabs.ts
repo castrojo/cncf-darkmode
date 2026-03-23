@@ -16,9 +16,20 @@ export interface ChangelogEvent {
   mentionedProjects?: Array<{ name: string; slug: string; logoUrl: string; maturity: string }>;
 }
 
-const TAB_STORAGE_KEY = 'projects-active-tab';
+const TAB_STORAGE_KEY = 'cncf-projects-tab';
+const LEGACY_KEY = 'projects-active-tab';
 
 export function initTabs(onTabChange: (tabId: TabId) => void): void {
+  // Migrate legacy key on first read
+  try {
+    const legacy = localStorage.getItem(LEGACY_KEY);
+    if (legacy) {
+      localStorage.setItem(TAB_STORAGE_KEY, legacy);
+      localStorage.removeItem(LEGACY_KEY);
+    }
+  } catch {
+    // localStorage unavailable
+  }
   const savedTab = (localStorage.getItem(TAB_STORAGE_KEY) as TabId) ?? 'everyone';
   activateTab(savedTab, onTabChange);
 
@@ -26,7 +37,7 @@ export function initTabs(onTabChange: (tabId: TabId) => void): void {
     btn.addEventListener('click', () => {
       const tab = (btn as HTMLElement).dataset.tab as TabId;
       if (tab) {
-        localStorage.setItem(TAB_STORAGE_KEY, tab);
+        try { localStorage.setItem(TAB_STORAGE_KEY, tab); } catch { /* unavailable */ }
         activateTab(tab, onTabChange);
       }
     });
