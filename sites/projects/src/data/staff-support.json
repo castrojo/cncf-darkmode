@@ -15,6 +15,11 @@
   ],
   "maintainers": [
     {
+      "handle": "idvoretskyi",
+      "name": "Ihor Dvoretskyi",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/ihor-dvoretskyi.jpeg"
+    },
+    {
       "handle": "krook",
       "name": "Daniel Krook",
       "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/daniel-krook.jpg"
