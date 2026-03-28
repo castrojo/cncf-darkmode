@@ -1,5 +1,1555 @@
 [
   {
+    "id": "a866bf82-3b7b-4b43-a2ed-0bb0a3c8a14e",
+    "type": "joined",
+    "memberName": "Cloud Native Texas (member)",
+    "memberSlug": "cloud-native-texas-member",
+    "logoUrl": "https://landscape.cncf.io/logos/c3b6bed6bfc840c18bb59d0812c1362a0f2d18f0e01971797e1b8b3b48c532ea.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Cloud Native Texas (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "78122b14-941c-4d5b-9760-0767cd02e78a",
+    "type": "joined",
+    "memberName": "Qube Research \u0026 Technologies (member)",
+    "memberSlug": "qube-research-technologies-member",
+    "logoUrl": "https://landscape.cncf.io/logos/d924d023c7b0e1a248f1e0a9c1a2669cd8a1398ad9bf9a08951acbb9ee9de960.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Qube Research \u0026 Technologies (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "34376b3e-0a0e-49a4-ad70-348546bd42af",
+    "type": "joined",
+    "memberName": "Strategic Education (member)",
+    "memberSlug": "strategic-education-member",
+    "logoUrl": "https://landscape.cncf.io/logos/18371103c6cd84dd07d7ef3a4ce49a8b46a6926d877425b6d2bd9b687f20fd9f.svg",
+    "tier": "Academic",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Strategic Education (member) joined CNCF as a Academic member"
+  },
+  {
+    "id": "191c3d8c-031d-470a-b2b9-b353b892bf51",
+    "type": "joined",
+    "memberName": "Form3 (supporter)",
+    "memberSlug": "form3-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/3cca6f480ffe125871551501f85a289bc8e642fc325e2a34dbc5eb5203e006e8.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Form3 (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "ad9970af-4b45-4e01-bae5-14af91d4086a",
+    "type": "joined",
+    "memberName": "SNCF (supporter)",
+    "memberSlug": "sncf-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/5755931ab9cb517ff0d6391bec7d371bfe5560d4a1245f2f6d07c27cee05e020.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "SNCF (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "3c609907-33d8-4fe2-9e4f-75ebae839b80",
+    "type": "joined",
+    "memberName": "trivago (supporter)",
+    "memberSlug": "trivago-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/50319616346c8d015679ec1909eb53d9bf9c6f17710c301f6a06a720bc13f7ee.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "trivago (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "4e6a255b-6d0f-48c6-b1fa-a7908ac595a0",
+    "type": "joined",
+    "memberName": "Apple (member)",
+    "memberSlug": "apple-member",
+    "logoUrl": "https://landscape.cncf.io/logos/5264177f389e197d6468829dc7a3b4f034fe781ca7cae933cce8db09a5415277.svg",
+    "tier": "Platinum",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Apple (member) joined CNCF as a Platinum member"
+  },
+  {
+    "id": "48c1695c-8c3c-45cd-9443-dab2f53ea97b",
+    "type": "joined",
+    "memberName": "Dlocal (member)",
+    "memberSlug": "dlocal-member",
+    "logoUrl": "https://landscape.cncf.io/logos/9464e383b920ca33590523e8607b95bca6e4e9d523c5fe3b21ea9c811cd3ac0d.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Dlocal (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "fe621014-ac9c-47b1-bef0-65a4914f3c43",
+    "type": "joined",
+    "memberName": "Indeed (member)",
+    "memberSlug": "indeed-member",
+    "logoUrl": "https://landscape.cncf.io/logos/29eb6e21e5957bf93b3b5cd41a3de4f2d6b2d4fa2c2e461bb4b0f6fbbc4c4eee.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Indeed (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "31631b25-fde2-4932-a011-41260da80f0d",
+    "type": "joined",
+    "memberName": "Centrica Energy (supporter)",
+    "memberSlug": "centrica-energy-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/10d51f402ba1b3c677e4701c1675b1a48ae3b82159697304d323bf9ab10df33a.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Centrica Energy (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "fdf16cb5-aa21-40e8-82fe-185091dee32a",
+    "type": "joined",
+    "memberName": "MasterClass (supporter)",
+    "memberSlug": "masterclass-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/fda61bd875f11baa1ad8ca586dbfeee77c9dee56e0d2895955489dbb163bcbbe.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "MasterClass (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "de252aca-938b-46a1-a1ca-8a88ade06863",
+    "type": "joined",
+    "memberName": "Non-Public Organization Iguana (supporter)",
+    "memberSlug": "non-public-organization-iguana-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/3aa7eaeadefacbd439aa5b63d9d06894ceff03d6f13216fdbca4b627402a8360.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Non-Public Organization Iguana (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "b5194079-4d68-4aab-b03b-3407ddaebdf6",
+    "type": "joined",
+    "memberName": "Springer Nature (member)",
+    "memberSlug": "springer-nature-member",
+    "logoUrl": "https://landscape.cncf.io/logos/d79ffdb8ea2b24b2625e96670bc843fe49f63a100744d1ad97721986047e7598.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Springer Nature (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "85496849-b857-474b-bc9f-0be0a5f10653",
+    "type": "joined",
+    "memberName": "Boeing (contributor)",
+    "memberSlug": "boeing-contributor",
+    "logoUrl": "https://landscape.cncf.io/logos/0ded7fbfced4f7ef00e10fe61dab96f06b42df9fe14f46375bc87f6b10b8364e.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Boeing (contributor) joined CNCF as a End User member"
+  },
+  {
+    "id": "8bb09f49-6303-4345-8578-fee1b2083a2d",
+    "type": "joined",
+    "memberName": "i Cubed Systems, Inc. (supporter)",
+    "memberSlug": "i-cubed-systems-inc-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/2e4ba84f9ce4129972ff403a071b7529390e159dcb9bfe3bfc05618461f15d76.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "i Cubed Systems, Inc. (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "701335c8-e3ca-40f5-9407-b3e9d9954287",
+    "type": "joined",
+    "memberName": "MasterControl (supporter)",
+    "memberSlug": "mastercontrol-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/e68c6b1ea3f4460f043a772c36705fe17181147cd4f143e23310d9a87dea44d6.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "MasterControl (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "dd8670c0-7b83-4123-abe8-1300acbf9017",
+    "type": "joined",
+    "memberName": "Upsider (member)",
+    "memberSlug": "upsider-member",
+    "logoUrl": "https://landscape.cncf.io/logos/ffdcdd9d2c0c1d0f5f1ac95d9719c7ee733aef3b7bf57cec2c072ac4b8eda285.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Upsider (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "99323a31-896a-49cc-b5b3-124ba45d91e1",
+    "type": "joined",
+    "memberName": "CFL (supporter)",
+    "memberSlug": "cfl-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/d5a15c75b584d9087bfd345e635e2df75f5775d80818e73c02f481ced2776318.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "CFL (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "844d6a09-eb7f-41d8-903d-bbe8bc1e06e8",
+    "type": "joined",
+    "memberName": "Monzo (supporter)",
+    "memberSlug": "monzo-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/1342ddcaa89f64fc221f50943fcbc67514d252d6e710cf1bb3ca478c29156dab.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Monzo (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "2759bd9f-9334-4d9e-b8d4-a458dbe0dc17",
+    "type": "joined",
+    "memberName": "Non-Public Organization Horse (supporter)",
+    "memberSlug": "non-public-organization-horse-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/f05732614e2b84a6dad109807cd2a72b82709e62a573007f971f2cbc41369553.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Non-Public Organization Horse (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "9aa1c1f6-1b0c-4c8a-aca7-4f83540d656e",
+    "type": "joined",
+    "memberName": "Ultimate Kronos Group (UKG) (supporter)",
+    "memberSlug": "ultimate-kronos-group-ukg-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/5ec5c00083fcd5d4d2c584d73b05668596a0f0fc723fd91b512a542c0398913c.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Ultimate Kronos Group (UKG) (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "4b1a3c1e-e204-411c-a02d-f37c85760b3b",
+    "type": "joined",
+    "memberName": "NAIC (member)",
+    "memberSlug": "naic-member",
+    "logoUrl": "https://landscape.cncf.io/logos/9791b4127faa460f5fbb17779e38c3fdc0493a8659f756347f1f6b4d11f25cdd.svg",
+    "tier": "Nonprofit",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "NAIC (member) joined CNCF as a Nonprofit member"
+  },
+  {
+    "id": "0688f40f-3ef3-457e-ac90-a6c598d94634",
+    "type": "joined",
+    "memberName": "Non-Public Organization Quail (member)",
+    "memberSlug": "non-public-organization-quail-member",
+    "logoUrl": "https://landscape.cncf.io/logos/1231cd601a2861ab6ef938479190b644053de61a94b043cd17fe1b9f74ca7c1e.svg",
+    "tier": "Nonprofit",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Non-Public Organization Quail (member) joined CNCF as a Nonprofit member"
+  },
+  {
+    "id": "884028ef-1e57-47a5-8dd2-468e476264d5",
+    "type": "joined",
+    "memberName": "JYSK (supporter)",
+    "memberSlug": "jysk-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/15d69ad446d2de244ec1c325403ea76ea3c34f494341e2b306692b99719ea634.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "JYSK (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "2043e273-5fc2-4572-8857-63bfa2a75fa5",
+    "type": "joined",
+    "memberName": "GIM UEMOA (member)",
+    "memberSlug": "gim-uemoa-member",
+    "logoUrl": "https://landscape.cncf.io/logos/83ac8f45c38ae9af0b22cfaace84c18362b95a8e7db0622f196a78b85f23ecec.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "GIM UEMOA (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "fcfdacfa-1c6f-4199-a548-5c4c85102893",
+    "type": "joined",
+    "memberName": "Mercedes Benz AG (member)",
+    "memberSlug": "mercedes-benz-ag-member",
+    "logoUrl": "https://landscape.cncf.io/logos/f23f6ddd23534f1a325f42545dbe78ea9f9a70234b140d3d4ea4a8a91c7b41df.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Mercedes Benz AG (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "5aec708d-03c4-41e7-985b-4570d5a7ef9b",
+    "type": "joined",
+    "memberName": "Walmart (member)",
+    "memberSlug": "walmart-member",
+    "logoUrl": "https://landscape.cncf.io/logos/18b1dbc0444e13a7676569aef75c3007fe2252036cb7f4d46c544122d3bfce3c.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Walmart (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "380ca936-92b0-4056-8e0e-4a62f217d87e",
+    "type": "joined",
+    "memberName": "Reddit (supporter)",
+    "memberSlug": "reddit-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/c1780c0759d770d243e99e80897a14a65489f2c2c239899451e7e64ff22ac46b.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Reddit (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "8ec5a80f-0aa1-4d7d-bac1-36000123fcb4",
+    "type": "joined",
+    "memberName": "Thermo Fisher Scientific (supporter)",
+    "memberSlug": "thermo-fisher-scientific-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/7d31effcd6fadfbaa34b0e8c26ce6f5eb0aa52087ef34f1015ce699799fcd470.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Thermo Fisher Scientific (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "426039ac-a833-4684-b504-c8277f25fb47",
+    "type": "joined",
+    "memberName": "Goldman Sachs (member)",
+    "memberSlug": "goldman-sachs-member",
+    "logoUrl": "https://landscape.cncf.io/logos/71743e85a6f77c8d175af3028b7324f8b42172cc07b12be84e0396c0ec0c2e2e.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Goldman Sachs (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "cec1d94f-6245-4ae4-9a02-454024a3170c",
+    "type": "joined",
+    "memberName": "Toyota Motor Corporation (member)",
+    "memberSlug": "toyota-motor-corporation-member",
+    "logoUrl": "https://landscape.cncf.io/logos/7db5a026fe633e79a6418fdea8c216c269459ea584eba4d24c68d70eabb482df.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Toyota Motor Corporation (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "64275ea6-4258-434d-81e6-dea4c97e6821",
+    "type": "joined",
+    "memberName": "AuthKeys (supporter)",
+    "memberSlug": "authkeys-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/49ddfb86a668b76c0346ab936011a0ded6226b0a56c75f865f98a7a2e476dffc.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "AuthKeys (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "98001ac5-c46a-4308-af8c-a6dfd2d986b1",
+    "type": "joined",
+    "memberName": "Blizzard (supporter)",
+    "memberSlug": "blizzard-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/0601b022702cbca5e28885600cd7580a1bed4fe8e601f6c8d88b83603bb49992.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Blizzard (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "ab92da44-a197-43ca-8649-1732f32539a9",
+    "type": "joined",
+    "memberName": "CARIAD (supporter)",
+    "memberSlug": "cariad-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/8ef240c2c86ea0fc4b506f9f13fe1bb40c183502696f6bea6b495d8aec2083b4.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "CARIAD (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "94d706f5-7ca0-427a-ba23-aee7a3492ddb",
+    "type": "joined",
+    "memberName": "Non-Public Organization Flamingo (supporter)",
+    "memberSlug": "non-public-organization-flamingo-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/7409dd370572fd8e1a3caa148a864b53e4beeee3e608ca8339388c759bbeb9c2.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Non-Public Organization Flamingo (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "f0299cf3-bf35-4f9c-b2f6-3177a2e91687",
+    "type": "joined",
+    "memberName": "Shopify (contributor)",
+    "memberSlug": "shopify-contributor",
+    "logoUrl": "https://landscape.cncf.io/logos/e58ae77ed7927db24c48adccf3d1916f00c4a80e73e81dbc4bdcabb9e1bd5fe8.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Shopify (contributor) joined CNCF as a End User member"
+  },
+  {
+    "id": "12dd6730-f4bb-4805-b234-4e4dc17c2649",
+    "type": "joined",
+    "memberName": "TomTom (supporter)",
+    "memberSlug": "tomtom-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/3573e28e708d4172f4bb6abcbfc6cccd40f2487add93ff3347f173fc4992c64a.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "TomTom (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "1ba527cf-6e5a-49b2-9b71-ea58ab549cec",
+    "type": "joined",
+    "memberName": "BlackRock (member)",
+    "memberSlug": "blackrock-member",
+    "logoUrl": "https://landscape.cncf.io/logos/d1a5613634b2f461ba06b71499adb10b1534920d2f17709e9a45a8b5d4e310ab.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "BlackRock (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "b2c7cada-b914-4148-bbd2-e71a2e4ad482",
+    "type": "joined",
+    "memberName": "Ziax (member)",
+    "memberSlug": "ziax-member",
+    "logoUrl": "https://landscape.cncf.io/logos/2d8736fe110363e56bc1a32510fccda11633b4684e2c5252317396e6e273b94d.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Ziax (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "edf43dbe-e081-4d80-ab31-60f89a533b6d",
+    "type": "joined",
+    "memberName": "Endress+Hauser (supporter)",
+    "memberSlug": "endress-hauser-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/6fdc438a2638b5b0f6004a6f12718198b3be26c8d8bbbcb2aaefe11a7a83fea1.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Endress+Hauser (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "52c71c82-9f28-4fe1-be4a-4066fdb14c26",
+    "type": "joined",
+    "memberName": "GMX (supporter)",
+    "memberSlug": "gmx-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/5d3d0ea82422f8d8b4ac643b2278d6b22915abb56d22eb5d63ced581751adca9.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "GMX (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "ad04c5c3-1889-4952-8899-2112951420f4",
+    "type": "joined",
+    "memberName": "NielsenIQ (supporter)",
+    "memberSlug": "nielseniq-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/f2f9033112843cfefdd3b04b87bc3fde29ed269c03e4bb10247cbe9f39dd0ef1.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "NielsenIQ (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "3f03ab2a-c123-4876-a0f3-bf51a91f93e1",
+    "type": "joined",
+    "memberName": "Robinhood (supporter)",
+    "memberSlug": "robinhood-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/012ea6007692a4aa0f3c7754c5019b9015784dc7abdca7e1a980766e091b2807.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Robinhood (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "693ae3e1-7a0a-463e-8500-27b7c8fbc53e",
+    "type": "joined",
+    "memberName": "LSEG (member)",
+    "memberSlug": "lseg-member",
+    "logoUrl": "https://landscape.cncf.io/logos/aa1d225d066c0b506bd6ae669021defd4fb59695b6bd8a8c09e8ed606dc0766d.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "LSEG (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "6b575dde-e0ae-408e-a154-8c717dddec06",
+    "type": "joined",
+    "memberName": "reo.dev (member)",
+    "memberSlug": "reo-dev-member",
+    "logoUrl": "https://landscape.cncf.io/logos/e4b09d2dc0d01281583e1a530deae4211db6f0c97bd8330ca2414e2ff86b7153.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "reo.dev (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "2659fd9f-7b55-44b1-91bd-524f94e0e1da",
+    "type": "joined",
+    "memberName": "Strava (member)",
+    "memberSlug": "strava-member",
+    "logoUrl": "https://landscape.cncf.io/logos/e9c21deb30c1dceec3517c99b9d568656a67b688081769d0020bffdf7c457008.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Strava (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "1264e55d-1ba9-4f15-9a14-d186ce80b91c",
+    "type": "joined",
+    "memberName": "Non-Public Organization Elephant (supporter)",
+    "memberSlug": "non-public-organization-elephant-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/d9051198303afe5229060e96466cc0310e27b4f5e12a67b421a1e4e2bb81d117.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Non-Public Organization Elephant (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "7c2730bf-279d-4452-bd30-91c1aae3456e",
+    "type": "joined",
+    "memberName": "Wehkamp Retail Group (supporter)",
+    "memberSlug": "wehkamp-retail-group-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/44a85ec6e2854f1f7b210cff7cfac39ce5477b1fad2ab62495046bc0047af6dc.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Wehkamp Retail Group (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "737500cb-af8a-49ef-8014-687a719d6b45",
+    "type": "joined",
+    "memberName": "ASML (member)",
+    "memberSlug": "asml-member",
+    "logoUrl": "https://landscape.cncf.io/logos/8a7eb577ae8f8116e63a9247b2339cb3f428cd32fc7d0cc81e16e90dba5409e1.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "ASML (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "d1b345ed-09ae-4a64-98f7-1711bf588a7a",
+    "type": "joined",
+    "memberName": "KSAT (supporter)",
+    "memberSlug": "ksat-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/ba07baac40e84eb081ab64291da34c439c41b3af2dbd38d929816a5976334e87.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "KSAT (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "bca92809-62b5-4f2e-8aad-d5857e655bc1",
+    "type": "joined",
+    "memberName": "Non-Public Organization Jellyfish (supporter)",
+    "memberSlug": "non-public-organization-jellyfish-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/21f44870659856f9b22d6586caa22bebec33e197d74aad5ddbd0e056db0fab4f.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Non-Public Organization Jellyfish (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "c409c11c-8c2a-405e-92b5-8c500c92d7b3",
+    "type": "joined",
+    "memberName": "Volvo (contributor)",
+    "memberSlug": "volvo-contributor",
+    "logoUrl": "https://landscape.cncf.io/logos/22b9f85ebf48e314a38f59cd697c8819c1453830a0d71a328db298a6b3787132.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Volvo (contributor) joined CNCF as a End User member"
+  },
+  {
+    "id": "c6abdb9b-5135-4c90-97c0-38b770b85bde",
+    "type": "joined",
+    "memberName": "eBay (member)",
+    "memberSlug": "ebay-member",
+    "logoUrl": "https://landscape.cncf.io/logos/956609eb2d5db6ec78b11741b9f9c32a3abb23c37585f0fd91942516b25702dc.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "eBay (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "d735e422-5a4b-46e3-b5ce-2282b2b2b1be",
+    "type": "joined",
+    "memberName": "Non-Public Organization Moose (member)",
+    "memberSlug": "non-public-organization-moose-member",
+    "logoUrl": "https://landscape.cncf.io/logos/578a0a758a55dd65c994467fb57744f378e7de4c3b9fd4c5fbfdfef36ee7f8ab.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Non-Public Organization Moose (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "8b797111-03d7-4ddb-be17-f88429a7c4e5",
+    "type": "joined",
+    "memberName": "Huifu Payment Limited (supporter)",
+    "memberSlug": "huifu-payment-limited-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/e2ec20ba7759a9c1c2de33e86013a9c9d8ffbf72b96a35e110c09f9f17c20593.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Huifu Payment Limited (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "46db7407-39a8-4182-a5cd-e124810dbf24",
+    "type": "joined",
+    "memberName": "Cathay Financial Holding (member)",
+    "memberSlug": "cathay-financial-holding-member",
+    "logoUrl": "https://landscape.cncf.io/logos/fa60db0dfbbfc7e69ea0bd7c4bd60e93b8369270794b7922f7f642784094770b.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Cathay Financial Holding (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "82b40e52-0718-40ef-acd3-b4f10aae2153",
+    "type": "joined",
+    "memberName": "CME Group (member)",
+    "memberSlug": "cme-group-member",
+    "logoUrl": "https://landscape.cncf.io/logos/a4b6fc6439bab1ecb70e6ed6a5a8459e1264806d75dbbe5185b20e96f65e4b55.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "CME Group (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "a44c5e4c-1634-4187-b0e7-92457a0b754f",
+    "type": "joined",
+    "memberName": "Prodigy Education (member)",
+    "memberSlug": "prodigy-education-member",
+    "logoUrl": "https://landscape.cncf.io/logos/63df757fa87ce51a90aebb7ceacc14165d29d8ba75e7005eadcc11fee409f4cd.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Prodigy Education (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "8f0fe7ef-5896-4ebb-9521-6936f30cd548",
+    "type": "joined",
+    "memberName": "Uber (member)",
+    "memberSlug": "uber-member",
+    "logoUrl": "https://landscape.cncf.io/logos/d1f1c14b9114fc743f967bd99a36a21a18aff82fc3d531a06798df027773ac32.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Uber (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "c5c7c048-7e47-4c4a-a6b3-523acc7edf4d",
+    "type": "joined",
+    "memberName": "Non-Public Organization Dog (supporter)",
+    "memberSlug": "non-public-organization-dog-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/1bebcf1bb5985044abb0d6433d2ef85eb0c1a5360fb5b3fc83940f65a327bfd7.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Non-Public Organization Dog (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "bd9d2955-f661-4517-965d-6850af6b3f36",
+    "type": "joined",
+    "memberName": "Non-Public Organization Kiwi (supporter)",
+    "memberSlug": "non-public-organization-kiwi-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/100c7879dd29f1fe0932d210e58957ab90336dc17d81a1ff805cf7d5c340401e.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Non-Public Organization Kiwi (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "ba3a6c61-1fcb-442b-ad66-5cd114bfd467",
+    "type": "joined",
+    "memberName": "PDT Partners (supporter)",
+    "memberSlug": "pdt-partners-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/e9197d26d763afa72b22108fa1e3703dd969632fbd2e97a4e324622df757bc46.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "PDT Partners (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "1b06a734-cb8f-4b01-b9a2-0f25871912fb",
+    "type": "joined",
+    "memberName": "DataGalaxy (supporter)",
+    "memberSlug": "datagalaxy-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/f2fc0561e92266f7c8a6ae99b9a00bd4249f8820d1341f2abcd225492a223806.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "DataGalaxy (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "847c8eb0-e2e6-45dd-b079-4062e14576f3",
+    "type": "joined",
+    "memberName": "EverQuote (supporter)",
+    "memberSlug": "everquote-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/37b611665e2e97b4bfe4d1f03071c80e9bad1fd541ebcdfffb121f9a32e1159f.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "EverQuote (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "3bcf4a72-25b2-4e7c-ab52-dbaca890b983",
+    "type": "joined",
+    "memberName": "Non-Public Organization Giraffe (supporter)",
+    "memberSlug": "non-public-organization-giraffe-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/cbd988db7bbf6523b776e9e5fc1f940d47fd19ce0d2aa1ef4c085b2563e2c2fa.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Non-Public Organization Giraffe (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "1a9a55d2-cd41-46d7-b55c-a6107e8972a6",
+    "type": "joined",
+    "memberName": "Framework (member)",
+    "memberSlug": "framework-member",
+    "logoUrl": "https://landscape.cncf.io/logos/28b4eeb21f00050e12383fbfc3821d4d743ee4c896875df2a3d4f9bfa8b12d52.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Framework (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "d7a0e0b2-ce1d-4ede-bbcc-b3119c7cbe77",
+    "type": "joined",
+    "memberName": "Royal Bank of Canada (member)",
+    "memberSlug": "royal-bank-of-canada-member",
+    "logoUrl": "https://landscape.cncf.io/logos/5aa4ebf9a92edcf0cc4df0ca294177204406161e85e7147b027a57d4f35eabb0.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Royal Bank of Canada (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "46126a46-9669-4ad7-9453-d59d1f97b439",
+    "type": "joined",
+    "memberName": "Squarespace (member)",
+    "memberSlug": "squarespace-member",
+    "logoUrl": "https://landscape.cncf.io/logos/580f2fe0fa6ea34730bb0b382617b020d98d05eb5c63062d13db408f8f6b3545.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Squarespace (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "e5aa6acf-acb1-44bc-bb0c-6db9ab2477d9",
+    "type": "joined",
+    "memberName": "Valve Software (member)",
+    "memberSlug": "valve-software-member",
+    "logoUrl": "https://landscape.cncf.io/logos/15e3af94ef19802ee51a0ac043f628c94b250fd20ad25fd12600a4d318364640.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Valve Software (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "143c9e88-9a00-4c39-b842-5590231f5ad7",
+    "type": "joined",
+    "memberName": "LinkedIn (supporter)",
+    "memberSlug": "linkedin-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/67e2207cfb1bbb2b52c5d32d385ceabd09ad42a01a49847009d1fa3216532103.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "LinkedIn (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "cabc837d-61b4-4124-a948-f5228d9d26fc",
+    "type": "joined",
+    "memberName": "Meltwater (supporter)",
+    "memberSlug": "meltwater-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/241c4dd25cade587e7b723527cc06ea4b0f897f9ecfd7878d09c854a8397ac45.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Meltwater (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "318e38b1-3781-49e2-8cef-95976e4a66c3",
+    "type": "joined",
+    "memberName": "Netnod (supporter)",
+    "memberSlug": "netnod-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/894f6a400b8c141f863b69ab1c2a34ae7c2b87401f556c682f608c706cc31fa2.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Netnod (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "d5f85de4-0c9d-434a-ae74-b13ea34b14d2",
+    "type": "joined",
+    "memberName": "PostFinance (supporter)",
+    "memberSlug": "postfinance-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/6ee16524382e728e3898601a3175d17444d0c10b8754c2f583f9a3059015821c.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "PostFinance (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "3ee4ce3d-f722-4d68-b68e-bfef14389d58",
+    "type": "joined",
+    "memberName": "CoBank (member)",
+    "memberSlug": "cobank-member",
+    "logoUrl": "https://landscape.cncf.io/logos/5da8944e65fcb6788a6deeed074c977432aa1e113d24bbfb5dcf4e1236df2559.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "CoBank (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "07025525-451b-4bb0-ad32-5cb145eb1112",
+    "type": "joined",
+    "memberName": "Cybozu (member)",
+    "memberSlug": "cybozu-member",
+    "logoUrl": "https://landscape.cncf.io/logos/ccd0adce3116771e0b92bd7af6a6db9946288ac92647dbfda8a21a3c1592ea7f.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Cybozu (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "b0159515-b817-4674-bb9c-eeeee67c168a",
+    "type": "joined",
+    "memberName": "Natwest (member)",
+    "memberSlug": "natwest-member",
+    "logoUrl": "https://landscape.cncf.io/logos/ded0270aefef4911df1ce962bce99dc2c97f9a7f4e008e9676de1a41c92a0a25.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Natwest (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "2c4fb35a-7138-40ef-8077-4a611ef5e466",
+    "type": "joined",
+    "memberName": "CarGurus (supporter)",
+    "memberSlug": "cargurus-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/f4686e72f01d3f6cb6d78f44eda5f53ef3af486aa59a9ac8a5a70a7db4fc2d67.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "CarGurus (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "5b9846cc-e217-45f6-aeb6-7af857311038",
+    "type": "joined",
+    "memberName": "Non-Public Organization Bear (supporter)",
+    "memberSlug": "non-public-organization-bear-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/f1a5fe737cb89f5e8eae20a742f5a778942fc25079dc81bfa9b4d90ed7afc7d8.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Non-Public Organization Bear (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "1c2efa27-eb8a-4b4d-9e6b-6f29c80f3906",
+    "type": "joined",
+    "memberName": "REWE International Dienstleistungsges.m.b.h. (supporter)",
+    "memberSlug": "rewe-international-dienstleistungsges-m-b-h-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/2f6cb6c13f07c781d5dc39952f70a9bb66c6a37de119b192779e10a9796291f6.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "REWE International Dienstleistungsges.m.b.h. (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "c43d04fd-e1e2-4926-a60e-9f424182d8b8",
+    "type": "joined",
+    "memberName": "Docusign (member)",
+    "memberSlug": "docusign-member",
+    "logoUrl": "https://landscape.cncf.io/logos/4c6f925ec104a24f07149123630f200fea98559cfd28d3e27538415df9661d00.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Docusign (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "291a5474-b572-4092-9343-7cd4f9cf0d7c",
+    "type": "joined",
+    "memberName": "Mathworks (member)",
+    "memberSlug": "mathworks-member",
+    "logoUrl": "https://landscape.cncf.io/logos/524555258ec855d410d52366bbcb42b9ed4b16e0c0f7fdc8ebaf8776574d2f3d.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Mathworks (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "2bade243-4724-4b43-9b56-5d30c2aaf2a6",
+    "type": "joined",
+    "memberName": "Non-Public Organization Narwhal (member)",
+    "memberSlug": "non-public-organization-narwhal-member",
+    "logoUrl": "https://landscape.cncf.io/logos/c630509648686bedb39f93c0e05112b7821d4c7bf716454cdec4a665aba1b4f4.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Non-Public Organization Narwhal (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "07a11c55-6e97-41e2-b40b-a3ac9a9f4fc4",
+    "type": "joined",
+    "memberName": "DB Systel (supporter)",
+    "memberSlug": "db-systel-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/4f09d8e17b8066aa6f51acbce172a63c6f56b1f2855777b71f37a4098d5e9828.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "DB Systel (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "d462753b-0707-43ad-ae74-15939b2fce3d",
+    "type": "joined",
+    "memberName": "Fiserv (supporter)",
+    "memberSlug": "fiserv-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/bb1d40d7677cbd79ae7135c75d4d2b66121d2689d73ee163cb934f246a3b963a.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Fiserv (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "7825ba18-4278-42af-8b4b-90dcfb069692",
+    "type": "joined",
+    "memberName": "NetMatch (supporter)",
+    "memberSlug": "netmatch-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/b21101a85b662672dc453e70ac4395d284859309e9f2da23ec08504088a0f29f.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "NetMatch (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "42dce343-cbc1-47ff-ad7e-297bdb4b521a",
+    "type": "joined",
+    "memberName": "The New York Times (supporter)",
+    "memberSlug": "the-new-york-times-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/6e6eef6f33fa7638da82b5895183fff1e50e35528e614d11b76fdcdb69ed3870.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "The New York Times (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "258c617c-d4e9-4621-8671-a798065b1130",
+    "type": "joined",
+    "memberName": "Adidas (supporter)",
+    "memberSlug": "adidas-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/c53a7307d82d4be4428eccde51d66300e7f749ef39ea6c58fa47039b98734f14.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Adidas (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "40032fa0-1b4b-4ebb-8e2c-6e4ea044aa9b",
+    "type": "joined",
+    "memberName": "Anova (supporter)",
+    "memberSlug": "anova-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/54c8cceea022c13e8860f188d950300f6be12be44e1b6cb0e859e167a465f8a3.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Anova (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "d040b70c-fec7-4223-925c-0263394083fe",
+    "type": "joined",
+    "memberName": "La Mobiliere (supporter)",
+    "memberSlug": "la-mobiliere-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/c0a6a68920e7d96a9d98223e18cae46ad73b4104bcb8559f6a2236df024a2823.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "La Mobiliere (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "ac5d5c31-22d9-4599-9808-a416a32d9a99",
+    "type": "joined",
+    "memberName": "PayIt (supporter)",
+    "memberSlug": "payit-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/bbedb6e74bb77342140c0c858fd947f70b59b18fd9a06467a0a8712eaca96158.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "PayIt (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "ea857f74-f039-4486-a5ea-49c38929c5a0",
+    "type": "joined",
+    "memberName": "Ricardo.ch (supporter)",
+    "memberSlug": "ricardo-ch-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/2b990695bb5f31eb277c9d1e62f12ff64a33092112bfd1f6dea9ba0c0e855b0a.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Ricardo.ch (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "9b4c57b0-c773-4132-8d2a-f674c49660bc",
+    "type": "joined",
+    "memberName": "Sky Betting \u0026 Gaming (supporter)",
+    "memberSlug": "sky-betting-gaming-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/2dca37ea198f533bd1b02ad9778d20d813ff5bb36d4fc4737cabf468f65b25f3.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Sky Betting \u0026 Gaming (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "e39ca8e1-4f31-475d-aa93-e16a778de099",
+    "type": "joined",
+    "memberName": "Sony Interactive Entertainment (supporter)",
+    "memberSlug": "sony-interactive-entertainment-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/112c7bfc5825b5c112a68254f1ef502aa99193a1807a90fd71c15cfd53641601.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Sony Interactive Entertainment (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "ceb09b40-02f6-4503-86d4-27bacf71e728",
+    "type": "joined",
+    "memberName": "Tokyo Gas (supporter)",
+    "memberSlug": "tokyo-gas-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/d0854bf0c8e39acf5abdfeb6b0d25a0ed866b09459219d5d0ca3f7c5c1c6d230.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Tokyo Gas (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "d1c3fe93-749a-4bed-be18-50daf503b1d5",
+    "type": "joined",
+    "memberName": "Lockheed Martin (member)",
+    "memberSlug": "lockheed-martin-member",
+    "logoUrl": "https://landscape.cncf.io/logos/6b02f669b34899417ba7e5fbdcff11bcbbca49a71f99ef7a9800b1526a45d70a.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Lockheed Martin (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "3a160eb9-3e2b-4e39-87b0-06f282188f05",
+    "type": "joined",
+    "memberName": "LY Corporation (member)",
+    "memberSlug": "ly-corporation-member",
+    "logoUrl": "https://landscape.cncf.io/logos/7dd05f6891b4867f63f506fc7e02076fa8adb5578dad845142baa26d6fb7f0bb.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "LY Corporation (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "62ada3ac-a302-4fdd-863d-48b8246af482",
+    "type": "joined",
+    "memberName": "Wikimedia (member)",
+    "memberSlug": "wikimedia-member",
+    "logoUrl": "https://landscape.cncf.io/logos/e0bc7e93262d282b3ea26bc4f81b1c6671ddb2b58dbc3d1f667f53d669294454.svg",
+    "tier": "Nonprofit",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Wikimedia (member) joined CNCF as a Nonprofit member"
+  },
+  {
+    "id": "d7ae78c6-54ba-44bc-99aa-841eeb1bf4a8",
+    "type": "joined",
+    "memberName": "Hightech Payment Systems (supporter)",
+    "memberSlug": "hightech-payment-systems-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/21920fbb0549aae4b027806ee10694973e19d16d718ce0a06ae9ad2d59687359.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Hightech Payment Systems (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "bf086e2b-2b2c-4f84-97e5-79f3ffbb2457",
+    "type": "joined",
+    "memberName": "Posit (supporter)",
+    "memberSlug": "posit-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/11ec8fb3ba5b9fa906e4d8e8a594782dd8484ba52fa56fc1c64219b9fa2bc6f6.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Posit (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "40e7d27f-a359-4ba3-b4a2-4e3fbbc74121",
+    "type": "joined",
+    "memberName": "Michelin (member)",
+    "memberSlug": "michelin-member",
+    "logoUrl": "https://landscape.cncf.io/logos/ad136d84b0aa17b2e11c16e36d9c77f192441e3ff49769627ff95291da3633ab.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Michelin (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "f0f4dd2d-af12-4940-9acc-47d80e52677e",
+    "type": "joined",
+    "memberName": "Telenor Norway (member)",
+    "memberSlug": "telenor-norway-member",
+    "logoUrl": "https://landscape.cncf.io/logos/b0d3adedd33f8e504a826d33600ab15ff0b44cba27c2eafaf89055ed4f9d1c91.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Telenor Norway (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "d6e9fe76-6098-431f-8efe-028b728fc2f2",
+    "type": "joined",
+    "memberName": "Cambia Health Solutions (member)",
+    "memberSlug": "cambia-health-solutions-member",
+    "logoUrl": "https://landscape.cncf.io/logos/ebf584e09fe9c67dface2d30592586517a2885101028c703cb851ec34abfffb9.svg",
+    "tier": "Nonprofit",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Cambia Health Solutions (member) joined CNCF as a Nonprofit member"
+  },
+  {
+    "id": "49ca2fa3-2722-4b62-86c0-74abc051a2cd",
+    "type": "joined",
+    "memberName": "Airbnb (supporter)",
+    "memberSlug": "airbnb-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/587c414d7d3d6bfb4cf2099dd4c3783cb4cfde78b570ab31528f4b5e776c6b8b.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Airbnb (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "5fcb9699-50fc-4f6d-a768-f458bac870dd",
+    "type": "joined",
+    "memberName": "King (supporter)",
+    "memberSlug": "king-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/580dd5e6745debe9928221f6f5bdb6cc84eccd0ddfc26492597434a6f9a06f92.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "King (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "7cfb1fa4-e5da-49ce-be5a-da3facb44196",
+    "type": "joined",
+    "memberName": "ProSiebenSat.1 (supporter)",
+    "memberSlug": "prosiebensat-1-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/5f393490a5e7060fa1e3737ba7ffe29bcd01fc803b3f5fdf06ac04ce7ec68c72.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "ProSiebenSat.1 (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "d612f02f-fcc0-4ccb-a5cd-c46f88bcb9e5",
+    "type": "joined",
+    "memberName": "American Express (member)",
+    "memberSlug": "american-express-member",
+    "logoUrl": "https://landscape.cncf.io/logos/a0ad53a54f909027dbc270fc72918ce65c8a3756b129f77fb8df579ee122fc7b.svg",
+    "tier": "Gold",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "American Express (member) joined CNCF as a Gold member"
+  },
+  {
+    "id": "4b8b02ea-1c0b-4c32-8a12-3cfcd57c6444",
+    "type": "joined",
+    "memberName": "Decathlon (supporter)",
+    "memberSlug": "decathlon-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/93874f8df33468c3d55f288c7acaf0fc031fb2aa1ba94532acf52d902f59ab17.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Decathlon (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "f2ef8976-c234-48fa-9842-2067cf635a39",
+    "type": "joined",
+    "memberName": "DIRECTV (supporter)",
+    "memberSlug": "directv-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/091a732bee604cb71c98179bcdce40a484a48023ad684c5d4dd34dc93b2f3cd2.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "DIRECTV (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "3d021bf8-b40c-4fa5-8dc7-78847ccbaddc",
+    "type": "joined",
+    "memberName": "Zalando (supporter)",
+    "memberSlug": "zalando-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/6632bd84496ef29679d233d50eea6984bad25100cde387683805bf82966d0f9d.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Zalando (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "31fbbce4-bd3d-4507-a1d5-d916253310fe",
+    "type": "joined",
+    "memberName": "Zendesk (supporter)",
+    "memberSlug": "zendesk-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/9c8841e20bc22ed2d9cd4d5c5dd46a5bb3fde4768aa518d32b3a354aded39833.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Zendesk (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "ddabc7ee-36c4-4b51-a843-b7ea8dbcc87b",
+    "type": "joined",
+    "memberName": "Citi (member)",
+    "memberSlug": "citi-member",
+    "logoUrl": "https://landscape.cncf.io/logos/d64beb9ecd5a42747b9068d7df20613ff69fd04fdf30ed29c8f7cd8d24d61bde.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Citi (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "b1ccf7b2-d779-4c63-8274-e5e9312348ab",
+    "type": "joined",
+    "memberName": "E.ON (member)",
+    "memberSlug": "e-on-member",
+    "logoUrl": "https://landscape.cncf.io/logos/74fba4ee5ed497ef8da820f712a4423a804c33bfd20ff4dfc580e21fb169705b.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "E.ON (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "47ebe101-622a-46b1-ada5-0c8f7dc70820",
+    "type": "joined",
+    "memberName": "Non-Public Organization Octopus (member)",
+    "memberSlug": "non-public-organization-octopus-member",
+    "logoUrl": "https://landscape.cncf.io/logos/0763a179fd0d8a8b2ccd7ef40153bc596a7c8e249f4dc921b487590dab8a0cb3.svg",
+    "tier": "Nonprofit",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Non-Public Organization Octopus (member) joined CNCF as a Nonprofit member"
+  },
+  {
+    "id": "52bdb5b8-6223-40f4-bcf8-34e48e0b7936",
+    "type": "joined",
+    "memberName": "iHerb (supporter)",
+    "memberSlug": "iherb-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/bd9d3bafbd9010a569166f71965c7575bf7e6c903c49d3daceafba3d8f247507.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "iHerb (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "23964f14-1a19-4265-8f1a-ae8701b9d041",
+    "type": "joined",
+    "memberName": "Lovable (member)",
+    "memberSlug": "lovable-member",
+    "logoUrl": "https://landscape.cncf.io/logos/baff9e769a7f6e47307aa5028ad399c91b285f251bfed943928f791703dc3cf8.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Lovable (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "b554fa1e-ab73-4f1a-a784-7aabe7e0ce34",
+    "type": "joined",
+    "memberName": "UBS (member)",
+    "memberSlug": "ubs-member",
+    "logoUrl": "https://landscape.cncf.io/logos/b8c79eaf8dcc5ec3447ad17b30654a3f6dc28a380280e957cef252f2c043b71e.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "UBS (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "6d946ff5-b7f9-4232-89b2-d59be7a793db",
+    "type": "joined",
+    "memberName": "DFDS (supporter)",
+    "memberSlug": "dfds-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/5fc5fb52e94956b2156af3739f7fcd0780d8373f4520926953e1ddcaa7974c0b.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "DFDS (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "c05f4049-6d4e-4f53-9a50-25eea8d8c918",
+    "type": "joined",
+    "memberName": "Merck (supporter)",
+    "memberSlug": "merck-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/690431a1d47d27f923365e142d7e04bb0f905d7da4430170b5b17eaa83509539.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Merck (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "8ee1476b-1088-49e9-b95e-55e2b2f6c6a6",
+    "type": "joined",
+    "memberName": "Nasdaq (supporter)",
+    "memberSlug": "nasdaq-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/89c8a5e8eccad45e22aa3cf2cdba6bc11c40229d6e5e942226b70669f2244af0.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Nasdaq (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "bbc0d914-f555-4837-a3ff-552d43285137",
+    "type": "joined",
+    "memberName": "OneCause (supporter)",
+    "memberSlug": "onecause-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/510de89bd9b5857c332aa0eb069ee34235748dc2da4bdc993134064b64cd067a.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "OneCause (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "8d96aade-437e-4ca9-8f81-dcbb762f458d",
+    "type": "joined",
+    "memberName": "TicketMaster (supporter)",
+    "memberSlug": "ticketmaster-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/a61e3e91cc4c2ebf43c3b7fadee9481ea1b12d47700a17a32f6af2f6fa3b85e4.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "TicketMaster (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "afb8e419-9173-4a37-83ae-3993b1ca7970",
+    "type": "joined",
+    "memberName": "Yahoo (supporter)",
+    "memberSlug": "yahoo-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/9938f1528f4067c34a50595aaba7e0f77bb9cd86e538b15c0898f048ffbd2793.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Yahoo (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "393ec5c5-5912-4f43-a025-6db3ef6114af",
+    "type": "joined",
+    "memberName": "Ant Financial (member)",
+    "memberSlug": "ant-financial-member",
+    "logoUrl": "https://landscape.cncf.io/logos/5dd2726b5eb0ff55dc7c65bfd962d8d130d215eb2e4b0a11b082526b705728b3.svg",
+    "tier": "Gold",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Ant Financial (member) joined CNCF as a Gold member"
+  },
+  {
+    "id": "8813398a-d69b-4206-aab1-eb603c170862",
+    "type": "joined",
+    "memberName": "Block (member)",
+    "memberSlug": "block-member",
+    "logoUrl": "https://landscape.cncf.io/logos/d669abd70cfce512f45bb7ebbe13229756eb4b49de6aa5585e564d5062f3682e.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Block (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "e94d2c14-ceaf-4eb8-b93a-089be5354f44",
+    "type": "joined",
+    "memberName": "JPMorgan Chase (member)",
+    "memberSlug": "jpmorgan-chase-member",
+    "logoUrl": "https://landscape.cncf.io/logos/969d39d91a5d8fae9dac06c13e9d7d43adde34bcf37a154152457a04b4a59863.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "JPMorgan Chase (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "ec6e205d-135e-4117-a2b5-0881c26b37d1",
+    "type": "joined",
+    "memberName": "Morgan Stanley (member)",
+    "memberSlug": "morgan-stanley-member",
+    "logoUrl": "https://landscape.cncf.io/logos/26790fd18399f05d3ba1d0dc2ab7ee91d30960575b26c2a85e4b3a241a43a26b.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Morgan Stanley (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "851ba329-f015-4b16-9b76-d5a87831177b",
+    "type": "joined",
+    "memberName": "AuditBoard (supporter)",
+    "memberSlug": "auditboard-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/e5005b1ea9fb2d836d30c2cadc242c7c86ec99ac047e11a3125f7ba7466165ff.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "AuditBoard (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "23b72d6f-a753-4f72-90d6-32a8d363c457",
+    "type": "joined",
+    "memberName": "Picnic (supporter)",
+    "memberSlug": "picnic-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/9dcee2cfcc8d7c31ad9c8952dfdd3d6e66f30c20cc5c872f6c9040c4c5eb58ea.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Picnic (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "4d298a80-7a22-48ba-b98a-a27bbf431103",
+    "type": "joined",
+    "memberName": "Guidewire (member)",
+    "memberSlug": "guidewire-member",
+    "logoUrl": "https://landscape.cncf.io/logos/da8066f0d0e826a2d21b89d8c6cd7d651f6b52a2fc0001078ff92577743a7535.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Guidewire (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "a07774f4-b541-42cb-b73d-bfdf74a31e84",
+    "type": "joined",
+    "memberName": "Teciem (member)",
+    "memberSlug": "teciem-member",
+    "logoUrl": "https://landscape.cncf.io/logos/1078b3da83c42082d647b3668879553eb170948803e543d3d54ddf80feb4569d.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Teciem (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "ced008af-44b9-41b1-ad1e-1e7b0977aab1",
+    "type": "joined",
+    "memberName": "Celonis (supporter)",
+    "memberSlug": "celonis-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/eddec2a3125f371cd0390605e1b60bebc3e5ba474a0d832f28b714f7afc6f4bd.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Celonis (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "06eb471d-e3da-48c2-a038-064e1132787c",
+    "type": "joined",
+    "memberName": "Capital One (member)",
+    "memberSlug": "capital-one-member",
+    "logoUrl": "https://landscape.cncf.io/logos/def58e0d4d79b434d638c025b82613f24be5b38a29fd260937a72912848f8f70.svg",
+    "tier": "Gold",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Capital One (member) joined CNCF as a Gold member"
+  },
+  {
+    "id": "74250a09-c00d-4d2c-a22f-9062fd2b0410",
+    "type": "joined",
+    "memberName": "Thales (member)",
+    "memberSlug": "thales-member",
+    "logoUrl": "https://landscape.cncf.io/logos/9f8e31e8f57eff8d474415d11d48f684ab0cce98b7901f11670449d621cb69ed.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Thales (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "be824572-f18f-47ac-b216-5382ded265b5",
+    "type": "joined",
+    "memberName": "Amadeus (supporter)",
+    "memberSlug": "amadeus-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/0e6820262853c3fbb83ff0319b76e6807f8a68b44ee2cb81faec7f694f3d29dc.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Amadeus (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "f763e1ad-7745-4cdd-8938-ca556ead2e64",
+    "type": "joined",
+    "memberName": "G-Research (member)",
+    "memberSlug": "g-research-member",
+    "logoUrl": "https://landscape.cncf.io/logos/d183a161b7005938526111bb0278e5ba2ca6015331a0e04fc740e6604110d988.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "G-Research (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "fafe444e-5e77-4a92-a562-b9bbfe99f5b9",
+    "type": "joined",
+    "memberName": "MyFitnessPal (member)",
+    "memberSlug": "myfitnesspal-member",
+    "logoUrl": "https://landscape.cncf.io/logos/48a26c5ae4f8b9a2c1c0f8951449ad8f8275dd39f30f5cbf57109a42eb025b68.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "MyFitnessPal (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "788a9519-339f-47a8-a5f5-eecf26b73ef4",
+    "type": "joined",
+    "memberName": "NIPR (member)",
+    "memberSlug": "nipr-member",
+    "logoUrl": "https://landscape.cncf.io/logos/29b051394cff29d3f1f8ebe7153dffca87f21394fe5b57dc3b10bb0c1c3dc24c.svg",
+    "tier": "Nonprofit",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "NIPR (member) joined CNCF as a Nonprofit member"
+  },
+  {
+    "id": "70a748bc-41d5-45b1-8ff1-307990405d78",
+    "type": "joined",
+    "memberName": "Fidelity Investments (member)",
+    "memberSlug": "fidelity-investments-member",
+    "logoUrl": "https://landscape.cncf.io/logos/5792414a37f8e21b421acc7a66aa89694ff0808243ac82bd32617ec47ed8d01d.svg",
+    "tier": "Gold",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Fidelity Investments (member) joined CNCF as a Gold member"
+  },
+  {
+    "id": "25160495-52ff-4463-ad65-f01e3377c60f",
+    "type": "joined",
+    "memberName": "Golden Gate University (member)",
+    "memberSlug": "golden-gate-university-member",
+    "logoUrl": "https://landscape.cncf.io/logos/534b2522ecc173d6b04b9c6c1aa546bc425bf9b7a987fb662488f83588486e9f.svg",
+    "tier": "Academic",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Golden Gate University (member) joined CNCF as a Academic member"
+  },
+  {
+    "id": "717d46d5-1fc4-4cea-923f-4f96aff0f3a0",
+    "type": "joined",
+    "memberName": "Box (supporter)",
+    "memberSlug": "box-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/0ac2d51a0f9a44e889905cba78d3515200492cee04a9192c308cdce864cfe32e.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Box (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "50d36f8f-c558-49a6-8b12-9198c7238417",
+    "type": "joined",
+    "memberName": "SAP Labs (supporter)",
+    "memberSlug": "sap-labs-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/78a1b15cffddeddb6dba7a7b4b454c51a7c6b97226ac24701769c233f48e3417.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "SAP Labs (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "a40492a4-8e26-49d4-9e47-285b9cadfd86",
+    "type": "joined",
+    "memberName": "Bloomberg (member)",
+    "memberSlug": "bloomberg-member",
+    "logoUrl": "https://landscape.cncf.io/logos/afd75c2b9138b6a3cfb4bb12a6952cbd8a1ec7f02031bb594c7aca72ec5a2352.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Bloomberg (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "4acd39b6-e63f-4783-be21-9376ef2732ea",
+    "type": "joined",
+    "memberName": "Audi (supporter)",
+    "memberSlug": "audi-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/b7e60a2d0c85e9515ded13fbc2af1a3f8d5aef31c310c2cb7f709768670e6f26.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Audi (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "758447be-b61e-48e7-a71e-6b7e883f6e5b",
+    "type": "joined",
+    "memberName": "Adobe (member)",
+    "memberSlug": "adobe-member",
+    "logoUrl": "https://landscape.cncf.io/logos/20218af0d9a3309747343f9dfcffed7c58006ce5fb5f479ef4b9db0c0e7cb022.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Adobe (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "34689a16-d280-4e2b-9e1f-00aa2a8c47f9",
+    "type": "joined",
+    "memberName": "Novo Nordisk (member)",
+    "memberSlug": "novo-nordisk-member",
+    "logoUrl": "https://landscape.cncf.io/logos/951a3f1c893dd95f88a504b6b62ff1adfae5f1d8e7cd5410ee393845470029c5.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Novo Nordisk (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "6e6ae932-5ee4-4d2b-935c-e38037ef0ee9",
+    "type": "joined",
+    "memberName": "Porch Financial (member)",
+    "memberSlug": "porch-financial-member",
+    "logoUrl": "https://landscape.cncf.io/logos/9da103b56a2c6c96ab89748336abeb2577e52523c1506d25d9996621ce7b7201.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Porch Financial (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "2d23851d-2427-4125-892f-7c969dc5058e",
+    "type": "joined",
+    "memberName": "Spotify (member)",
+    "memberSlug": "spotify-member",
+    "logoUrl": "https://landscape.cncf.io/logos/b3e58568576d7cecbf2bc46f43228c22a239b0d89b76edff0890fda86a1d88d4.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Spotify (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "e5810f77-d9c0-4af2-978e-e651aa7e70cc",
+    "type": "joined",
+    "memberName": "Skyline Technology Solutions (supporter)",
+    "memberSlug": "skyline-technology-solutions-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/d5b69d46187d8c21e723eb983df82dcf66228e6ae21e4524d3be744dec39ae5c.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Skyline Technology Solutions (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "dc862bdd-54e4-490a-95ab-09a7010ed4bf",
+    "type": "joined",
+    "memberName": "Swiss Post (supporter)",
+    "memberSlug": "swiss-post-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/5de2bb18fd21ceb93b119848786d28feec97fba057868faa6a936a01ea85be90.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Swiss Post (supporter) joined CNCF as a End User member"
+  },
+  {
+    "id": "56a53f5c-35cf-4d68-a71d-c435811b00c3",
+    "type": "joined",
+    "memberName": "CVS Health (member)",
+    "memberSlug": "cvs-health-member",
+    "logoUrl": "https://landscape.cncf.io/logos/280d99fbdf4562026ae443ac21b7e56f15a1d01e5ef635410bb5f92185a18f35.svg",
+    "tier": "Platinum",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "CVS Health (member) joined CNCF as a Platinum member"
+  },
+  {
+    "id": "a7da073f-40ba-4c8d-9405-1608eb7a8bc2",
+    "type": "joined",
+    "memberName": "Intuit (member)",
+    "memberSlug": "intuit-member",
+    "logoUrl": "https://landscape.cncf.io/logos/0eb3366da124ce942c973c085e0cba0e22209b60c6c4598b102997c6fe14d71c.svg",
+    "tier": "Gold",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Intuit (member) joined CNCF as a Gold member"
+  },
+  {
+    "id": "c547dfaf-4866-4a78-b23d-bda6cdd41662",
+    "type": "joined",
+    "memberName": "Banco de Crédito BCP (member)",
+    "memberSlug": "banco-de-crédito-bcp-member",
+    "logoUrl": "https://landscape.cncf.io/logos/d78c2e5bda4f613f4f0475ed99cad1e7ee7a89852353000c420cc20dd55a273a.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Banco de Crédito BCP (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "fad99d26-5f3c-44a3-aa6c-686be87ab4b1",
+    "type": "joined",
+    "memberName": "Non-Public Organization Camel (member)",
+    "memberSlug": "non-public-organization-camel-member",
+    "logoUrl": "https://landscape.cncf.io/logos/5766623d66a65cbd26eae7bb335c29686f5bede72d3c062c538a6945fb8bc1d0.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Non-Public Organization Camel (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "3de1ddf0-1d27-47c0-9ee3-4cfbdf757674",
+    "type": "joined",
+    "memberName": "RTX (member)",
+    "memberSlug": "rtx-member",
+    "logoUrl": "https://landscape.cncf.io/logos/bf1fb848099d0c7105e8b4e96af5b5e2b21925d1d7335c5b71bfc298c6aa9fe2.svg",
+    "tier": "Silver",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "RTX (member) joined CNCF as a Silver member"
+  },
+  {
+    "id": "8fe68ceb-50cb-40df-ba50-eeaf01cfefaa",
+    "type": "joined",
+    "memberName": "Cardinal Health (supporter)",
+    "memberSlug": "cardinal-health-supporter",
+    "logoUrl": "https://landscape.cncf.io/logos/353e1e558aecdb4f986e2ad6b68bbb11d3e85ac74183e72eee1bdb5893e7e24a.svg",
+    "tier": "End User",
+    "timestamp": "2026-03-28T07:25:41Z",
+    "description": "Cardinal Health (supporter) joined CNCF as a End User member"
+  },
+  {
     "id": "e0caf1c2-4435-4cac-a354-5abc32d2fa78",
     "type": "joined",
     "memberName": "trivago (supporter)",
