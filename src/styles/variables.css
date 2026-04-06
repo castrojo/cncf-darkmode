@@ -1,4 +1,5 @@
 /* Shared foundation */
+@import './variables-base.css';
 @import './layout.css';
 
 :root {
