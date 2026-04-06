@@ -101,6 +101,15 @@ describe('renderCard', () => {
     const m: SafeMember = { ...base, slug: 'logo-test', logoUrl: 'https://example.com/logo.svg' };
     const html = renderCard(m);
     expect(html).toContain('src="https://example.com/logo.svg"');
+    expect(html).toContain('card-logo--fallback');
+    expect(html).toContain("onerror=\"this.style.display='none'");
+  });
+
+  it('renders card fallback glyph when logoUrl is empty', () => {
+    const m: SafeMember = { ...base, slug: 'logo-missing', logoUrl: '' };
+    const html = renderCard(m);
+    expect(html).toContain('card-logo--fallback');
+    expect(html).toContain('>G<');
   });
 
   it('renders LinkedIn link when linkedInUrl is present', () => {
@@ -221,6 +230,15 @@ describe('renderShowcaseCard', () => {
   it('renders logo img src', () => {
     const html = renderShowcaseCard(base);
     expect(html).toContain('https://example.com/google.svg');
+    expect(html).toContain('showcase-logo--fallback');
+    expect(html).toContain("onerror=\"this.style.display='none'");
+  });
+
+  it('renders showcase fallback glyph when logoUrl is empty', () => {
+    const m: SafeMember = { ...base, slug: 'sc-no-logo', logoUrl: '' };
+    const html = renderShowcaseCard(m);
+    expect(html).toContain('showcase-logo--fallback');
+    expect(html).toContain('>G<');
   });
 
   it('escapes XSS in name', () => {

@@ -40,11 +40,19 @@ function formatDate(iso?: string): string {
   catch { return iso; }
 }
 
+function fallbackGlyph(name: string): string {
+  const trimmed = name.trim();
+  if (!trimmed) return '?';
+  const first = trimmed.charAt(0).toUpperCase();
+  return escapeHtml(first);
+}
+
 export function renderCard(m: SafeMember): string {
   const tierVar = TIER_VAR[m.tier] ?? '--color-text-muted';
   const name = escapeHtml(m.name);
   const desc = escapeHtml(m.description ?? '');
   const location = [m.city, m.countryFlag ? `${m.country} ${m.countryFlag}` : m.country].filter(Boolean).join(', ');
+  const glyph = fallbackGlyph(m.name);
 
   const links: string[] = [];
   if (m.homepageUrl) links.push(`<a class="card-link" href="${escapeHtml(m.homepageUrl)}" target="_blank" rel="noopener">Website</a>`);
@@ -75,7 +83,10 @@ export function renderCard(m: SafeMember): string {
     <div class="card-body">
       <div class="card-header">
         <span class="tier-badge" style="background:var(${tierVar});color:${badgeTextColor}">${escapeHtml(m.tier)}</span>
-        ${m.logoUrl ? `<img class="card-logo" src="${escapeHtml(m.logoUrl)}" alt="${name} logo" width="40" height="40" loading="lazy" style="width:40px;height:40px;object-fit:contain" />` : ''}
+        ${m.logoUrl
+          ? `<img class="card-logo" src="${escapeHtml(m.logoUrl)}" alt="${name} logo" width="40" height="40" loading="lazy" style="width:40px;height:40px;object-fit:contain" onerror="this.style.display='none';var n=this.nextElementSibling;if(n){n.style.display='inline-flex';}" />`
+          : ''}
+        <span class="card-logo card-logo--fallback" aria-hidden="true"${m.logoUrl ? ' style="display:none"' : ''}>${glyph}</span>
       </div>
       <h3 class="card-name">${name}</h3>
       ${desc ? `<p class="card-description">${desc}</p>` : ''}
@@ -94,6 +105,7 @@ export function renderShowcaseCard(m: SafeMember): string {
   const name = escapeHtml(m.name);
   const desc = escapeHtml(m.description ?? '');
   const location = [m.city, m.countryFlag ? `${m.country} ${m.countryFlag}` : m.country].filter(Boolean).join(', ');
+  const glyph = fallbackGlyph(m.name);
 
   const links: string[] = [];
   if (m.homepageUrl) links.push(`<a class="showcase-link" href="${escapeHtml(m.homepageUrl)}" target="_blank" rel="noopener">Website</a>`);
@@ -123,7 +135,10 @@ export function renderShowcaseCard(m: SafeMember): string {
   >
     <div class="showcase-accent-bar"></div>
     <div class="showcase-logo-box">
-      ${m.logoUrl ? `<img class="showcase-logo" src="${escapeHtml(m.logoUrl)}" alt="${name} logo" loading="lazy" />` : ''}
+      ${m.logoUrl
+        ? `<img class="showcase-logo" src="${escapeHtml(m.logoUrl)}" alt="${name} logo" loading="lazy" onerror="this.style.display='none';var n=this.nextElementSibling;if(n){n.style.display='inline-flex';}" />`
+        : ''}
+      <span class="showcase-logo showcase-logo--fallback" aria-hidden="true"${m.logoUrl ? ' style="display:none"' : ''}>${glyph}</span>
     </div>
     <div class="showcase-body">
       ${nameEl}
@@ -133,4 +148,3 @@ export function renderShowcaseCard(m: SafeMember): string {
     </div>
   </article>`;
 }
-

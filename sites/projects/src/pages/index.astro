@@ -5,10 +5,10 @@ import type { SafeProject } from '../lib/project-renderer';
 import { selectHeroSets } from '../lib/heroes';
 import type { ChangelogEvent } from '../lib/tabs';
 import staffSupportData from '../data/staff-support.json';
+import { selectStaffList, type StaffMember } from '../lib/staff';
 import fs from 'node:fs';
 
-interface StaffMember { handle?: string; name: string; imageUrl?: string; }
-const staffList = staffSupportData.maintainers as StaffMember[];
+const staffList: StaffMember[] = selectStaffList(staffSupportData);
 
 const base = import.meta.env.BASE_URL;
 
@@ -99,13 +99,13 @@ function formatNumber(n: number): string {
     <h2 class="staff-support-heading">CNCF Staff providing Support</h2>
     <div class="staff-support-list">
       {staffList.map(m => (
-        <a href={m.handle ? `https://github.com/${m.handle}` : '#'} target="_blank" rel="noopener noreferrer" class="staff-support-card">
+        <a href={m.handle ? `https://github.com/${m.handle}` : (m.profileUrl ?? '#')} target="_blank" rel="noopener noreferrer" class="staff-support-card">
           <img
             src={m.imageUrl?.trim() || (m.handle ? `https://avatars.githubusercontent.com/${m.handle}` : '')}
             alt={m.name}
             class="staff-support-avatar"
             loading="lazy"
-            onerror={m.handle ? `this.src='https://avatars.githubusercontent.com/${m.handle}'` : undefined}
+            onerror={!m.imageUrl?.trim() && m.handle ? `this.src='https://avatars.githubusercontent.com/${m.handle}'` : undefined}
           />
           <div class="staff-support-info">
             <span class="staff-support-name">{m.name}</span>
