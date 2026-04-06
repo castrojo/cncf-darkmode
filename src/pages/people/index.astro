@@ -442,7 +442,7 @@ const emeritusSorted = [...emeritusMembers].sort((a, b) => {
         <div class="staff-support-list">
           {TAB_STAFF['ambassadors'].map(m => (
             <a href={m.handle ? `https://github.com/${m.handle}` : (m.profileUrl ?? '#')} target="_blank" rel="noopener noreferrer" class="staff-support-card">
-              <img src={m.handle ? `https://avatars.githubusercontent.com/${m.handle}` : (m.imageUrl ?? '')} alt={m.name} class="staff-support-avatar" loading="lazy" />
+              <img src={m.imageUrl || (m.handle ? `https://avatars.githubusercontent.com/${m.handle}` : '')} alt={m.name} class="staff-support-avatar" loading="lazy" />
               <div class="staff-support-info">
                 <span class="staff-support-name">{m.name}</span>
                 {m.handle && <span class="staff-support-handle">@{m.handle}</span>}
@@ -479,7 +479,7 @@ const emeritusSorted = [...emeritusMembers].sort((a, b) => {
         <div class="staff-support-list">
           {TAB_STAFF['kubestronauts'].map(m => (
             <a href={m.handle ? `https://github.com/${m.handle}` : (m.profileUrl ?? '#')} target="_blank" rel="noopener noreferrer" class="staff-support-card">
-              <img src={m.handle ? `https://avatars.githubusercontent.com/${m.handle}` : (m.imageUrl ?? '')} alt={m.name} class="staff-support-avatar" loading="lazy" />
+              <img src={m.imageUrl || (m.handle ? `https://avatars.githubusercontent.com/${m.handle}` : '')} alt={m.name} class="staff-support-avatar" loading="lazy" />
               <div class="staff-support-info">
                 <span class="staff-support-name">{m.name}</span>
                 {m.handle && <span class="staff-support-handle">@{m.handle}</span>}
@@ -523,7 +523,7 @@ const emeritusSorted = [...emeritusMembers].sort((a, b) => {
         <div class="heroes-grid">
           {leadershipMembers.map(m => (
             <HeroCard
-              person={{ name: m.name, handle: m.handle, github: `https://github.com/${m.handle}`, avatarUrl: `https://avatars.githubusercontent.com/${m.handle}` }}
+              person={{ name: m.name, handle: m.handle, github: m.handle ? `https://github.com/${m.handle}` : undefined, avatarUrl: m.imageUrl || (m.handle ? `https://avatars.githubusercontent.com/${m.handle}` : ``) }}
               label={m.title}
               categoryKey="Staff"
               baseUrl={baseUrl}
@@ -554,7 +554,7 @@ const emeritusSorted = [...emeritusMembers].sort((a, b) => {
         <div class="heroes-grid">
           {tocMembers.map(m => (
             <HeroCard
-              person={{ name: m.name, handle: m.handle, github: `https://github.com/${m.handle}`, avatarUrl: `https://avatars.githubusercontent.com/${m.handle}` }}
+              person={{ name: m.name, handle: m.handle, github: m.handle ? `https://github.com/${m.handle}` : undefined, avatarUrl: m.imageUrl || (m.handle ? `https://avatars.githubusercontent.com/${m.handle}` : ``) }}
               label={m.title}
               categoryKey="TOC"
               baseUrl={baseUrl}
@@ -567,7 +567,7 @@ const emeritusSorted = [...emeritusMembers].sort((a, b) => {
         <div class="staff-support-list">
           {TAB_STAFF['toc'].map(m => (
             <a href={m.handle ? `https://github.com/${m.handle}` : (m.profileUrl ?? '#')} target="_blank" rel="noopener noreferrer" class="staff-support-card">
-              <img src={m.handle ? `https://avatars.githubusercontent.com/${m.handle}` : (m.imageUrl ?? '')} alt={m.name} class="staff-support-avatar" loading="lazy" />
+              <img src={m.imageUrl || (m.handle ? `https://avatars.githubusercontent.com/${m.handle}` : '')} alt={m.name} class="staff-support-avatar" loading="lazy" />
               <div class="staff-support-info">
                 <span class="staff-support-name">{m.name}</span>
                 {m.handle && <span class="staff-support-handle">@{m.handle}</span>}
@@ -585,7 +585,7 @@ const emeritusSorted = [...emeritusMembers].sort((a, b) => {
         <div class="heroes-grid">
           {tabMembers.map(m => (
             <HeroCard
-              person={{ name: m.name, handle: m.handle, github: `https://github.com/${m.handle}`, avatarUrl: `https://avatars.githubusercontent.com/${m.handle}` }}
+              person={{ name: m.name, handle: m.handle, github: m.handle ? `https://github.com/${m.handle}` : undefined, avatarUrl: m.imageUrl || (m.handle ? `https://avatars.githubusercontent.com/${m.handle}` : ``) }}
               label={m.title}
               categoryKey="TAB"
               baseUrl={baseUrl}
@@ -598,7 +598,7 @@ const emeritusSorted = [...emeritusMembers].sort((a, b) => {
         <div class="staff-support-list">
           {TAB_STAFF['tab'].map(m => (
             <a href={m.handle ? `https://github.com/${m.handle}` : (m.profileUrl ?? '#')} target="_blank" rel="noopener noreferrer" class="staff-support-card">
-              <img src={m.handle ? `https://avatars.githubusercontent.com/${m.handle}` : (m.imageUrl ?? '')} alt={m.name} class="staff-support-avatar" loading="lazy" />
+              <img src={m.imageUrl || (m.handle ? `https://avatars.githubusercontent.com/${m.handle}` : '')} alt={m.name} class="staff-support-avatar" loading="lazy" />
               <div class="staff-support-info">
                 <span class="staff-support-name">{m.name}</span>
                 {m.handle && <span class="staff-support-handle">@{m.handle}</span>}
@@ -616,7 +616,7 @@ const emeritusSorted = [...emeritusMembers].sort((a, b) => {
         <div class="heroes-grid">
           {gbMembers.filter(m => m.handle).map(m => (
             <HeroCard
-              person={{ name: m.name, handle: m.handle, github: `https://github.com/${m.handle}`, avatarUrl: `https://avatars.githubusercontent.com/${m.handle}` }}
+              person={{ name: m.name, handle: m.handle, github: m.handle ? `https://github.com/${m.handle}` : undefined, avatarUrl: m.imageUrl || (m.handle ? `https://avatars.githubusercontent.com/${m.handle}` : ``) }}
               label={m.title ?? 'Board Member'}
               categoryKey="Board"
               baseUrl={baseUrl}
@@ -630,7 +630,7 @@ const emeritusSorted = [...emeritusMembers].sort((a, b) => {
           <div class="staff-support-list">
             {TAB_STAFF['governing-board'].map(m => (
             <a href={m.handle ? `https://github.com/${m.handle}` : (m.profileUrl ?? '#')} target="_blank" rel="noopener noreferrer" class="staff-support-card">
-              <img src={m.handle ? `https://avatars.githubusercontent.com/${m.handle}` : (m.imageUrl ?? '')} alt={m.name} class="staff-support-avatar" loading="lazy" />
+              <img src={m.imageUrl || (m.handle ? `https://avatars.githubusercontent.com/${m.handle}` : '')} alt={m.name} class="staff-support-avatar" loading="lazy" />
               <div class="staff-support-info">
                 <span class="staff-support-name">{m.name}</span>
                 {m.handle && <span class="staff-support-handle">@{m.handle}</span>}
@@ -649,7 +649,7 @@ const emeritusSorted = [...emeritusMembers].sort((a, b) => {
         <div class="heroes-grid">
           {marketingMembers.filter(m => m.handle).map(m => (
             <HeroCard
-              person={{ name: m.name, handle: m.handle, github: `https://github.com/${m.handle}`, avatarUrl: `https://avatars.githubusercontent.com/${m.handle}` }}
+              person={{ name: m.name, handle: m.handle, github: m.handle ? `https://github.com/${m.handle}` : undefined, avatarUrl: m.imageUrl || (m.handle ? `https://avatars.githubusercontent.com/${m.handle}` : ``) }}
               label={m.title ?? 'Marketing'}
               categoryKey="Marketing"
               baseUrl={baseUrl}
@@ -663,7 +663,7 @@ const emeritusSorted = [...emeritusMembers].sort((a, b) => {
           <div class="staff-support-list">
             {TAB_STAFF['marketing'].map(m => (
             <a href={m.handle ? `https://github.com/${m.handle}` : (m.profileUrl ?? '#')} target="_blank" rel="noopener noreferrer" class="staff-support-card">
-              <img src={m.handle ? `https://avatars.githubusercontent.com/${m.handle}` : (m.imageUrl ?? '')} alt={m.name} class="staff-support-avatar" loading="lazy" />
+              <img src={m.imageUrl || (m.handle ? `https://avatars.githubusercontent.com/${m.handle}` : '')} alt={m.name} class="staff-support-avatar" loading="lazy" />
               <div class="staff-support-info">
                 <span class="staff-support-name">{m.name}</span>
                 {m.handle && <span class="staff-support-handle">@{m.handle}</span>}
@@ -748,7 +748,7 @@ const emeritusSorted = [...emeritusMembers].sort((a, b) => {
         <div class="staff-support-list">
           {TAB_STAFF['maintainers'].map(m => (
             <a href={m.handle ? `https://github.com/${m.handle}` : (m.profileUrl ?? '#')} target="_blank" rel="noopener noreferrer" class="staff-support-card">
-              <img src={m.handle ? `https://avatars.githubusercontent.com/${m.handle}` : (m.imageUrl ?? '')} alt={m.name} class="staff-support-avatar" loading="lazy" />
+              <img src={m.imageUrl || (m.handle ? `https://avatars.githubusercontent.com/${m.handle}` : '')} alt={m.name} class="staff-support-avatar" loading="lazy" />
               <div class="staff-support-info">
                 <span class="staff-support-name">{m.name}</span>
                 {m.handle && <span class="staff-support-handle">@{m.handle}</span>}
