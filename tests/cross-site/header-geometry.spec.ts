@@ -32,6 +32,13 @@ for (const site of SITES) {
     await page.goto(site.url);
     const switcher = page.locator('.site-switcher, [data-site-switcher], nav[aria-label*="site" i]').first();
     await expect(switcher).toBeVisible();
+    await expect(switcher).toContainText('Projects');
+    await expect(switcher).toContainText('End Users');
+    await expect(switcher).toContainText('People');
+    await expect(switcher.locator('a', { hasText: 'People' })).toHaveAttribute(
+      'href',
+      /(^\/people-website\/$)|(^http:\/\/localhost:4323\/people-website\/$)/,
+    );
   });
 
   test(`${site.name}: header layout does not overflow viewport`, async ({ page }) => {

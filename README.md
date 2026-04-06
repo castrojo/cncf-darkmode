@@ -6,7 +6,7 @@ npm workspaces monorepo unifying three CNCF websites under one architecture with
 |------|-----|------|
 | Projects | `/cncf-darkmode/` | 4322 |
 | Members | `/cncf-darkmode/members/` | 4324 |
-| People | `/cncf-darkmode/people-website/` | 4323 (gated) |
+| People | `/people-website/` | 4323 (gated) |
 
 ## First-Time Setup
 

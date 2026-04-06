@@ -1,6 +1,6 @@
 ---
 interface Props {
-  activeSite: 'projects' | 'members';
+  activeSite: 'projects' | 'members' | 'people';
 }
 const { activeSite } = Astro.props;
 const isDev = import.meta.env.DEV;
@@ -15,6 +15,11 @@ const sites = [
     key: 'members',
     label: 'End Users',
     url: isDev ? 'http://localhost:4324/cncf-darkmode/members/' : '/cncf-darkmode/members/',
+  },
+  {
+    key: 'people',
+    label: 'People',
+    url: isDev ? 'http://localhost:4323/people-website/' : '/people-website/',
   },
 ];
 ---
