@@ -8,10 +8,11 @@ interface Opts {
   onSitePrev?: () => void; onSiteNext?: () => void;
 }
 
-export function initKeyboard(opts: Opts): void {
+export function initKeyboard(opts: Opts): () => void {
   const searchInput = document.getElementById('search-input') as HTMLInputElement | null;
 
-  document.addEventListener('keydown', (e) => {
+  const handler = (e: KeyboardEvent) => {
+    if (e.isComposing || e.ctrlKey || e.metaKey || e.altKey) return;
     const active = document.activeElement;
     const inInput = active?.tagName === 'INPUT' || active?.tagName === 'TEXTAREA' || active?.tagName === 'SELECT';
 
@@ -55,7 +56,9 @@ export function initKeyboard(opts: Opts): void {
       if (e.key === '[') { e.preventDefault(); opts.onSitePrev?.(); }
       if (e.key === ']') { e.preventDefault(); opts.onSiteNext?.(); }
     }
-  });
+  };
+  document.addEventListener('keydown', handler);
+  return () => document.removeEventListener('keydown', handler);
 }
 
 const TABS: TabId[] = ['everyone', 'platinum', 'gold', 'silver', 'academic', 'architectures'];

@@ -5,6 +5,7 @@ import SiteSwitcher from '@cncf/site-kit/components/SiteSwitcher.astro';
 import KubeConBanner from '@cncf/site-kit/components/KubeConBanner.astro';
 import InfoBox from '@cncf/site-kit/components/InfoBox.astro';
 import { getActiveBanners } from '../lib/banners';
+import { antiFlashScript } from '@cncf/site-kit/lib/theme';
 
 interface Props {
   title?: string;
@@ -32,17 +33,7 @@ const banners = await getActiveBanners();
   <meta name="description" content="Discover CNCF cloud native projects — graduated, incubating, sandbox, and archived." />
   <link rel="alternate" type="application/rss+xml" title="CNCF Projects Feed" href={`${base}/feed.xml`} />
   <link rel="icon" href={`${base}/cncf-icon-color.svg`} type="image/svg+xml" />
-  <script is:inline>
-    (function() {
-      const getTheme = () => {
-        const stored = localStorage.getItem('theme');
-        if (stored === 'light' || stored === 'dark') return stored;
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
-        return 'light';
-      };
-      document.documentElement.setAttribute('data-theme', getTheme());
-    })();
-  </script>
+  <script is:inline set:html={antiFlashScript}></script>
 </head>
 <body>
   <header class="site-header">

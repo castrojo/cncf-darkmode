@@ -8,9 +8,13 @@ export interface SafeMember {
   updatedAt: string;
 }
 
-const TIER_COLORS: Record<string, string> = {
-  Platinum: '#E5E4E2', Gold: '#FFB300', Silver: '#C0C0C0',
-  'End User': '#0086FF', Academic: '#7B2FBE', Nonprofit: '#00A86B',
+const TIER_VAR: Record<string, string> = {
+  Platinum:   '--color-platinum',
+  Gold:       '--color-gold',
+  Silver:     '--color-silver',
+  'End User': '--color-enduser',
+  Academic:   '--color-academic',
+  Nonprofit:  '--color-nonprofit',
 };
 
 function escapeHtml(s: string): string {
@@ -37,7 +41,7 @@ function formatDate(iso?: string): string {
 }
 
 export function renderCard(m: SafeMember): string {
-  const color = TIER_COLORS[m.tier] ?? '#8b949e';
+  const tierVar = TIER_VAR[m.tier] ?? '--color-text-muted';
   const name = escapeHtml(m.name);
   const desc = escapeHtml(m.description ?? '');
   const location = [m.city, m.countryFlag ? `${m.country} ${m.countryFlag}` : m.country].filter(Boolean).join(', ');
@@ -62,7 +66,7 @@ export function renderCard(m: SafeMember): string {
 
   return `<article
     class="member-card"
-    style="--card-accent: ${color}"
+    style="--card-accent: var(${tierVar})"
     data-tier="${escapeHtml(m.tier.toLowerCase().replace(' ', '-'))}"
     data-enduser="${m.isEndUser}"
     data-slug="${escapeHtml(m.slug)}"
@@ -70,7 +74,7 @@ export function renderCard(m: SafeMember): string {
     <div class="card-accent-bar"></div>
     <div class="card-body">
       <div class="card-header">
-        <span class="tier-badge" style="background:${color};color:${badgeTextColor}">${escapeHtml(m.tier)}</span>
+        <span class="tier-badge" style="background:var(${tierVar});color:${badgeTextColor}">${escapeHtml(m.tier)}</span>
         ${m.logoUrl ? `<img class="card-logo" src="${escapeHtml(m.logoUrl)}" alt="${name} logo" width="40" height="40" loading="lazy" style="width:40px;height:40px;object-fit:contain" />` : ''}
       </div>
       <h3 class="card-name">${name}</h3>
@@ -86,7 +90,7 @@ export function renderCards(members: SafeMember[]): string {
 }
 
 export function renderShowcaseCard(m: SafeMember): string {
-  const color = TIER_COLORS[m.tier] ?? '#8b949e';
+  const tierVar = TIER_VAR[m.tier] ?? '--color-text-muted';
   const name = escapeHtml(m.name);
   const desc = escapeHtml(m.description ?? '');
   const location = [m.city, m.countryFlag ? `${m.country} ${m.countryFlag}` : m.country].filter(Boolean).join(', ');
@@ -113,7 +117,7 @@ export function renderShowcaseCard(m: SafeMember): string {
 
   return `<article
     class="hero-card hero-card--showcase"
-    style="--hero-color: ${color}"
+    style="--hero-color: var(${tierVar})"
     data-tier="${escapeHtml(m.tier.toLowerCase().replace(' ', '-'))}"
     data-slug="${escapeHtml(m.slug)}"
   >

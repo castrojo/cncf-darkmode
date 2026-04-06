@@ -58,3 +58,31 @@ test('header height is consistent across sites (within 5px)', async ({ browser }
   const max = Math.max(...heights);
   expect(max - min).toBeLessThan(5); // headers within 5px of each other
 });
+
+test('header-left is ~240px wide on both sites (±10px)', async ({ browser }) => {
+  for (const site of SITES) {
+    const page = await browser.newPage();
+    await page.goto(site.url);
+    const left = page.locator('.header-left').first();
+    await expect(left).toBeVisible();
+    const box = await left.boundingBox();
+    expect(box).not.toBeNull();
+    expect(Math.abs(box!.width - 240)).toBeLessThanOrEqual(10);
+    await page.close();
+  }
+});
+
+test('ThemeToggle X position is consistent across sites (within 10px)', async ({ browser }) => {
+  const xs: number[] = [];
+  for (const site of SITES) {
+    const page = await browser.newPage();
+    await page.goto(site.url);
+    const toggle = page.locator('#theme-toggle').first();
+    await expect(toggle).toBeVisible();
+    const box = await toggle.boundingBox();
+    if (box) xs.push(box.x);
+    await page.close();
+  }
+  expect(xs).toHaveLength(SITES.length);
+  expect(Math.max(...xs) - Math.min(...xs)).toBeLessThan(10);
+});

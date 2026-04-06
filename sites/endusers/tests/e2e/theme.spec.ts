@@ -23,7 +23,7 @@ test('dark theme applies dark colors', async ({ page }) => {
   // Force dark theme
   await page.evaluate(() => {
     document.documentElement.setAttribute('data-theme', 'dark');
-    localStorage.setItem('theme', 'dark');
+    localStorage.setItem('cncf-theme', 'dark');
   });
   const theme = await page.locator('html').getAttribute('data-theme');
   expect(theme).toBe('dark');

@@ -143,7 +143,7 @@ export function renderArchCards(architectures: SafeArchitecture[]): string {
 export function renderArchModalContent(arch: SafeArchitecture): string {
   const projectsHTML = arch.projects?.map(p => `
     <div class="arch-modal-project">
-      <img class="arch-modal-project-logo" src="${p.logoUrl ?? ''}" alt="${escapeHtml(p.name)} logo" loading="lazy" />
+      ${p.logoUrl ? `<img class="arch-modal-project-logo" src="${escapeHtml(p.logoUrl)}" alt="${escapeHtml(p.name)} logo" loading="lazy" />` : ''}
       <div class="arch-modal-project-info">
         <span class="arch-modal-project-name">${escapeHtml(p.name)}</span>
         ${p.maturity ? `<span class="arch-modal-maturity arch-modal-maturity--${escapeHtml(p.maturity.toLowerCase())}">${escapeHtml(p.maturity)}</span>` : ''}

@@ -32,6 +32,12 @@
   --color-accent-emphasis: #2f81f7;
   --color-cncf-blue: #58a6ff;
   --color-rss-orange: #f26522;
+  /* Dark-mode tier color overrides */
+  --color-platinum: #b8b8b8;
+  --color-gold:     #f2c14e;
+  --color-silver:   #9aa4ad;
+  --color-academic: #b48ef0;
+  --color-nonprofit:#34c38f;
 }
 
 * {

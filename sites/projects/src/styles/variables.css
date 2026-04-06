@@ -33,6 +33,11 @@
   --color-accent-emphasis: #2f81f7;
   --color-cncf-blue: #58a6ff;
   --color-rss-orange: #f26522;
+  /* Dark-mode maturity color overrides */
+  --color-graduated: #f2c14e;
+  --color-incubating: #58a6ff;
+  --color-sandbox:   #8b949e;
+  --color-archived:  #8b949e;
 }
 
 * {

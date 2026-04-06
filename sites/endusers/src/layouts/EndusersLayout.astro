@@ -5,6 +5,7 @@ import SiteSwitcher from '@cncf/site-kit/components/SiteSwitcher.astro';
 import KubeConBanner from '@cncf/site-kit/components/KubeConBanner.astro';
 import InfoBox from '@cncf/site-kit/components/InfoBox.astro';
 import { getActiveBanners } from '../lib/banners';
+import { antiFlashScript } from '@cncf/site-kit/lib/theme';
 import archData from '../data/architectures.json';
 import '../styles/variables.css';
 import '../styles/layout.css';
@@ -61,17 +62,7 @@ const base = import.meta.env.BASE_URL;
   <title>{title}</title>
   <link rel="icon" href={`${base}/cncf-icon-color.svg`} type="image/svg+xml" />
   <link rel="alternate" type="application/rss+xml" title="CNCF Members Feed" href={`${base}/feed.xml`} />
-  <script is:inline>
-    (function() {
-      const getTheme = () => {
-        const stored = localStorage.getItem('theme');
-        if (stored === 'light' || stored === 'dark') return stored;
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
-        return 'light';
-      };
-      document.documentElement.setAttribute('data-theme', getTheme());
-    })();
-  </script>
+  <script is:inline set:html={antiFlashScript}></script>
   <style is:global>
     /* Logo dark/light toggle */
     .cncf-logo-wrapper .logo-light { display: block; }

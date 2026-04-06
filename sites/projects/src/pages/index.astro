@@ -100,10 +100,11 @@ function formatNumber(n: number): string {
       {staffList.map(m => (
         <a href={m.handle ? `https://github.com/${m.handle}` : '#'} target="_blank" rel="noopener noreferrer" class="staff-support-card">
           <img
-            src={m.handle ? `https://avatars.githubusercontent.com/${m.handle}` : (m.imageUrl ?? '')}
+            src={m.imageUrl?.trim() || (m.handle ? `https://avatars.githubusercontent.com/${m.handle}` : '')}
             alt={m.name}
             class="staff-support-avatar"
             loading="lazy"
+            onerror={m.handle ? `this.src='https://avatars.githubusercontent.com/${m.handle}'` : undefined}
           />
           <div class="staff-support-info">
             <span class="staff-support-name">{m.name}</span>

@@ -31,11 +31,12 @@ just dev-endusers    # http://localhost:4324
 
 ```bash
 just install          # npm install (all workspaces)
-just build-kit        # build @cncf/site-kit
-just build-all        # build all sites
-just test-all         # run all unit tests
-just sync-all         # sync both projects and endusers data
-just verify           # smoke check workspace
+just build            # build all sites
+just test             # run all unit tests
+just sync             # sync both projects and endusers data (requires network)
+just serve            # build projects site + open browser preview (just serve endusers for other)
+just dev              # hot-reload dev server for projects (just dev endusers for other)
+just push             # commit + push all changes
 ```
 
 ## Architecture

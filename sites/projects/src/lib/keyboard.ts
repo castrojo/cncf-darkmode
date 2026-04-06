@@ -19,8 +19,9 @@ interface KeyboardOptions {
   onSiteNext?: () => void;
 }
 
-export function initKeyboard(opts: KeyboardOptions): void {
-  document.addEventListener('keydown', (e) => {
+export function initKeyboard(opts: KeyboardOptions): () => void {
+  const handler = (e: KeyboardEvent) => {
+    if (e.isComposing || e.ctrlKey || e.metaKey || e.altKey) return;
     const active = document.activeElement as HTMLElement;
     const tag = active?.tagName;
     const inInput = tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT';
@@ -62,7 +63,9 @@ export function initKeyboard(opts: KeyboardOptions): void {
     else if (e.key === 'o' || e.key === 'Enter') {
       if (opts.onOpen()) e.preventDefault();
     }
-  });
+  };
+  document.addEventListener('keydown', handler);
+  return () => document.removeEventListener('keydown', handler);
 }
 
 const TABS: TabId[] = ['everyone', 'graduated', 'incubating', 'sandbox', 'archived'];

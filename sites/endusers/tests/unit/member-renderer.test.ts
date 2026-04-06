@@ -34,7 +34,7 @@ describe('renderCard', () => {
     const eu: SafeMember = { ...base, tier: 'End User', isEndUser: true, slug: 'eu-test' };
     const html = renderCard(eu);
     expect(html).toContain('End User');
-    expect(html).toContain('#0086FF');
+    expect(html).toContain('--color-enduser');
   });
 
   it('formats funding', () => {
@@ -43,15 +43,15 @@ describe('renderCard', () => {
     expect(html).toContain('$2.5B');
   });
 
-  it('renders platinum tier color #E5E4E2', () => {
+  it('renders platinum tier color via CSS variable', () => {
     const html = renderCard(base);
-    expect(html).toContain('#E5E4E2');
+    expect(html).toContain('--color-platinum');
   });
 
-  it('renders gold tier color #FFB300', () => {
+  it('renders gold tier color via CSS variable', () => {
     const gold: SafeMember = { ...base, slug: 'gold-co', tier: 'Gold', isEndUser: false };
     const html = renderCard(gold);
-    expect(html).toContain('#FFB300');
+    expect(html).toContain('--color-gold');
   });
 
   it('renders homepage link as href', () => {
@@ -85,16 +85,16 @@ describe('renderCard', () => {
     expect(html).toContain('NASDAQ: GOOG');
   });
 
-  it('renders silver tier color #C0C0C0', () => {
+  it('renders silver tier color via CSS variable', () => {
     const silver: SafeMember = { ...base, slug: 'silver-co', tier: 'Silver' };
     const html = renderCard(silver);
-    expect(html).toContain('#C0C0C0');
+    expect(html).toContain('--color-silver');
   });
 
-  it('renders academic tier color #7B2FBE', () => {
+  it('renders academic tier color via CSS variable', () => {
     const ac: SafeMember = { ...base, slug: 'academic-co', tier: 'Academic' };
     const html = renderCard(ac);
-    expect(html).toContain('#7B2FBE');
+    expect(html).toContain('--color-academic');
   });
 
   it('renders logo img with src when logoUrl is present', () => {
@@ -215,7 +215,7 @@ describe('renderShowcaseCard', () => {
 
   it('has tier accent color as CSS variable', () => {
     const html = renderShowcaseCard(base);
-    expect(html).toContain('#E5E4E2'); // Platinum color
+    expect(html).toContain('--color-platinum'); // Platinum color via CSS var
   });
 
   it('renders logo img src', () => {
