@@ -3,7 +3,7 @@ import path from 'path';
 export default defineConfig({
   resolve: {
     alias: {
-      '@cncf/site-kit': path.resolve('./packages/site-kit/src'),
+      '@cncf/site-kit/lib': path.resolve('./src/lib'),
     },
   },
   test: {
