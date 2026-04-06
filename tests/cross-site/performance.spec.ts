@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { readdirSync, statSync } from 'fs';
+import { readdirSync, statSync, readFileSync } from 'fs';
 import { join } from 'path';
 
 // Maximum JS bundle size per site: 500KB
@@ -28,4 +28,15 @@ test('endusers JS bundle is under 500KB', async () => {
   const sizeKb = getJsSize(distDir);
   console.log(`endusers JS bundle: ${sizeKb.toFixed(1)}KB`);
   expect(sizeKb).toBeLessThan(MAX_JS_KB);
+});
+
+test('projects production HTML does not embed full JSON payload blobs', async () => {
+  const html = readFileSync(join(process.cwd(), 'sites/projects/dist/index.html'), 'utf-8');
+  expect(html).not.toContain('id="initial-projects-data"');
+  expect(html).not.toContain('id="initial-changelog-data"');
+});
+
+test('endusers production HTML does not embed full members JSON blob', async () => {
+  const html = readFileSync(join(process.cwd(), 'sites/endusers/dist/index.html'), 'utf-8');
+  expect(html).not.toContain('id="initial-members-data"');
 });

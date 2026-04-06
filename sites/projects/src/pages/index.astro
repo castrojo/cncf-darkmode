@@ -11,6 +11,7 @@ import fs from 'node:fs';
 const staffList: StaffMember[] = selectStaffList(staffSupportData);
 
 const base = import.meta.env.BASE_URL;
+const includeEmbeddedData = import.meta.env.DEV;
 
 let projects: SafeProject[] = [];
 let stats = { total: 0, graduated: 0, incubating: 0, sandbox: 0, archived: 0, totalStars: 0 };
@@ -177,8 +178,12 @@ function formatNumber(n: number): string {
 
   <div id="archived-container" style="display:none"></div>
   <div id="no-results" class="empty-state" style="display:none">No projects match your search.</div>
-  <script slot="body-end" type="application/json" id="initial-projects-data" set:html={JSON.stringify(projects)}></script>
-  <script slot="body-end" type="application/json" id="initial-changelog-data" set:html={JSON.stringify(changelogEvents)}></script>
+  {includeEmbeddedData && (
+    <script slot="body-end" type="application/json" id="initial-projects-data" set:html={JSON.stringify(projects)}></script>
+  )}
+  {includeEmbeddedData && (
+    <script slot="body-end" type="application/json" id="initial-changelog-data" set:html={JSON.stringify(changelogEvents)}></script>
+  )}
 </ProjectsLayout>
 
 <script>

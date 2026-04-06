@@ -67,6 +67,7 @@ const archProjectCount = archProjectNames.size;
 
 const STATIC_COUNT = 30;
 const staticMembers = members.slice(0, STATIC_COUNT);
+const includeEmbeddedData = import.meta.env.DEV;
 ---
 <EndusersLayout
   title="CNCF End Users"
@@ -144,7 +145,9 @@ const staticMembers = members.slice(0, STATIC_COUNT);
         </div>
     }
   </Fragment>
-  <script slot="body-end" type="application/json" id="initial-members-data" set:html={JSON.stringify(members)}></script>
+  {includeEmbeddedData && (
+    <script slot="body-end" type="application/json" id="initial-members-data" set:html={JSON.stringify(members)}></script>
+  )}
 </EndusersLayout>
 
 <script>
