@@ -1,0 +1,143 @@
+---
+;
+;
+import KeyboardHelp from './KeyboardHelp.astro';
+import SiteSwitcher from './SiteSwitcher.astro';
+import ThemeToggle from './ThemeToggle.astro';
+import '../styles/variables.css';
+;
+import '../styles/people/people.css';
+
+interface Props {
+  pageTitle?: string;
+  feedUrl?: string;
+}
+
+const {
+  pageTitle = 'CNCF People',
+  feedUrl,
+} = Astro.props;
+
+const baseUrl = (import.meta.env.BASE_URL as string).replace(/\/*$/, '/');
+---
+
+<!DOCTYPE html>
+<html lang="en" data-base-url={baseUrl}>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Who's joining the CNCF community — activity feed for cncf/people">
+  {feedUrl && <link rel="alternate" type="application/rss+xml" title={pageTitle} href={feedUrl}>}
+  <title>{pageTitle}</title>
+  <!-- Preconnect to GitHub avatar CDN for faster hero/card image loads -->
+  <link rel="preconnect" href="https://avatars.githubusercontent.com">
+  <link rel="preconnect" href="https://raw.githubusercontent.com">
+
+  <script is:inline>
+    (function() {
+      const getTheme = () => {
+        const stored = localStorage.getItem('theme');
+        if (stored === 'light' || stored === 'dark') return stored;
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
+        return 'light';
+      };
+      document.documentElement.setAttribute('data-theme', getTheme());
+    })();
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <div class="header-left">
+          <div class="logo-title">
+            <span class="cncf-logo-wrapper" aria-hidden="true">
+              <img src={`${import.meta.env.BASE_URL}/cncf-icon-color.svg`} alt="CNCF" class="logo-light" width="42" height="42" />
+              <img src={`${import.meta.env.BASE_URL}/cncf-icon-white.svg`} alt="CNCF" class="logo-dark" width="42" height="42" />
+            </span>
+            <div class="title-block">
+              <h1 class="site-title">
+                <a href={baseUrl} id="home-link" class="home-link">CNCF People</a>
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div class="nav-group">
+          <SiteSwitcher activeSite="people" />
+          <div class="search-wrapper">
+            <input type="text" id="search-input" class="search-input" placeholder="Search by name, company, or location… (/)" aria-label="Search people" />
+            <span class="search-count" id="search-count"></span>
+            <button id="search-clear" class="search-clear" aria-label="Clear search" title="Clear search">✕</button>
+          </div>
+        </div>
+        <div class="header-actions">
+          <ThemeToggle />
+          <button
+            id="help-button"
+            class="icon-button"
+            aria-label="Keyboard shortcuts (?)"
+            title="Keyboard shortcuts (?)"
+          >?</button>
+        </div>
+      </div>
+      <!-- Category tab navigation -->
+      <nav class="section-nav" aria-label="Filter by category">
+        <button class="section-link active" data-tab="everyone">Everyone</button>
+        <button class="section-link" data-tab="ambassadors">Ambassadors</button>
+        <button class="section-link" data-tab="kubestronauts">Kubestronauts</button>
+        <button class="section-link" data-tab="maintainers">Maintainers</button>
+        <button class="section-link" data-tab="toc">TOC</button>
+        <button class="section-link" data-tab="tab">End User TAB</button>
+        <button class="section-link" data-tab="governing-board">Governing Board</button>
+        <button class="section-link" data-tab="marketing">Marketing Committee</button>
+        <button class="section-link" data-tab="staff">Staff</button>
+        <button class="section-link" data-tab="emeritus">Emeritus</button>
+        <button class="section-link tab-memorial" data-tab="memorial">Memorial</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-layout">
+      <aside class="sidebar">
+        <slot name="sidebar" />
+      </aside>
+      <div class="main-content">
+        <slot />
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Updated daily from <a href="https://github.com/cncf/people" target="_blank" rel="noopener noreferrer">cncf/people</a> •
+        <a href="https://github.com/castrojo/people-website" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
+    </div>
+  </footer>
+
+  <KeyboardHelp />
+  <div id="kbd-live-region" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+</body>
+</html>
+
+<script>
+  import { initSearchClear, initHelpButton } from '../lib/people/keyboard';
+  import { initTabs } from '../lib/people/tabs';
+
+  const searchInput = document.getElementById('search-input') as HTMLInputElement | null;
+  const searchClear = document.getElementById('search-clear') as HTMLButtonElement | null;
+  if (searchInput && searchClear) initSearchClear(searchInput, searchClear);
+
+  const helpBtn = document.getElementById('help-button');
+  if (helpBtn) {
+    initHelpButton(
+      helpBtn,
+      document.getElementById('keyboard-help-modal'),
+      document.getElementById('keyboard-help-backdrop'),
+    );
+  }
+
+  initTabs();
+</script>
+
+

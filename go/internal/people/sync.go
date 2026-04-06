@@ -15,7 +15,7 @@ import (
 )
 
 const (
-	defaultPeopleDataDir  = "../sites/people/src/data"
+	defaultPeopleDataDir  = "../src/data/people"
 	defaultPeopleCacheDir = "../.sync-cache/people"
 )
 

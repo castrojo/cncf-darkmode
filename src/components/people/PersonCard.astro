@@ -1,0 +1,526 @@
+---
+import { CATEGORY_MAP, PROGRAM_LOGOS, LOGO_PRIORITY, TYPE_LABEL } from '../../lib/people/person-renderer';
+
+interface Change {
+  field: string;
+  from: string;
+  to: string;
+}
+
+interface Person {
+  name: string;
+  handle?: string;
+  github?: string;
+  imageUrl?: string;
+  bio?: string;
+  pronouns?: string;
+  company?: string;
+  companyLandscapeUrl?: string;
+  location?: string;
+  linkedin?: string;
+  twitter?: string;
+  youtube?: string;
+  website?: string;
+  bluesky?: string;
+  mastodon?: string;
+  certDirectory?: string;
+  category: string[];
+  projects?: string[];
+  avatarUrl?: string;
+  contributions?: number;
+  publicRepos?: number;
+  yearsContributing?: number;
+  countryFlag?: string;
+  primaryBadge?: string;
+}
+
+interface Props {
+  id: string;
+  type: 'added' | 'removed' | 'updated';
+  timestamp: string;
+  person: Person;
+  changes?: Change[];
+  landscapeLogos?: Record<string, string>;
+}
+
+const { id, type, timestamp, person, changes = [], landscapeLogos = {} } = Astro.props;
+
+// Resolve a project name to its logo URL using the landscape map.
+// Tries exact match first, then lowercase. Falls back to empty string (image hidden by onerror).
+function projectLogoUrl(name: string): string {
+  return landscapeLogos[name] ?? landscapeLogos[name.toLowerCase()] ?? '';
+}
+
+const avatarSrc = person.avatarUrl || person.imageUrl || '';
+const profileUrl = person.github || (person.handle ? `https://github.com/${person.handle}` : '#');
+const primaryCategory = person.category?.[0] ?? '';
+
+// Use pre-computed primaryBadge from backend; fall back to category scan for older events
+const logoKey = person.primaryBadge
+  ? (PROGRAM_LOGOS[person.primaryBadge] ? person.primaryBadge : undefined)
+  : LOGO_PRIORITY.find(c => person.category?.includes(c));
+const accentKey = person.primaryBadge || LOGO_PRIORITY.find(c => person.category?.includes(c)) || primaryCategory;
+const categoryInfo = CATEGORY_MAP[accentKey] ?? CATEGORY_MAP[primaryCategory] ?? { name: primaryCategory, color: '#888' };
+const programLogo = logoKey ? PROGRAM_LOGOS[logoKey] : null;
+
+const typeLabel = TYPE_LABEL[type];
+const typeBadgeClass = `badge-${type}`;
+
+const date = new Date(timestamp);
+const formattedDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+const formattedTime = date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC', timeZoneName: 'short' });
+---
+
+<article class="person-card" data-id={id} data-type={type} data-category={primaryCategory.toLowerCase()} data-categories={(person.category ?? []).map(c => c.toLowerCase()).join('|')} style={`--card-accent: ${categoryInfo.color}`}>
+  <div class="card-accent-bar"></div>
+
+  <div class="card-body">
+
+    {/* ── main column ── */}
+    <div class="card-main">
+
+      <div class="card-identity">
+        <a href={profileUrl} target="_blank" rel="noopener noreferrer" class="avatar-link">
+          {avatarSrc
+            ? <img src={avatarSrc} alt={person.name} class="avatar" loading="lazy" width="64" height="64" />
+            : <div class="avatar avatar-placeholder" aria-hidden="true">{person.name.charAt(0)}</div>
+          }
+        </a>
+
+        <div class="identity-info">
+          <div class="name-row">
+            <a href={profileUrl} target="_blank" rel="noopener noreferrer" class="person-name">{person.name}</a>
+            {person.handle && <a href={profileUrl} target="_blank" rel="noopener noreferrer" class="handle">@{person.handle}</a>}
+            {person.pronouns && <span class="pronouns">({person.pronouns})</span>}
+          </div>
+          {person.company && (
+            <div class="company-row">
+              {person.companyLandscapeUrl
+                ? <a href={person.companyLandscapeUrl} target="_blank" rel="noopener noreferrer" class="company-chip company-chip-link">{person.company}</a>
+                : <span class="company-chip">{person.company}</span>
+              }
+            </div>
+          )}
+          {person.bio && <p class="bio">{person.bio}</p>}
+          <div class="badges">
+            <span class={`badge ${typeBadgeClass}`}>{typeLabel}</span>
+            {(person.category ?? []).map(cat => (
+              <span class="badge badge-category" style={`background: ${(CATEGORY_MAP[cat] ?? categoryInfo).color}22; color: ${(CATEGORY_MAP[cat] ?? categoryInfo).color}; border-color: ${(CATEGORY_MAP[cat] ?? categoryInfo).color}44`}>
+                {CATEGORY_MAP[cat]?.name ?? cat}
+              </span>
+            ))}
+          </div>
+        </div>{/* end identity-info */}
+      </div>{/* end card-identity */}
+
+      {(person.contributions || person.publicRepos || person.yearsContributing) && (
+        <div class="stats-row">
+          {person.yearsContributing > 0 && (
+            <span class="stat-chip" aria-label={`Contributing to CNCF projects since ${new Date().getFullYear() - person.yearsContributing}`}>
+              <img src="/people-website/program-logos/cncf.svg" alt="" class="stat-cncf-icon" aria-hidden="true" />
+              <span class="stat-val">Since {new Date().getFullYear() - person.yearsContributing} ({person.yearsContributing}y)</span>
+            </span>
+          )}
+          {person.contributions > 0 && (
+            <span class="stat-chip" aria-label={`${person.contributions.toLocaleString()} GitHub contributions in the last year`}>
+              <span class="stat-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><rect width="16" height="2" rx="1" y="0"/><rect width="16" height="2" rx="1" y="4"/><rect width="16" height="2" rx="1" y="8"/><rect width="10" height="2" rx="1" y="12"/></svg></span>
+              <span class="stat-val">{person.contributions.toLocaleString()}</span>
+              <span class="stat-label">contributions</span>
+            </span>
+          )}
+          {person.publicRepos > 0 && (
+            <span class="stat-chip" aria-label={`${person.publicRepos} public repositories`}>
+              <span class="stat-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="14" height="14" rx="2"/><path d="M4 8h8M4 5h8M4 11h5"/></svg></span>
+              <span class="stat-val">{person.publicRepos}</span>
+              <span class="stat-label">repos</span>
+            </span>
+          )}
+        </div>
+      )}
+
+      {person.projects && person.projects.length > 0 && (
+        <div class="projects-row">
+          {person.projects.map(project => (
+            <span class="project-chip">
+              <img
+                src={projectLogoUrl(project)}
+                alt=""
+                class="project-logo"
+                aria-hidden="true"
+                loading="lazy"
+                onerror="this.style.display='none'"
+              />
+              {project}
+            </span>
+          ))}
+        </div>
+      )}
+
+      {changes.length > 0 && (
+        <details class="changes-details">
+          <summary class="changes-summary">{changes.length} field{changes.length > 1 ? 's' : ''} changed</summary>
+          <ul class="changes-list">
+            {changes.map(c => (
+              <li class="change-item">
+                <span class="change-field">{c.field}</span>
+                <span class="change-from">{c.from || '(empty)'}</span>
+                <span class="change-arrow">→</span>
+                <span class="change-to">{c.to || '(empty)'}</span>
+              </li>
+            ))}
+          </ul>
+        </details>
+      )}
+
+    </div>{/* end card-main */}
+
+    {/* ── right column: program logo + location (top-right) ── */}
+    {(programLogo || person.location) && (
+      <div class="card-right">
+        {programLogo && <img src={programLogo} alt={logoKey ?? ''} class="program-logo" loading="lazy" />}
+        {person.location && <span class="location-right">{person.countryFlag ?? ''} {person.location}</span>}
+      </div>
+    )}
+
+  </div>{/* end card-body */}
+
+  <div class="card-footer">
+    <time datetime={timestamp} class="timestamp">{formattedDate} · {formattedTime}</time>
+    <div class="social-links">
+      {person.certDirectory && <a href={person.certDirectory} target="_blank" rel="noopener noreferrer" class="social-link" title="CNCF Cert Directory" aria-label="CNCF Cert Directory">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+      </a>}
+      {person.youtube && <a href={person.youtube} target="_blank" rel="noopener noreferrer" class="social-link" title="YouTube" aria-label="YouTube">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>}
+      {person.github && <a href={person.github} target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub" aria-label="GitHub">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+      </a>}
+      {person.linkedin && <a href={person.linkedin} target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn" aria-label="LinkedIn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>}
+      {person.twitter && <a href={person.twitter} target="_blank" rel="noopener noreferrer" class="social-link" title="Twitter/X" aria-label="Twitter">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>}
+      {person.bluesky && <a href={person.bluesky} target="_blank" rel="noopener noreferrer" class="social-link" title="Bluesky" aria-label="Bluesky"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.204-.659-.299-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8Z"/></svg></a>}
+    </div>
+  </div>
+</article>
+
+<style>
+  .person-card {
+    background: var(--color-bg-default);
+    border: 1px solid var(--color-border-default);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+    margin-bottom: 1rem;
+  }
+  .person-card:hover {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    border-color: var(--card-accent);
+  }
+
+  .card-accent-bar {
+    height: 3px;
+    background: var(--card-accent);
+  }
+
+  .card-body {
+    padding: 1rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .card-main { flex: 1; min-width: 0; }
+
+  .card-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.4rem;
+    flex-shrink: 0;
+    max-width: 120px;
+  }
+
+  .program-logo {
+    height: 48px;
+    width: auto;
+    opacity: 0.9;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.15));
+  }
+
+  .location-right {
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    text-align: right;
+    word-break: break-word;
+  }
+
+  .card-identity {
+    display: flex;
+    gap: 0.875rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .avatar-link { flex-shrink: 0; }
+
+  .avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-border-default);
+  }
+
+  .avatar-placeholder {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--card-accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: 2px solid var(--color-border-default);
+  }
+
+  .identity-info { flex: 1; min-width: 0; }
+
+  .name-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.375rem;
+  }
+
+  .person-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    text-decoration: none;
+  }
+  .person-name:hover { color: var(--color-text-link); }
+
+  .handle {
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-family: ui-monospace, monospace;
+  }
+  .handle:hover { color: var(--color-text-link); }
+
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin-bottom: 0.375rem;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.125rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid transparent;
+    white-space: nowrap;
+  }
+  .badge-added    { background: #dcfce7; color: #166534; border-color: #bbf7d0; }
+  .badge-removed  { background: #fee2e2; color: #991b1b; border-color: #fecaca; }
+  .badge-updated  { background: #dbeafe; color: #1e40af; border-color: #bfdbfe; }
+  [data-theme="dark"] .badge-added    { background: #14532d44; color: #86efac; border-color: #166534; }
+  [data-theme="dark"] .badge-removed  { background: #7f1d1d44; color: #fca5a5; border-color: #991b1b; }
+  [data-theme="dark"] .badge-updated  { background: #1e3a8a44; color: #93c5fd; border-color: #1e40af; }
+  .badge-category { font-weight: 500; }
+
+  .company-row {
+    margin: 0.2rem 0 0.3rem;
+  }
+  .company-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.6rem;
+    background: var(--color-bg-tertiary);
+    border: 1px solid var(--color-border-default);
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 320px;
+  }
+  a.company-chip-link {
+    text-decoration: none;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+  }
+  a.company-chip-link:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #fff;
+  }
+
+  .bio {
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+    margin: 0.25rem 0 0.375rem;
+    line-height: 1.45;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .pronouns {
+    font-size: 0.75rem;
+    color: var(--color-text-tertiary);
+    font-style: italic;
+  }
+
+  .stats-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .stat-chip {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.625rem;
+    background: var(--color-bg-tertiary);
+    border: 1px solid var(--color-border-default);
+    border-radius: 6px;
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+    cursor: default;
+  }
+  .stat-val { font-weight: 600; color: var(--color-text-primary); }
+  .stat-label {
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    opacity: 0.8;
+  }
+  .stat-cncf-icon {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  /* Tooltip shown on hover — uses aria-label value */
+  .stat-chip::after {
+    content: attr(aria-label);
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-text-primary);
+    color: var(--color-bg-default);
+    font-size: 0.75rem;
+    white-space: nowrap;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s;
+    z-index: 10;
+  }
+  .stat-chip::before {
+    content: '';
+    position: absolute;
+    bottom: calc(100% + 1px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: var(--color-text-primary);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s;
+    z-index: 10;
+  }
+  .stat-chip:hover::after,
+  .stat-chip:hover::before { opacity: 1; }
+
+  .projects-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin-top: 0.5rem;
+  }
+  .project-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.1rem 0.45rem;
+    background: var(--color-bg-tertiary);
+    border: 1px solid var(--color-border-default);
+    border-radius: 6px;
+    font-size: 0.7rem;
+    line-height: 1.4;
+    color: var(--color-text-primary);
+    font-weight: 500;
+  }
+  .project-logo {
+    width: 13px;
+    height: 13px;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: grayscale(100%);
+    transition: filter 0.15s;
+  }
+  .project-chip:hover .project-logo {
+    filter: grayscale(0%);
+  }
+
+  .changes-details { margin-top: 0.75rem; }
+  .changes-summary {
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    user-select: none;
+  }
+  .changes-list { list-style: none; padding: 0.5rem 0 0; display: flex; flex-direction: column; gap: 0.375rem; }
+  .change-item {
+    display: flex;
+    gap: 0.375rem;
+    font-size: 0.75rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .change-field { font-weight: 600; color: var(--color-text-primary); }
+  .change-from { color: #991b1b; background: #fee2e2; padding: 0.1rem 0.4rem; border-radius: 4px; }
+  .change-to   { color: #166534; background: #dcfce7; padding: 0.1rem 0.4rem; border-radius: 4px; }
+  .change-arrow { color: var(--color-text-tertiary); }
+  [data-theme="dark"] .change-from { color: #fca5a5; background: #7f1d1d44; }
+  [data-theme="dark"] .change-to   { color: #86efac; background: #14532d44; }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.625rem 1rem;
+    border-top: 1px solid var(--color-border-default);
+    background: var(--color-bg-tertiary);
+  }
+
+  .timestamp { font-size: 0.75rem; color: var(--color-text-secondary); }
+
+  .social-links { display: flex; gap: 0.5rem; align-items: center; }
+  .social-link {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.15s;
+  }
+  .social-link:hover { color: var(--color-text-primary); }
+</style>

@@ -1,0 +1,74 @@
+/* Shared card base patterns — hero grid layout and letterbox aspect ratio.
+   Site-specific card colors, borders, and maturity accents stay per-site. */
+
+/* Hero grid — 8-slot letterbox layout shared by all three sites */
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+}
+
+/* Letterbox card — fixed aspect ratio for consistent hero rows */
+.hero-card {
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  background: var(--color-surface, #f8f9fa);
+  border: 1px solid var(--color-border, #dee2e6);
+}
+
+.hero-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.hero-card img {
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
+}
+
+/* Generic card list layout */
+.cards-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Base card shell — accent color and maturity variants are per-site */
+.base-card {
+  background: var(--color-surface, #f8f9fa);
+  border: 1px solid var(--color-border, #dee2e6);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  margin-bottom: 0.75rem;
+}
+
+.base-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transform: translateX(2px);
+}
+
+.base-card.keyboard-focused {
+  outline: 2px solid var(--color-focus, #0066cc);
+  outline-offset: 2px;
+}
