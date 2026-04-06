@@ -1,0 +1,95 @@
+---
+import BaseLayout from '@cncf/site-kit/layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+const projectsUrl = `${base}/`;
+const membersUrl = `${base}/members/`;
+---
+
+<BaseLayout
+  title="CNCF People"
+  description="Unified people section for CNCF darkmode."
+  activeSite="people"
+  siteTitle="CNCF People"
+  homeHref={`${base}/people/`}
+  tabCount={2}
+>
+  <Fragment slot="head">
+    <link rel="icon" href={`${base}/cncf-icon-color.svg`} type="image/svg+xml" />
+  </Fragment>
+
+  <Fragment slot="sidebar">
+    <div class="info-box">
+      <h2>Unified navigation</h2>
+      <p>People navigation now stays inside the unified cncf-darkmode site.</p>
+    </div>
+  </Fragment>
+
+  <section class="people-main">
+    <h2>People section is now internal</h2>
+    <p>
+      The deprecated external people website is retired. Use these internal unified routes:
+    </p>
+    <div class="people-links">
+      <a href={projectsUrl}>CNCF Projects</a>
+      <a href={membersUrl}>CNCF End Users</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style is:global>
+  .people-main {
+    background: var(--color-bg-default);
+    border: 1px solid var(--color-border-default);
+    border-radius: 10px;
+    padding: 1.25rem;
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .people-main h2 {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+
+  .people-main p {
+    margin: 0;
+    color: var(--color-text-secondary);
+  }
+
+  .people-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .people-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--color-border-default);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--color-text-primary);
+    background: var(--color-bg-secondary);
+  }
+
+  .info-box {
+    background: var(--color-bg-default);
+    border: 1px solid var(--color-border-default);
+    border-radius: 6px;
+    padding: 1rem;
+  }
+
+  .info-box h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.95rem;
+  }
+
+  .info-box p {
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: 0.85rem;
+  }
+</style>

@@ -8,7 +8,7 @@ This repository is the single source of truth for the unified CNCF darkmode site
 |------|-----|------|
 | Projects | `/cncf-darkmode/` | 4322 |
 | Members | `/cncf-darkmode/members/` | 4324 |
-| People navigation target | `/people-website/` | 4323 |
+| People | `/cncf-darkmode/people/` | 4322 |
 
 ## First-Time Setup
 

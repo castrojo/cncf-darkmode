@@ -23,6 +23,7 @@ This is one unified product with shared platform code:
 3. Prefer behavior-level tests for critical UX over shallow visibility checks.
 4. Keep data contracts strict (`schema.test.ts`) and avoid silent fallbacks.
 5. Preserve XSS/IME safeguards already in place (`escapeHtml`, `e.isComposing`).
+6. Before disabling any linked destination, add/verify a route-exists test for every SiteSwitcher target to prevent shipping navigation 404s.
 
 ## Primary Commands
 

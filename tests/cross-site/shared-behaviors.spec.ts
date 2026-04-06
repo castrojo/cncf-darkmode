@@ -46,3 +46,10 @@ test('keyboard [ navigates from end users to projects section', async ({ page })
   await page.waitForURL('http://localhost:4322/cncf-darkmode/');
   await expect(page.locator('.site-title')).toContainText('CNCF Projects');
 });
+
+test('people route exists and is served internally', async ({ page }) => {
+  const response = await page.goto('http://localhost:4322/cncf-darkmode/people/');
+  expect(response?.status()).toBe(200);
+  await expect(page.locator('.site-title')).toContainText('CNCF People');
+  await expect(page.locator('.site-switcher .switcher-pill.active')).toContainText('People');
+});

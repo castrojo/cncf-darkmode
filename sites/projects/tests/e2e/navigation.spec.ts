@@ -9,6 +9,6 @@ test('SiteSwitcher renders projects, end users, and people', async ({ page }) =>
   await expect(switcher).toContainText('People');
   await expect(switcher.locator('a', { hasText: 'People' })).toHaveAttribute(
     'href',
-    /(^\/people-website\/$)|(^http:\/\/localhost:4323\/people-website\/$)/,
+    /(^\/cncf-darkmode\/people\/$)|(^http:\/\/localhost:4322\/cncf-darkmode\/people\/$)/,
   );
 });
