@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('theme toggle button changes data-theme attribute', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('./');
   const toggle = page.locator('#theme-toggle').first();
   await toggle.click();
   const theme = await page.locator('html').getAttribute('data-theme');
@@ -9,7 +9,7 @@ test('theme toggle button changes data-theme attribute', async ({ page }) => {
 });
 
 test('theme persists on reload', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('./');
   // Use t key to toggle
   await page.keyboard.press('t');
   const theme1 = await page.locator('html').getAttribute('data-theme');
@@ -19,7 +19,7 @@ test('theme persists on reload', async ({ page }) => {
 });
 
 test('dark theme applies dark colors', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('./');
   // Force dark theme
   await page.evaluate(() => {
     document.documentElement.setAttribute('data-theme', 'dark');

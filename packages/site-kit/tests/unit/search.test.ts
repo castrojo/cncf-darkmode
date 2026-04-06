@@ -67,6 +67,16 @@ describe('createSearchSync', () => {
     expect(() => search.search('kube\\')).not.toThrow();
     expect(() => search.search('(proxy)')).not.toThrow();
   });
+
+  it('deduplicates duplicate slugs instead of throwing', () => {
+    const withDuplicateSlug: Item[] = [
+      ...items,
+      { slug: 'kubernetes', name: 'Kubernetes Duplicate', description: 'duplicate entry' },
+    ];
+    const deduped = createSearchSync(withDuplicateSlug, config);
+    expect(() => deduped.search('kubernetes')).not.toThrow();
+    expect(deduped.all().filter((r: Item) => r.slug === 'kubernetes')).toHaveLength(1);
+  });
 });
 
 describe('createSearchAsync', () => {
@@ -100,5 +110,16 @@ describe('createSearchAsync', () => {
     const search = createSearchAsync(loader, config);
     await search.load();
     expect(search.all()).toHaveLength(items.length);
+  });
+
+  it('deduplicates duplicate slugs in async loader output', async () => {
+    const withDuplicateSlug: Item[] = [
+      ...items,
+      { slug: 'prometheus', name: 'Prometheus Duplicate', description: 'duplicate entry' },
+    ];
+    const loader = vi.fn().mockResolvedValue(withDuplicateSlug);
+    const search = createSearchAsync(loader, config);
+    await search.load();
+    expect(search.all().filter((r: Item) => r.slug === 'prometheus')).toHaveLength(1);
   });
 });

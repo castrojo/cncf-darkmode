@@ -49,17 +49,17 @@ const base = import.meta.env.BASE_URL;
   title={title}
   description={description}
   activeSite="members"
-  siteTitle="CNCF Members"
+  siteTitle="CNCF End Users"
   homeHref={base || '/'}
   tabCount={6}
 >
   <Fragment slot="head">
     <link rel="icon" href={`${base}/cncf-icon-color.svg`} type="image/svg+xml" />
-    <link rel="alternate" type="application/rss+xml" title="CNCF Members Feed" href={`${base}/feed.xml`} />
+    <link rel="alternate" type="application/rss+xml" title="CNCF End Users Feed" href={`${base}/feed.xml`} />
   </Fragment>
 
   <div slot="header-nav" class="search-wrapper">
-    <input id="search-input" class="search-input" type="text" placeholder="Search members... (/)" aria-label="Search members" />
+    <input id="search-input" class="search-input" type="text" placeholder="Search end users... (/)" aria-label="Search end users" />
     <span class="search-count" id="search-count"></span>
     <button id="search-clear" class="search-clear" aria-label="Clear search" title="Clear search">✕</button>
   </div>
@@ -75,12 +75,12 @@ const base = import.meta.env.BASE_URL;
 
   <Fragment slot="sidebar">
     <InfoBox
-      title="About CNCF Members"
-      description="Organizations that support the cloud native ecosystem through CNCF membership."
+      title="About CNCF End Users"
+      description="Organizations that use cloud native technologies and support CNCF."
       links={[
         { text: 'CNCF Landscape', url: 'https://landscape.cncf.io', external: true },
         { text: 'Become a Member', url: 'https://www.cncf.io/about/join/', external: true },
-        { text: 'Members Feed (RSS)', url: `${base}/feed.xml`, rss: true },
+        { text: 'End Users Feed (RSS)', url: `${base}/feed.xml`, rss: true },
         { text: 'Report an issue', url: 'https://github.com/castrojo/cncf-darkmode/issues', external: true },
       ]}
     />
@@ -104,7 +104,7 @@ const base = import.meta.env.BASE_URL;
         </select>
       </div>
       <div class="stats-box">
-        <h2 class="sidebar-heading">Members</h2>
+        <h2 class="sidebar-heading">End Users</h2>
         <div class="stat-row"><span class="stat-label">Total members</span><span class="stat-value" id="stat-total">{memberCount}</span></div>
         <div class="stat-row"><span class="stat-label">Platinum</span><span class="stat-value">{platinumCount}</span></div>
         <div class="stat-row"><span class="stat-label">Gold</span><span class="stat-value">{goldCount}</span></div>
@@ -157,6 +157,7 @@ const base = import.meta.env.BASE_URL;
 
   <Fragment slot="body-end">
     <script type="application/json" id="arch-data" set:html={JSON.stringify(Object.fromEntries((archData as any[]).map((a: any) => [a.slug, a])))} />
+    <slot name="body-end" />
 
     <dialog id="arch-modal" aria-modal="true" aria-labelledby="arch-modal-title">
       <div class="arch-modal-dialog">

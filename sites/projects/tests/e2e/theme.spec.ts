@@ -1,13 +1,13 @@
 import { test, expect } from '@playwright/test';
 
 test('theme toggle button is visible', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('./');
   const toggle = page.locator('#theme-toggle, [aria-label*="theme" i], .theme-toggle').first();
   await expect(toggle).toBeVisible();
 });
 
 test('theme toggle cycles through modes', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('./');
   const toggle = page.locator('#theme-toggle, [aria-label*="theme" i], .theme-toggle').first();
   const theme1 = await page.locator('html').getAttribute('data-theme');
   await toggle.click();
@@ -17,7 +17,7 @@ test('theme toggle cycles through modes', async ({ page }) => {
 });
 
 test('theme persists on reload', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('./');
   // Set theme via keyboard shortcut
   await page.keyboard.press('t');
   const theme1 = await page.locator('html').getAttribute('data-theme');

@@ -92,6 +92,10 @@ const banners = await getActiveBanners();
     </footer>
   </Fragment>
 
+  <Fragment slot="body-end">
+    <slot name="body-end" />
+  </Fragment>
+
   <slot />
 </BaseLayout>
 

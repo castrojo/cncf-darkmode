@@ -26,15 +26,36 @@ const CNCF_COLORS = ['#0086FF', '#D62293', '#93EAFF', '#FFB300', '#00A86B', '#7B
 let logoShapes: confetti.Shape[] | null = null;
 let loadingLogos = false;
 
+function safeShapeFromImage(url: string): confetti.Shape | null {
+  const c = confetti as unknown as {
+    shapeFromImage?: (opts: { src: string; width: number; height: number }) => confetti.Shape;
+  };
+  if (typeof c.shapeFromImage !== 'function') return null;
+  return c.shapeFromImage({ src: url, width: 40, height: 40 });
+}
+
+function safeShapeFromText(text: string, scalar: number, fallback: confetti.Shape): confetti.Shape {
+  const c = confetti as unknown as {
+    shapeFromText?: (opts: { text: string; scalar: number }) => confetti.Shape;
+  };
+  if (typeof c.shapeFromText !== 'function') return fallback;
+  return c.shapeFromText({ text, scalar });
+}
+
 function loadLogoShapes(): void {
   if (loadingLogos || logoShapes !== null) return;
   loadingLogos = true;
+  if (!safeShapeFromImage(CNCF_LOGO_URLS[0])) {
+    logoShapes = ['square'];
+    loadingLogos = false;
+    return;
+  }
   Promise.all(
     CNCF_LOGO_URLS.map(url =>
       new Promise<confetti.Shape | null>(resolve => {
         const img = new Image();
         img.crossOrigin = 'anonymous';
-        img.onload = () => resolve(confetti.shapeFromImage({ src: url, width: 40, height: 40 }));
+        img.onload = () => resolve(safeShapeFromImage(url));
         img.onerror = () => resolve(null);
         img.src = url;
         setTimeout(() => resolve(null), 4000);
@@ -70,8 +91,8 @@ export function fireHearts(card: Element): void {
     y: (rect.top + rect.height / 2) / window.innerHeight,
   };
 
-  const blueHeart = confetti.shapeFromText({ text: '💙', scalar: 4 });
-  const redHeart  = confetti.shapeFromText({ text: '❤️', scalar: 4 });
+  const blueHeart = safeShapeFromText('💙', 4, 'circle');
+  const redHeart  = safeShapeFromText('❤️', 4, 'square');
   // Alternate blue and red hearts so roughly half are each colour.
   const shapes = [blueHeart, redHeart, blueHeart, redHeart];
 
@@ -101,8 +122,8 @@ export function fireStarburst(card: Element): void {
     y: (rect.top + rect.height / 2) / window.innerHeight,
   };
 
-  const star    = confetti.shapeFromText({ text: '⭐', scalar: 2.5 });
-  const sparkle = confetti.shapeFromText({ text: '✨', scalar: 2.5 });
+  const star    = safeShapeFromText('⭐', 2.5, 'square');
+  const sparkle = safeShapeFromText('✨', 2.5, 'circle');
 
   confetti({
     origin,

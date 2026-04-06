@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('logo is approximately 42×42px', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('./');
   const logo = page.locator('.cncf-logo-wrapper img').first();
   await expect(logo).toBeVisible();
   const rect = await logo.boundingBox();
@@ -12,7 +12,7 @@ test('logo is approximately 42×42px', async ({ page }) => {
 });
 
 test('site title is single line (no wrap)', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('./');
   const el = page.locator('.site-title').first();
   await expect(el).toBeVisible();
   const box = await el.boundingBox();
@@ -21,7 +21,7 @@ test('site title is single line (no wrap)', async ({ page }) => {
 });
 
 test('header is visible and contains CNCF branding', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('./');
   const header = page.locator('.site-header');
   await expect(header).toBeVisible();
   const title = page.locator('.site-title');

@@ -60,12 +60,38 @@ function buildIndex<T extends { slug: string }>(
   return ms;
 }
 
+function dedupeBySlug<T extends { slug: string }>(items: T[]): T[] {
+  const seen = new Set<string>();
+  const deduped: T[] = [];
+  for (const item of items) {
+    if (seen.has(item.slug)) continue;
+    seen.add(item.slug);
+    deduped.push(item);
+  }
+  return deduped;
+}
+
+function buildIndexWithDuplicateFallback<T extends { slug: string }>(
+  items: T[],
+  config: SearchConfig<T>
+): { ms: MiniSearch<T>; indexedItems: T[] } {
+  try {
+    return { ms: buildIndex(items, config), indexedItems: items };
+  } catch (error) {
+    if (!(error instanceof Error) || !error.message.includes('duplicate ID')) {
+      throw error;
+    }
+    const deduped = dedupeBySlug(items);
+    return { ms: buildIndex(deduped, config), indexedItems: deduped };
+  }
+}
+
 // Sync mode — data available at build time (projects, endusers)
 export function createSearchSync<T extends { slug: string }>(
   items: T[],
   config: SearchConfig<T>
 ): SearchInstance<T> {
-  const ms = buildIndex(items, config);
+  const { ms, indexedItems } = buildIndexWithDuplicateFallback(items, config);
   const limit = config.limit ?? 50;
 
   return {
@@ -78,7 +104,7 @@ export function createSearchSync<T extends { slug: string }>(
         return [];
       }
     },
-    all: () => items,
+    all: () => indexedItems,
   };
 }
 
@@ -95,8 +121,9 @@ export function createSearchAsync<T extends { slug: string }>(
   const load = (): Promise<void> => {
     if (loadPromise) return loadPromise;
     loadPromise = loader().then(data => {
-      items = data;
-      ms = buildIndex(data, config);
+      const built = buildIndexWithDuplicateFallback(data, config);
+      items = built.indexedItems;
+      ms = built.ms;
     });
     return loadPromise;
   };

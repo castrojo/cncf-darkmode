@@ -7,7 +7,7 @@ const DATA_TABS = ['everyone', 'platinum', 'gold', 'silver', 'academic', 'archit
 
 for (const tab of TABS) {
   test(`${tab} tab is clickable`, async ({ page }) => {
-    await page.goto('/');
+    await page.goto('./');
     const tabBtn = page.locator(`button.section-link[data-tab="${tab.toLowerCase()}"]`);
     await tabBtn.click();
     await expect(page.locator('main')).toBeVisible();
@@ -17,7 +17,7 @@ for (const tab of TABS) {
 }
 
 test('Academic & Nonprofit tab is clickable', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('./');
   const tabBtn = page.locator('button.section-link[data-tab="academic"]');
   await tabBtn.click();
   await expect(page.locator('main')).toBeVisible();
@@ -25,7 +25,7 @@ test('Academic & Nonprofit tab is clickable', async ({ page }) => {
 });
 
 test('Reference Architectures tab is clickable', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('./');
   const tabBtn = page.locator('button.section-link[data-tab="architectures"]');
   await tabBtn.click();
   await expect(page.locator('main')).toBeVisible();
@@ -33,21 +33,21 @@ test('Reference Architectures tab is clickable', async ({ page }) => {
 });
 
 test('all 6 tabs exist in DOM', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('./');
   for (const tab of DATA_TABS) {
     await expect(page.locator(`button.section-link[data-tab="${tab}"]`)).toBeVisible();
   }
 });
 
 test('tab 6 keyboard shortcut activates Reference Architectures', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('./');
   await page.keyboard.press('6');
   const archTabBtn = page.locator('button.section-link[data-tab="architectures"]');
   await expect(archTabBtn).toHaveClass(/active/);
 });
 
 test('no phantom End Users tab exists', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('./');
   const endUserTab = page.locator('button.section-link[data-tab="end-users"], button.section-link[data-tab="endusers"]');
   expect(await endUserTab.count()).toBe(0);
 });

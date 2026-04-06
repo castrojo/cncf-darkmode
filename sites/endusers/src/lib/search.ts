@@ -16,6 +16,7 @@ export function initSearch(members: SafeMember[]): void {
       'employeesMin', 'employeesMax', 'totalFunding', 'industries', 'stockExchange', 'ticker',
       'joinedAt', 'region', 'companyType', 'id', 'industriesStr'],
     boost: { name: 5, description: 2, industriesStr: 1.5 },
+    fuzzy: 0,
   });
 }
 

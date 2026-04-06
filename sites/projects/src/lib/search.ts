@@ -22,6 +22,7 @@ export function initSearch(projects: SafeProject[]): void {
     fields: ['name', 'description', 'category', 'subcategory', 'categoryStr', 'topicsStr', 'primaryLanguage'],
     storeFields: Object.keys(indexed[0] ?? {}) as string[],
     boost: { name: 5, description: 2, category: 1.5 },
+    fuzzy: 0,
   });
 }
 

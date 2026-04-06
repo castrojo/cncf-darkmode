@@ -32,3 +32,17 @@ for (const site of SITES) {
     await expect(page.locator('.section-link[data-tab]').nth(1)).toHaveClass(/active/);
   });
 }
+
+test('keyboard ] navigates from projects to end users section', async ({ page }) => {
+  await page.goto('http://localhost:4322/cncf-darkmode/');
+  await page.keyboard.press(']');
+  await page.waitForURL('http://localhost:4324/cncf-darkmode/members/');
+  await expect(page.locator('.site-title')).toContainText('CNCF End Users');
+});
+
+test('keyboard [ navigates from end users to projects section', async ({ page }) => {
+  await page.goto('http://localhost:4324/cncf-darkmode/members/');
+  await page.keyboard.press('[');
+  await page.waitForURL('http://localhost:4322/cncf-darkmode/');
+  await expect(page.locator('.site-title')).toContainText('CNCF Projects');
+});

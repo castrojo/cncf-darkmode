@@ -144,6 +144,7 @@ const staticMembers = members.slice(0, STATIC_COUNT);
         </div>
     }
   </Fragment>
+  <script slot="body-end" type="application/json" id="initial-members-data" set:html={JSON.stringify(members)}></script>
 </EndusersLayout>
 
 <script>
@@ -172,11 +173,24 @@ const staticMembers = members.slice(0, STATIC_COUNT);
   async function loadAllMembers() {
     try {
       const res = await fetch(`${base}/data/members.json`);
+      if (!res.ok) return;
       allMembers = await res.json();
       initSearch(allMembers);
       applyFilters();
     } catch {
       // use static members already rendered
+    }
+  }
+
+  function hydrateEmbeddedMembers() {
+    const membersRaw = document.getElementById('initial-members-data')?.textContent;
+    if (!membersRaw) return;
+    try {
+      allMembers = JSON.parse(membersRaw);
+      initSearch(allMembers);
+      applyFilters();
+    } catch {
+      allMembers = [];
     }
   }
 
@@ -254,8 +268,8 @@ const staticMembers = members.slice(0, STATIC_COUNT);
     if (changelogSection) changelogSection.style.display = (isArchTab || tab !== 'everyone') ? 'none' : '';
 
     if (searchInput) {
-      searchInput.placeholder = isArchTab ? 'Search architectures... (/)' : 'Search members... (/)';
-      searchInput.setAttribute('aria-label', isArchTab ? 'Search architectures' : 'Search members');
+      searchInput.placeholder = isArchTab ? 'Search architectures... (/)' : 'Search end users... (/)';
+      searchInput.setAttribute('aria-label', isArchTab ? 'Search architectures' : 'Search end users');
     }
     if (!isArchTab) {
       const reftypeSelect = document.getElementById('arch-reftype-filter') as HTMLSelectElement | null;
@@ -402,6 +416,7 @@ const staticMembers = members.slice(0, STATIC_COUNT);
     });
   }
 
+  hydrateEmbeddedMembers();
   loadAllMembers();
   wireCardEvents();
   initArchModal();

@@ -29,11 +29,12 @@ try {
 }
 
 // Latest LWCN newsletter — pinned card on Everything tab, rendered at build time
+let changelogEvents: ChangelogEvent[] = [];
 let pinnedNewsletter: ChangelogEvent | null = null;
 try {
   const changelogRaw = fs.readFileSync('src/data/changelog.json', 'utf-8');
-  const allEvents = JSON.parse(changelogRaw) as ChangelogEvent[];
-  const newsletters = allEvents.filter(e => e.type === 'newsletter');
+  changelogEvents = JSON.parse(changelogRaw) as ChangelogEvent[];
+  const newsletters = changelogEvents.filter(e => e.type === 'newsletter');
   if (newsletters.length > 0) {
     pinnedNewsletter = newsletters.sort((a, b) => b.timestamp.localeCompare(a.timestamp))[0];
   }
@@ -176,6 +177,8 @@ function formatNumber(n: number): string {
 
   <div id="archived-container" style="display:none"></div>
   <div id="no-results" class="empty-state" style="display:none">No projects match your search.</div>
+  <script slot="body-end" type="application/json" id="initial-projects-data" set:html={JSON.stringify(projects)}></script>
+  <script slot="body-end" type="application/json" id="initial-changelog-data" set:html={JSON.stringify(changelogEvents)}></script>
 </ProjectsLayout>
 
 <script>
@@ -207,6 +210,28 @@ function formatNumber(n: number): string {
     const res = await fetch(`${base}/data/changelog.json`);
     if (!res.ok) return;
     allChangelog = await res.json();
+  }
+
+  function hydrateEmbeddedData(): void {
+    const projectsRaw = document.getElementById('initial-projects-data')?.textContent;
+    const changelogRaw = document.getElementById('initial-changelog-data')?.textContent;
+
+    if (projectsRaw) {
+      try {
+        allProjects = JSON.parse(projectsRaw);
+        initSearch(allProjects);
+      } catch {
+        allProjects = [];
+      }
+    }
+
+    if (changelogRaw) {
+      try {
+        allChangelog = JSON.parse(changelogRaw);
+      } catch {
+        allChangelog = [];
+      }
+    }
   }
 
   function renderCurrentView(): void {
@@ -303,6 +328,8 @@ function formatNumber(n: number): string {
     }
   }
 
+  hydrateEmbeddedData();
+  renderCurrentView();
   Promise.all([loadProjects(), loadChangelog()]).then(() => renderCurrentView());
 
   function showHeroesForTab(tab: string) {
