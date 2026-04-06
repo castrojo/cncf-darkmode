@@ -1,6 +1,26 @@
 [
-  { "handle": "jbryce",       "name": "Jonathan Bryce",  "title": "Executive Director" },
-  { "handle": "caniszczyk",   "name": "Chris Aniszczyk", "title": "CTO" },
-  { "handle": "joannalee333", "name": "Joanna Lee",      "title": "COO" },
-  { "handle": "vheric",       "name": "Vanessa Heric",   "title": "Director of Events" }
+  {
+    "handle": "jbryce",
+    "name": "Jonathan Bryce",
+    "title": "Executive Director",
+    "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/Jonathan-Bryce.jpg"
+  },
+  {
+    "handle": "caniszczyk",
+    "name": "Chris Aniszczyk",
+    "title": "CTO",
+    "imageUrl": "https://www.cncf.io/wp-content/uploads/2017/05/Headshots-Aniszczyk-768x822-1.jpg"
+  },
+  {
+    "handle": "joannalee333",
+    "name": "Joanna Lee",
+    "title": "COO",
+    "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/joanna-lee.jpg"
+  },
+  {
+    "handle": "vheric",
+    "name": "Vanessa Heric",
+    "title": "Director of Events",
+    "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/vanessa-heric.jpg"
+  }
 ]
