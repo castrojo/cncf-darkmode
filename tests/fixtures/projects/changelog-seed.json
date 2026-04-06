@@ -1,0 +1,33 @@
+[
+  {
+    "id": "evt-001",
+    "type": "accepted",
+    "projectName": "Kubernetes",
+    "projectSlug": "kubernetes",
+    "logoUrl": "https://raw.githubusercontent.com/cncf/artwork/main/projects/kubernetes/icon/color/kubernetes-icon-color.svg",
+    "maturity": "graduated",
+    "timestamp": "2016-03-10T00:00:00Z",
+    "description": "Kubernetes was accepted as a CNCF project."
+  },
+  {
+    "id": "evt-002",
+    "type": "graduated",
+    "projectName": "Prometheus",
+    "projectSlug": "prometheus",
+    "logoUrl": "https://raw.githubusercontent.com/cncf/artwork/main/projects/prometheus/icon/color/prometheus-icon-color.svg",
+    "maturity": "graduated",
+    "oldMaturity": "incubating",
+    "timestamp": "2018-08-09T00:00:00Z",
+    "description": "Prometheus graduated from incubating to graduated status."
+  },
+  {
+    "id": "evt-003",
+    "type": "accepted",
+    "projectName": "Envoy",
+    "projectSlug": "envoy",
+    "logoUrl": "https://raw.githubusercontent.com/cncf/artwork/main/projects/envoy/icon/color/envoy-icon-color.svg",
+    "maturity": "incubating",
+    "timestamp": "2017-09-13T00:00:00Z",
+    "description": "Envoy was accepted into CNCF as an incubating project."
+  }
+]

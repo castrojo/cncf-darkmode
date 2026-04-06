@@ -1,0 +1,96 @@
+/* Shared foundation */
+@import './layout.css';
+
+:root {
+  --color-bg-default: #ffffff;
+  --color-bg-secondary: #f6f8fa;
+  --color-bg-tertiary: #eaeef2;
+  --color-border-default: #d0d7de;
+  --color-text-primary: #24292f;
+  --color-text-secondary: #57606a;
+  --color-text-muted: #8c959f;
+  --color-text-tertiary: #6e7781;
+  --color-accent-emphasis: #0969da;
+  --color-cncf-blue: #0086ff;
+  --color-rss-orange: #f26522;
+  --card-border-radius: 8px;
+  --card-name-size: 0.95rem;
+  --card-name-weight: 600;
+  --card-hover-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+  /* Legacy aliases */
+  --color-bg: var(--color-bg-default);
+  --color-surface: var(--color-bg-secondary);
+  --color-surface-alt: var(--color-bg-tertiary);
+  --color-border: var(--color-border-default);
+  --color-text: var(--color-text-primary);
+  --color-accent: var(--color-accent-emphasis);
+
+  /* Projects accents */
+  --color-graduated: #ffb300;
+  --color-incubating: #0086ff;
+  --color-sandbox: #8b949e;
+  --color-archived: #6b7280;
+
+  /* Members tier accents */
+  --color-platinum: #e5e4e2;
+  --color-gold: #ffb300;
+  --color-silver: #c0c0c0;
+  --color-enduser: #0086ff;
+  --color-academic: #7b2fbe;
+  --color-nonprofit: #00a86b;
+
+  /* People badge accents */
+  --color-kubestronaut: #0086FF;
+  --color-golden: #C9A000;
+  --color-ambassador: #0086FF;
+  --color-staff: #00A86B;
+  --color-toc: #D62293;
+  --color-tab: #7B2FBE;
+  --color-board: #E65100;
+  --color-text-link: #D62293;
+}
+
+[data-theme="dark"] {
+  --color-bg-default: #0d1117;
+  --color-bg-secondary: #161b22;
+  --color-bg-tertiary: #21262d;
+  --color-border-default: #30363d;
+  --color-text-primary: #e6edf3;
+  --color-text-secondary: #8b949e;
+  --color-text-muted: #6e7681;
+  --color-text-tertiary: #8b949e;
+  --color-accent-emphasis: #2f81f7;
+  --color-cncf-blue: #58a6ff;
+  --color-rss-orange: #f26522;
+  /* Projects dark */
+  --color-graduated: #f2c14e;
+  --color-incubating: #58a6ff;
+  --color-sandbox: #8b949e;
+  --color-archived: #8b949e;
+  /* Members dark */
+  --color-platinum: #b8b8b8;
+  --color-gold: #f2c14e;
+  --color-silver: #9aa4ad;
+  --color-academic: #b48ef0;
+  --color-nonprofit: #34c38f;
+  /* People dark */
+  --color-text-link: #ff6bc4;
+}
+
+/* SVG logo dark/light toggle */
+.cncf-logo-wrapper .logo-dark { display: none; }
+[data-theme="dark"] .cncf-logo-wrapper .logo-light { display: none; }
+[data-theme="dark"] .cncf-logo-wrapper .logo-dark { display: block; }
+
+/* Footer */
+.site-footer {
+  background: var(--color-bg-default);
+  border-top: 1px solid var(--color-border-default);
+  padding: 2rem 0;
+  margin-top: 3rem;
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+}
+.site-footer a { color: var(--color-cncf-blue); text-decoration: none; }
+.site-footer a:hover { text-decoration: underline; }

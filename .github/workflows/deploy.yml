@@ -24,12 +24,16 @@ jobs:
           cache-dependency-path: go/go.sum
       - name: Run sync-projects
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
         run: cd go && go run ./cmd/sync-projects/
       - name: Run sync-endusers
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
         run: cd go && go run ./cmd/sync-endusers/
+      - name: Run sync-people
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: cd go && go run ./cmd/sync-people/
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
@@ -41,7 +45,7 @@ jobs:
           fi
 
   build:
-    name: "Build all sites"
+    name: "Build site"
     runs-on: ubuntu-latest
     needs: [sync]
     steps:
@@ -53,42 +57,19 @@ jobs:
           node-version: '22'
           cache: 'npm'
       - run: npm ci
-      - name: Build site-kit
-        run: npm run build --workspace=packages/site-kit
-      - name: Copy data to public/ (required for client-side fetch)
+      - name: Copy data to public/
         run: |
-          mkdir -p sites/projects/public/data
-          cp sites/projects/src/data/projects.json sites/projects/public/data/
-          cp sites/projects/src/data/changelog.json sites/projects/public/data/
-          mkdir -p sites/endusers/public/data
-          cp sites/endusers/src/data/members.json sites/endusers/public/data/
-          cp sites/endusers/src/data/changelog.json sites/endusers/public/data/
-          cp sites/endusers/src/data/architectures.json sites/endusers/public/data/
-      - name: Build projects site
-        run: npm run build --workspace=sites/projects
-      - name: Build endusers site
-        run: npm run build --workspace=sites/endusers
-      - name: Combine into single artifact
-        run: |
-          mkdir -p dist
-          cp -r sites/projects/dist/. dist/
-          mkdir -p dist/members
-          cp -r sites/endusers/dist/. dist/members/
-          mkdir -p dist/endusers-website
-          cat > dist/endusers-website/index.html << 'EOF'
-          <!doctype html>
-          <html lang="en">
-          <head>
-            <meta charset="utf-8" />
-            <meta http-equiv="refresh" content="0;url=/cncf-darkmode/members/" />
-            <title>Redirecting to CNCF Members…</title>
-            <link rel="canonical" href="/cncf-darkmode/members/" />
-          </head>
-          <body>
-            <p>Redirecting to <a href="/cncf-darkmode/members/">/cncf-darkmode/members/</a>…</p>
-          </body>
-          </html>
-          EOF
+          mkdir -p public/data/projects public/data/members public/data/people
+          cp src/data/projects/projects.json public/data/projects/ 2>/dev/null || true
+          cp src/data/projects/changelog.json public/data/projects/ 2>/dev/null || true
+          cp src/data/members/members.json public/data/members/ 2>/dev/null || true
+          cp src/data/members/changelog.json public/data/members/ 2>/dev/null || true
+          cp src/data/members/architectures.json public/data/members/ 2>/dev/null || true
+          cp src/data/people/people-index.json public/data/people/ 2>/dev/null || true
+          cp src/data/people/heroes.json public/data/people/ 2>/dev/null || true
+          cp src/data/people/changelog.json public/data/people/ 2>/dev/null || true
+      - name: Build site
+        run: npm run build
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

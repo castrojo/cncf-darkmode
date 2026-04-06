@@ -1,23 +1,27 @@
 {
   "name": "cncf-darkmode",
   "private": true,
-  "workspaces": [
-    "packages/*",
-    "sites/*"
-  ],
-  "devDependencies": {
-    "@axe-core/playwright": "^4.10.0"
-  },
+  "type": "module",
+  "engines": { "node": ">=22.12.0" },
   "scripts": {
-    "build:kit": "npm run build --workspace=packages/site-kit",
-    "build:projects": "npm run build --workspace=sites/projects",
-    "build:endusers": "npm run build --workspace=sites/endusers",
-    "test:kit": "npm run test --workspace=packages/site-kit",
-    "test:projects": "npm run test --workspace=sites/projects",
-    "test:endusers": "npm run test --workspace=sites/endusers",
-    "test:all": "npm run test:kit && npm run test:projects && npm run test:endusers"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "vitest run",
+    "test:e2e": "playwright test"
   },
-  "engines": {
-    "node": ">=22.12.0"
+  "dependencies": {
+    "@astrojs/rss": "^4.0.17",
+    "astro": "^6.0.5",
+    "canvas-confetti": "^1.9.4",
+    "i18n-iso-countries": "^7.14.0",
+    "minisearch": "^7.2.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/canvas-confetti": "^1.9.0",
+    "@vitest/coverage-v8": "^4.1.0",
+    "jsdom": "^26.0.0",
+    "vitest": "^4.1.0"
   }
 }

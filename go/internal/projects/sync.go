@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	defaultDataDir  = "../sites/projects/src/data"
+	defaultDataDir  = "../src/data/projects"
 	defaultCacheDir = "../.sync-cache/projects"
 )
 

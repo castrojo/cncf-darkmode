@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	defaultDataDir  = "../sites/endusers/src/data"
+	defaultDataDir  = "../src/data/members"
 	defaultCacheDir = "../.sync-cache/endusers"
 )
 
