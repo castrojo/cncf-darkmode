@@ -183,8 +183,9 @@ function formatNumber(n: number): string {
 
 <script>
   import type { SafeProject } from '../lib/project-renderer';
+  import { renderCard } from '../lib/project-renderer';
   import { renderTimeline } from '../lib/archived-timeline';
-  import { initTabs, filterChangelogByTab, tabFromNumber, type TabId, type ChangelogEvent } from '../lib/tabs';
+  import { initTabs, filterByTab, filterChangelogByTab, tabFromNumber, type TabId, type ChangelogEvent } from '../lib/tabs';
   import { renderChangelogEvent } from '../lib/changelog-renderer';
   import { initSearch, searchProjects } from '../lib/search';
   import { initKeyboard } from '@cncf/site-kit/lib/keyboard';
@@ -256,12 +257,35 @@ function formatNumber(n: number): string {
     archivedContainer.style.display = 'none';
     if (changelogHeading) changelogHeading.style.display = '';
 
+    const projectsBySlug = new Map(allProjects.map(p => [p.slug, p]));
+
+    // Search mode: render actual project cards from the full dataset.
+    if (currentQuery.trim()) {
+      let filteredProjects = filterByTab(allProjects, currentTab);
+      if (currentCategory) {
+        filteredProjects = filteredProjects.filter(p => p.category === currentCategory);
+      }
+      const matched = searchProjects(currentQuery);
+      const matchedSlugs = new Set(matched.map(p => p.slug));
+      filteredProjects = filteredProjects.filter(p => matchedSlugs.has(p.slug));
+
+      const hasResults = filteredProjects.length > 0;
+      noResults.style.display = hasResults ? 'none' : 'block';
+      container.innerHTML = hasResults
+        ? filteredProjects.map(project => renderCard(project)).join('')
+        : '';
+
+      const countEl = document.getElementById('search-count');
+      if (countEl) {
+        countEl.textContent = String(filteredProjects.length);
+      }
+      wireCardEvents();
+      return;
+    }
+
     // Resolve which changelog events to show (newsletter events excluded from project feed)
     let events = filterChangelogByTab(allChangelog, currentTab)
       .filter(e => e.type !== 'newsletter');
-
-    // Build project lookup for rich card rendering
-    const projectsBySlug = new Map(allProjects.map(p => [p.slug, p]));
 
     // Apply category filter
     if (currentCategory) {
@@ -269,13 +293,6 @@ function formatNumber(n: number): string {
         allProjects.filter(p => p.category === currentCategory).map(p => p.slug)
       );
       events = events.filter(e => slugsInCategory.has(e.projectSlug ?? ''));
-    }
-
-    // Apply search filter
-    if (currentQuery) {
-      const results = searchProjects(currentQuery);
-      const matchedSlugs = new Set(results.map(r => r.slug));
-      events = events.filter(e => matchedSlugs.has(e.projectSlug ?? ''));
     }
 
     const hasResults = events.length > 0;
@@ -330,7 +347,10 @@ function formatNumber(n: number): string {
 
   hydrateEmbeddedData();
   renderCurrentView();
-  Promise.all([loadProjects(), loadChangelog()]).then(() => renderCurrentView());
+  const isLocalDev = window.location.hostname === 'localhost';
+  if (!isLocalDev) {
+    Promise.all([loadProjects(), loadChangelog()]).then(() => renderCurrentView());
+  }
 
   function showHeroesForTab(tab: string) {
     const heroesSection = document.querySelector<HTMLElement>('.heroes-section');

@@ -45,9 +45,10 @@ function renderProjectChip(p: ArchProject): string {
   const dot = color
     ? `<span class="arch-maturity-dot" style="background:${color}" title="${escapeHtml(p.maturity ?? '')}"></span>`
     : '';
+  const fallbackGlyph = escapeHtml((p.name.trim().charAt(0) || '?').toUpperCase());
   const logo = p.logoUrl
     ? `<img class="arch-project-logo" src="${escapeHtml(p.logoUrl)}" alt="${escapeHtml(p.name)} logo" width="18" height="18" loading="lazy" />`
-    : '';
+    : `<span class="arch-project-logo arch-project-logo--fallback" aria-hidden="true">${fallbackGlyph}</span>`;
   return `<span class="arch-project-chip arch-project-chip--${escapeHtml(p.maturity ?? 'unknown')}" title="${escapeHtml(p.name)}${p.usingSince ? ' · since ' + escapeHtml(p.usingSince) : ''}">${logo}${dot}<span class="arch-project-name">${escapeHtml(p.name)}</span></span>`;
 }
 
@@ -67,10 +68,11 @@ export function renderArchCard(a: SafeArchitecture): string {
   const orgName = escapeHtml(a.orgName);
   const title = escapeHtml(a.title);
   const description = a.orgDescription ? escapeHtml(a.orgDescription) : '';
+  const orgFallbackGlyph = escapeHtml((a.orgName.trim().charAt(0) || '?').toUpperCase());
 
   const logoHtml = a.orgLogoUrl
     ? `<img class="arch-org-logo" src="${escapeHtml(a.orgLogoUrl)}" alt="${orgName} logo" loading="lazy" />`
-    : '';
+    : `<span class="arch-org-logo arch-org-logo--fallback" aria-hidden="true">${orgFallbackGlyph}</span>`;
 
   const meta: string[] = [];
   if (a.orgTeam) meta.push(`<span class="arch-meta-team">${escapeHtml(a.orgTeam)}</span>`);
@@ -143,7 +145,9 @@ export function renderArchCards(architectures: SafeArchitecture[]): string {
 export function renderArchModalContent(arch: SafeArchitecture): string {
   const projectsHTML = arch.projects?.map(p => `
     <div class="arch-modal-project">
-      ${p.logoUrl ? `<img class="arch-modal-project-logo" src="${escapeHtml(p.logoUrl)}" alt="${escapeHtml(p.name)} logo" loading="lazy" />` : ''}
+      ${p.logoUrl
+        ? `<img class="arch-modal-project-logo" src="${escapeHtml(p.logoUrl)}" alt="${escapeHtml(p.name)} logo" loading="lazy" />`
+        : `<span class="arch-modal-project-logo arch-modal-project-logo--fallback" aria-hidden="true">${escapeHtml((p.name.trim().charAt(0) || '?').toUpperCase())}</span>`}
       <div class="arch-modal-project-info">
         <span class="arch-modal-project-name">${escapeHtml(p.name)}</span>
         ${p.maturity ? `<span class="arch-modal-maturity arch-modal-maturity--${escapeHtml(p.maturity.toLowerCase())}">${escapeHtml(p.maturity)}</span>` : ''}
@@ -154,10 +158,13 @@ export function renderArchModalContent(arch: SafeArchitecture): string {
   `).join('') ?? '';
 
   const refType = arch.refArchTypes?.join(', ') ?? '';
+  const orgModalGlyph = escapeHtml((arch.orgName.trim().charAt(0) || '?').toUpperCase());
 
   return `
     <div class="arch-modal-header">
-      <img class="arch-modal-company-logo" src="${escapeHtml(arch.orgLogoUrl)}" alt="${escapeHtml(arch.orgName)} logo" />
+      ${arch.orgLogoUrl
+        ? `<img class="arch-modal-company-logo" src="${escapeHtml(arch.orgLogoUrl)}" alt="${escapeHtml(arch.orgName)} logo" />`
+        : `<span class="arch-modal-company-logo arch-modal-company-logo--fallback" aria-hidden="true">${orgModalGlyph}</span>`}
       <div class="arch-modal-meta">
         <h2 class="arch-modal-title">${escapeHtml(arch.orgName)}</h2>
         ${arch.submittedAt ? `<span class="arch-modal-date">Submitted ${escapeHtml(arch.submittedAt)}</span>` : ''}

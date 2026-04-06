@@ -1,12 +1,14 @@
-# CNCF Darkmode — Unified Trilogy
+# CNCF Darkmode — Unified Site
 
-npm workspaces monorepo unifying three CNCF websites under one architecture with dark mode support.
+This repository is the single source of truth for the unified CNCF darkmode site.
 
-| Site | URL | Port |
+> **Deprecation note:** `projects-website`, `endusers-website`, and `people-website` repos are deprecated for this initiative. Work only in `cncf-darkmode`.
+
+| Section | URL | Dev Port |
 |------|-----|------|
 | Projects | `/cncf-darkmode/` | 4322 |
 | Members | `/cncf-darkmode/members/` | 4324 |
-| People | `/people-website/` | 4323 (gated) |
+| People navigation target | `/people-website/` | 4323 |
 
 ## First-Time Setup
 
@@ -45,8 +47,8 @@ just push             # commit + push all changes
 ## Architecture
 
 - `packages/site-kit` — shared platform (`@cncf/site-kit`): ThemeToggle, SiteSwitcher, KeyboardHelp, InfoBox, KubeConBanner
-- `sites/projects` — CNCF Projects site (port 4322, base: `/cncf-darkmode`)
-- `sites/endusers` — CNCF Members site (port 4324, base: `/cncf-darkmode/members`)
+- `sites/projects` — Projects section (base: `/cncf-darkmode`)
+- `sites/endusers` — Members section (base: `/cncf-darkmode/members`)
 - `go/` — Go data sync backend (three independent binaries sharing `internal/common/`)
 
 ## How Data Serving Works
@@ -70,6 +72,6 @@ cp sites/projects/src/data/projects.json sites/projects/public/data/
 cp sites/projects/src/data/changelog.json sites/projects/public/data/
 ```
 
-## People Site (Gated)
+## Scope Rule for Agents
 
-Phase 5 (people site) is gated on 7 pre-migration gates. Do not start until all gates pass.
+When working this project, treat it as **one unified site product**. Do not split planning or implementation across deprecated `*-website` repos.

@@ -66,6 +66,27 @@ jobs:
       - name: Build endusers site
         run: npm run build --workspace=sites/endusers
 
+  critical-path:
+    name: "Critical path UX checks"
+    runs-on: ubuntu-latest
+    needs: [projects, endusers]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - run: npm ci
+      - name: Install Playwright
+        run: npx playwright install chromium --with-deps
+      - name: Run cross-site critical path specs
+        run: |
+          npx playwright test \
+            tests/cross-site/header-geometry.spec.ts \
+            tests/cross-site/search-contract.spec.ts \
+            tests/cross-site/shared-behaviors.spec.ts \
+            --config tests/cross-site/playwright.config.ts
+
   performance-budget:
     name: "Performance budget check"
     runs-on: ubuntu-latest

@@ -417,7 +417,10 @@ const staticMembers = members.slice(0, STATIC_COUNT);
   }
 
   hydrateEmbeddedMembers();
-  loadAllMembers();
+  const isLocalDev = window.location.hostname === 'localhost';
+  if (!isLocalDev || allMembers.length === 0) {
+    loadAllMembers();
+  }
   wireCardEvents();
   initArchModal();
 
