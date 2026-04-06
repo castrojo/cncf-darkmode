@@ -22,7 +22,12 @@ export function applyTab(tab: string): void {
   const maintainerSummary = document.getElementById('maintainer-summary');
 
   document.querySelectorAll<HTMLElement>('[data-tab-heroes]').forEach(el => {
-    el.style.display = el.dataset.tabHeroes === tab ? '' : 'none';
+    const heroTab = el.dataset.tabHeroes ?? '';
+    // On 'everyone', show both the curated everyone rotation and the kubestronauts sections.
+    const show = tab === 'everyone'
+      ? (heroTab === 'everyone' || heroTab === 'kubestronauts')
+      : heroTab === tab;
+    el.style.display = show ? '' : 'none';
   });
 
   if (maintainerSummary) maintainerSummary.style.display = tab === 'maintainers' ? '' : 'none';

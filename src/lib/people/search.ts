@@ -13,7 +13,7 @@ async function ensureLoaded(baseUrl: string): Promise<void> {
   if (miniSearch) return;
   if (loadPromise) return loadPromise;
   loadPromise = (async () => {
-    const url = `${baseUrl.replace(/\/$/, '')}/data/people-index.json`;
+    const url = `${baseUrl.replace(/\/$/, '')}/data/people/people-index.json`;
     const res = await fetch(url);
     if (!res.ok) throw new Error(`Failed to load people-index.json: ${res.status}`);
     const people: SafePerson[] = await res.json();

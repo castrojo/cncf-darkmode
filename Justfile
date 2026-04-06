@@ -51,6 +51,7 @@ copy-data-to-public:
     @cp src/data/people/people-index.json public/data/people/ 2>/dev/null || true
     @cp src/data/people/heroes.json public/data/people/ 2>/dev/null || true
     @cp src/data/people/changelog.json public/data/people/ 2>/dev/null || true
+    @cp src/data/people/landscape_logos.json public/data/people/ 2>/dev/null || true
 
 [private]
 verify:

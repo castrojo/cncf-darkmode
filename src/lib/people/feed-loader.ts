@@ -3,8 +3,10 @@
 import { esc, renderPersonCard, dateHeader, type PersonEvent } from './person-renderer';
 export { esc, dateHeader };
 
-const BASE = (document.documentElement.dataset.base ?? '/cncf-darkmode/people').replace(/\/$/, '');
-const DATA_URL = `${BASE}/data/changelog.json`;
+// Use Astro's injected BASE_URL (e.g. /cncf-darkmode/) so the path is always correct
+// regardless of when this module evaluates relative to the page script setting dataset.base.
+const BASE = (import.meta.env.BASE_URL ?? '/cncf-darkmode/').replace(/\/+$/, '');
+const DATA_URL = `${BASE}/data/people/changelog.json`;
 const BATCH_SIZE = 50;
 
 // renderCard re-exports renderPersonCard for backward compatibility.

@@ -1027,13 +1027,11 @@ const emeritusSorted = [...emeritusMembers].sort((a, b) => {
   import { initFeedLoader } from '../../lib/people/feed-loader';
   import { initMaintainerLoader } from '../../lib/people/maintainer-loader';
   import { searchPeople, preloadSearchIndex } from '../../lib/people/search';
+  import { applyTab } from '../../lib/people/tabs';
 
   const timelineFeed = document.getElementById('timeline-feed') as HTMLElement;
   const staticCount = parseInt(timelineFeed?.dataset.staticCount ?? '200', 10);
-  const baseUrl = timelineFeed?.dataset.baseUrl ?? '/cncf-darkmode/people';
-
-  // Expose base for feed-loader
-  document.documentElement.dataset.base = baseUrl;
+  const baseUrl = timelineFeed?.dataset.baseUrl ?? '/cncf-darkmode';
 
   // Preload search index in background
   preloadSearchIndex(import.meta.env.BASE_URL);
@@ -1042,14 +1040,22 @@ const emeritusSorted = [...emeritusMembers].sort((a, b) => {
   // Use a mutable object so feed-loader can start immediately and logos fill in async.
   const logos: Record<string, string> = {};
   const logosPromise: Promise<void> =
-    fetch(`${baseUrl}/data/landscape_logos.json`)
+    fetch(`${baseUrl}/data/people/landscape_logos.json`)
       .then(r => r.json())
       .then((resolved: Record<string, string>) => { Object.assign(logos, resolved); })
       .catch(() => {/* logos stay empty — onerror handlers hide broken imgs */});
 
+  // After each batch loads, re-apply both the search/type/cat filters AND the active tab
+  // filter so dynamically loaded cards respect the currently visible tab.
+  function onBatchLoaded() {
+    applyFilters();
+    const activeTab = document.querySelector<HTMLButtonElement>('.section-link.active')?.dataset.tab ?? 'everyone';
+    applyTab(activeTab);
+  }
+
   // Kick off infinite scroll for the main timeline feed immediately — no logo gate.
   // changelog.json (4.1MB) takes longer than logos (476KB) so they arrive in parallel.
-  initFeedLoader(staticCount, logos, applyFilters);
+  initFeedLoader(staticCount, logos, onBatchLoaded);
 
   // Defer maintainer data fetch until the Maintainers tab is first activated.
   let maintainerInitialized = false;
