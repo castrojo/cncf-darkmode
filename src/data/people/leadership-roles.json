@@ -3,253 +3,302 @@
     {
       "handle": "angellk",
       "name": "Karena Angell",
-      "title": "Chair"
+      "title": "Chair",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/karena-angell.jpeg"
     },
     {
       "handle": "kevin-wangzefeng",
       "name": "Kevin (Zefeng) Wang",
-      "title": "Vice Chair"
+      "title": "Vice Chair",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/kevin-wang.jpg"
     },
     {
       "handle": "chira001",
       "name": "Alex Chircop",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/alex_chircop.jpg"
     },
     {
       "handle": "chadbeaudin",
       "name": "Chad Beaudin",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/chad-beaudin.jpg"
     },
     {
       "handle": "dims",
       "name": "Davanum Srinivas",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://www.cncf.io/wp-content/uploads/2019/07/23304.jpg"
     },
     {
       "handle": "TheFoxAtWork",
       "name": "Emily Fox",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/emily-fox.JPG"
     },
     {
       "handle": "kfaseela",
       "name": "Faseela K",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/faseela-kundatti.jpg"
     },
     {
       "handle": "jeremyrickard",
       "name": "Jeremy Rickard",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/jeremy-rickard.jpg"
     },
     {
       "handle": "",
       "name": "Katie Gamanji",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/katie-gamanji.jpg"
     },
     {
       "handle": "linsun",
       "name": "Lin Sun",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/lin-sun.jpg"
     },
     {
       "handle": "raravena80",
       "name": "Ricardo Aravena",
-      "title": "Shadow (GB)"
+      "title": "Shadow (GB)",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/ricardo-aravena.jpg"
     },
     {
       "handle": "rochaporto",
       "name": "Ricardo Rocha",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://www.cncf.io/wp-content/uploads/2021/03/ricardo.jpg"
     }
   ],
   "tab": [
     {
       "handle": "abebars",
       "name": "Ahmed Bebars",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/ahmed-bebars.jpg"
     },
     {
       "handle": "",
       "name": "Alolita Sharma",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/alolita-sharma.jpeg"
     },
     {
       "handle": "",
       "name": "Ben Somogyi",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/ben-somogyi.jpg"
     },
     {
       "handle": "chadbeaudin",
       "name": "Chad Beaudin",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/chad-beaudin.jpg"
     },
     {
       "handle": "jrsapi",
       "name": "Joseph Sandoval",
-      "title": "TAB Vice Chair"
+      "title": "TAB Vice Chair",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/joseph-sandoval.jpg"
     },
     {
       "handle": "",
       "name": "Katie Gamanji",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/katie-gamanji.jpg"
     },
     {
       "handle": "KentaTada",
       "name": "Kenta Tada",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/kenta-tada.jpeg"
     },
     {
       "handle": "",
       "name": "Michael Amundson",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/michael-amundson-headshot.jpg"
     },
     {
       "handle": "",
       "name": "Mike Bowen",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/mike-bowen.jpg"
     },
     {
       "handle": "rochaporto",
       "name": "Ricardo Rocha",
-      "title": "TAB Chair"
+      "title": "TAB Chair",
+      "imageUrl": "https://www.cncf.io/wp-content/uploads/2021/03/ricardo.jpg"
     },
     {
       "handle": "gnawux",
       "name": "Xu Wang",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/xu-wang.jpg"
     }
   ],
   "governing-board": [
     {
       "handle": "cblecker",
       "name": "Christoph Blecker",
-      "title": "Chair, Kubernetes Rep"
+      "title": "Chair, Kubernetes Rep",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/cblecker.jpeg"
     },
     {
       "handle": "",
       "name": "Jan Melén",
-      "title": "Vice Chair, Gold Member Rep"
+      "title": "Vice Chair, Gold Member Rep",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/jan-melen.jpg"
     },
     {
       "handle": "lachie83",
       "name": "Lachlan Evenson",
-      "title": "Vice Chair"
+      "title": "Vice Chair",
+      "imageUrl": "https://www.cncf.io/wp-content/uploads/2018/01/n8MwLvTY_400x400.jpg"
     },
     {
       "handle": "alena1108",
       "name": "Alena Prokharchyk",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://www.cncf.io/wp-content/uploads/2020/08/image-1-1.jpg"
     },
     {
       "handle": "",
       "name": "Betty Junod",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/betty-junod.jpg"
     },
     {
       "handle": "",
       "name": "Bill Ren (Ren Xudong)",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/bill-ren.jpg"
     },
     {
       "handle": "",
       "name": "Chris Wright",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/chris-wright.jpg"
     },
     {
       "handle": "",
       "name": "Jeremy Garcia",
-      "title": "Silver Member Rep"
+      "title": "Silver Member Rep",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/jeremy-garcia.jpg"
     },
     {
       "handle": "jimternet",
       "name": "Jim Beyers",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/jim-beyers.jpg"
     },
     {
       "handle": "angellk",
       "name": "Karena Angell",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/karena-angell.jpeg"
     },
     {
       "handle": "",
       "name": "Li Yi",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://www.cncf.io/wp-content/uploads/2020/08/li-yi-alibaba-1.jpg"
     },
     {
       "handle": "",
       "name": "Liz Rice",
-      "title": "Developer Seat Rep"
+      "title": "Developer Seat Rep",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/liz-rice.jpg"
     },
     {
       "handle": "mkorbi",
       "name": "Max Körbächer",
-      "title": "Silver Member Rep"
+      "title": "Silver Member Rep",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/max-korbacher.jpg"
     },
     {
       "handle": "maximilianbraun",
       "name": "Maximilian Braun",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/max-braun.jpg"
     },
     {
       "handle": "",
       "name": "Mike Bufano",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/mike-bufano.jpg"
     },
     {
       "handle": "",
       "name": "Mike Stefaniak",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/mike-stefaniak.jpg"
     },
     {
       "handle": "",
       "name": "Naresh Duddu",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/naresh-duddu.jpg"
     },
     {
       "handle": "rochaporto",
       "name": "Ricardo Rocha",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://www.cncf.io/wp-content/uploads/2021/03/ricardo.jpg"
     },
     {
       "handle": "scheeles",
       "name": "Sebastian Scheele",
-      "title": "Silver Member Rep"
+      "title": "Silver Member Rep",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/sebastian-scheele.jpg"
     },
     {
       "handle": "",
       "name": "Sudha Raghavan",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/sudha-raghavan.jpg"
     },
     {
       "handle": "",
       "name": "Takao Indoh",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/takao.indoh.jpg"
     },
     {
       "handle": "gnawux",
       "name": "Xu Wang",
-      "title": "Gold Member Rep"
+      "title": "Gold Member Rep",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/xu-wang.jpg"
     },
     {
       "handle": "yuichi-nakamura",
       "name": "Yuichi Nakamura",
-      "title": "Gold Member Rep"
+      "title": "Gold Member Rep",
+      "imageUrl": "https://raw.githubusercontent.com/cncf/people/main/images/yuichi-nakamura.jpg"
     }
   ],
   "marketing": [
     {
       "handle": "",
       "name": "Ariel Jatib",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://www.cncf.io/wp-content/uploads/2017/06/1611853780719.jpg"
     },
     {
       "handle": "",
       "name": "Jiayao (Julia) Han",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://www.cncf.io/wp-content/uploads/2017/06/1611887010893.jpg"
     },
     {
       "handle": "yaronha",
       "name": "Yaron Haviv",
-      "title": "Member"
+      "title": "Member",
+      "imageUrl": "https://www.cncf.io/wp-content/uploads/2017/10/18oLcZPr_400x400.jpg"
     }
   ]
 }
