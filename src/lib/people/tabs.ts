@@ -23,10 +23,7 @@ export function applyTab(tab: string): void {
 
   document.querySelectorAll<HTMLElement>('[data-tab-heroes]').forEach(el => {
     const heroTab = el.dataset.tabHeroes ?? '';
-    // On 'everyone', show both the curated everyone rotation and the kubestronauts sections.
-    const show = tab === 'everyone'
-      ? (heroTab === 'everyone' || heroTab === 'kubestronauts')
-      : heroTab === tab;
+    const show = tab === 'everyone' ? heroTab === 'everyone' : heroTab === tab;
     el.style.display = show ? '' : 'none';
   });
 

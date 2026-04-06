@@ -56,12 +56,17 @@ test('people page: ambassadors tab shows changelog events', async ({ page }) => 
 test('people page: everyone tab shows kubestronauts hero section', async ({ page }) => {
   await page.goto(`${PROD}/people/`);
   await page.waitForLoadState('networkidle');
-  // Everyone tab is default — at least one kubestronauts hero section must be visible.
-  // Multiple sections can match; use first().
+  // Everyone tab is default — kubestronauts hero sections must NOT appear on everyone tab.
+  // Only data-tab-heroes="everyone" sections should be visible.
   const kubeSection = page.locator('[data-tab-heroes="kubestronauts"]').first();
   const visible = await kubeSection.isVisible();
-  console.log('kubestronauts hero visible on everyone tab:', visible);
-  expect(visible).toBe(true);
+  console.log('kubestronauts hero visible on everyone tab (must be false):', visible);
+  expect(visible).toBe(false);
+  // The everyone-tab hero section should be visible
+  const everyoneSection = page.locator('[data-tab-heroes="everyone"]').first();
+  const everySectionVisible = await everyoneSection.isVisible();
+  console.log('everyone hero visible on everyone tab:', everySectionVisible);
+  expect(everySectionVisible).toBe(true);
 });
 
 test('people page: search returns results', async ({ page }) => {
