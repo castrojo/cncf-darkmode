@@ -558,3 +558,79 @@ func TestWriteLeadershipRoles_EmptyPeopleProducesEmptySections(t *testing.T) {
 		t.Errorf("expected all sections empty, got %+v", roles)
 	}
 }
+
+// TestWriteLeadershipRoles_ImageURLPreservedForMembersWithNoHandle verifies that
+// imageUrl is written to leadership-roles.json so that the deploy sync does not
+// wipe photos for TAB/TOC/GB members who have no GitHub handle.
+// Regression: LeadershipEntry had no ImageURL field — every sync produced
+// entries with empty imageUrl, causing hero photo placeholders on /people/.
+func TestWriteLeadershipRoles_ImageURLPreservedForMembersWithNoHandle(t *testing.T) {
+	dir := t.TempDir()
+
+	people := []RawPerson{
+		// Member with image but no GitHub handle — the broken case
+		{Name: "Katie Gamanji", Image: "katie-gamanji.jpg", Category: []string{"End User TAB"}, TABRole: "Member"},
+		// Member with both handle and image — image should still be written
+		{Name: "Alice Chair", GitHub: "https://github.com/alicechair", Image: "alice.jpg", Category: []string{"Technical Oversight Committee"}, TOCRole: "Chair"},
+		// Member with handle but no image — imageUrl should be empty
+		{Name: "Bob Member", GitHub: "https://github.com/bobmember", Category: []string{"End User TAB"}, TABRole: "Member"},
+	}
+
+	if err := WriteLeadershipRoles(dir, people); err != nil {
+		t.Fatalf("WriteLeadershipRoles: %v", err)
+	}
+
+	data, err := os.ReadFile(filepath.Join(dir, "leadership-roles.json"))
+	if err != nil {
+		t.Fatalf("leadership-roles.json not created: %v", err)
+	}
+
+	var roles LeadershipRoles
+	if err := json.Unmarshal(data, &roles); err != nil {
+		t.Fatalf("unmarshal: %v", err)
+	}
+
+	// Find Katie — no handle, must have imageUrl
+	var katie *LeadershipEntry
+	for i := range roles.TAB {
+		if roles.TAB[i].Name == "Katie Gamanji" {
+			katie = &roles.TAB[i]
+		}
+	}
+	if katie == nil {
+		t.Fatal("Katie Gamanji not found in TAB")
+	}
+	wantKatie := ImageBaseURL + "katie-gamanji.jpg"
+	if katie.ImageURL != wantKatie {
+		t.Errorf("Katie Gamanji imageUrl = %q, want %q", katie.ImageURL, wantKatie)
+	}
+
+	// Find Alice — has handle AND image, imageUrl must still be written
+	var alice *LeadershipEntry
+	for i := range roles.TOC {
+		if roles.TOC[i].Name == "Alice Chair" {
+			alice = &roles.TOC[i]
+		}
+	}
+	if alice == nil {
+		t.Fatal("Alice Chair not found in TOC")
+	}
+	wantAlice := ImageBaseURL + "alice.jpg"
+	if alice.ImageURL != wantAlice {
+		t.Errorf("Alice Chair imageUrl = %q, want %q", alice.ImageURL, wantAlice)
+	}
+
+	// Find Bob — handle but no image, imageUrl must be empty
+	var bob *LeadershipEntry
+	for i := range roles.TAB {
+		if roles.TAB[i].Name == "Bob Member" {
+			bob = &roles.TAB[i]
+		}
+	}
+	if bob == nil {
+		t.Fatal("Bob Member not found in TAB")
+	}
+	if bob.ImageURL != "" {
+		t.Errorf("Bob Member imageUrl = %q, want empty", bob.ImageURL)
+	}
+}

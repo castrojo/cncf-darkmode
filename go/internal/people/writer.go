@@ -374,9 +374,10 @@ return os.WriteFile(filepath.Join(outDir, "people-index.json"), data, 0o644)
 
 // LeadershipEntry is the output format for toc.json, tab.json, gb.json, and marketing.json.
 type LeadershipEntry struct {
-Handle string `json:"handle"`
-Name   string `json:"name"`
-Title  string `json:"title"`
+Handle   string `json:"handle"`
+Name     string `json:"name"`
+Title    string `json:"title"`
+ImageURL string `json:"imageUrl,omitempty"`
 }
 
 func leadershipSortKey(title string) int {
@@ -416,9 +417,10 @@ if title == "" {
 title = "Member"
 }
 entries = append(entries, LeadershipEntry{
-Handle: handle,
-Name:   p.Name,
-Title:  title,
+Handle:   handle,
+Name:     p.Name,
+Title:    title,
+ImageURL: p.ImageURL(),
 })
 }
 sort.Slice(entries, func(i, j int) bool {
@@ -488,7 +490,7 @@ title := roleFunc(p)
 if title == "" {
 title = "Member"
 }
-entries = append(entries, LeadershipEntry{Handle: handle, Name: p.Name, Title: title})
+entries = append(entries, LeadershipEntry{Handle: handle, Name: p.Name, Title: title, ImageURL: p.ImageURL()})
 }
 sort.Slice(entries, func(i, j int) bool {
 ki, kj := leadershipSortKey(entries[i].Title), leadershipSortKey(entries[j].Title)
