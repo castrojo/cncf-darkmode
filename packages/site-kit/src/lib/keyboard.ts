@@ -15,7 +15,7 @@ export interface KeyboardCallbacks {
   onPageDown?: () => void;
   onPageUp?: () => void;
   onTabCycle?: (reverse: boolean) => void;
-  onOpen?: () => void;
+  onOpen?: () => boolean | void;
   onResetFocus?: () => void;
   onSitePrev?: () => void;
   onSiteNext?: () => void;
@@ -72,6 +72,7 @@ export function initKeyboard(
 
       case 'Escape':
         callbacks.onEscape?.();
+        callbacks.onResetFocus?.();
         break;
 
       case 'j':
@@ -116,7 +117,8 @@ export function initKeyboard(
       case 'Enter':
       case 'o':
         if (!inInput) {
-          callbacks.onOpen?.();
+          const handled = callbacks.onOpen?.();
+          if (handled) e.preventDefault();
         }
         break;
 

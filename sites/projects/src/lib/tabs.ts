@@ -1,4 +1,6 @@
+import { initDataTabs, migrateLegacyKey } from '@cncf/site-kit/lib/tabs';
 export type TabId = 'everyone' | 'graduated' | 'incubating' | 'sandbox' | 'archived';
+const TABS: TabId[] = ['everyone', 'graduated', 'incubating', 'sandbox', 'archived'];
 
 export interface ChangelogEvent {
   id: string;
@@ -16,31 +18,21 @@ export interface ChangelogEvent {
   mentionedProjects?: Array<{ name: string; slug: string; logoUrl: string; maturity: string }>;
 }
 
-const TAB_STORAGE_KEY = 'cncf-projects-tab';
 const LEGACY_KEY = 'projects-active-tab';
 
 export function initTabs(onTabChange: (tabId: TabId) => void): void {
-  // Migrate legacy key on first read
-  try {
-    const legacy = localStorage.getItem(LEGACY_KEY);
-    if (legacy) {
-      localStorage.setItem(TAB_STORAGE_KEY, legacy);
-      localStorage.removeItem(LEGACY_KEY);
-    }
-  } catch {
-    // localStorage unavailable
-  }
-  const savedTab = (localStorage.getItem(TAB_STORAGE_KEY) as TabId) ?? 'everyone';
-  activateTab(savedTab, onTabChange);
-
-  document.querySelectorAll('.section-link').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const tab = (btn as HTMLElement).dataset.tab as TabId;
-      if (tab) {
-        try { localStorage.setItem(TAB_STORAGE_KEY, tab); } catch { /* unavailable */ }
-        activateTab(tab, onTabChange);
-      }
-    });
+  migrateLegacyKey('projects', LEGACY_KEY);
+  initDataTabs<TabId>({
+    site: 'projects',
+    defaultTab: 'everyone',
+    tabs: [
+      { id: 'everyone', selector: '.section-link[data-tab="everyone"]' },
+      { id: 'graduated', selector: '.section-link[data-tab="graduated"]' },
+      { id: 'incubating', selector: '.section-link[data-tab="incubating"]' },
+      { id: 'sandbox', selector: '.section-link[data-tab="sandbox"]' },
+      { id: 'archived', selector: '.section-link[data-tab="archived"]' },
+    ],
+    onActivate: onTabChange,
   });
 }
 
@@ -64,4 +56,8 @@ export function filterChangelogByTab(events: ChangelogEvent[], tabId: TabId): Ch
     e.type !== 'newsletter' &&
     (e.maturity === tabId || e.oldMaturity === tabId)
   );
+}
+
+export function tabFromNumber(n: number): TabId {
+  return TABS[n - 1] ?? 'everyone';
 }

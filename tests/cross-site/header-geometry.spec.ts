@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
 
 const SITES = [
-  { name: 'projects', url: 'http://localhost:4322/projects-website' },
-  { name: 'endusers', url: 'http://localhost:4324/endusers-website' },
+  { name: 'projects', url: 'http://localhost:4322/cncf-darkmode/' },
+  { name: 'members', url: 'http://localhost:4324/cncf-darkmode/members/' },
 ];
 
 const LOGO_SIZE = 42;

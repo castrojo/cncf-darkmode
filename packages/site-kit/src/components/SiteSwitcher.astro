@@ -1,16 +1,24 @@
 ---
 interface Props {
-  activeSite: 'people' | 'projects' | 'endusers';
+  activeSite: 'projects' | 'members';
 }
 const { activeSite } = Astro.props;
+const isDev = import.meta.env.DEV;
 
 const sites = [
-  { key: 'people',   label: 'People',    url: 'https://castrojo.github.io/people-website/' },
-  { key: 'projects', label: 'Projects',  url: 'https://castrojo.github.io/projects-website/' },
-  { key: 'endusers', label: 'End Users', url: 'https://castrojo.github.io/endusers-website/' },
+  {
+    key: 'projects',
+    label: 'Projects',
+    url: isDev ? 'http://localhost:4322/cncf-darkmode/' : '/cncf-darkmode/',
+  },
+  {
+    key: 'members',
+    label: 'Members',
+    url: isDev ? 'http://localhost:4324/cncf-darkmode/members/' : '/cncf-darkmode/members/',
+  },
 ];
 ---
-<nav class="site-switcher" aria-label="Indie Cloud Native sites">
+<nav class="site-switcher" aria-label="CNCF Landscape sections">
   {sites.map(site => (
     site.key === activeSite
       ? <span class="switcher-pill active" aria-current="page">{site.label}</span>
@@ -47,18 +55,3 @@ const sites = [
     background: var(--color-bg-default, #ffffff);
   }
 </style>
-<script>
-  // Patch pill URLs for localhost dev navigation
-  if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
-    const LOCAL_URLS: Record<string, string> = {
-      'people-website':   'http://localhost:4323/people-website/',
-      'projects-website': 'http://localhost:4322/projects-website/',
-      'endusers-website': 'http://localhost:4324/endusers-website/',
-    };
-    document.querySelectorAll<HTMLAnchorElement>('.switcher-pill[href]').forEach(a => {
-      for (const [key, url] of Object.entries(LOCAL_URLS)) {
-        if (a.href.includes(key)) { a.href = url; break; }
-      }
-    });
-  }
-</script>

@@ -11,7 +11,7 @@ export const GET: APIRoute = () => {
     // empty
   }
 
-  const base = 'https://castrojo.github.io/endusers-website';
+  const base = 'https://castrojo.github.io/cncf-darkmode/members';
   const items = members.slice(0, 50).map(m => `
     <item>
       <title>${escapeXml(m.name)} (${escapeXml(m.tier)})</title>

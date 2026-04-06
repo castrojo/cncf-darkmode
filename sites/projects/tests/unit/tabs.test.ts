@@ -1,7 +1,18 @@
-import { describe, it, expect } from 'vitest';
-import { filterByTab, filterChangelogByTab } from '../../src/lib/tabs';
+import { describe, it, expect, beforeEach } from 'vitest';
+import { filterByTab, filterChangelogByTab, initTabs } from '../../src/lib/tabs';
 import type { SafeProject } from '../../src/lib/project-renderer';
 import type { ChangelogEvent } from '../../src/lib/tabs';
+
+const localStorageMock = (() => {
+  let store: Record<string, string> = {};
+  return {
+    getItem: (key: string) => store[key] ?? null,
+    setItem: (key: string, value: string) => { store[key] = value; },
+    removeItem: (key: string) => { delete store[key]; },
+    clear: () => { store = {}; },
+  };
+})();
+Object.defineProperty(globalThis, 'localStorage', { value: localStorageMock, writable: true });
 
 const projects: SafeProject[] = [
   { name: 'K8s', slug: 'k8s', maturity: 'graduated', category: 'Orch', subcategory: '', logoUrl: '', updatedAt: '' },
@@ -63,5 +74,36 @@ describe('filterChangelogByTab', () => {
       const result = filterChangelogByTab(events, tab);
       expect(result.some(e => e.type === 'newsletter')).toBe(false);
     }
+  });
+});
+
+describe('initTabs hash routing', () => {
+  beforeEach(() => {
+    localStorageMock.clear();
+    window.history.replaceState(null, '', '/');
+    document.body.innerHTML = `
+      <button class="section-link" data-tab="everyone">Everyone</button>
+      <button class="section-link" data-tab="graduated">Graduated</button>
+      <button class="section-link" data-tab="incubating">Incubating</button>
+      <button class="section-link" data-tab="sandbox">Sandbox</button>
+      <button class="section-link" data-tab="archived">Archived</button>
+    `;
+  });
+
+  it('hash overrides localStorage on load', () => {
+    localStorage.setItem('cncf-projects-tab', 'incubating');
+    window.history.replaceState(null, '', '/#graduated');
+    let active: string | null = null;
+    initTabs((tab) => { active = tab; });
+    expect(active).toBe('graduated');
+  });
+
+  it('invalid hash falls back to default tab', () => {
+    localStorage.setItem('cncf-projects-tab', 'incubating');
+    window.history.replaceState(null, '', '/#does-not-exist');
+    let active: string | null = null;
+    initTabs((tab) => { active = tab; });
+    expect(active).toBe('everyone');
+    expect(window.location.hash).toBe('');
   });
 });

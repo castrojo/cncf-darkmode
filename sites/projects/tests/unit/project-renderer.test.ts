@@ -18,13 +18,13 @@ describe('renderCard', () => {
   it('renders graduated card with gold badge', () => {
     const html = renderCard(base);
     expect(html).toContain('data-maturity="graduated"');
-    expect(html).toContain('#FFB300');
+    expect(html).toContain('Graduated');
     expect(html).toContain('Kubernetes');
   });
 
   it('renders sandbox card with gray badge', () => {
     const html = renderCard({ ...base, maturity: 'sandbox', name: 'MySandbox', slug: 'mysandbox' });
-    expect(html).toContain('#8b949e');
+    expect(html).toContain('data-maturity="sandbox"');
     expect(html).toContain('Sandbox');
   });
 

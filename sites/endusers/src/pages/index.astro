@@ -150,9 +150,9 @@ const staticMembers = members.slice(0, STATIC_COUNT);
   import { initSearch, searchMembers } from '../lib/search';
   import { initArchSearch, searchArchSlugs, resetArchSearch } from '../lib/arch-search';
   import { renderCard } from '../lib/member-renderer';
-  import { initTabs, filterByTab } from '../lib/tabs';
-  import { initKeyboard, tabFromNumber } from '../lib/keyboard';
-  import { fireFountain, preloadOnHover, fireHearts } from '../lib/confetti';
+  import { initTabs, filterByTab, tabFromNumber } from '../lib/tabs';
+  import { initKeyboard } from '@cncf/site-kit/lib/keyboard';
+  import { fireFountain, preloadOnHover, fireHearts } from '@cncf/site-kit/lib/confetti';
   import { openArchModal, initArchModal } from '../lib/arch-modal';
   import type { TabId } from '../lib/tabs';
 
@@ -308,6 +308,9 @@ const staticMembers = members.slice(0, STATIC_COUNT);
   });
 
   initKeyboard({
+    tabCount: 6,
+    searchInput,
+  }, {
     onSearch: () => searchInput?.focus(),
     onHelp: () => {
       document.getElementById('keyboard-help-modal')?.classList.add('visible');
@@ -322,38 +325,58 @@ const staticMembers = members.slice(0, STATIC_COUNT);
     onEscape: () => {
       const archModal = document.getElementById('arch-modal') as HTMLDialogElement | null;
       if (archModal?.open) return;
+      document.getElementById('keyboard-help-modal')?.classList.remove('visible');
+      document.getElementById('keyboard-help-backdrop')?.classList.remove('visible');
       if (searchInput && searchInput.value) {
         searchInput.value = '';
         currentQuery = '';
         applyFilters();
       }
-      resetFocus();
     },
     onNext: () => { focusCard(focusedIdx + 1); },
     onPrev: () => { focusCard(focusedIdx - 1); },
-    onOpenLink: () => {
+    onScrollTop: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
+    onPageDown: () => window.scrollBy({ top: window.innerHeight * 0.85, behavior: 'smooth' }),
+    onPageUp: () => window.scrollBy({ top: -window.innerHeight * 0.85, behavior: 'smooth' }),
+    onTabCycle: (reverse) => {
+      const tabBtns = Array.from(document.querySelectorAll<HTMLElement>('.section-link[data-tab]'));
+      if (tabBtns.length === 0) return;
+      const activeBtn = tabBtns.find(b => b.classList.contains('active'));
+      const cur = activeBtn ? tabBtns.indexOf(activeBtn) : 0;
+      const next = reverse
+        ? (cur - 1 + tabBtns.length) % tabBtns.length
+        : (cur + 1) % tabBtns.length;
+      tabBtns[next].click();
+      tabBtns[next].scrollIntoView({ inline: 'nearest', block: 'nearest' });
+    },
+    onOpen: () => {
       const all = visibleCards();
       const card = all[focusedIdx];
-      if (!card) return;
+      if (!card) return false;
       if (card.classList.contains('arch-card')) {
         const slug = (card as HTMLElement).dataset.slug;
         if (slug) openArchModal(slug);
-        return;
+        return true;
       }
       const link = card?.querySelector('a[href]') as HTMLAnchorElement | null;
-      if (link) { window.open(link.href, '_blank', 'noopener'); }
+      if (link) {
+        window.open(link.href, '_blank', 'noopener');
+        return true;
+      }
+      return false;
     },
+    onResetFocus: resetFocus,
     onSitePrev: () => {
       const isLocal = window.location.hostname === 'localhost';
       window.location.href = isLocal
-        ? 'http://localhost:4322/projects-website/'
-        : 'https://castrojo.github.io/projects-website/';
+        ? 'http://localhost:4322/cncf-darkmode/'
+        : '/cncf-darkmode/';
     },
     onSiteNext: () => {
       const isLocal = window.location.hostname === 'localhost';
       window.location.href = isLocal
-        ? 'http://localhost:4323/people-website/'
-        : 'https://castrojo.github.io/people-website/';
+        ? 'http://localhost:4322/cncf-darkmode/'
+        : '/cncf-darkmode/';
     },
   });
 

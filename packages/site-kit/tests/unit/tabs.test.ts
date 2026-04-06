@@ -58,6 +58,7 @@ Object.defineProperty(document, 'querySelector', {
 beforeEach(() => {
   localStorageMock.clear();
   queryMap = {};
+  window.history.replaceState(null, '', '/');
   vi.clearAllMocks();
 });
 
@@ -100,6 +101,47 @@ describe('initDataTabs', () => {
     expect(el2.classList.has('active')).toBe(true);
   });
 
+  it('prefers hash over localStorage on first load', () => {
+    localStorageMock.setItem('cncf-projects-tab', 'a');
+    window.history.replaceState(null, '', '/#b');
+    const onActivate = vi.fn();
+    const el1 = makeEl('tab-a');
+    const el2 = makeEl('tab-b');
+    queryMap['#tab-a'] = el1;
+    queryMap['#tab-b'] = el2;
+
+    initDataTabs({
+      site: 'projects',
+      defaultTab: 'a' as const,
+      tabs: [{ id: 'a' as const, selector: '#tab-a' }, { id: 'b' as const, selector: '#tab-b' }],
+      onActivate,
+    });
+
+    expect(onActivate).toHaveBeenCalledWith('b');
+    expect(el2.classList.has('active')).toBe(true);
+  });
+
+  it('falls back to default tab when hash is invalid', () => {
+    localStorageMock.setItem('cncf-projects-tab', 'b');
+    window.history.replaceState(null, '', '/#invalid');
+    const onActivate = vi.fn();
+    const el1 = makeEl('tab-a');
+    const el2 = makeEl('tab-b');
+    queryMap['#tab-a'] = el1;
+    queryMap['#tab-b'] = el2;
+
+    initDataTabs({
+      site: 'projects',
+      defaultTab: 'a' as const,
+      tabs: [{ id: 'a' as const, selector: '#tab-a' }, { id: 'b' as const, selector: '#tab-b' }],
+      onActivate,
+    });
+
+    expect(onActivate).toHaveBeenCalledWith('a');
+    expect(window.location.hash).toBe('');
+    expect(el1.classList.has('active')).toBe(true);
+  });
+
   it('saves tab to localStorage on activateTab', () => {
     const el1 = makeEl('tab-a');
     const el2 = makeEl('tab-b');
@@ -114,6 +156,28 @@ describe('initDataTabs', () => {
 
     ctrl.activateTab('b');
     expect(localStorageMock.getItem('cncf-projects-tab')).toBe('b');
+    expect(window.location.hash).toBe('#b');
+  });
+
+  it('reacts to hashchange for back/forward navigation', () => {
+    const onActivate = vi.fn();
+    const el1 = makeEl('tab-a');
+    const el2 = makeEl('tab-b');
+    queryMap['#tab-a'] = el1;
+    queryMap['#tab-b'] = el2;
+
+    initDataTabs({
+      site: 'projects',
+      defaultTab: 'a' as const,
+      tabs: [{ id: 'a' as const, selector: '#tab-a' }, { id: 'b' as const, selector: '#tab-b' }],
+      onActivate,
+    });
+
+    window.history.pushState(null, '', '/#b');
+    window.dispatchEvent(new Event('hashchange'));
+
+    expect(onActivate).toHaveBeenLastCalledWith('b');
+    expect(el2.classList.has('active')).toBe(true);
   });
 
   it('activeTab() returns current tab', () => {

@@ -82,7 +82,8 @@ describe('renderTimeline', () => {
       graduatedDate: '2022-01-01',
     })]);
     expect(html).toContain('Graduated');
-    expect(html).toContain('#FFB300');
+    expect(html).toContain('timeline-peak-badge');
+    expect(html).toContain('--peak-color:');
   });
 
   it('shows peak maturity as Incubating when incubatingDate set but no graduatedDate', () => {
@@ -91,7 +92,8 @@ describe('renderTimeline', () => {
       incubatingDate: '2021-01-01',
     })]);
     expect(html).toContain('Incubating');
-    expect(html).toContain('#0086FF');
+    expect(html).toContain('timeline-peak-badge');
+    expect(html).toContain('--peak-color:');
   });
 
   it('falls back to Sandbox peak maturity', () => {

@@ -82,8 +82,8 @@ describe('renderArchCard', () => {
 
   it('renders project chip with graduated maturity color', () => {
     const html = renderArchCard(baseArch);
-    // graduated = #00B5D8 teal
-    expect(html).toContain('#00B5D8');
+    expect(html).toContain('arch-project-chip--graduated');
+    expect(html).toContain('title="graduated"');
   });
 
   it('renders project chip with incubating maturity color', () => {
@@ -92,7 +92,8 @@ describe('renderArchCard', () => {
       projects: [{ name: 'Backstage', maturity: 'incubating' }],
     };
     const html = renderArchCard(arch);
-    expect(html).toContain('#F6AD55');
+    expect(html).toContain('arch-project-chip--incubating');
+    expect(html).toContain('title="incubating"');
   });
 
   it('renders project chip with sandbox maturity color', () => {
@@ -101,7 +102,8 @@ describe('renderArchCard', () => {
       projects: [{ name: 'SomeProject', maturity: 'sandbox' }],
     };
     const html = renderArchCard(arch);
-    expect(html).toContain('#8b949e');
+    expect(html).toContain('arch-project-chip--sandbox');
+    expect(html).toContain('title="sandbox"');
   });
 
   it('renders project name in ribbon chip', () => {

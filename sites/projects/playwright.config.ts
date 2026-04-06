@@ -9,7 +9,7 @@ export default defineConfig({
   reporter: 'list',
   timeout: 30000,
   use: {
-    baseURL: 'http://localhost:4322/projects-website/',
+    baseURL: 'http://localhost:4322/cncf-darkmode/',
     headless: true,
     trace: 'on-first-retry',
   },
@@ -21,7 +21,7 @@ export default defineConfig({
   ],
   webServer: {
     command: 'npx astro build && npx astro preview --port 4322',
-    url: 'http://localhost:4322/projects-website/',
+    url: 'http://localhost:4322/cncf-darkmode/',
     reuseExistingServer: !process.env.CI,
     timeout: 120000,
   },

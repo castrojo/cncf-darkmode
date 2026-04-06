@@ -1,28 +1,27 @@
-import MiniSearch from 'minisearch';
+import { createSearchSync, type SearchInstance } from '@cncf/site-kit/lib/search';
 import type { SafeMember } from './member-renderer';
 
 interface Indexed extends SafeMember { id: number; industriesStr: string; }
 
-let ms: MiniSearch | null = null;
+let search: SearchInstance<Indexed> | null = null;
 let allMembers: SafeMember[] = [];
 
 export function initSearch(members: SafeMember[]): void {
   allMembers = members;
-  const instance = new MiniSearch<Indexed>({
+  const indexed = members.map((m, i) => ({ ...m, id: i, industriesStr: (m.industries ?? []).join(' ') }));
+  search = createSearchSync(indexed, {
     fields: ['name', 'description', 'city', 'country', 'industriesStr'],
     storeFields: ['name', 'slug', 'tier', 'isEndUser', 'logoUrl', 'updatedAt', 'description',
       'homepageUrl', 'twitterUrl', 'linkedInUrl', 'city', 'country', 'countryFlag',
       'employeesMin', 'employeesMax', 'totalFunding', 'industries', 'stockExchange', 'ticker',
-      'joinedAt', 'region', 'companyType'],
-    searchOptions: { fuzzy: 0.2, prefix: true, boost: { name: 5, description: 2, industriesStr: 1.5 } },
+      'joinedAt', 'region', 'companyType', 'id', 'industriesStr'],
+    boost: { name: 5, description: 2, industriesStr: 1.5 },
   });
-  instance.addAll(members.map((m, i) => ({ ...m, id: i, industriesStr: (m.industries ?? []).join(' ') })));
-  ms = instance;
 }
 
 export function searchMembers(query: string): SafeMember[] {
-  if (!query.trim() || !ms) return [];
-  return ms.search(query).map(r => r as unknown as SafeMember);
+  if (!query.trim() || !search) return [];
+  return search.search(query).map(({ id: _id, industriesStr: _industriesStr, ...member }) => member);
 }
 
 export function getAllMembers(): SafeMember[] { return allMembers; }

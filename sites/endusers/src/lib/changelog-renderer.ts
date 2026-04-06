@@ -1,4 +1,5 @@
 import type { SafeMember } from './member-renderer';
+import { escapeHtml } from '@cncf/site-kit/lib/search';
 
 export interface MemberEvent {
   id: string;
@@ -35,15 +36,6 @@ const TIER_COLORS: Record<string, string> = {
   Academic:             '#7B2FBE',
   Nonprofit:            '#00A86B',
 };
-
-function escapeHtml(s: string): string {
-  return s
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#x27;');
-}
 
 function formatRelativeDate(iso: string): string {
   try {

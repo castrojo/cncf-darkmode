@@ -4,7 +4,7 @@ export default defineConfig({
   testDir: './tests/e2e',
   timeout: 30000,
   use: {
-    baseURL: 'http://localhost:4324/endusers-website',
+    baseURL: 'http://localhost:4324/cncf-darkmode/members/',
     browserName: 'chromium',
   },
   webServer: {

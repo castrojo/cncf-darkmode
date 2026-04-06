@@ -59,20 +59,45 @@ function saveTab(site: string, tabId: string): void {
   }
 }
 
+function readHashTab<TabId extends string>(validIds: ReadonlyArray<TabId>): TabId | null {
+  if (typeof window === 'undefined') return null;
+  const hash = window.location.hash.replace(/^#/, '') as TabId;
+  if (!hash) return null;
+  return (validIds as ReadonlyArray<string>).includes(hash) ? hash : null;
+}
+
+function writeHash<TabId extends string>(tabId: TabId, defaultTab: TabId, mode: 'push' | 'replace'): void {
+  if (typeof window === 'undefined') return;
+  const base = `${window.location.pathname}${window.location.search}`;
+  const url = tabId === defaultTab ? base : `${base}#${tabId}`;
+  if (mode === 'replace') {
+    window.history.replaceState(null, '', url);
+  } else {
+    window.history.pushState(null, '', url);
+  }
+}
+
 // Data-filter mode (projects, endusers) — tabs filter a data array
 export function initDataTabs<TabId extends string>(
   config: DataTabConfig<TabId>
 ): TabController<TabId> {
   const validIds = config.tabs.map(t => t.id) as ReadonlyArray<TabId>;
-  let current = loadSavedTab(config.site, validIds, config.defaultTab);
+  const hasHash = typeof window !== 'undefined' && window.location.hash.length > 1;
+  const hashTab = readHashTab(validIds);
+  let current = hasHash
+    ? (hashTab ?? config.defaultTab)
+    : loadSavedTab(config.site, validIds, config.defaultTab);
 
   const tabEls = config.tabs
     .map(t => ({ id: t.id, el: document.querySelector(t.selector) as HTMLElement | null }))
     .filter(t => t.el !== null);
 
-  const activate = (tabId: TabId) => {
+  const activate = (tabId: TabId, mode: 'push' | 'replace' | 'none' = 'push') => {
     current = tabId;
     saveTab(config.site, tabId);
+    if (mode !== 'none') {
+      writeHash(tabId, config.defaultTab, mode);
+    }
     tabEls.forEach(t => {
       t.el!.classList.toggle('active', t.id === tabId);
     });
@@ -82,19 +107,36 @@ export function initDataTabs<TabId extends string>(
   // Wire click handlers
   const clickHandlers: Array<{ el: HTMLElement; handler: EventListener }> = [];
   tabEls.forEach(({ id, el }) => {
-    const handler = () => activate(id);
+    const handler = () => activate(id, 'push');
     el!.addEventListener('click', handler);
     clickHandlers.push({ el: el!, handler });
   });
 
+  const hashHandler = () => {
+    const hashTab = readHashTab(validIds);
+    if (hashTab && hashTab !== current) {
+      activate(hashTab, 'none');
+      return;
+    }
+    if (!hashTab && current !== config.defaultTab) {
+      activate(config.defaultTab, 'none');
+    }
+  };
+  if (typeof window !== 'undefined') {
+    window.addEventListener('hashchange', hashHandler);
+  }
+
   // Activate initial tab
-  activate(current);
+  activate(current, 'replace');
 
   return {
     activeTab: () => current,
-    activateTab: activate,
+    activateTab: (tabId: TabId) => activate(tabId, 'push'),
     destroy: () => {
       clickHandlers.forEach(({ el, handler }) => el.removeEventListener('click', handler));
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('hashchange', hashHandler);
+      }
     },
   };
 }

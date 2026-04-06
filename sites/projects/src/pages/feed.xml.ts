@@ -31,7 +31,7 @@ export async function GET(context: APIContext) {
       title: `${e.type.charAt(0).toUpperCase() + e.type.slice(1)}: ${e.projectName}`,
       pubDate: new Date(e.timestamp),
       description: e.description,
-      link: `https://castrojo.github.io/projects-website/`,
+      link: `https://castrojo.github.io/cncf-darkmode/`,
       guid: e.id,
     })),
   });

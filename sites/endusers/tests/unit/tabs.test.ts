@@ -1,6 +1,17 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { filterByTab } from '../../src/lib/tabs';
+import { filterByTab, initTabs } from '../../src/lib/tabs';
 import type { SafeMember } from '../../src/lib/member-renderer';
+
+const localStorageMock = (() => {
+  let store: Record<string, string> = {};
+  return {
+    getItem: (key: string) => store[key] ?? null,
+    setItem: (key: string, value: string) => { store[key] = value; },
+    removeItem: (key: string) => { delete store[key]; },
+    clear: () => { store = {}; },
+  };
+})();
+Object.defineProperty(globalThis, 'localStorage', { value: localStorageMock, writable: true });
 
 const mk = (name: string, tier: string, isEndUser = false): SafeMember => ({
   name, slug: name.toLowerCase(), tier, isEndUser, logoUrl: '', updatedAt: '',
@@ -26,24 +37,32 @@ describe('filterByTab', () => {
 });
 
 describe('localStorage key', () => {
-  it('STORAGE_KEY is cncf-endusers-tab (not legacy endusers-active-tab)', async () => {
-    // Read the module source to verify the correct key constant is used
-    const { readFileSync } = await import('node:fs');
-    const { resolve, dirname } = await import('node:path');
-    const { fileURLToPath } = await import('node:url');
-    const dir = dirname(fileURLToPath(import.meta.url));
-    const src = readFileSync(resolve(dir, '../../src/lib/tabs.ts'), 'utf-8');
-    expect(src).toContain("'cncf-endusers-tab'");
-    expect(src).toContain("STORAGE_KEY");
+  beforeEach(() => {
+    localStorageMock.clear();
+    window.history.replaceState(null, '', '/');
+    document.body.innerHTML = `
+      <button class="section-link" data-tab="everyone">Everyone</button>
+      <button class="section-link" data-tab="platinum">Platinum</button>
+      <button class="section-link" data-tab="gold">Gold</button>
+      <button class="section-link" data-tab="silver">Silver</button>
+      <button class="section-link" data-tab="academic">Academic</button>
+      <button class="section-link" data-tab="architectures">Architectures</button>
+    `;
   });
 
-  it('LEGACY_KEY migration code references endusers-active-tab', async () => {
-    const { readFileSync } = await import('node:fs');
-    const { resolve, dirname } = await import('node:path');
-    const { fileURLToPath } = await import('node:url');
-    const dir = dirname(fileURLToPath(import.meta.url));
-    const src = readFileSync(resolve(dir, '../../src/lib/tabs.ts'), 'utf-8');
-    expect(src).toContain("'endusers-active-tab'");
-    expect(src).toContain("LEGACY_KEY");
+  it('migrates endusers-active-tab to cncf-endusers-tab', () => {
+    localStorage.setItem('endusers-active-tab', 'gold');
+    initTabs(() => {});
+    expect(localStorage.getItem('cncf-endusers-tab')).toBe('gold');
+    expect(localStorage.getItem('endusers-active-tab')).toBeNull();
+  });
+
+  it('activates stored tab from cncf-endusers-tab', () => {
+    localStorage.setItem('cncf-endusers-tab', 'silver');
+    let activated: string | null = null;
+    initTabs((tab) => { activated = tab; });
+    expect(activated).toBe('silver');
+    const active = document.querySelector('.section-link.active') as HTMLElement | null;
+    expect(active?.dataset.tab).toBe('silver');
   });
 });

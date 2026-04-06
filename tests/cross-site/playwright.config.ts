@@ -6,7 +6,18 @@ export default defineConfig({
   use: {
     browserName: 'chromium',
   },
-  // Note: header-geometry.spec.ts and accessibility.spec.ts require both dev servers running.
-  // Run manually: just test-cross-site
-  // performance.spec.ts and fixtures-audit.spec.ts run without servers (used in CI).
+  webServer: [
+    {
+      command: 'cd ../../ && npm run dev --workspace=sites/projects',
+      port: 4322,
+      reuseExistingServer: !process.env.CI,
+      timeout: 120000,
+    },
+    {
+      command: 'cd ../../ && npm run dev --workspace=sites/endusers',
+      port: 4324,
+      reuseExistingServer: !process.env.CI,
+      timeout: 120000,
+    },
+  ],
 });

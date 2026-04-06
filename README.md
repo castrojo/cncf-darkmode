@@ -5,7 +5,7 @@ npm workspaces monorepo unifying three CNCF websites under one architecture with
 | Site | URL | Port |
 |------|-----|------|
 | Projects | `/cncf-darkmode/` | 4322 |
-| End Users | `/cncf-darkmode/endusers-website/` | 4324 |
+| Members | `/cncf-darkmode/members/` | 4324 |
 | People | `/cncf-darkmode/people-website/` | 4323 (gated) |
 
 ## First-Time Setup
@@ -19,8 +19,10 @@ just sync-projects   # populates sites/projects/src/data/projects.json
 just sync-endusers   # populates sites/endusers/src/data/members.json
 
 # 3. Start dev server
-just dev-projects    # http://localhost:4322
-just dev-endusers    # http://localhost:4324
+just dev             # http://localhost:4322/cncf-darkmode/
+just dev endusers    # http://localhost:4324/cncf-darkmode/members/
+# or start both:
+just dev-all
 ```
 
 > **Note**: `sync-projects` and `sync-endusers` require network access to `landscape.cncf.io`.
@@ -36,6 +38,7 @@ just test             # run all unit tests
 just sync             # sync both projects and endusers data (requires network)
 just serve            # build projects site + open browser preview (just serve endusers for other)
 just dev              # hot-reload dev server for projects (just dev endusers for other)
+just dev-all          # run both dev servers together
 just push             # commit + push all changes
 ```
 
@@ -43,7 +46,7 @@ just push             # commit + push all changes
 
 - `packages/site-kit` — shared platform (`@cncf/site-kit`): ThemeToggle, SiteSwitcher, KeyboardHelp, InfoBox, KubeConBanner
 - `sites/projects` — CNCF Projects site (port 4322, base: `/cncf-darkmode`)
-- `sites/endusers` — CNCF End Users site (port 4324, base: `/cncf-darkmode/endusers-website`)
+- `sites/endusers` — CNCF Members site (port 4324, base: `/cncf-darkmode/members`)
 - `go/` — Go data sync backend (three independent binaries sharing `internal/common/`)
 
 ## How Data Serving Works

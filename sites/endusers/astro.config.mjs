@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   site: 'https://castrojo.github.io',
-  base: '/cncf-darkmode/endusers-website',
+  base: '/cncf-darkmode/members',
   outDir: './dist',
   vite: {
     resolve: {

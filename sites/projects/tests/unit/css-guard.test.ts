@@ -10,7 +10,7 @@ import fs from 'fs';
 import path from 'path';
 
 const layoutCss = fs.readFileSync(
-  path.resolve(__dirname, '../../src/styles/layout.css'),
+  path.resolve(__dirname, '../../../../packages/site-kit/src/styles/layout.css'),
   'utf8'
 );
 

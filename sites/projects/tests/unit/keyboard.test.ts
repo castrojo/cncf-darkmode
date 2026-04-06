@@ -20,9 +20,8 @@ describe('keyboard shortcuts', () => {
       onEscape: vi.fn(),
     };
     vi.resetModules();
-    const { initKeyboard } = await import('../../src/lib/keyboard');
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    cleanup = initKeyboard(handlers as any) as (() => void) | undefined;
+    const { initKeyboard } = await import('@cncf/site-kit/lib/keyboard');
+    cleanup = initKeyboard({ tabCount: 5, searchInput: null }, handlers) as (() => void) | undefined;
   });
 
   afterEach(() => { cleanup?.(); cleanup = undefined; });

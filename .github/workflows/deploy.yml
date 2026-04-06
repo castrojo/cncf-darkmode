@@ -72,8 +72,23 @@ jobs:
         run: |
           mkdir -p dist
           cp -r sites/projects/dist/. dist/
+          mkdir -p dist/members
+          cp -r sites/endusers/dist/. dist/members/
           mkdir -p dist/endusers-website
-          cp -r sites/endusers/dist/. dist/endusers-website/
+          cat > dist/endusers-website/index.html << 'EOF'
+          <!doctype html>
+          <html lang="en">
+          <head>
+            <meta charset="utf-8" />
+            <meta http-equiv="refresh" content="0;url=/cncf-darkmode/members/" />
+            <title>Redirecting to CNCF Members…</title>
+            <link rel="canonical" href="/cncf-darkmode/members/" />
+          </head>
+          <body>
+            <p>Redirecting to <a href="/cncf-darkmode/members/">/cncf-darkmode/members/</a>…</p>
+          </body>
+          </html>
+          EOF
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

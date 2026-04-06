@@ -20,12 +20,17 @@ install:
 # Build and open in browser for local preview  (site: projects or endusers)
 serve site="projects":
     npm run build --workspace=sites/{{site}}
-    xdg-open {{if site == "projects" { "http://localhost:4322/projects-website/" } else { "http://localhost:4324/endusers-website/" }}} || true
+    xdg-open {{if site == "projects" { "http://localhost:4322/cncf-darkmode/" } else { "http://localhost:4324/cncf-darkmode/members/" }}} || true
     npm run preview --workspace=sites/{{site}}
 
 # Hot-reload dev server  (site: projects or endusers)
 dev site="projects":
     npm run dev --workspace=sites/{{site}}
+
+# Start both dev servers simultaneously (projects:4322, members:4324)
+dev-all:
+    npm run dev --workspace=sites/endusers &
+    npm run dev --workspace=sites/projects
 
 # Build all sites
 build: build-kit build-projects build-endusers

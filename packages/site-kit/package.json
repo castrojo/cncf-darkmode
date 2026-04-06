@@ -6,7 +6,8 @@
     "./lib/*": "./src/lib/*",
     "./components/*": "./src/components/*",
     "./layouts/*": "./src/layouts/*",
-    "./styles/*": "./src/styles/*"
+    "./styles/*": "./src/styles/*",
+    "./types/*": "./src/types/*"
   },
   "scripts": {
     "test": "vitest run",

@@ -1,6 +1,9 @@
 ---
 // KeyboardHelp.astro — Keyboard shortcuts modal
-// No props needed — static content
+interface Props {
+  tabCount?: number;
+}
+const { tabCount = 9 } = Astro.props;
 ---
 
 <!-- Backdrop -->
@@ -20,6 +23,7 @@
       <tbody>
         <tr><td class="shortcut-key"><kbd>Tab</kbd></td><td class="shortcut-description">Next tab</td></tr>
         <tr><td class="shortcut-key"><kbd>Shift</kbd> + <kbd>Tab</kbd></td><td class="shortcut-description">Previous tab</td></tr>
+        <tr><td class="shortcut-key"><kbd>1</kbd> – <kbd>{tabCount}</kbd></td><td class="shortcut-description">Jump to tab by number</td></tr>
         <tr><td class="shortcut-key"><kbd>j</kbd></td><td class="shortcut-description">Next item</td></tr>
         <tr><td class="shortcut-key"><kbd>k</kbd></td><td class="shortcut-description">Previous item</td></tr>
         <tr><td class="shortcut-key"><kbd>o</kbd> or <kbd>Enter</kbd></td><td class="shortcut-description">Open focused item</td></tr>

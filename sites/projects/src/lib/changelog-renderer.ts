@@ -1,5 +1,6 @@
 import type { ChangelogEvent } from './tabs';
 import { renderCard, formatRelativeDate, type SafeProject } from './project-renderer';
+import { escapeHtml } from '@cncf/site-kit/lib/search';
 
 const EVENT_COLORS: Record<string, string> = {
   accepted:   '#00A86B',
@@ -18,15 +19,6 @@ const EVENT_LABELS: Record<string, string> = {
   removed:    'Removed',
   newsletter: 'Newsletter',
 };
-
-function escapeHtml(s: string): string {
-  return s
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#x27;');
-}
 
 const MATURITY_COLORS: Record<string, string> = {
   graduated: '#FFB300',

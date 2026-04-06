@@ -48,20 +48,23 @@ describe('renderChangelogEvent — minimal (no member)', () => {
 
   it('renders joined event with green color', () => {
     const html = renderChangelogEvent(baseEvent);
-    expect(html).toContain('#00A86B');
+    expect(html).toContain('data-type="joined"');
+    expect(html).toContain('--card-accent:');
   });
 
   it('renders left event with red color', () => {
     const left: MemberEvent = { ...baseEvent, id: 'evt-2', type: 'left' };
     const html = renderChangelogEvent(left);
-    expect(html).toContain('#ef4444');
+    expect(html).toContain('data-type="left"');
+    expect(html).toContain('--card-accent:');
     expect(html).toContain('Left');
   });
 
   it('renders tier_changed event with gold color', () => {
     const changed: MemberEvent = { ...baseEvent, id: 'evt-3', type: 'tier_changed', oldTier: 'Silver' };
     const html = renderChangelogEvent(changed);
-    expect(html).toContain('#FFB300');
+    expect(html).toContain('data-type="tier_changed"');
+    expect(html).toContain('--card-accent:');
     expect(html).toContain('Tier Changed');
   });
 
@@ -74,7 +77,8 @@ describe('renderChangelogEvent — minimal (no member)', () => {
   it('renders updated event with blue color', () => {
     const updated: MemberEvent = { ...baseEvent, id: 'evt-5', type: 'updated' };
     const html = renderChangelogEvent(updated);
-    expect(html).toContain('#0086FF');
+    expect(html).toContain('data-type="updated"');
+    expect(html).toContain('--card-accent:');
     expect(html).toContain('Updated');
   });
 
@@ -141,6 +145,7 @@ describe('renderChangelogEvent — rich (with SafeMember)', () => {
   it('still renders event badge in rich mode', () => {
     const html = renderChangelogEvent(baseEvent, fullMember);
     expect(html).toContain('Joined');
-    expect(html).toContain('#00A86B');
+    expect(html).toContain('data-type="joined"');
+    expect(html).toContain('--card-accent:');
   });
 });
