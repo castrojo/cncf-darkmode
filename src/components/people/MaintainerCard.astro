@@ -27,9 +27,9 @@ interface Props {
 }
 
 const MATURITY_COLOR: Record<string, string> = {
-  'Graduated':  '#FFB300',
-  'Incubating': '#0086FF',
-  'Sandbox':    '#8b949e',
+  'Graduated':  'var(--color-graduated, #996600)',
+  'Incubating': 'var(--color-incubating, #0060CC)',
+  'Sandbox':    'var(--color-sandbox, #57606a)',
 };
 
 const { maintainer, projectLogos } = Astro.props;

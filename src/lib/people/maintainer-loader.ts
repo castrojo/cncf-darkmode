@@ -11,9 +11,9 @@ interface SafeMaintainer {
   maturity: string; ownersUrl?: string; logoUrl?: string; yearsContributing?: number;
 }
 const MATURITY_COLOR: Record<string, string> = {
-  'Graduated':  '#FFB300',
-  'Incubating': '#0086FF',
-  'Sandbox':    '#8b949e',
+  'Graduated':  '#996600',
+  'Incubating': '#0060CC',
+  'Sandbox':    '#57606a',
 };
 export function resolveLogoUrl(project: string, logos: Record<string, string>): string {
   const key = project.toLowerCase();
