@@ -170,6 +170,7 @@ const staticArchitectures = includeEmbeddedData ? architectures : [];
 
   const base = import.meta.env.BASE_URL.replace(/\/$/, '');;
   const noResults = document.getElementById('no-results')!;
+  const grid = document.getElementById('members-grid') as HTMLElement;
   const searchInput = document.getElementById('search-input') as HTMLInputElement;
   const searchCount = document.getElementById('search-count')!;
   const statShowing = document.getElementById('stat-showing')!;
