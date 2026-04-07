@@ -61,5 +61,5 @@
   color: var(--color-text-secondary);
   font-size: 0.875rem;
 }
-.site-footer a { color: var(--color-cncf-blue); text-decoration: none; }
+.site-footer a { color: var(--color-accent-emphasis); text-decoration: none; }
 .site-footer a:hover { text-decoration: underline; }
