@@ -6,13 +6,12 @@
   --color-border-default: #d0d7de;
   --color-text-primary: #24292f;
   --color-text-secondary: #57606a;
-  --color-text-muted: #8c959f;
+  --color-text-muted: #656d76;
   --color-text-tertiary: #6e7781;
   --color-accent-emphasis: #0969da;
   --color-cncf-blue: #0086ff;
-  --color-rss-orange: #f26522;
+  --color-rss-orange: #b94600;
 
-  /* Shared card design tokens */
   --card-border-radius: 8px;
   --card-name-size: 0.95rem;
   --card-name-weight: 600;
@@ -34,7 +33,7 @@
   --color-border-default: #30363d;
   --color-text-primary: #e6edf3;
   --color-text-secondary: #8b949e;
-  --color-text-muted: #6e7681;
+  --color-text-muted: #8b949e;
   --color-text-tertiary: #8b949e;
   --color-accent-emphasis: #2f81f7;
   --color-cncf-blue: #58a6ff;

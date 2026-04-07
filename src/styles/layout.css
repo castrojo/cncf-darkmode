@@ -120,8 +120,8 @@ html {
 }
 
 .section-link.active {
-  color: var(--color-cncf-blue);
-  border-bottom-color: var(--color-cncf-blue);
+  color: var(--color-accent-emphasis);
+  border-bottom-color: var(--color-accent-emphasis);
   font-weight: 600;
 }
 
