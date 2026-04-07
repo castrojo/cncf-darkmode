@@ -1,7 +1,7 @@
 import { renderArchModalContent } from './architecture-renderer';
 import type { SafeArchitecture } from './architecture-renderer';
 
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 async function loadArchData(): Promise<Record<string, SafeArchitecture>> {
   // Try inline embedded data first (DEV mode only)

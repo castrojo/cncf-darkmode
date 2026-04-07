@@ -168,8 +168,7 @@ const staticArchitectures = includeEmbeddedData ? architectures : [];
   import { openArchModal, initArchModal } from '../../lib/members/arch-modal';
   import type { TabId } from '../../lib/members/tabs';
 
-  const base = import.meta.env.BASE_URL;
-  const grid = document.getElementById('members-grid')!;
+  const base = import.meta.env.BASE_URL.replace(/\/$/, '');;
   const noResults = document.getElementById('no-results')!;
   const searchInput = document.getElementById('search-input') as HTMLInputElement;
   const searchCount = document.getElementById('search-count')!;

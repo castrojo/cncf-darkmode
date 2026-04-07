@@ -10,7 +10,6 @@ import fs from 'node:fs';
 
 const staffList: StaffMember[] = selectStaffList(staffSupportData);
 
-const base = import.meta.env.BASE_URL;
 const includeEmbeddedData = import.meta.env.DEV;
 
 let projects: SafeProject[] = [];
@@ -52,7 +51,7 @@ const categories = [...new Set(projects.filter(p => p.maturity !== 'archived').m
 const heroSets = selectHeroSets(projects);
 
 const MATURITY_COLORS: Record<string, string> = {
-  graduated: '#FFB300', incubating: '#0086FF', sandbox: '#8b949e', archived: '#6b7280',
+  graduated: '#996600', incubating: '#0060CC', sandbox: '#57606a', archived: '#6b7280',
 };
 
 function formatNumber(n: number): string {
@@ -196,8 +195,7 @@ function formatNumber(n: number): string {
   import { initKeyboard } from '../lib/keyboard';
   import { fireFountain, preloadOnHover, fireHearts } from '../lib/confetti';
 
-  const base = import.meta.env.BASE_URL;
-  let allProjects: SafeProject[] = [];
+  const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   let allChangelog: ChangelogEvent[] = [];
   let currentQuery = '';
   let currentTab: TabId = 'everyone';
