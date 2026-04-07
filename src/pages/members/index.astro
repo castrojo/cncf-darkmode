@@ -420,13 +420,13 @@ const staticArchitectures = includeEmbeddedData ? architectures : [];
     onSitePrev: () => {
       const isLocal = window.location.hostname === 'localhost';
       window.location.href = isLocal
-        ? 'http://localhost:4321/cncf-darkmode/'
+        ? `${window.location.origin}/cncf-darkmode/`
         : '/cncf-darkmode/';
     },
     onSiteNext: () => {
       const isLocal = window.location.hostname === 'localhost';
       window.location.href = isLocal
-        ? 'http://localhost:4321/cncf-darkmode/people/'
+        ? `${window.location.origin}/cncf-darkmode/people/`
         : '/cncf-darkmode/people/';
     },
   });

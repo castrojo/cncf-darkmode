@@ -1310,12 +1310,12 @@ const emeritusSorted = [...emeritusMembers].sort((a, b) => {
       if (e.key === '[') {
         const _isLocal = window.location.hostname === 'localhost';
         window.location.href = _isLocal
-          ? 'http://localhost:4321/cncf-darkmode/members/'
+          ? `${window.location.origin}/cncf-darkmode/members/`
           : '/cncf-darkmode/members/';
       } else if (e.key === ']') {
         const _isLocal = window.location.hostname === 'localhost';
         window.location.href = _isLocal
-          ? 'http://localhost:4321/cncf-darkmode/'
+          ? `${window.location.origin}/cncf-darkmode/`
           : '/cncf-darkmode/';
       }
     }

@@ -353,7 +353,7 @@ function formatNumber(n: number): string {
   hydrateEmbeddedData();
   renderCurrentView();
   const isLocalDev = window.location.hostname === 'localhost';
-  if (!isLocalDev) {
+  if (!isLocalDev || allProjects.length === 0) {
     Promise.all([loadProjects(), loadChangelog()]).then(() => renderCurrentView());
   }
 
@@ -454,13 +454,13 @@ function formatNumber(n: number): string {
     onSitePrev: () => {
       const isLocal = window.location.hostname === 'localhost';
       window.location.href = isLocal
-        ? 'http://localhost:4321/cncf-darkmode/people/'
+        ? `${window.location.origin}/cncf-darkmode/people/`
         : '/cncf-darkmode/people/';
     },
     onSiteNext: () => {
       const isLocal = window.location.hostname === 'localhost';
       window.location.href = isLocal
-        ? 'http://localhost:4321/cncf-darkmode/members/'
+        ? `${window.location.origin}/cncf-darkmode/members/`
         : '/cncf-darkmode/members/';
     },
   });
