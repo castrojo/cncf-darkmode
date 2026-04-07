@@ -2,30 +2,8 @@
 @import './variables-base.css';
 @import './layout.css';
 
+/* Section-specific design tokens (base tokens live in variables-base.css) */
 :root {
-  --color-bg-default: #ffffff;
-  --color-bg-secondary: #f6f8fa;
-  --color-bg-tertiary: #eaeef2;
-  --color-border-default: #d0d7de;
-  --color-text-primary: #24292f;
-  --color-text-secondary: #57606a;
-  --color-text-muted: #8c959f;
-  --color-text-tertiary: #6e7781;
-  --color-accent-emphasis: #0969da;
-  --color-cncf-blue: #0086ff;
-  --color-rss-orange: #f26522;
-  --card-border-radius: 8px;
-  --card-name-size: 0.95rem;
-  --card-name-weight: 600;
-  --card-hover-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
-  /* Legacy aliases */
-  --color-bg: var(--color-bg-default);
-  --color-surface: var(--color-bg-secondary);
-  --color-surface-alt: var(--color-bg-tertiary);
-  --color-border: var(--color-border-default);
-  --color-text: var(--color-text-primary);
-  --color-accent: var(--color-accent-emphasis);
-
   /* Projects accents */
   --color-graduated: #ffb300;
   --color-incubating: #0086ff;
@@ -52,17 +30,6 @@
 }
 
 [data-theme="dark"] {
-  --color-bg-default: #0d1117;
-  --color-bg-secondary: #161b22;
-  --color-bg-tertiary: #21262d;
-  --color-border-default: #30363d;
-  --color-text-primary: #e6edf3;
-  --color-text-secondary: #8b949e;
-  --color-text-muted: #6e7681;
-  --color-text-tertiary: #8b949e;
-  --color-accent-emphasis: #2f81f7;
-  --color-cncf-blue: #58a6ff;
-  --color-rss-orange: #f26522;
   /* Projects dark */
   --color-graduated: #f2c14e;
   --color-incubating: #58a6ff;
@@ -79,6 +46,7 @@
 }
 
 /* SVG logo dark/light toggle */
+.cncf-logo-wrapper .logo-light { display: block; }
 .cncf-logo-wrapper .logo-dark { display: none; }
 [data-theme="dark"] .cncf-logo-wrapper .logo-light { display: none; }
 [data-theme="dark"] .cncf-logo-wrapper .logo-dark { display: block; }
