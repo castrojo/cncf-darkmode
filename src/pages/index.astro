@@ -11,7 +11,7 @@ import fs from 'node:fs';
 const staffList: StaffMember[] = selectStaffList(staffSupportData);
 
 const base = import.meta.env.BASE_URL;
-const includeEmbeddedData = import.meta.env.DEV;
+const includeEmbeddedData = true;
 
 let projects: SafeProject[] = [];
 let stats = { total: 0, graduated: 0, incubating: 0, sandbox: 0, archived: 0, totalStars: 0 };
