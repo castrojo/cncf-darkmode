@@ -1,5 +1,8 @@
 import { test, expect, type Page } from '@playwright/test';
 
+// All search tests are endusers-specific: members grid and member cards only exist on the members section
+test.describe('@endusers', () => {
+
 async function gotoMembersEveryone(page: Page) {
   await page.goto('./');
   await page.locator('.section-link[data-tab="everyone"]').click();
@@ -43,3 +46,5 @@ test('search shows empty state for unknown member query', async ({ page }) => {
   await expect(page.locator('#members-grid')).toBeHidden();
   await expect(page.locator('#no-results')).toBeVisible();
 });
+
+}); // end @endusers describe

@@ -1,5 +1,8 @@
 import { test, expect } from '@playwright/test';
 
+// All tab tests are endusers-specific: these tabs only exist on the members section
+test.describe('@endusers', () => {
+
 // CORRECT tab list — verified by source analysis
 // There is NO "End Users" tab
 const TABS = ['Everyone', 'Platinum', 'Gold', 'Silver'] as const;
@@ -51,3 +54,5 @@ test('no phantom End Users tab exists', async ({ page }) => {
   const endUserTab = page.locator('button.section-link[data-tab="end-users"], button.section-link[data-tab="endusers"]');
   expect(await endUserTab.count()).toBe(0);
 });
+
+}); // end @endusers describe

@@ -1,5 +1,9 @@
 import { test, expect } from '@playwright/test';
 
+// Performance tests are endusers-specific: they reference members-section inline data blobs
+// (arch-data, initial-members-data) that do not exist on other sections
+test.describe('@endusers', () => {
+
 test('members page loads within 3000ms (DOMContentLoaded)', async ({ page }) => {
   const start = Date.now();
   await page.goto('./');
@@ -28,3 +32,5 @@ test('members page has no inline script payloads over 10KB', async ({ page }) =>
   );
   expect(disallowedLargeBlobs).toHaveLength(0);
 });
+
+}); // end @endusers describe

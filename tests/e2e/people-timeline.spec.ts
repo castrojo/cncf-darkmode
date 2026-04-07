@@ -1,10 +1,11 @@
 import { test, expect } from '@playwright/test';
 
-// Navigate to people page (base URL points to members, so use full path)
-const PEOPLE = 'http://localhost:4321/cncf-darkmode/people/';
+// All people-timeline tests are people-specific; they run only against the @people project
+// whose baseURL is http://localhost:4321/cncf-darkmode/people/
+test.describe('@people', () => {
 
 test('people page: dynamic cards receive CSS (card-body padding is 1rem)', async ({ page }) => {
-  await page.goto(PEOPLE);
+  await page.goto('./');
   await page.waitForLoadState('networkidle');
 
   // Scroll to bottom to trigger IntersectionObserver for feed-sentinel
@@ -43,7 +44,7 @@ test('people page: dynamic cards receive CSS (card-body padding is 1rem)', async
 });
 
 test('people page: everyone tab shows everyone hero, hides kubestronauts hero', async ({ page }) => {
-  await page.goto(PEOPLE);
+  await page.goto('./');
   await page.waitForLoadState('networkidle');
 
   // Ensure everyone tab is active (clear any localStorage)
@@ -66,7 +67,7 @@ test('people page: everyone tab shows everyone hero, hides kubestronauts hero', 
 });
 
 test('people page: ambassadors tab filters timeline to ambassador cards only', async ({ page }) => {
-  await page.goto(PEOPLE);
+  await page.goto('./');
   await page.waitForLoadState('networkidle');
   await page.evaluate(() => localStorage.removeItem('active-tab'));
   await page.reload();
@@ -87,7 +88,7 @@ test('people page: ambassadors tab filters timeline to ambassador cards only', a
 });
 
 test('people page: kubestronauts tab filters timeline to kubestronaut cards only', async ({ page }) => {
-  await page.goto(PEOPLE);
+  await page.goto('./');
   await page.waitForLoadState('networkidle');
   await page.evaluate(() => localStorage.removeItem('active-tab'));
   await page.reload();
@@ -106,3 +107,5 @@ test('people page: kubestronauts tab filters timeline to kubestronaut cards only
   expect(visible.shown).toBeGreaterThan(0);
   expect(visible.wrongTab).toBe(0);
 });
+
+}); // end @people describe

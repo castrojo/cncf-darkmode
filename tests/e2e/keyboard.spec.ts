@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test';
 
+// Generic: all section-level keyboard shortcuts work on every section
+
 test('/ key focuses search input', async ({ page }) => {
   await page.goto('./');
   await page.keyboard.press('/');
@@ -29,7 +31,8 @@ test('t key toggles theme', async ({ page }) => {
   expect(before).not.toBe(after);
 });
 
-test('digit keys 1-6 switch tabs', async ({ page }) => {
+// Endusers-specific: tabs 1-6 only exist on the members section
+test('digit keys 1-6 switch tabs @endusers', async ({ page }) => {
   await page.goto('./');
   const tabKeys = ['1', '2', '3', '4', '5', '6'];
   const tabIds  = ['everyone', 'platinum', 'gold', 'silver', 'academic', 'architectures'];
