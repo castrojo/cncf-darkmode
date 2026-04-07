@@ -88,14 +88,14 @@ export function initTabs(): void {
       document.querySelectorAll<HTMLElement>('[data-tab-summary]').forEach(el => {
         el.style.display = el.dataset.tabSummary === tab ? '' : 'none';
       });
-      localStorage.setItem('active-tab', tab);
+      localStorage.setItem('cncf-people-tab', tab);
     }
 
     buttons.forEach(btn => {
       btn.addEventListener('click', () => activateTab(btn.dataset.tab ?? 'everyone'));
     });
 
-    const saved = localStorage.getItem('active-tab') ?? 'everyone';
+    const saved = localStorage.getItem('cncf-people-tab') ?? 'everyone';
     activateTab(saved);
   });
 }

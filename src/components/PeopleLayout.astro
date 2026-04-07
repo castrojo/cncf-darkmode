@@ -1,11 +1,10 @@
 ---
-;
-;
 import KeyboardHelp from './KeyboardHelp.astro';
 import SiteSwitcher from './SiteSwitcher.astro';
 import ThemeToggle from './ThemeToggle.astro';
+import { antiFlashScript } from '../lib/theme';
 import '../styles/variables.css';
-;
+import '../styles/layout.css';
 import '../styles/people/people.css';
 
 interface Props {
@@ -33,17 +32,7 @@ const baseUrl = (import.meta.env.BASE_URL as string).replace(/\/*$/, '/');
   <link rel="preconnect" href="https://avatars.githubusercontent.com">
   <link rel="preconnect" href="https://raw.githubusercontent.com">
 
-  <script is:inline>
-    (function() {
-      const getTheme = () => {
-        const stored = localStorage.getItem('theme');
-        if (stored === 'light' || stored === 'dark') return stored;
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
-        return 'light';
-      };
-      document.documentElement.setAttribute('data-theme', getTheme());
-    })();
-  </script>
+  <script is:inline set:html={antiFlashScript} />
 </head>
 <body>
   <header class="site-header">
@@ -115,7 +104,7 @@ const baseUrl = (import.meta.env.BASE_URL as string).replace(/\/*$/, '/');
     </div>
   </footer>
 
-  <KeyboardHelp />
+  <KeyboardHelp tabCount={11} />
   <div id="kbd-live-region" aria-live="polite" aria-atomic="true" class="sr-only"></div>
 </body>
 </html>
