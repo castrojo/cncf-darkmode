@@ -26,9 +26,9 @@ function lifespanLabel(acceptedDate?: string, archivedDate?: string): string {
 }
 
 function peakMaturity(p: SafeProject): { label: string; color: string } {
-  if (p.graduatedDate) return { label: 'Graduated', color: '#FFB300' };
-  if (p.incubatingDate) return { label: 'Incubating', color: '#0086FF' };
-  return { label: 'Sandbox', color: '#8b949e' };
+  if (p.graduatedDate) return { label: 'Graduated', color: '#996600' };
+  if (p.incubatingDate) return { label: 'Incubating', color: '#0060CC' };
+  return { label: 'Sandbox', color: '#57606a' };
 }
 
 export function renderTimeline(archived: SafeProject[]): string {

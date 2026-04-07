@@ -633,7 +633,7 @@ a.showcase-name:hover {
   margin-top: 8px;
   font-size: 0.82rem;
   font-weight: 600;
-  color: var(--color-accent-fg, #0086FF);
+  color: var(--color-accent-emphasis, #0969da);
   text-decoration: none;
   align-self: flex-start;
 }
@@ -719,7 +719,7 @@ a.showcase-name:hover {
   padding: 3rem 1rem;
   color: var(--color-text-muted);
 }
-.arch-empty a { color: var(--color-accent-fg, #0086FF); }
+.arch-empty a { color: var(--color-accent-emphasis, #0969da); }
 
 /* Tag chips — outlined gray pills, distinct from filled teal .arch-reftype chips. */
 .arch-tags {
