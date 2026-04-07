@@ -22,7 +22,7 @@ export function initSearch(members: SafeMember[]): void {
 
 export function searchMembers(query: string): SafeMember[] {
   if (!query.trim() || !search) return [];
-  return search.search(query).map(({ id: _id, industriesStr: _industriesStr, ...member }) => member);
+  return search.search(query, { prefix: true, fuzzy: 0.2 }).map(({ id: _id, industriesStr: _industriesStr, ...member }) => member);
 }
 
 export function getAllMembers(): SafeMember[] { return allMembers; }
