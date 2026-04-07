@@ -125,6 +125,7 @@ export function createSearchAsync<T extends { slug: string }>(
       items = built.indexedItems;
       ms = built.ms;
     });
+    loadPromise.catch(() => { loadPromise = null; }); // clear on failure so next search retries
     return loadPromise;
   };
 
