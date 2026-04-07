@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 // Navigate to people page (base URL points to members, so use full path)
 const PEOPLE = 'http://localhost:4321/cncf-darkmode/people/';
 
-test('people page: dynamic cards receive CSS (card-body padding is 1rem)', async ({ page }) => {
+test('people page: dynamic cards receive CSS (card-body padding is 1rem) @people', async ({ page }) => {
   await page.goto(PEOPLE);
   await page.waitForLoadState('networkidle');
 
@@ -42,7 +42,7 @@ test('people page: dynamic cards receive CSS (card-body padding is 1rem)', async
   expect((result as any).earlyPadding).toMatch(/^16px/);
 });
 
-test('people page: everyone tab shows everyone hero, hides kubestronauts hero', async ({ page }) => {
+test('people page: everyone tab shows everyone hero, hides kubestronauts hero @people', async ({ page }) => {
   await page.goto(PEOPLE);
   await page.waitForLoadState('networkidle');
 
@@ -65,7 +65,7 @@ test('people page: everyone tab shows everyone hero, hides kubestronauts hero', 
   expect(kubeVisible.length).toBe(0);
 });
 
-test('people page: ambassadors tab filters timeline to ambassador cards only', async ({ page }) => {
+test('people page: ambassadors tab filters timeline to ambassador cards only @people', async ({ page }) => {
   await page.goto(PEOPLE);
   await page.waitForLoadState('networkidle');
   await page.evaluate(() => localStorage.removeItem('active-tab'));
@@ -86,7 +86,7 @@ test('people page: ambassadors tab filters timeline to ambassador cards only', a
   expect(visible.wrongTab).toBe(0);
 });
 
-test('people page: kubestronauts tab filters timeline to kubestronaut cards only', async ({ page }) => {
+test('people page: kubestronauts tab filters timeline to kubestronaut cards only @people', async ({ page }) => {
   await page.goto(PEOPLE);
   await page.waitForLoadState('networkidle');
   await page.evaluate(() => localStorage.removeItem('active-tab'));

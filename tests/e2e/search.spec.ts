@@ -5,7 +5,7 @@ async function gotoMembersEveryone(page: Page) {
   await page.locator('.section-link[data-tab="everyone"]').click();
 }
 
-test('search returns results for a known member token', async ({ page }) => {
+test('search returns results for a known member token @endusers', async ({ page }) => {
   await gotoMembersEveryone(page);
   const cards = page.locator('#members-grid .member-card');
   await expect(cards.first()).toBeVisible();
@@ -26,7 +26,7 @@ test('search returns results for a known member token', async ({ page }) => {
   await expect(page.locator('#no-results')).toBeHidden();
 });
 
-test('search input clears on X button click', async ({ page }) => {
+test('search input clears on X button click @endusers', async ({ page }) => {
   await gotoMembersEveryone(page);
   const input = page.locator('input#search-input').first();
   await input.fill('test query');
@@ -35,7 +35,7 @@ test('search input clears on X button click', async ({ page }) => {
   await expect(input).toHaveValue('');
 });
 
-test('search shows empty state for unknown member query', async ({ page }) => {
+test('search shows empty state for unknown member query @endusers', async ({ page }) => {
   await gotoMembersEveryone(page);
   const input = page.locator('#search-input');
   await input.fill('qzxwvvqzxwv12345');

@@ -18,7 +18,7 @@ test('site title is single line', async ({ page }) => {
   expect(box?.height).toBeLessThan(50);
 });
 
-test('site title contains CNCF End Users', async ({ page }) => {
+test('site title contains CNCF End Users @endusers', async ({ page }) => {
   await page.goto('./');
   await expect(page.locator('.site-title')).toContainText('CNCF End Users');
 });

@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 const PROD = 'https://castrojo.github.io/cncf-darkmode';
 
-test('people page: body uses system font stack (not serif fallback)', async ({ page }) => {
+test('people page: body uses system font stack (not serif fallback) @people', async ({ page }) => {
   await page.goto(`${PROD}/people/`);
   await page.waitForLoadState('networkidle');
   const fontFamily = await page.evaluate(() => getComputedStyle(document.body).fontFamily);
@@ -11,7 +11,7 @@ test('people page: body uses system font stack (not serif fallback)', async ({ p
   expect(fontFamily.toLowerCase()).toMatch(/apple-system|blinkmacsystemfont|segoe ui|helvetica/i);
 });
 
-test('people page: Jonathan Bryce hero has CNCF headshot (not GitHub avatar)', async ({ page }) => {
+test('people page: Jonathan Bryce hero has CNCF headshot (not GitHub avatar) @people', async ({ page }) => {
   await page.goto(`${PROD}/people/`);
   await page.waitForLoadState('networkidle');
   // Find Jonathan Bryce hero card photo
@@ -21,7 +21,7 @@ test('people page: Jonathan Bryce hero has CNCF headshot (not GitHub avatar)', a
   expect(src).toContain('cncf/people/main/images/Jonathan-Bryce');
 });
 
-test('people page: Chris Aniszczyk hero has CNCF headshot', async ({ page }) => {
+test('people page: Chris Aniszczyk hero has CNCF headshot @people', async ({ page }) => {
   await page.goto(`${PROD}/people/`);
   await page.waitForLoadState('networkidle');
   const img = page.locator('.hero-photo[alt="Chris Aniszczyk"]');
@@ -30,7 +30,7 @@ test('people page: Chris Aniszczyk hero has CNCF headshot', async ({ page }) => 
   expect(src).toContain('cncf.io/wp-content/uploads');
 });
 
-test('people page: Vanessa Heric hero has CNCF headshot', async ({ page }) => {
+test('people page: Vanessa Heric hero has CNCF headshot @people', async ({ page }) => {
   await page.goto(`${PROD}/people/`);
   await page.waitForLoadState('networkidle');
   const img = page.locator('.hero-photo[alt="Vanessa Heric"]');
@@ -39,7 +39,7 @@ test('people page: Vanessa Heric hero has CNCF headshot', async ({ page }) => {
   expect(src).toContain('cncf/people/main/images/vanessa-heric');
 });
 
-test('people page: ambassadors tab shows changelog events', async ({ page }) => {
+test('people page: ambassadors tab shows changelog events @people', async ({ page }) => {
   await page.goto(`${PROD}/people/`);
   await page.waitForLoadState('networkidle');
   // Click the Ambassadors tab
@@ -53,7 +53,7 @@ test('people page: ambassadors tab shows changelog events', async ({ page }) => 
   expect(count).toBeGreaterThan(0);
 });
 
-test('people page: everyone tab shows kubestronauts hero section', async ({ page }) => {
+test('people page: everyone tab shows kubestronauts hero section @people', async ({ page }) => {
   await page.goto(`${PROD}/people/`);
   await page.waitForLoadState('networkidle');
   // Everyone tab is default — kubestronauts hero sections must NOT appear on everyone tab.
@@ -69,7 +69,7 @@ test('people page: everyone tab shows kubestronauts hero section', async ({ page
   expect(everySectionVisible).toBe(true);
 });
 
-test('people page: search returns results', async ({ page }) => {
+test('people page: search returns results @people', async ({ page }) => {
   await page.goto(`${PROD}/people/`);
   await page.waitForLoadState('networkidle');
   // Type a common name; search shows results as .search-result-item in the overlay

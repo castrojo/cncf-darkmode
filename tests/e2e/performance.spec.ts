@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('members page loads within 3000ms (DOMContentLoaded)', async ({ page }) => {
+test('members page loads within 3000ms (DOMContentLoaded) @endusers', async ({ page }) => {
   const start = Date.now();
   await page.goto('./');
   await page.waitForLoadState('domcontentloaded');
@@ -9,7 +9,7 @@ test('members page loads within 3000ms (DOMContentLoaded)', async ({ page }) => 
   expect(elapsed).toBeLessThan(3000);
 });
 
-test('members page has no inline script payloads over 10KB', async ({ page }) => {
+test('members page has no inline script payloads over 10KB @endusers', async ({ page }) => {
   await page.goto('./');
   const largeBlobsFound = await page.evaluate(() => {
     const scripts = Array.from(document.querySelectorAll('script:not([src])'));

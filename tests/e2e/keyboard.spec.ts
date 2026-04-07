@@ -29,7 +29,7 @@ test('t key toggles theme', async ({ page }) => {
   expect(before).not.toBe(after);
 });
 
-test('digit keys 1-6 switch tabs', async ({ page }) => {
+test('digit keys 1-6 switch tabs @endusers', async ({ page }) => {
   await page.goto('./');
   const tabKeys = ['1', '2', '3', '4', '5', '6'];
   const tabIds  = ['everyone', 'platinum', 'gold', 'silver', 'academic', 'architectures'];
