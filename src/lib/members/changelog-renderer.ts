@@ -14,10 +14,10 @@ export interface MemberEvent {
 }
 
 const EVENT_COLORS: Record<string, string> = {
-  joined:       '#00A86B',
-  left:         '#ef4444',
-  tier_changed: '#FFB300',
-  updated:      '#0086FF',
+  joined:       '#007a4d',
+  left:         '#cc0000',
+  tier_changed: '#996600',
+  updated:      '#0060CC',
 };
 
 const EVENT_LABELS: Record<string, string> = {
@@ -29,12 +29,12 @@ const EVENT_LABELS: Record<string, string> = {
 
 const TIER_COLORS: Record<string, string> = {
   Platinum:             '#E5E4E2',
-  Gold:                 '#FFB300',
+  Gold:                 '#ffb300',
   Silver:               '#C0C0C0',
-  'End User':           '#0086FF',
-  'End User Supporter': '#0086FF',
+  'End User':           '#0060CC',
+  'End User Supporter': '#0060CC',
   Academic:             '#7B2FBE',
-  Nonprofit:            '#00A86B',
+  Nonprofit:            '#007a4d',
 };
 
 function formatRelativeDate(iso: string): string {
@@ -60,11 +60,11 @@ function formatFunding(n?: number): string {
 }
 
 function buildEventBanner(event: MemberEvent): string {
-  const color = EVENT_COLORS[event.type] ?? '#8b949e';
+  const color = EVENT_COLORS[event.type] ?? '#57606a';
   const label = EVENT_LABELS[event.type] ?? event.type;
   const timeAgo = event.timestamp ? formatRelativeDate(event.timestamp) : '';
-  const tierColor = TIER_COLORS[event.tier] ?? '#8b949e';
-  const tierTextColor = (event.tier === 'Platinum' || event.tier === 'Silver') ? '#333' : '#fff';
+  const tierColor = TIER_COLORS[event.tier] ?? '#57606a';
+  const tierTextColor = (['Platinum', 'Silver', 'Gold'].includes(event.tier)) ? '#24292f' : '#fff';
   const tierBadge = `<span style="font-size:0.65rem;font-weight:600;text-transform:uppercase;background:${tierColor};color:${tierTextColor};padding:0.1rem 0.35rem;border-radius:3px">${escapeHtml(event.tier)}</span>`;
   const oldTierNote = event.oldTier
     ? `<span style="font-size:0.75rem;color:var(--color-text-muted)">from ${escapeHtml(event.oldTier)}</span>`
@@ -78,7 +78,7 @@ function buildEventBanner(event: MemberEvent): string {
  * Falls back to a minimal skeleton when only event data is available.
  */
 export function renderChangelogEvent(event: MemberEvent, member?: SafeMember): string {
-  const color = EVENT_COLORS[event.type] ?? '#8b949e';
+  const color = EVENT_COLORS[event.type] ?? '#57606a';
   const banner = buildEventBanner(event);
   const name = escapeHtml(event.memberName);
   const logoSrc = escapeHtml(member?.logoUrl ?? event.logoUrl);

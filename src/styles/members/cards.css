@@ -222,7 +222,7 @@ a.hero-name:hover {
 
 a.showcase-name:hover {
   text-decoration: underline;
-  color: var(--hero-color, var(--color-cncf-blue));
+  color: var(--hero-color, var(--color-accent-emphasis));
 }
 
 .showcase-description {

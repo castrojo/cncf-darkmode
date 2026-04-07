@@ -3,11 +3,11 @@ import { renderCard, formatRelativeDate, type SafeProject } from './project-rend
 import { escapeHtml } from '../search';
 
 const EVENT_COLORS: Record<string, string> = {
-  accepted:   '#00A86B',
-  promoted:   '#FFB300',
+  accepted:   '#007a4d',
+  promoted:   '#996600',
   archived:   '#6b7280',
-  updated:    '#0086FF',
-  removed:    '#ef4444',
+  updated:    '#0060CC',
+  removed:    '#cc0000',
   newsletter: '#1a202c',
 };
 
@@ -21,17 +21,17 @@ const EVENT_LABELS: Record<string, string> = {
 };
 
 const MATURITY_COLORS: Record<string, string> = {
-  graduated: '#FFB300',
-  incubating: '#0086FF',
-  sandbox: '#8b949e',
+  graduated: '#996600',
+  incubating: '#0060CC',
+  sandbox: '#57606a',
   archived: '#6b7280',
 };
 
 function buildEventBanner(event: ChangelogEvent): string {
-  const color = EVENT_COLORS[event.type] ?? '#8b949e';
+  const color = EVENT_COLORS[event.type] ?? '#57606a';
   const label = EVENT_LABELS[event.type] ?? event.type;
   const timeAgo = event.timestamp ? formatRelativeDate(event.timestamp) : '';
-  const maturityColor = event.maturity ? (MATURITY_COLORS[event.maturity] ?? '#8b949e') : '';
+  const maturityColor = event.maturity ? (MATURITY_COLORS[event.maturity] ?? '#57606a') : '';
   const maturityBadge = event.maturity
     ? `<span style="font-size:0.65rem;font-weight:600;text-transform:uppercase;background:${maturityColor};color:#fff;padding:0.1rem 0.35rem;border-radius:3px">${escapeHtml(event.maturity)}</span>`
     : '';
@@ -55,7 +55,7 @@ export function renderChangelogEvent(event: ChangelogEvent, project?: SafeProjec
   }
 
   // Minimal fallback — used only for events where the project is not in projects.json
-  const color = EVENT_COLORS[event.type] ?? '#8b949e';
+  const color = EVENT_COLORS[event.type] ?? '#57606a';
   const name = escapeHtml(event.projectName ?? '');
   const logoHtml = event.logoUrl
     ? `<img src="${escapeHtml(event.logoUrl)}" alt="${name} logo" width="64" height="64" loading="lazy" style="width:64px;height:64px;object-fit:contain;flex-shrink:0" />`
