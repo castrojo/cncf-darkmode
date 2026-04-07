@@ -3,24 +3,11 @@ interface Props {
   activeSite: 'projects' | 'members' | 'people';
 }
 const { activeSite } = Astro.props;
-const isDev = import.meta.env.DEV;
 
 const sites = [
-  {
-    key: 'projects',
-    label: 'Projects',
-    url: isDev ? 'http://localhost:4321/cncf-darkmode/' : '/cncf-darkmode/',
-  },
-  {
-    key: 'members',
-    label: 'End Users',
-    url: isDev ? 'http://localhost:4321/cncf-darkmode/members/' : '/cncf-darkmode/members/',
-  },
-  {
-    key: 'people',
-    label: 'People',
-    url: isDev ? 'http://localhost:4321/cncf-darkmode/people/' : '/cncf-darkmode/people/',
-  },
+  { key: 'projects', label: 'Projects',  url: '/cncf-darkmode/' },
+  { key: 'members',  label: 'End Users', url: '/cncf-darkmode/members/' },
+  { key: 'people',   label: 'People',    url: '/cncf-darkmode/people/' },
 ];
 ---
 <nav class="site-switcher" aria-label="CNCF Landscape sections">
