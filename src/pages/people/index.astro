@@ -1029,6 +1029,14 @@ const emeritusSorted = [...emeritusMembers].sort((a, b) => {
   import { searchPeople, preloadSearchIndex } from '../../lib/people/search';
   import { applyTab } from '../../lib/people/tabs';
 
+  function escapeHtml(s: string): string {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+  function safeHref(url: string | undefined | null): string {
+    if (!url) return '#';
+    return url.startsWith('https://') || url.startsWith('http://') ? url : '#';
+  }
+
   const timelineFeed = document.getElementById('timeline-feed') as HTMLElement;
   const staticCount = parseInt(timelineFeed?.dataset.staticCount ?? '200', 10);
   const baseUrl = timelineFeed?.dataset.baseUrl ?? '/cncf-darkmode';
@@ -1192,13 +1200,13 @@ const emeritusSorted = [...emeritusMembers].sort((a, b) => {
         list.innerHTML = '<p class="search-no-results">No people found matching your search.</p>';
       } else {
         list.innerHTML = results.map(p => `
-          <a class="search-result-item" href="${p.github ?? '#'}" target="_blank" rel="noopener noreferrer">
-            <img class="search-result-avatar" src="${p.avatarUrl || p.imageUrl || ''}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'" />
+          <a class="search-result-item" href="${safeHref(p.github)}" target="_blank" rel="noopener noreferrer">
+            <img class="search-result-avatar" src="${escapeHtml(p.avatarUrl || p.imageUrl || '')}" alt="${escapeHtml(p.name)}" loading="lazy" onerror="this.style.display='none'" />
             <div class="search-result-info">
-              <span class="search-result-name">${p.countryFlag ? p.countryFlag + ' ' : ''}${p.name}</span>
-              ${p.handle ? `<span class="search-result-handle">@${p.handle}</span>` : ''}
-              ${p.company ? `<span class="search-result-company">${p.company}</span>` : ''}
-              <span class="search-result-cats">${(p.category ?? []).slice(0, 2).join(' · ')}</span>
+              <span class="search-result-name">${p.countryFlag ? escapeHtml(p.countryFlag) + ' ' : ''}${escapeHtml(p.name)}</span>
+              ${p.handle ? `<span class="search-result-handle">@${escapeHtml(p.handle)}</span>` : ''}
+              ${p.company ? `<span class="search-result-company">${escapeHtml(p.company)}</span>` : ''}
+              <span class="search-result-cats">${(p.category ?? []).slice(0, 2).map(escapeHtml).join(' · ')}</span>
             </div>
           </a>
         `).join('');
