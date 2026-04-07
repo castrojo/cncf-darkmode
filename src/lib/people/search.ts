@@ -27,6 +27,7 @@ async function ensureLoaded(baseUrl: string): Promise<void> {
     const indexed: IndexedPerson[] = people.map((p, i) => ({ ...p, id: i, categoryStr: (p.category ?? []).join(' ') }));
     miniSearch.addAll(indexed);
   })();
+  loadPromise.catch(() => { loadPromise = null; }); // clear on failure so next search retries
   return loadPromise;
 }
 /** Search all people; returns up to `limit` results sorted by relevance. Lazy-loads the index. */
