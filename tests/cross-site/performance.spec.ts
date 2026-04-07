@@ -1,42 +1,66 @@
-import { test, expect } from '@playwright/test';
 import { readdirSync, statSync, readFileSync } from 'fs';
 import { join } from 'path';
+import { test, expect } from '@playwright/test';
 
-// Maximum JS bundle size per site: 500KB
-const MAX_JS_KB = 500;
+const DIST = join(process.cwd(), 'dist');
 
-function getJsSize(distDir: string): number {
+function totalSizeKb(dir: string, ext: string): number {
   try {
-    const files = readdirSync(join(distDir, '_astro'), { withFileTypes: true })
-      .filter(f => f.isFile() && f.name.endsWith('.js'))
-      .map(f => statSync(join(distDir, '_astro', f.name)).size);
-    return files.reduce((sum, size) => sum + size, 0) / 1024; // KB
-  } catch {
-    return 0;
-  }
+    return readdirSync(dir)
+      .filter(f => f.endsWith(ext))
+      .reduce((sum, f) => sum + statSync(join(dir, f)).size, 0) / 1024;
+  } catch { return 0; }
 }
 
-test('projects JS bundle is under 500KB', async () => {
-  const distDir = join(process.cwd(), 'sites/projects/dist');
-  const sizeKb = getJsSize(distDir);
-  console.log(`projects JS bundle: ${sizeKb.toFixed(1)}KB`);
-  expect(sizeKb).toBeLessThan(MAX_JS_KB);
+// HTML size budgets
+test('root HTML is under 50KB', () => {
+  const size = statSync(join(DIST, 'index.html')).size / 1024;
+  console.log(`root index.html: ${size.toFixed(1)}KB`);
+  expect(size).toBeLessThan(50);
 });
 
-test('endusers JS bundle is under 500KB', async () => {
-  const distDir = join(process.cwd(), 'sites/endusers/dist');
-  const sizeKb = getJsSize(distDir);
-  console.log(`endusers JS bundle: ${sizeKb.toFixed(1)}KB`);
-  expect(sizeKb).toBeLessThan(MAX_JS_KB);
+test('members HTML is under 75KB', () => {
+  const size = statSync(join(DIST, 'members', 'index.html')).size / 1024;
+  console.log(`members index.html: ${size.toFixed(1)}KB`);
+  expect(size).toBeLessThan(75);
 });
 
-test('projects production HTML does not embed full JSON payload blobs', async () => {
-  const html = readFileSync(join(process.cwd(), 'sites/projects/dist/index.html'), 'utf-8');
-  expect(html).not.toContain('id="initial-projects-data"');
-  expect(html).not.toContain('id="initial-changelog-data"');
+test('people HTML is under 1000KB (SSR-heavy — tracked)', () => {
+  const size = statSync(join(DIST, 'people', 'index.html')).size / 1024;
+  console.log(`people index.html: ${size.toFixed(1)}KB`);
+  expect(size).toBeLessThan(1000);
 });
 
-test('endusers production HTML does not embed full members JSON blob', async () => {
-  const html = readFileSync(join(process.cwd(), 'sites/endusers/dist/index.html'), 'utf-8');
+// Bundle budgets
+test('total JS bundle is under 200KB', () => {
+  const sizeKb = totalSizeKb(join(DIST, '_astro'), '.js');
+  console.log(`JS bundle total: ${sizeKb.toFixed(1)}KB`);
+  expect(sizeKb).toBeLessThan(200);
+});
+
+test('total CSS bundle is under 80KB', () => {
+  const sizeKb = totalSizeKb(join(DIST, '_astro'), '.css');
+  console.log(`CSS bundle total: ${sizeKb.toFixed(1)}KB`);
+  expect(sizeKb).toBeLessThan(80);
+});
+
+// JSON blob guards — these must never appear in production HTML
+test('members HTML does not embed arch-data blob', () => {
+  const html = readFileSync(join(DIST, 'members', 'index.html'), 'utf-8');
+  expect(html).not.toContain('id="arch-data"');
+});
+
+test('members HTML does not embed initial-members-data blob', () => {
+  const html = readFileSync(join(DIST, 'members', 'index.html'), 'utf-8');
   expect(html).not.toContain('id="initial-members-data"');
+});
+
+test('projects HTML does not embed initial-projects-data blob', () => {
+  const html = readFileSync(join(DIST, 'index.html'), 'utf-8');
+  expect(html).not.toContain('id="initial-projects-data"');
+});
+
+test('projects HTML does not embed initial-changelog-data blob', () => {
+  const html = readFileSync(join(DIST, 'index.html'), 'utf-8');
+  expect(html).not.toContain('id="initial-changelog-data"');
 });

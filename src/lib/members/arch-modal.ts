@@ -1,12 +1,25 @@
 import { renderArchModalContent } from './architecture-renderer';
 import type { SafeArchitecture } from './architecture-renderer';
 
-// Parse arch data embedded by EndusersLayout at build time.
-function getArchData(): Record<string, SafeArchitecture> {
+const base = import.meta.env.BASE_URL;
+
+async function loadArchData(): Promise<Record<string, SafeArchitecture>> {
+  // Try inline embedded data first (DEV mode only)
   const el = document.getElementById('arch-data');
-  if (!el?.textContent) return {};
+  if (el?.textContent) {
+    try {
+      return JSON.parse(el.textContent) as Record<string, SafeArchitecture>;
+    } catch {
+      // fall through to fetch
+    }
+  }
+
+  // Production: fetch from public/data
   try {
-    return JSON.parse(el.textContent) as Record<string, SafeArchitecture>;
+    const res = await fetch(`${base}/data/members/architectures.json`);
+    if (!res.ok) return {};
+    const list = (await res.json()) as SafeArchitecture[];
+    return Object.fromEntries(list.map(a => [a.slug, a]));
   } catch {
     return {};
   }
@@ -14,18 +27,19 @@ function getArchData(): Record<string, SafeArchitecture> {
 
 let archDataCache: Record<string, SafeArchitecture> | null = null;
 
-function archData(): Record<string, SafeArchitecture> {
-  if (!archDataCache) archDataCache = getArchData();
+async function archData(): Promise<Record<string, SafeArchitecture>> {
+  if (!archDataCache) archDataCache = await loadArchData();
   return archDataCache;
 }
 
-export function openArchModal(slug: string): void {
+export async function openArchModal(slug: string): Promise<void> {
   const dialog = document.getElementById('arch-modal') as HTMLDialogElement | null;
   const content = document.getElementById('arch-modal-content');
   const extLink = document.getElementById('arch-modal-ext-link') as HTMLAnchorElement | null;
   if (!dialog || !content) return;
 
-  const arch = archData()[slug];
+  const data = await archData();
+  const arch = data[slug];
   if (!arch) return;
 
   content.innerHTML = renderArchModalContent(arch);

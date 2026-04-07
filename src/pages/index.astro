@@ -454,13 +454,13 @@ function formatNumber(n: number): string {
     onSitePrev: () => {
       const isLocal = window.location.hostname === 'localhost';
       window.location.href = isLocal
-        ? 'http://localhost:4324/cncf-darkmode/members/'
-        : '/cncf-darkmode/members/';
+        ? 'http://localhost:4321/cncf-darkmode/people/'
+        : '/cncf-darkmode/people/';
     },
     onSiteNext: () => {
       const isLocal = window.location.hostname === 'localhost';
       window.location.href = isLocal
-        ? 'http://localhost:4324/cncf-darkmode/members/'
+        ? 'http://localhost:4321/cncf-darkmode/members/'
         : '/cncf-darkmode/members/';
     },
   });

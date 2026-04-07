@@ -6,18 +6,10 @@ export default defineConfig({
   use: {
     browserName: 'chromium',
   },
-  webServer: [
-    {
-      command: 'cd ../../ && npm run dev --workspace=sites/projects',
-      port: 4322,
-      reuseExistingServer: !process.env.CI,
-      timeout: 120000,
-    },
-    {
-      command: 'cd ../../ && npm run dev --workspace=sites/endusers',
-      port: 4324,
-      reuseExistingServer: !process.env.CI,
-      timeout: 120000,
-    },
-  ],
+  webServer: {
+    command: 'cd ../../ && npm run dev',
+    port: 4321,
+    reuseExistingServer: !process.env.CI,
+    timeout: 120000,
+  },
 });

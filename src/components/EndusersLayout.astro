@@ -43,6 +43,7 @@ const {
 
 const banners = await getActiveBanners();
 const base = import.meta.env.BASE_URL;
+const includeEmbeddedData = import.meta.env.DEV;
 ---
 
 <BaseLayout
@@ -156,7 +157,9 @@ const base = import.meta.env.BASE_URL;
   <div id="no-results" class="no-results" style="display:none">No members match your search.</div>
 
   <Fragment slot="body-end">
-    <script type="application/json" id="arch-data" set:html={JSON.stringify(Object.fromEntries((archData as any[]).map((a: any) => [a.slug, a])))} />
+    {includeEmbeddedData && (
+      <script type="application/json" id="arch-data" set:html={JSON.stringify(Object.fromEntries((archData as any[]).map((a: any) => [a.slug, a])))} />
+    )}
     <slot name="body-end" />
 
     <dialog id="arch-modal" aria-modal="true" aria-labelledby="arch-modal-title">

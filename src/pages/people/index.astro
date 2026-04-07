@@ -1310,13 +1310,13 @@ const emeritusSorted = [...emeritusMembers].sort((a, b) => {
       if (e.key === '[') {
         const _isLocal = window.location.hostname === 'localhost';
         window.location.href = _isLocal
-          ? 'http://localhost:4324/endusers-website/'
-          : 'https://castrojo.github.io/endusers-website/';
+          ? 'http://localhost:4321/cncf-darkmode/members/'
+          : '/cncf-darkmode/members/';
       } else if (e.key === ']') {
         const _isLocal = window.location.hostname === 'localhost';
         window.location.href = _isLocal
-          ? 'http://localhost:4322/projects-website/'
-          : 'https://castrojo.github.io/projects-website/';
+          ? 'http://localhost:4321/cncf-darkmode/'
+          : '/cncf-darkmode/';
       }
     }
   });

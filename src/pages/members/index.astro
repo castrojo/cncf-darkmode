@@ -58,6 +58,11 @@ const silverCount = members.filter(m => m.tier === 'Silver').length;
 const industries = [...new Set(members.flatMap(m => m.industries ?? []).filter(Boolean))].sort();
 const countries = [...new Set(members.map(m => m.country).filter(Boolean))].sort() as string[];
 const heroSets = selectHeroSets(members);
+const renderedHeroSets = import.meta.env.DEV
+  ? heroSets
+  : (Object.fromEntries(
+      Object.entries(heroSets).map(([tab, heroes]) => [tab, heroes.slice(0, 2)]),
+    ) as Record<string, SafeMember[]>);
 
 const archRefTypes = [...new Set(architectures.flatMap(a => a.refArchTypes ?? []))].sort();
 const archIndustryList = [...new Set(architectures.flatMap(a => a.industries ?? []))].sort();
@@ -65,9 +70,11 @@ const archProjectNames = new Set(architectures.flatMap(a => (a.projects ?? []).m
 const archIndustryCount = archIndustryList.length;
 const archProjectCount = archProjectNames.size;
 
-const STATIC_COUNT = 30;
+const STATIC_COUNT = import.meta.env.DEV ? 30 : 0;
+const STATIC_EVENT_COUNT = import.meta.env.DEV ? 20 : 0;
 const staticMembers = members.slice(0, STATIC_COUNT);
 const includeEmbeddedData = import.meta.env.DEV;
+const staticArchitectures = includeEmbeddedData ? architectures : [];
 ---
 <EndusersLayout
   title="CNCF End Users"
@@ -86,7 +93,7 @@ const includeEmbeddedData = import.meta.env.DEV;
 >
   <div slot="heroes">
     <section class="heroes-section" aria-label="Daily highlights">
-      {(Object.entries(heroSets) as [string, SafeMember[]][]).map(([tabKey, heroes]) => (
+      {(Object.entries(renderedHeroSets) as [string, SafeMember[]][]).map(([tabKey, heroes]) => (
         <div class="heroes-grid" data-heroes-tab={tabKey} style={tabKey !== 'everyone' ? 'display:none' : ''}>
           {heroes.map(member => (
             <Fragment set:html={renderShowcaseCard(member)} />
@@ -118,10 +125,10 @@ const includeEmbeddedData = import.meta.env.DEV;
       </section>
     )}
 
-    {events.length > 0 && (
+    {events.length > 0 && STATIC_EVENT_COUNT > 0 && (
       <section id="changelog-section" aria-label="Member activity">
         <h2 class="changelog-heading">Member Activity</h2>
-        {events.slice(0, 20).map(event => (
+        {events.slice(0, STATIC_EVENT_COUNT).map(event => (
           <Fragment set:html={renderChangelogEvent(event, memberBySlug.get(event.memberSlug))} />
         ))}
       </section>
@@ -135,9 +142,9 @@ const includeEmbeddedData = import.meta.env.DEV;
       <p>These organizations didn't just adopt cloud native — they published how. Each architecture
       is a collaboration between an end user, CNCF projects, and the people who built them.</p>
     </div>
-    {architectures.length > 0
-      ? architectures.map(a => <Fragment set:html={renderArchCard(a)} />)
-      : <div class="arch-empty">
+    {staticArchitectures.length > 0
+      ? staticArchitectures.map(a => <Fragment set:html={renderArchCard(a)} />)
+      : includeEmbeddedData && <div class="arch-empty">
           <p>No reference architectures loaded yet.</p>
           <a href="https://architecture.cncf.io/architectures/?all=true" target="_blank" rel="noopener noreferrer">
             Browse architectures on architecture.cncf.io →
@@ -154,6 +161,7 @@ const includeEmbeddedData = import.meta.env.DEV;
   import { initSearch, searchMembers } from '../../lib/members/search';
   import { initArchSearch, searchArchSlugs, resetArchSearch } from '../../lib/members/arch-search';
   import { renderCard } from '../../lib/members/member-renderer';
+  import { renderArchCard } from '../../lib/members/architecture-renderer';
   import { initTabs, filterByTab, tabFromNumber } from '../../lib/members/tabs';
   import { initKeyboard } from '../../lib/keyboard';
   import { fireFountain, preloadOnHover, fireHearts } from '../../lib/confetti';
@@ -182,6 +190,32 @@ const includeEmbeddedData = import.meta.env.DEV;
       applyFilters();
     } catch {
       // use static members already rendered
+    }
+  }
+
+  async function loadAllArchitectures() {
+    try {
+      const res = await fetch(`${base}/data/members/architectures.json`);
+      if (!res.ok) return;
+      const items = await res.json() as import('../../lib/members/architecture-renderer').SafeArchitecture[];
+      const archGrid = document.getElementById('arch-grid');
+      if (!archGrid) return;
+
+      const intro = archGrid.querySelector('.arch-intro')?.outerHTML ?? '';
+      archGrid.innerHTML = `${intro}${items.length > 0
+        ? items.map(a => renderArchCard(a)).join('')
+        : `<div class="arch-empty">
+             <p>No reference architectures loaded yet.</p>
+             <a href="https://architecture.cncf.io/architectures/?all=true" target="_blank" rel="noopener noreferrer">
+               Browse architectures on architecture.cncf.io →
+             </a>
+           </div>`}`;
+
+      resetArchSearch();
+      wireCardEvents();
+      applyFilters();
+    } catch {
+      // keep current SSR fallback
     }
   }
 
@@ -372,7 +406,7 @@ const includeEmbeddedData = import.meta.env.DEV;
       if (!card) return false;
       if (card.classList.contains('arch-card')) {
         const slug = (card as HTMLElement).dataset.slug;
-        if (slug) openArchModal(slug);
+        if (slug) void openArchModal(slug);
         return true;
       }
       const link = card?.querySelector('a[href]') as HTMLAnchorElement | null;
@@ -386,34 +420,40 @@ const includeEmbeddedData = import.meta.env.DEV;
     onSitePrev: () => {
       const isLocal = window.location.hostname === 'localhost';
       window.location.href = isLocal
-        ? 'http://localhost:4322/cncf-darkmode/'
+        ? 'http://localhost:4321/cncf-darkmode/'
         : '/cncf-darkmode/';
     },
     onSiteNext: () => {
       const isLocal = window.location.hostname === 'localhost';
       window.location.href = isLocal
-        ? 'http://localhost:4322/cncf-darkmode/'
-        : '/cncf-darkmode/';
+        ? 'http://localhost:4321/cncf-darkmode/people/'
+        : '/cncf-darkmode/people/';
     },
   });
 
   function wireCardEvents(): void {
     document.querySelectorAll<HTMLElement>('.member-card').forEach(card => {
+      if (card.dataset.eventsWired === '1') return;
+      card.dataset.eventsWired = '1';
       preloadOnHover(card);
       card.addEventListener('click', () => fireFountain(card));
     });
     document.querySelectorAll<HTMLElement>('.hero-card').forEach(card => {
+      if (card.dataset.eventsWired === '1') return;
+      card.dataset.eventsWired = '1';
       preloadOnHover(card);
       card.addEventListener('click', () => fireHearts(card));
     });
     document.querySelectorAll<HTMLElement>('.arch-card').forEach(card => {
+      if (card.dataset.eventsWired === '1') return;
+      card.dataset.eventsWired = '1';
       const slug = card.dataset.slug;
       if (!slug) return;
-      card.addEventListener('click', () => openArchModal(slug));
+      card.addEventListener('click', () => { void openArchModal(slug); });
       card.addEventListener('keydown', (e: KeyboardEvent) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          openArchModal(slug);
+          void openArchModal(slug);
         }
       });
     });
@@ -423,6 +463,9 @@ const includeEmbeddedData = import.meta.env.DEV;
   const isLocalDev = window.location.hostname === 'localhost';
   if (!isLocalDev || allMembers.length === 0) {
     loadAllMembers();
+  }
+  if (!isLocalDev) {
+    loadAllArchitectures();
   }
   wireCardEvents();
   initArchModal();
