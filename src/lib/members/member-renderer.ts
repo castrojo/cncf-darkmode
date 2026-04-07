@@ -70,7 +70,7 @@ export function renderCard(m: SafeMember): string {
   if (m.ticker && m.stockExchange) meta.push(`<div class="card-meta-row card-ticker">${escapeHtml(m.stockExchange)}: ${escapeHtml(m.ticker)}</div>`);
   if (m.joinedAt) meta.push(`<div class="card-meta-row">Joined: ${escapeHtml(formatDate(m.joinedAt))}</div>`);
 
-  const badgeTextColor = (m.tier === 'Platinum' || m.tier === 'Silver') ? '#333' : 'white';
+  const badgeTextColor = (['Platinum', 'Silver', 'Gold'].includes(m.tier)) ? '#24292f' : 'white';
 
   return `<article
     class="member-card"

@@ -35,9 +35,9 @@ export interface SafeProject {
 }
 
 const MATURITY_COLORS: Record<string, string> = {
-  graduated: '#FFB300',
-  incubating: '#0086FF',
-  sandbox: '#8b949e',
+  graduated: '#996600',
+  incubating: '#0060CC',
+  sandbox: '#57606a',
   archived: '#6b7280',
 };
 
