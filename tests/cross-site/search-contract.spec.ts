@@ -3,13 +3,13 @@ import { test, expect } from '@playwright/test';
 const SITES = [
   {
     name: 'projects',
-    url: 'http://localhost:4322/cncf-darkmode/',
+    url: 'http://localhost:4321/cncf-darkmode/',
     cardSelector: '#cards-container .changelog-event-card',
     nameSelector: '.card-name',
   },
   {
     name: 'members',
-    url: 'http://localhost:4324/cncf-darkmode/members/',
+    url: 'http://localhost:4321/cncf-darkmode/members/',
     cardSelector: '#members-grid .member-card',
     nameSelector: '.card-name',
   },

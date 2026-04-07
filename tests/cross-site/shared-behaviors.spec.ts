@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
 
 const SITES = [
-  { name: 'projects', url: 'http://localhost:4322/cncf-darkmode/' },
-  { name: 'members', url: 'http://localhost:4324/cncf-darkmode/members/' },
+  { name: 'projects', url: 'http://localhost:4321/cncf-darkmode/' },
+  { name: 'members', url: 'http://localhost:4321/cncf-darkmode/members/' },
 ];
 
 for (const site of SITES) {
@@ -34,21 +34,21 @@ for (const site of SITES) {
 }
 
 test('keyboard ] navigates from projects to end users section', async ({ page }) => {
-  await page.goto('http://localhost:4322/cncf-darkmode/');
+  await page.goto('http://localhost:4321/cncf-darkmode/');
   await page.keyboard.press(']');
-  await page.waitForURL('http://localhost:4324/cncf-darkmode/members/');
+  await page.waitForURL('http://localhost:4321/cncf-darkmode/members/');
   await expect(page.locator('.site-title')).toContainText('CNCF End Users');
 });
 
 test('keyboard [ navigates from end users to projects section', async ({ page }) => {
-  await page.goto('http://localhost:4324/cncf-darkmode/members/');
+  await page.goto('http://localhost:4321/cncf-darkmode/members/');
   await page.keyboard.press('[');
-  await page.waitForURL('http://localhost:4322/cncf-darkmode/');
+  await page.waitForURL('http://localhost:4321/cncf-darkmode/');
   await expect(page.locator('.site-title')).toContainText('CNCF Projects');
 });
 
 test('people route exists and is served internally', async ({ page }) => {
-  const response = await page.goto('http://localhost:4322/cncf-darkmode/people/');
+  const response = await page.goto('http://localhost:4321/cncf-darkmode/people/');
   expect(response?.status()).toBe(200);
   await expect(page.locator('.site-title')).toContainText('CNCF People');
   await expect(page.locator('.site-switcher .switcher-pill.active')).toContainText('People');

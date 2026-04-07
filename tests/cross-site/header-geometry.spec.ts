@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
 
 const SITES = [
-  { name: 'projects', url: 'http://localhost:4322/cncf-darkmode/' },
-  { name: 'members', url: 'http://localhost:4324/cncf-darkmode/members/' },
+  { name: 'projects', url: 'http://localhost:4321/cncf-darkmode/' },
+  { name: 'members', url: 'http://localhost:4321/cncf-darkmode/members/' },
 ];
 
 const LOGO_SIZE = 42;
@@ -37,7 +37,7 @@ for (const site of SITES) {
     await expect(switcher).toContainText('People');
     await expect(switcher.locator('a', { hasText: 'People' })).toHaveAttribute(
       'href',
-      /(^\/cncf-darkmode\/people\/$)|(^http:\/\/localhost:4322\/cncf-darkmode\/people\/$)/,
+      /(^\/cncf-darkmode\/people\/$)|(^http:\/\/localhost:4321\/cncf-darkmode\/people\/$)/,
     );
   });
 

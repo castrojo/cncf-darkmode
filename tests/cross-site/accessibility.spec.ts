@@ -2,8 +2,8 @@ import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
 const SITES = [
-  { name: 'projects', url: 'http://localhost:4322/cncf-darkmode/' },
-  { name: 'members', url: 'http://localhost:4324/cncf-darkmode/members/' },
+  { name: 'projects', url: 'http://localhost:4321/cncf-darkmode/' },
+  { name: 'members', url: 'http://localhost:4321/cncf-darkmode/members/' },
 ];
 
 for (const site of SITES) {
