@@ -44,20 +44,24 @@ test('SiteSwitcher "People" pill navigates from members to people', async ({ pag
 // General card / tab interaction — works in any project context
 // -----------------------------------------------------------------------
 
-test('j/k keys navigate cards without crashing', async ({ page }) => {
+test('j/k keys move keyboard focus between cards', async ({ page }) => {
   await page.goto('./');
   await page.waitForLoadState('networkidle');
   await page.keyboard.press('j');
-  await expect(page.locator('main')).toBeVisible();
+  await expect(page.locator('.keyboard-focused').first()).toBeVisible();
   await page.keyboard.press('k');
-  await expect(page.locator('main')).toBeVisible();
+  // Focus should remain on a card (first card when wrapping back)
+  await expect(page.locator('.keyboard-focused').first()).toBeVisible();
 });
 
-test('Tab key cycles through section tabs without crashing', async ({ page }) => {
+test('Tab key cycles to the next section tab', async ({ page }) => {
   await page.goto('./');
   await page.waitForLoadState('networkidle');
+  const firstActive = await page.locator('.section-link.active').first().textContent();
   await page.keyboard.press('Tab');
-  await expect(page.locator('main')).toBeVisible();
+  // After Tab, active tab should have changed
+  const secondActive = await page.locator('.section-link.active').first().textContent();
+  expect(secondActive).not.toEqual(firstActive);
 });
 
 // -----------------------------------------------------------------------
@@ -73,18 +77,21 @@ test('projects: search input filters changelog cards', async ({ page }) => {
   const initialCount = await cards.count();
   expect(initialCount).toBeGreaterThan(0);
 
-  // Type a short token likely to match some cards
+  // Type a short token — wait for DOM to actually update (not a fixed timeout)
   const input = page.locator('#search-input');
   await input.fill('a');
-  await page.waitForTimeout(250);
+  await expect(async () => {
+    const count = await cards.count();
+    expect(count).toBeLessThanOrEqual(initialCount);
+  }).toPass({ timeout: 3000 });
   const filteredCount = await cards.count();
   expect(filteredCount).toBeGreaterThanOrEqual(0);
-  expect(filteredCount).toBeLessThanOrEqual(initialCount);
 
   // Clear restores all cards
   await input.fill('');
-  await page.waitForTimeout(250);
-  const restoredCount = await cards.count();
-  expect(restoredCount).toEqual(initialCount);
+  await expect(async () => {
+    const count = await cards.count();
+    expect(count).toEqual(initialCount);
+  }).toPass({ timeout: 3000 });
 });
 

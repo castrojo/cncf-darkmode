@@ -22,7 +22,7 @@ test-e2e:
 test-cross-site:
     cd tests/cross-site && npx playwright test --config playwright.config.ts
 
-test-all: test test-e2e test-cross-site
+test-all: check test test-e2e test-cross-site
 
 check:
     npx astro check

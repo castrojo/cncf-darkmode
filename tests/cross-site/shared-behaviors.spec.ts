@@ -19,6 +19,7 @@ for (const site of SITES) {
     await page.waitForLoadState('networkidle');
     await page.keyboard.press('/');
     await expect(page.locator('#search-input')).toBeFocused();
+    expect(errors).toHaveLength(0);
   });
 
   test(`${site.name}: keyboard help opens with "?" and closes with Escape`, async ({ page }) => {
@@ -30,6 +31,7 @@ for (const site of SITES) {
     await expect(page.locator('#keyboard-help-modal')).toHaveClass(/visible/);
     await page.keyboard.press('Escape');
     await expect(page.locator('#keyboard-help-modal')).not.toHaveClass(/visible/);
+    expect(errors).toHaveLength(0);
   });
 
   test(`${site.name}: numeric tab shortcut activates tab 2`, async ({ page }) => {
@@ -39,6 +41,7 @@ for (const site of SITES) {
     await page.waitForLoadState('networkidle');
     await page.keyboard.press('2');
     await expect(page.locator('.section-link[data-tab]').nth(1)).toHaveClass(/active/);
+    expect(errors).toHaveLength(0);
   });
 }
 
