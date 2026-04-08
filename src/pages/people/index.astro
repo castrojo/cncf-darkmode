@@ -264,7 +264,9 @@ function alphabeticalPeople(filterFn: (cats: string[]) => boolean): Event[] {
 }
 
 const alphaFeeds = Object.fromEntries(
-  Object.entries(ALPHA_TABS).map(([tab, fn]) => [tab, alphabeticalPeople(fn)])
+  Object.entries(ALPHA_TABS)
+    .filter(([tab]) => tab !== 'staff')
+    .map(([tab, fn]) => [tab, alphabeticalPeople(fn)])
 );
 
 
@@ -1068,11 +1070,19 @@ for (const m of maintainerList) {
       logosPromise.then(() => initMaintainerLoader(maintainerStaticCount, logos));
     }
   }
+  let emeritusInitialized = false;
   function maybeInitEmeritus(tab: string) {
-    if (tab === 'emeritus') logosPromise.then(() => initEmeritusLoader(logos));
+    if (tab === 'emeritus' && !emeritusInitialized) {
+      emeritusInitialized = true;
+      logosPromise.then(() => initEmeritusLoader(logos));
+    }
   }
+  let staffInitialized = false;
   function maybeInitStaff(tab: string) {
-    if (tab === 'staff') logosPromise.then(() => initStaffLoader(logos));
+    if (tab === 'staff' && !staffInitialized) {
+      staffInitialized = true;
+      logosPromise.then(() => initStaffLoader(logos));
+    }
   }
 
   // Hook into tab buttons to trigger deferred init.

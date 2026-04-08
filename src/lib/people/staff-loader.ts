@@ -15,6 +15,11 @@ interface StaffEntry {
   countryFlag?: string;
   primaryBadge?: string;
   linkedin?: string;
+  twitter?: string;
+  youtube?: string;
+  website?: string;
+  bluesky?: string;
+  mastodon?: string;
   category: string | string[];
 }
 
@@ -41,12 +46,12 @@ export async function initStaffLoader(landscapeLogos: Record<string, string> = {
   // Sort alphabetically by name (matches previous SSR order)
   entries.sort((a, b) => a.name.localeCompare(b.name));
 
-  for (const s of entries) {
+  for (const [i, s] of entries.entries()) {
     const handle = s.github
       ? s.github.replace(/^https?:\/\/github\.com\//, '').replace(/\/$/, '')
       : undefined;
     const event: PersonEvent = {
-      id: `staff-${s.github ?? s.name}`,
+      id: `staff-${s.github ?? `${i}-${s.name.toLowerCase().replace(/\s+/g, '-')}`}`,
       type: 'staff',
       timestamp: '',
       person: {
@@ -61,6 +66,11 @@ export async function initStaffLoader(landscapeLogos: Record<string, string> = {
         countryFlag: s.countryFlag,
         primaryBadge: s.primaryBadge,
         linkedin: s.linkedin,
+        twitter: s.twitter,
+        youtube: s.youtube,
+        website: s.website,
+        bluesky: s.bluesky,
+        mastodon: s.mastodon,
         category: ['Staff'],
       },
     };

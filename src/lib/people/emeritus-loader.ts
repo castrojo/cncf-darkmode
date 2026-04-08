@@ -1,5 +1,5 @@
 // emeritus-loader.ts — lazy-loads emeritus person cards on first tab activation.
-import { renderPersonCard, type PersonEvent } from './person-renderer';
+import { renderPersonCard, esc, type PersonEvent } from './person-renderer';
 
 const BASE = (document.documentElement.dataset.baseUrl ?? '/cncf-darkmode').replace(/\/$/, '');
 const EMERITUS_URL = `${BASE}/data/people/people-emeritus.json`;
@@ -11,9 +11,7 @@ interface EmeritusEntry {
   category?: string | string[];
 }
 
-function esc(s: string): string {
-  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-}
+
 
 type LoadState = 'idle' | 'loading' | 'loaded';
 let state: LoadState = 'idle';
