@@ -466,16 +466,10 @@ function formatNumber(n: number): string {
     },
     onResetFocus: resetFocus,
     onSitePrev: () => {
-      const isLocal = window.location.hostname === 'localhost';
-      window.location.href = isLocal
-        ? `${window.location.origin}${base}/people/`
-        : `${base}/people/`;
+      window.location.href = `${base}/people/`;
     },
     onSiteNext: () => {
-      const isLocal = window.location.hostname === 'localhost';
-      window.location.href = isLocal
-        ? `${window.location.origin}${base}/members/`
-        : `${base}/members/`;
+      window.location.href = `${base}/members/`;
     },
   });
 

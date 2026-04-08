@@ -418,12 +418,10 @@ const staticArchitectures = includeEmbeddedData ? architectures : [];
     },
     onResetFocus: resetFocus,
     onSitePrev: () => {
-      const isLocal = window.location.hostname === 'localhost';
-      window.location.href = isLocal ? `${window.location.origin}${base}/` : `${base}/`;
+      window.location.href = `${base}/`;
     },
     onSiteNext: () => {
-      const isLocal = window.location.hostname === 'localhost';
-      window.location.href = isLocal ? `${window.location.origin}${base}/people/` : `${base}/people/`;
+      window.location.href = `${base}/people/`;
     },
   });
 

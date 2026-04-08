@@ -1305,16 +1305,10 @@ const emeritusSorted = [...emeritusMembers].sort((a, b) => {
     },
     onResetFocus: resetFocus,
     onSitePrev: () => {
-      const isLocal = window.location.hostname === 'localhost';
-      window.location.href = isLocal
-        ? `${window.location.origin}${base}/members/`
-        : `${base}/members/`;
+      window.location.href = `${base}/members/`;
     },
     onSiteNext: () => {
-      const isLocal = window.location.hostname === 'localhost';
-      window.location.href = isLocal
-        ? `${window.location.origin}${base}/`
-        : `${base}/`;
+      window.location.href = `${base}/`;
     },
   });
 </script>
