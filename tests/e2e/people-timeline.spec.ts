@@ -12,18 +12,22 @@ test('people page: dynamic cards receive CSS (card-body padding is 1rem)', async
   await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
   await page.waitForTimeout(2000); // allow batch to render
 
-  // Confirm dynamic cards loaded (count > 30 = STATIC_COUNT)
+  // Confirm dynamic cards loaded (count > STATIC_COUNT read from DOM)
   const cardCount = await page.locator('.person-card').count();
+  const staticCount = await page.evaluate(() =>
+    parseInt(document.getElementById('timeline-feed')?.dataset.staticCount ?? '30', 10)
+  );
   console.log('Total person-cards after scroll:', cardCount);
-  expect(cardCount).toBeGreaterThan(30);
+  expect(cardCount).toBeGreaterThan(staticCount);
 
   const result = await page.evaluate(() => {
     // After <style is:global> fix, ALL .person-card elements share the same global CSS
     // (no data-astro-cid attribute on any card — both SSR and dynamic are plain .person-card)
     const allCards = Array.from(document.querySelectorAll<HTMLElement>('.person-card'));
     if (allCards.length === 0) return { error: 'no person-card elements found' };
-    // Check a card from the dynamic batch (beyond STATIC_COUNT=30)
-    const dynamic = allCards[35] ?? allCards[allCards.length - 1];
+    const sc = parseInt(document.getElementById('timeline-feed')?.dataset.staticCount ?? '30', 10);
+    // Check a card from the dynamic batch (beyond STATIC_COUNT)
+    const dynamic = allCards[sc + 5] ?? allCards[allCards.length - 1];
     const dynBody = dynamic.querySelector<HTMLElement>('.card-body');
     // Also check an early card (SSR'd)
     const early = allCards[0];

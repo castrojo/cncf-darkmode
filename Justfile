@@ -57,6 +57,8 @@ copy-data-to-public:
     @cp src/data/members/changelog.json public/data/members/ 2>/dev/null || true
     @cp src/data/members/architectures.json public/data/members/ 2>/dev/null || true
     @cp src/data/people/people-index.json public/data/people/ 2>/dev/null || true
+    @cp src/data/people/people-emeritus.json public/data/people/ 2>/dev/null || true
+    @node -e "const d=JSON.parse(require('fs').readFileSync('src/data/people/people-index.json','utf8'));require('fs').writeFileSync('public/data/people/staff-index.json',JSON.stringify(d.filter(p=>Array.isArray(p.category)&&p.category.includes('Staff'))));" 2>/dev/null || true
     @cp src/data/people/heroes.json public/data/people/ 2>/dev/null || true
     @cp src/data/people/changelog.json public/data/people/ 2>/dev/null || true
     @cp src/data/people/landscape_logos.json public/data/people/ 2>/dev/null || true
