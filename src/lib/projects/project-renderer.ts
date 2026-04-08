@@ -83,7 +83,7 @@ function formatAge(iso: string): string {
   return `${Math.floor(days / 30)} mo`;
 }
 
-export function renderCard(p: SafeProject, eventBanner?: string): string {
+export function renderCard(p: SafeProject, eventBanner?: string, eventType?: string): string {
   const color = MATURITY_COLORS[p.maturity] ?? '#8b949e';
   const label = p.maturity.charAt(0).toUpperCase() + p.maturity.slice(1);
   const name = escapeHtml(p.name);
@@ -138,7 +138,7 @@ export function renderCard(p: SafeProject, eventBanner?: string): string {
     data-maturity="${escHtml(p.maturity)}"
     data-slug="${escHtml(p.slug)}"
     data-name="${name.toLowerCase()}"
-    data-category="${escHtml(p.category.toLowerCase())}"
+    data-category="${escHtml(p.category.toLowerCase())}"${eventType ? `\n    data-type="${escHtml(eventType)}"` : ''}
   >
     <div class="letterbox-logo" style="flex-shrink:0;width:64px;display:flex;align-items:flex-start;padding-top:0.25rem">
       ${logoHtml}

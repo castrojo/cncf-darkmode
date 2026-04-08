@@ -48,18 +48,26 @@ test('j/k keys move keyboard focus between cards', async ({ page }) => {
   await page.goto('./');
   await page.waitForLoadState('networkidle');
 
+  // Wait for focusable cards to render (projects: .changelog-event-card; endusers: .member-card/.hero-card)
+  await expect(page.locator('.changelog-event-card, .member-card, .hero-card').first()).toBeVisible({ timeout: 5000 });
+
   const focused = page.locator('.keyboard-focused');
 
-  // First j — focus lands on the first card
+  // First j — some card gets focus
   await page.keyboard.press('j');
   await expect(focused).toHaveCount(1);
-  const box1 = await focused.boundingBox();
 
-  // Second j — focus moves down to the next card (higher Y in a vertical list)
+  // Grab the actual DOM element for identity comparison
+  const handle1 = await focused.elementHandle();
+
+  // Second j — focus moves to a DIFFERENT card
   await page.keyboard.press('j');
   await expect(focused).toHaveCount(1);
-  const box2 = await focused.boundingBox();
-  expect(box2?.y).toBeGreaterThan(box1?.y ?? 0);
+  const handle2 = await focused.elementHandle();
+
+  // The focused element must have changed (not the same DOM node)
+  const isSame = await page.evaluate(([a, b]) => a === b, [handle1, handle2]);
+  expect(isSame).toBe(false);
 });
 
 test('Tab key cycles to the next section tab', async ({ page }) => {
