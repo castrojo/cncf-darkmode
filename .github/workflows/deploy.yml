@@ -69,6 +69,7 @@ jobs:
           cp src/data/people/heroes.json public/data/people/ 2>/dev/null || true
           cp src/data/people/changelog.json public/data/people/ 2>/dev/null || true
           cp src/data/people/landscape_logos.json public/data/people/ 2>/dev/null || true
+          cp src/data/people/maintainers.json public/data/people/ 2>/dev/null || true
       - name: Build site
         run: npm run build
       - name: Upload pages artifact

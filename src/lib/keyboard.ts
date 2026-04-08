@@ -109,6 +109,9 @@ export function initKeyboard(
 
       case 'Tab':
         if (!inInput) {
+          // Don't cycle section tabs when help modal is open — focus stays in modal
+          const modal = document.getElementById('keyboard-help-modal');
+          if (modal?.classList.contains('visible')) break;
           e.preventDefault();
           callbacks.onTabCycle?.(e.shiftKey);
         }

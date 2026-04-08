@@ -54,6 +54,7 @@ for (const site of SITES) {
 
   test(`${site.name}: search contract returns results for known token`, async ({ page }) => {
     await page.goto(site.url);
+    await page.waitForLoadState('networkidle');
     await expect(page.locator(site.cardSelector).first()).toBeVisible();
     const initialCount = await visibleCount(page, site.cardSelector);
     expect(initialCount).toBeGreaterThan(0);

@@ -1,8 +1,11 @@
 import { readdirSync, statSync, readFileSync } from 'fs';
-import { join } from 'path';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
 import { test, expect } from '@playwright/test';
 
-const DIST = join(process.cwd(), 'dist');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const DIST = join(__dirname, '../../dist');
 
 function totalSizeKb(dir: string, ext: string): number {
   try {

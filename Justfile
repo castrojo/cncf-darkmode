@@ -19,6 +19,14 @@ test:
 test-e2e:
     npm run test:e2e
 
+test-cross-site:
+    cd tests/cross-site && npx playwright test --config playwright.config.ts
+
+test-all: test test-e2e test-cross-site
+
+check:
+    npx astro check
+
 sync: sync-projects sync-endusers sync-people
     @just copy-data-to-public
 
@@ -52,6 +60,7 @@ copy-data-to-public:
     @cp src/data/people/heroes.json public/data/people/ 2>/dev/null || true
     @cp src/data/people/changelog.json public/data/people/ 2>/dev/null || true
     @cp src/data/people/landscape_logos.json public/data/people/ 2>/dev/null || true
+    @cp src/data/people/maintainers.json public/data/people/ 2>/dev/null || true
 
 [private]
 verify:

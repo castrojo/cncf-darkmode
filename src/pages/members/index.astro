@@ -419,15 +419,11 @@ const staticArchitectures = includeEmbeddedData ? architectures : [];
     onResetFocus: resetFocus,
     onSitePrev: () => {
       const isLocal = window.location.hostname === 'localhost';
-      window.location.href = isLocal
-        ? `${window.location.origin}/cncf-darkmode/`
-        : '/cncf-darkmode/';
+      window.location.href = isLocal ? `${window.location.origin}${base}/` : `${base}/`;
     },
     onSiteNext: () => {
       const isLocal = window.location.hostname === 'localhost';
-      window.location.href = isLocal
-        ? `${window.location.origin}/cncf-darkmode/people/`
-        : '/cncf-darkmode/people/';
+      window.location.href = isLocal ? `${window.location.origin}${base}/people/` : `${base}/people/`;
     },
   });
 

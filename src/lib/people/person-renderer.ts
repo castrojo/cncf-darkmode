@@ -2,9 +2,10 @@
 // Keeping both static (SSR) and dynamic (lazy-loaded) cards in sync.
 
 // SSR-safe BASE: Astro builds run in Node where document is unavailable.
+// PeopleLayout.astro sets data-base-url on <html>, which maps to dataset.baseUrl.
 const BASE = typeof document !== 'undefined'
-  ? (document.documentElement.dataset.base ?? '/cncf-darkmode/people').replace(/\/$/, '')
-  : '/cncf-darkmode/people';
+  ? (document.documentElement.dataset.baseUrl ?? '/cncf-darkmode').replace(/\/$/, '')
+  : '/cncf-darkmode';
 
 export interface Change { field: string; from: string; to: string; }
 export interface Person {
@@ -61,6 +62,18 @@ export function esc(s: string): string {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
+/** Validate external URLs before placing them in href attributes.
+ *  Rejects javascript:, data:, and any other non-http(s) scheme to prevent XSS. */
+export function safeHref(url: string): string {
+  try {
+    const parsed = new URL(url);
+    if (parsed.protocol !== 'https:' && parsed.protocol !== 'http:') return '#';
+    return url;
+  } catch {
+    return '#';
+  }
+}
+
 export function dateHeader(ts: string): string {
   return new Date(ts).toLocaleDateString('en-US', {
     weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC',
@@ -113,7 +126,7 @@ export function renderPersonCard(e: PersonEvent, landscapeLogos: Record<string, 
   }</div>` : '';
 
   const sl = (url: string | undefined, title: string, icon: string) =>
-    url ? `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer" class="social-link" title="${title}" aria-label="${title}">${icon}</a>` : '';
+    url ? `<a href="${esc(safeHref(url))}" target="_blank" rel="noopener noreferrer" class="social-link" title="${title}" aria-label="${title}">${icon}</a>` : '';
   const socialLinks =
     sl(p.certDirectory, 'CNCF Cert Directory', CERT_ICON) +
     sl(p.youtube, 'YouTube', YT_ICON) +
@@ -128,7 +141,7 @@ export function renderPersonCard(e: PersonEvent, landscapeLogos: Record<string, 
 
   const companyHtml = p.company ? `<div class="company-row">${
     p.companyLandscapeUrl
-      ? `<a href="${esc(p.companyLandscapeUrl)}" target="_blank" rel="noopener noreferrer" class="company-chip company-chip-link">${esc(p.company)}</a>`
+      ? `<a href="${esc(safeHref(p.companyLandscapeUrl))}" target="_blank" rel="noopener noreferrer" class="company-chip company-chip-link">${esc(p.company)}</a>`
       : `<span class="company-chip">${esc(p.company)}</span>`
   }</div>` : '';
 
@@ -138,11 +151,11 @@ export function renderPersonCard(e: PersonEvent, landscapeLogos: Record<string, 
   return `<article class="person-card" data-id="${esc(e.id)}" data-type="${esc(e.type)}" data-category="${esc(primaryCat.toLowerCase())}" data-categories="${esc(cats.map(c => c.toLowerCase()).join('|'))}" style="--card-accent:${catInfo.color}">` +
     `<div class="card-accent-bar"></div>` +
     `<div class="card-body"><div class="card-main"><div class="card-identity">` +
-    `<a href="${esc(profileUrl)}" target="_blank" rel="noopener noreferrer" class="avatar-link">${avatarHtml}</a>` +
+    `<a href="${esc(safeHref(profileUrl))}" target="_blank" rel="noopener noreferrer" class="avatar-link">${avatarHtml}</a>` +
     `<div class="identity-info">` +
     `<div class="name-row">` +
-    `<a href="${esc(profileUrl)}" target="_blank" rel="noopener noreferrer" class="person-name">${esc(p.name)}</a>` +
-    (p.handle ? `<a href="${esc(profileUrl)}" target="_blank" rel="noopener noreferrer" class="handle">@${esc(p.handle)}</a>` : '') +
+    `<a href="${esc(safeHref(profileUrl))}" target="_blank" rel="noopener noreferrer" class="person-name">${esc(p.name)}</a>` +
+    (p.handle ? `<a href="${esc(safeHref(profileUrl))}" target="_blank" rel="noopener noreferrer" class="handle">@${esc(p.handle)}</a>` : '') +
     (p.pronouns ? `<span class="pronouns">(${esc(p.pronouns)})</span>` : '') +
     `</div>` +
     companyHtml +
