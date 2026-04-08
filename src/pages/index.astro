@@ -181,7 +181,7 @@ function formatNumber(n: number): string {
     <script slot="body-end" type="application/json" id="initial-projects-data" set:html={JSON.stringify(projects)}></script>
   )}
   {includeEmbeddedData && (
-    <script slot="body-end" type="application/json" id="initial-changelog-data" set:html={JSON.stringify(changelogEvents)}></script>
+    <script slot="body-end" type="application/json" id="initial-changelog-data" set:html={JSON.stringify(changelogEvents.slice(0, 100))}></script>
   )}
 </ProjectsLayout>
 
@@ -202,6 +202,8 @@ function formatNumber(n: number): string {
   let currentTab: TabId = 'everyone';
   let currentCategory = '';
   let archivedRendered = false;
+  const CHANGELOG_PAGE_SIZE = 100;
+  let changelogOffset = 0;
 
   async function loadProjects(): Promise<void> {
     const res = await fetch(`${base}/data/projects/projects.json`);
@@ -288,7 +290,7 @@ function formatNumber(n: number): string {
     }
 
     // Resolve which changelog events to show (newsletter events excluded from project feed)
-    let events = filterChangelogByTab(allChangelog, currentTab)
+    let allEvents = filterChangelogByTab(allChangelog, currentTab)
       .filter(e => e.type !== 'newsletter');
 
     // Apply category filter
@@ -296,18 +298,39 @@ function formatNumber(n: number): string {
       const slugsInCategory = new Set(
         allProjects.filter(p => p.category === currentCategory).map(p => p.slug)
       );
-      events = events.filter(e => slugsInCategory.has(e.projectSlug ?? ''));
+      allEvents = allEvents.filter(e => slugsInCategory.has(e.projectSlug ?? ''));
     }
 
-    const hasResults = events.length > 0;
+    // Paginate: only render the first (changelogOffset + CHANGELOG_PAGE_SIZE) events
+    const pageEnd = changelogOffset + CHANGELOG_PAGE_SIZE;
+    const visibleEvents = allEvents.slice(0, pageEnd);
+    const hasMore = allEvents.length > pageEnd;
+
+    const hasResults = visibleEvents.length > 0;
     noResults.style.display = hasResults ? 'none' : 'block';
     container.innerHTML = hasResults
-      ? events.map(e => renderChangelogEvent(e, e.projectSlug ? projectsBySlug.get(e.projectSlug) : undefined)).join('')
+      ? visibleEvents.map(e => renderChangelogEvent(e, e.projectSlug ? projectsBySlug.get(e.projectSlug) : undefined)).join('')
       : '';
+
+    // "Load more" button — remove stale one, add fresh if needed
+    document.getElementById('load-more-changelog')?.remove();
+    if (hasMore) {
+      const btn = document.createElement('button');
+      btn.id = 'load-more-changelog';
+      btn.className = 'load-more-btn';
+      btn.textContent = `Load more (${allEvents.length - pageEnd} more events)`;
+      btn.addEventListener('click', () => {
+        changelogOffset += CHANGELOG_PAGE_SIZE;
+        renderCurrentView();
+        // scroll to just above the new content
+        btn.scrollIntoView({ behavior: 'smooth', block: 'end' });
+      });
+      container.after(btn);
+    }
 
     const countEl = document.getElementById('search-count');
     if (countEl) {
-      countEl.textContent = currentQuery ? String(events.length) : '';
+      countEl.textContent = currentQuery ? String(visibleEvents.length) : '';
     }
     wireCardEvents();
   }
@@ -396,6 +419,7 @@ function formatNumber(n: number): string {
 
   initTabs((tab) => {
     currentTab = tab;
+    changelogOffset = 0; // reset pagination on tab change
     showHeroesForTab(tab);
     renderCurrentView();
   });
@@ -407,12 +431,14 @@ function formatNumber(n: number): string {
 
   document.getElementById('category-filter')?.addEventListener('change', (e) => {
     currentCategory = (e.target as HTMLSelectElement).value;
+    changelogOffset = 0; // reset pagination on filter change
     renderCurrentView();
   });
 
   const searchInput = document.getElementById('search-input') as HTMLInputElement;
   searchInput?.addEventListener('input', () => {
     currentQuery = searchInput.value;
+    changelogOffset = 0; // reset pagination on search
     renderCurrentView();
   });
 
@@ -495,6 +521,25 @@ function formatNumber(n: number): string {
 
   #lwcn-container {
     margin-bottom: 1rem;
+  }
+
+  #load-more-changelog {
+    display: block;
+    width: 100%;
+    margin: 1.5rem 0;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border-default);
+    border-radius: 6px;
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+  #load-more-changelog:hover {
+    background: var(--color-bg-overlay);
+    color: var(--color-text-primary);
+    border-color: var(--color-accent-emphasis);
   }
 
   .changelog-event-card.keyboard-focused,
@@ -662,7 +707,6 @@ function formatNumber(n: number): string {
   }
 
   .hero-card {
-    aspect-ratio: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -785,4 +829,13 @@ function formatNumber(n: number): string {
   .staff-support-info { display: flex; flex-direction: column; gap: 0.1rem; }
   .staff-support-name  { font-size: 0.875rem; font-weight: 600; }
   .staff-support-handle { font-size: 0.75rem; color: var(--color-text-secondary); }
+
+  @media (max-width: 768px) {
+    .heroes-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .hero-card {
+      aspect-ratio: auto;
+    }
+  }
 </style>
