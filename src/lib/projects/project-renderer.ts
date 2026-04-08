@@ -55,14 +55,6 @@ function formatNumber(n: number): string {
   return String(n);
 }
 
-function formatDate(iso: string): string {
-  try {
-    return new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
-  } catch {
-    return iso;
-  }
-}
-
 export function formatRelativeDate(dateStr: string): string {
   const d = new Date(dateStr);
   const now = new Date();
@@ -167,5 +159,5 @@ export function renderCard(p: SafeProject, eventBanner?: string, eventType?: str
 }
 
 export function renderCards(projects: SafeProject[]): string {
-  return projects.map(renderCard).join('\n');
+  return projects.map(p => renderCard(p)).join('\n');
 }

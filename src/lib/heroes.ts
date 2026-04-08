@@ -10,7 +10,6 @@ export function djb2(str: string): number {
 
 export interface HeroItem {
   slug: string;
-  [key: string]: unknown;
 }
 
 // Returns `count` heroes from pool, deduplicated by slug, rotating by day

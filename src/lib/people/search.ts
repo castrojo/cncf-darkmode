@@ -37,7 +37,7 @@ export async function searchPeople(query: string, baseUrl: string, limit = 50): 
   if (!miniSearch) return [];
   const raw = miniSearch.search(query);
   return raw.slice(0, limit).map(({ score, terms, category, ...rest }) => ({
-    ...(rest as Omit<SearchResult, 'score' | 'terms' | 'category'>), score, terms,
+    ...(rest as unknown as Omit<SearchResult, 'score' | 'terms' | 'category'>), score, terms,
     category: (category as string[] | undefined) ?? [],
   }));
 }

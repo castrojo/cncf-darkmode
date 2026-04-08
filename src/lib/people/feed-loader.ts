@@ -25,13 +25,13 @@ export async function initFeedLoader(staticCount: number, landscapeLogos: Record
     done = nextIdx >= allEvents.length;
     for (const e of batch) {
       const header = dateHeader(e.timestamp);
-      let group = feed.querySelector<HTMLElement>(`.day-group[data-date="${CSS.escape(header)}"]`);
+      let group = feed!.querySelector<HTMLElement>(`.day-group[data-date="${CSS.escape(header)}"]`);
       if (!group) {
         group = document.createElement('section');
         group.className = 'day-group';
         group.dataset.date = header;
         group.innerHTML = `<h2 class="day-header">${esc(header)}</h2>`;
-        feed.insertBefore(group, sentinel);
+        feed!.insertBefore(group, sentinel);
       }
       group.insertAdjacentHTML('beforeend', renderCard(e, landscapeLogos));
     }
