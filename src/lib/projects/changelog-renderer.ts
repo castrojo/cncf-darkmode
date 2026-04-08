@@ -51,7 +51,7 @@ export function renderChangelogEvent(event: ChangelogEvent, project?: SafeProjec
   const banner = buildEventBanner(event);
 
   if (project) {
-    return renderCard(project, banner);
+    return renderCard(project, banner, event.type);
   }
 
   // Minimal fallback — used only for events where the project is not in projects.json
