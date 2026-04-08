@@ -54,4 +54,27 @@ describe('selectHeroSets', () => {
     const sets = selectHeroSets(bigPool);
     expect(sets.everyone.every(p => p.maturity !== 'archived')).toBe(true);
   });
+
+  // Regression: per-tab hero sets must be non-empty (heroSlots called without count returned [])
+  it('graduated tab set is non-empty', () => {
+    const sets = selectHeroSets(bigPool);
+    expect(sets.graduated.length).toBeGreaterThan(0);
+  });
+
+  it('incubating tab set is non-empty', () => {
+    const sets = selectHeroSets(bigPool);
+    expect(sets.incubating.length).toBeGreaterThan(0);
+  });
+
+  it('sandbox tab set is non-empty', () => {
+    const sets = selectHeroSets(bigPool);
+    expect(sets.sandbox.length).toBeGreaterThan(0);
+  });
+
+  it('per-tab sets contain only correct maturity', () => {
+    const sets = selectHeroSets(bigPool);
+    expect(sets.graduated.every(p => p.maturity === 'graduated')).toBe(true);
+    expect(sets.incubating.every(p => p.maturity === 'incubating')).toBe(true);
+    expect(sets.sandbox.every(p => p.maturity === 'sandbox')).toBe(true);
+  });
 });

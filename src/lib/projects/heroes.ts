@@ -29,8 +29,8 @@ export function selectHeroSets(projects: SafeProject[]): HeroSets {
       ...heroSlots(incubating, 3),
       ...heroSlots(sandbox, 1),
     ],
-    graduated:  heroSlots(graduated),
-    incubating: heroSlots(incubating),
-    sandbox:    heroSlots(sandbox),
+    graduated:  heroSlots(graduated, 8),
+    incubating: heroSlots(incubating, 8),
+    sandbox:    heroSlots(sandbox, 8),
   };
 }
