@@ -526,7 +526,10 @@ for (const m of maintainerList) {
 
     <!-- Staff PersonCards: lazy-loaded on first tab activation to reduce initial HTML payload -->
     <div id="alpha-feed-staff" class="alpha-feed" style="display:none" data-alpha-tab="staff"></div>
-    <!-- Alpha feeds: deduplicated, alphabetical (category roll-up tabs) -->
+    <!-- Alpha feeds: deduplicated, alphabetical (category roll-up tabs).
+         alphaFeeds currently only contains 'staff', which is filtered out because staff
+         PersonCards are lazy-loaded into #alpha-feed-staff above. This loop renders zero
+         elements today but is kept for future alpha-feed tabs. -->
     {Object.entries(alphaFeeds).filter(([tab]) => tab !== 'staff').map(([tab, tabEvents]) => (
       <div id={`alpha-feed-${tab}`} class="alpha-feed" style="display:none" data-alpha-tab={tab}>
         {tabEvents.map(event => (

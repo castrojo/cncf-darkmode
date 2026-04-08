@@ -84,7 +84,7 @@ export function dateHeader(ts: string): string {
 export function renderPersonCard(e: PersonEvent, landscapeLogos: Record<string, string>): string {
   const p = e.person;
   const avatarSrc = p.avatarUrl || p.imageUrl || '';
-  const profileUrl = p.github || (p.handle ? `https://github.com/${p.handle}` : '#');
+  const profileUrl = p.github || (p.handle ? `https://github.com/${p.handle}` : p.linkedin || '#');
   const cats = p.category ?? [];
   const primaryCat = cats[0] ?? '';
 
