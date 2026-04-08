@@ -195,7 +195,7 @@ export function fireConfetti(card: Element): void {
 
   // Phase 2: if logos already loaded, add a logo burst on top immediately.
   if (logoShapes && logoShapes.length > 0) {
-    const mixed = [...logoShapes, 'square'];
+    const mixed: confetti.Shape[] = [...logoShapes, 'square' as confetti.Shape];
     confetti({ ...base, shapes: mixed, particleCount: 40, spread: 110, startVelocity: 45, angle: 90 });
   }
 }

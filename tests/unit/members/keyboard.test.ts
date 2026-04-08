@@ -21,7 +21,7 @@ describe('keyboard shortcuts', () => {
     };
     vi.resetModules();
     const { initKeyboard } = await import('@cncf/site-kit/lib/keyboard');
-    cleanup = initKeyboard({ tabCount: 6, searchInput: null }, handlers) as (() => void) | undefined;
+    cleanup = initKeyboard({ tabCount: 6, searchInput: null }, handlers as any) as (() => void) | undefined;
   });
 
   afterEach(() => { cleanup?.(); cleanup = undefined; });

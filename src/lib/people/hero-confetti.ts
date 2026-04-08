@@ -17,7 +17,7 @@ function loadLogoShapes(): void {
   Promise.all(CNCF_LOGO_URLS.map(url => new Promise<confetti.Shape | null>(resolve => {
     const img = new Image();
     img.crossOrigin = 'anonymous';
-    img.onload = () => resolve(confetti.shapeFromImage({ src: url, width: 40, height: 40 }));
+    img.onload = () => resolve((confetti as any).shapeFromImage({ src: url, width: 40, height: 40 }));
     img.onerror = () => resolve(null);
     img.src = url;
     setTimeout(() => resolve(null), 4000);

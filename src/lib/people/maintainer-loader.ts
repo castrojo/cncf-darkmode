@@ -61,7 +61,7 @@ export async function initMaintainerLoader(staticCount: number, preloadedLogos?:
     nextIdx += batch.length;
     done = nextIdx >= allMaintainers.length;
     for (const m of batch) {
-      feed.insertAdjacentHTML('beforeend', renderMaintainerCard(m, logos));
+      feed!.insertAdjacentHTML('beforeend', renderMaintainerCard(m, logos));
     }
     loading = false;
     if (done) observer.disconnect();

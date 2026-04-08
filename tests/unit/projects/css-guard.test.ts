@@ -6,11 +6,11 @@
  * specificity conflict or removed a critical guard. Fix layout.css, not the test.
  */
 import { describe, it, expect } from 'vitest';
-import fs from 'fs';
-import path from 'path';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 
-const layoutCss = fs.readFileSync(
-  path.resolve(__dirname, '../../../src/styles/layout.css'),
+const layoutCss = readFileSync(
+  resolve(process.cwd(), 'src/styles/layout.css'),
   'utf8'
 );
 

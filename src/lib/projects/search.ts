@@ -28,7 +28,7 @@ export function initSearch(projects: SafeProject[]): void {
 
 export function searchProjects(query: string): SafeProject[] {
   if (!query.trim() || !search) return [];
-  return search.search(query, { prefix: true, fuzzy: 0.2 }).map(({ id: _id, categoryStr: _categoryStr, topicsStr: _topicsStr, ...project }) => project);
+  return search.search(query).map(({ id: _id, categoryStr: _categoryStr, topicsStr: _topicsStr, ...project }) => project);
 }
 
 export function getAllProjects(): SafeProject[] {

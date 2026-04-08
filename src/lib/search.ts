@@ -99,7 +99,7 @@ export function createSearchSync<T extends { slug: string }>(
       const q = query.trim();
       if (!q) return [];
       try {
-        return ms.search(q, { limit }) as unknown as T[];
+        return ms.search(q).slice(0, limit) as unknown as T[];
       } catch {
         return [];
       }
@@ -135,7 +135,7 @@ export function createSearchAsync<T extends { slug: string }>(
       const q = query.trim();
       if (!q) return [];
       try {
-        return ms.search(q, { limit }) as unknown as T[];
+        return ms.search(q).slice(0, limit) as unknown as T[];
       } catch {
         return [];
       }

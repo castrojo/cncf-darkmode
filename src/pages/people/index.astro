@@ -228,9 +228,9 @@ const tabStats = Object.fromEntries(
 );
 
 // TOC and TAB use static JSON hero displays — excluded from PersonCard alpha-feeds.
-interface OrgMember { handle: string; name: string; title: string; }
+interface OrgMember { handle: string; name: string; title: string; imageUrl?: string; }
 // FlexOrgMember: same shape but handle is optional (for GB, marketing lists)
-interface FlexOrgMember { handle?: string; name: string; title?: string; }
+interface FlexOrgMember { handle?: string; name: string; title?: string; imageUrl?: string; }
 // EmeritusMember: people who left CNCF roles
 interface EmeritusMember { handle?: string; name: string; removedDate?: string; category?: string[]; }
 const tocMembers = (leadershipRoles as any).toc as OrgMember[];
@@ -684,9 +684,9 @@ const emeritusSorted = [...emeritusMembers].sort((a, b) => {
             person={{
               name: person.name,
               handle: person.github ? person.github.replace('https://github.com/', '') : undefined,
-              github: person.github,
-              avatarUrl: person.avatar,
-              company: person.company,
+              github: person.github ?? undefined,
+              avatarUrl: person.avatar ?? undefined,
+              company: person.company ?? undefined,
             }}
             label={person.role ?? 'Community Member'}
             categoryKey="Memorial"
