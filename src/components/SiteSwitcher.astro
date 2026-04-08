@@ -4,10 +4,11 @@ interface Props {
 }
 const { activeSite } = Astro.props;
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const sites = [
-  { key: 'projects', label: 'Projects',  url: '/cncf-darkmode/' },
-  { key: 'members',  label: 'End Users', url: '/cncf-darkmode/members/' },
-  { key: 'people',   label: 'People',    url: '/cncf-darkmode/people/' },
+  { key: 'projects', label: 'Projects',  url: `${base}/` },
+  { key: 'members',  label: 'End Users', url: `${base}/members/` },
+  { key: 'people',   label: 'People',    url: `${base}/people/` },
 ];
 ---
 <nav class="site-switcher" aria-label="CNCF Landscape sections">

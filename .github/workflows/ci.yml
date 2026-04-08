@@ -18,8 +18,11 @@ jobs:
       - run: npm ci
       - name: Unit tests
         run: npm run test
+      - name: Type check
+        run: npx astro check
       - name: Build
         run: npm run build
+        # Note: E2E and cross-site Playwright tests are run manually via `just test-e2e` / `just test-cross-site`
 
   test-go:
     runs-on: ubuntu-latest

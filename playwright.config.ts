@@ -27,5 +27,14 @@ export default defineConfig({
       },
       testMatch: ['**/people-timeline.spec.ts'],
     },
+    {
+      // Projects section: all tests except people-specific ones
+      name: 'projects',
+      use: {
+        ...devices['Desktop Chrome'],
+        baseURL: 'http://localhost:4321/cncf-darkmode/',
+      },
+      testIgnore: ['**/people-timeline.spec.ts'],
+    },
   ],
 });

@@ -196,6 +196,7 @@ function formatNumber(n: number): string {
   import { fireFountain, preloadOnHover, fireHearts } from '../lib/confetti';
 
   const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+  let allProjects: SafeProject[] = [];
   let allChangelog: ChangelogEvent[] = [];
   let currentQuery = '';
   let currentTab: TabId = 'everyone';
@@ -313,10 +314,14 @@ function formatNumber(n: number): string {
 
   function wireCardEvents(): void {
     document.querySelectorAll<HTMLElement>('.changelog-event-card, .newsletter-card').forEach(card => {
+      if (card.dataset.eventsWired === '1') return;
+      card.dataset.eventsWired = '1';
       preloadOnHover(card);
       card.addEventListener('click', () => fireFountain(card));
     });
     document.querySelectorAll<HTMLElement>('.hero-card').forEach(card => {
+      if (card.dataset.eventsWired === '1') return;
+      card.dataset.eventsWired = '1';
       preloadOnHover(card);
       card.addEventListener('click', () => fireHearts(card));
     });
@@ -461,16 +466,10 @@ function formatNumber(n: number): string {
     },
     onResetFocus: resetFocus,
     onSitePrev: () => {
-      const isLocal = window.location.hostname === 'localhost';
-      window.location.href = isLocal
-        ? `${window.location.origin}/cncf-darkmode/people/`
-        : '/cncf-darkmode/people/';
+      window.location.href = `${base}/people/`;
     },
     onSiteNext: () => {
-      const isLocal = window.location.hostname === 'localhost';
-      window.location.href = isLocal
-        ? `${window.location.origin}/cncf-darkmode/members/`
-        : '/cncf-darkmode/members/';
+      window.location.href = `${base}/members/`;
     },
   });
 

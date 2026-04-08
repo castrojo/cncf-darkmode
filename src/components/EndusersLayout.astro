@@ -56,7 +56,7 @@ const includeEmbeddedData = import.meta.env.DEV;
 >
   <Fragment slot="head">
     <link rel="icon" href={`${base}/cncf-icon-color.svg`} type="image/svg+xml" />
-    <link rel="alternate" type="application/rss+xml" title="CNCF End Users Feed" href={`${base}/feed.xml`} />
+    <link rel="alternate" type="application/rss+xml" title="CNCF End Users Feed" href={`${base}/members/feed.xml`} />
   </Fragment>
 
   <div slot="header-nav" class="search-wrapper">
@@ -81,7 +81,7 @@ const includeEmbeddedData = import.meta.env.DEV;
       links={[
         { text: 'CNCF Landscape', url: 'https://landscape.cncf.io', external: true },
         { text: 'Become a Member', url: 'https://www.cncf.io/about/join/', external: true },
-        { text: 'End Users Feed (RSS)', url: `${base}/feed.xml`, rss: true },
+        { text: 'End Users Feed (RSS)', url: `${base}/members/feed.xml`, rss: true },
         { text: 'Report an issue', url: 'https://github.com/castrojo/cncf-darkmode/issues', external: true },
       ]}
     />
@@ -177,6 +177,12 @@ const includeEmbeddedData = import.meta.env.DEV;
 </BaseLayout>
 
 <style is:global>
+  /* Canonical header spec: section-link active state uses CNCF blue */
+  .section-link.active {
+    color: var(--color-cncf-blue);
+    border-bottom-color: var(--color-cncf-blue);
+  }
+
   .heroes-section { margin-bottom: 1.5rem; }
   .stats-box { background: var(--color-bg-default); border: 1px solid var(--color-border-default); border-radius: 6px; padding: 1rem; }
   .sidebar-heading { font-size: 0.875rem; font-weight: 600; margin: 0 0 0.75rem; }

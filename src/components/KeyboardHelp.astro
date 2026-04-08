@@ -55,6 +55,43 @@ const { tabCount = 9 } = Astro.props;
     document.getElementById('keyboard-help-modal')?.classList.remove('visible');
     document.getElementById('keyboard-help-backdrop')?.classList.remove('visible');
   });
+
+  // Auto-focus the close button when the modal opens.
+  // The help button lives outside this component; watch for the modal becoming visible.
+  const modal = document.getElementById('keyboard-help-modal');
+  if (modal) {
+    const observer = new MutationObserver(() => {
+      if (modal.classList.contains('visible')) {
+        // Small delay lets the CSS display:block paint before focus
+        setTimeout(() => {
+          (document.getElementById('close-help') as HTMLElement | null)?.focus();
+        }, 50);
+      }
+    });
+    observer.observe(modal, { attributeFilter: ['class'] });
+  }
+
+  // Focus trap — Tab/Shift+Tab cycle within the modal while it is open.
+  document.addEventListener('keydown', (e: KeyboardEvent) => {
+    const helpModal = document.getElementById('keyboard-help-modal');
+    if (!helpModal?.classList.contains('visible')) return;
+
+    if (e.key === 'Tab') {
+      e.preventDefault();
+      const focusable = Array.from(
+        helpModal.querySelectorAll<HTMLElement>(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        )
+      ).filter(el => !el.hidden && !(el as HTMLInputElement).disabled);
+
+      if (focusable.length === 0) return;
+      const current = focusable.indexOf(document.activeElement as HTMLElement);
+      const next = e.shiftKey
+        ? (current - 1 + focusable.length) % focusable.length
+        : (current + 1) % focusable.length;
+      focusable[next]?.focus();
+    }
+  });
 </script>
 
 <style>

@@ -42,7 +42,8 @@ export async function initFeedLoader(staticCount: number, landscapeLogos: Record
   const sentinel = document.createElement('div');
   sentinel.id = 'feed-sentinel'; feed.appendChild(sentinel);
   const res = await fetch(DATA_URL);
-  allEvents = await res.json() as Event[];
+  if (!res.ok) return;
+  allEvents = await res.json() as PersonEvent[];
   done = nextIdx >= allEvents.length;
   const observer = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting) appendBatch();

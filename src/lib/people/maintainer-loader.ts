@@ -1,6 +1,7 @@
 // maintainer-loader.ts — progressively loads/renders maintainer cards via IntersectionObserver.
-const BASE = (document.documentElement.dataset.base ?? '/cncf-darkmode/people').replace(/\/$/, '');
-const MAINTAINERS_URL = `${BASE}/data/maintainers.json`;
+// PeopleLayout.astro sets data-base-url on <html>, which maps to dataset.baseUrl.
+const BASE = (document.documentElement.dataset.baseUrl ?? '/cncf-darkmode').replace(/\/$/, '');
+const MAINTAINERS_URL = `${BASE}/data/people/maintainers.json`;
 const LOGOS_URL = `${BASE}/data/landscape_logos.json`;
 const BATCH_SIZE = 50;
 interface ProjectDetail { name: string; maturity: string; }
@@ -71,6 +72,7 @@ export async function initMaintainerLoader(staticCount: number, preloadedLogos?:
     fetch(MAINTAINERS_URL),
     preloadedLogos ? null : fetch(LOGOS_URL).catch(() => null),
   ]);
+  if (!maintainersRes.ok) return;
   allMaintainers = await maintainersRes.json() as SafeMaintainer[];
   if (!preloadedLogos && logosRes?.ok) logos = await logosRes.json() as Record<string, string>;
   done = nextIdx >= allMaintainers.length;
