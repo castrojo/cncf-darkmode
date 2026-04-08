@@ -66,3 +66,4 @@ copy-data-to-public:
 verify:
     @echo "Checking Go..."
     @cd go && go build ./... && echo "Go: OK" || echo "Go: FAIL"
+    @npx astro check && echo "Astro types: OK" || echo "Astro types: FAIL"
