@@ -66,8 +66,8 @@
     "name": "Patrick Jakubowski",
     "handle": "patjakdev",
     "company": "Delinea",
-    "location": "Canada",
-    "countryFlag": "🇨🇦",
+    "location": "Shanghai, China ",
+    "countryFlag": "🇨🇳",
     "projects": [
       "Cedar"
     ],
@@ -86,8 +86,8 @@
     "name": "Yanran Zeng",
     "handle": "yanranzeng1",
     "company": "Delinea",
-    "location": "Bozeman, MT",
-    "countryFlag": "🇲🇹",
+    "location": "Canada",
+    "countryFlag": "🇨🇦",
     "projects": [
       "Cedar"
     ],
@@ -108,6 +108,7 @@
     "company": "Amazon",
     "location": "Bozeman, MT",
     "countryFlag": "🇲🇹",
+    "bio": "Cloud Software Engineer | Kubernetes, Databases, Storage",
     "projects": [
       "Cedar"
     ],
@@ -167,8 +168,8 @@
     "name": "Lidi Zheng",
     "handle": "lidizheng",
     "company": "Google",
-    "location": "Denver, CO",
-    "countryFlag": "🇨🇴",
+    "location": "China",
+    "countryFlag": "🇨🇳",
     "projects": [
       "GRPC"
     ],
@@ -293,8 +294,8 @@
     "name": "Adolfo García Veytia",
     "handle": "puerco",
     "company": "Carabiner Systems, Inc",
-    "location": "Denver, CO",
-    "countryFlag": "🇨🇴",
+    "location": "Germany",
+    "countryFlag": "🇩🇪",
     "bio": "⎈ @Kubernetes SIG Release Technical Lead\r\n🔗 Software Engineer \r\n💡Founder @uServers @carabiner-dev \r\n:feather: Prev @mattermost @chainguard-dev @stacklok",
     "projects": [
       "Kubernetes Maintainers"
@@ -336,7 +337,7 @@
     "name": "Aravindh Puthiyaparambil",
     "handle": "aravindhp",
     "company": "Softdrive Technologies Group Inc.",
-    "location": "Seattle, WA",
+    "location": "Portland, OR",
     "projects": [
       "Kubernetes Maintainers"
     ],
@@ -375,8 +376,8 @@
     "name": "Arnaud Meukam",
     "handle": "ameukam",
     "company": "Independent",
-    "location": "Shanghai, China ",
-    "countryFlag": "🇨🇳",
+    "location": "Türkiye",
+    "countryFlag": "🇹🇷",
     "projects": [
       "Kubernetes Maintainers"
     ],
@@ -422,7 +423,8 @@
     "name": "Brady Pratt",
     "handle": "jbpratt",
     "company": "Red Hat",
-    "location": "Seattle",
+    "location": "Berlin, Germany",
+    "countryFlag": "🇩🇪",
     "projects": [
       "Kubernetes Maintainers"
     ],
@@ -551,7 +553,7 @@
     "company": "Cloudbase Solutions",
     "location": "Timisoara, Romania",
     "countryFlag": "🇷🇴",
-    "bio": "Senior Security Engineer\r\nKubernetes Org Member",
+    "bio": "Maintainer @kubernetes-sigs Inference Gateway | Chair @kubernetes AI Gateway WG | Maintainer @llm-d | Senior Principal Software Engineer @ Red Hat AI",
     "projects": [
       "Kubernetes Maintainers"
     ],
@@ -658,8 +660,7 @@
     "name": "David Ashpole",
     "handle": "dashpole",
     "company": "Google",
-    "location": "Bay Area, CA",
-    "countryFlag": "🇨🇦",
+    "location": "Berlin",
     "projects": [
       "Kubernetes Maintainers",
       "Prometheus"
@@ -685,7 +686,7 @@
     "company": "Red Hat",
     "location": "Raleigh, NC",
     "countryFlag": "🇳🇨",
-    "bio": "Open Source Engineer at VMware | Working on Kubernetes",
+    "bio": "@grafana Labs: Principal Software Engineer, Cloud Backend.  @mixxxdj: core contributor. Member of @prometheus -team and @open-telemetry \r\n",
     "projects": [
       "Kubernetes Maintainers",
       "Open Cluster Management"
@@ -711,7 +712,7 @@
     "company": "Google",
     "location": "United States",
     "countryFlag": "🇺🇸",
-    "bio": "The difference between fine and great software is listening to people.",
+    "bio": "Software Engineer at Google | Kubernetes SIG Scheduling Chair \u0026 Approver",
     "projects": [
       "Kubernetes Maintainers"
     ],
@@ -732,7 +733,7 @@
     "company": "Red Hat",
     "location": "Raleigh, NC",
     "countryFlag": "🇳🇨",
-    "bio": "The difference between fine and great software is listening to people.",
+    "bio": "@grafana Labs: Principal Software Engineer, Cloud Backend.  @mixxxdj: core contributor. Member of @prometheus -team and @open-telemetry \r\n",
     "projects": [
       "Kubernetes Maintainers"
     ],
@@ -777,8 +778,8 @@
     "name": "Dominik Marciński",
     "handle": "dom4ha",
     "company": "Google",
-    "location": "Canada",
-    "countryFlag": "🇨🇦",
+    "location": "Poland",
+    "countryFlag": "🇵🇱",
     "projects": [
       "Kubernetes Maintainers"
     ],
@@ -839,8 +840,7 @@
     "name": "Federico Bongiovanni",
     "handle": "fedebongio",
     "company": "Google",
-    "location": "Raleigh, NC",
-    "countryFlag": "🇳🇨",
+    "location": "Munich",
     "projects": [
       "Kubernetes Maintainers"
     ],
@@ -900,8 +900,8 @@
     "name": "Ivan Valdes",
     "handle": "ivanvc",
     "company": "Inmar Intelligence",
-    "location": "New Zealand",
-    "countryFlag": "🇳🇿",
+    "location": "Germany",
+    "countryFlag": "🇩🇪",
     "bio": "Coding for the fun of coding.",
     "projects": [
       "Kubernetes Maintainers",
@@ -1087,7 +1087,8 @@
     "name": "Joel Speed",
     "handle": "joelspeed",
     "company": "Red Hat",
-    "location": "Colorado",
+    "location": "Canada",
+    "countryFlag": "🇨🇦",
     "bio": "Senior Principal Software Engineer, Red Hat @openshift",
     "projects": [
       "Kubernetes Maintainers",
@@ -1112,7 +1113,7 @@
     "name": "John Belamaric",
     "handle": "johnbelamaric",
     "company": "Google",
-    "location": "Colorado",
+    "location": "Berlin",
     "projects": [
       "Kubernetes Maintainers",
       "CoreDNS"
@@ -1258,7 +1259,7 @@
     "name": "Lubomir Ivanov",
     "handle": "neolit123",
     "company": "Independent",
-    "location": "Schirnding",
+    "location": "Berlin",
     "bio": "k8s maintainer and SIG Cluster Lifecycle chair\r\n",
     "projects": [
       "Kubernetes Maintainers"
@@ -1278,8 +1279,8 @@
     "name": "Maciej Skoczeń",
     "handle": "macsko",
     "company": "Google",
-    "location": "Poland",
-    "countryFlag": "🇵🇱",
+    "location": "Champaign, IL",
+    "countryFlag": "🇮🇱",
     "bio": "Software Engineer at Google | Kubernetes SIG Scheduling Chair \u0026 Approver",
     "projects": [
       "Kubernetes Maintainers"
@@ -1570,8 +1571,8 @@
     "name": "Michelle Au",
     "handle": "msau42",
     "company": "Google",
-    "location": "San Francisco, CA",
-    "countryFlag": "🇨🇦",
+    "location": "Germany",
+    "countryFlag": "🇩🇪",
     "projects": [
       "Kubernetes Maintainers"
     ],
@@ -1629,8 +1630,8 @@
     "name": "Mrunal Patel",
     "handle": "mrunalp",
     "company": "Red Hat",
-    "location": "India",
-    "countryFlag": "🇮🇳",
+    "location": "Türkiye",
+    "countryFlag": "🇹🇷",
     "projects": [
       "Kubernetes Maintainers",
       "CRI-O"
@@ -1700,7 +1701,7 @@
     "name": "Nir Rozenbaum",
     "handle": "nirrozenbaum",
     "company": "Red Hat",
-    "location": "Warsaw",
+    "location": "Berlin",
     "bio": "Maintainer @kubernetes-sigs Inference Gateway | Chair @kubernetes AI Gateway WG | Maintainer @llm-d | Senior Principal Software Engineer @ Red Hat AI",
     "projects": [
       "Kubernetes Maintainers"
@@ -1720,7 +1721,8 @@
     "name": "Peter Hunt",
     "handle": "haircommander",
     "company": "Red Hat",
-    "location": "Seattle, WA",
+    "location": "Lyon, France",
+    "countryFlag": "🇫🇷",
     "projects": [
       "Kubernetes Maintainers",
       "CRI-O"
@@ -1804,8 +1806,8 @@
     "name": "Ray Wainman",
     "handle": "raywainman",
     "company": "Google",
-    "location": "San Francisco, CA",
-    "countryFlag": "🇨🇦",
+    "location": "United States",
+    "countryFlag": "🇺🇸",
     "bio": "Kubernetes Autoscaling",
     "projects": [
       "Kubernetes Maintainers"
@@ -1984,8 +1986,7 @@
     "name": "Siyuan Zhang",
     "handle": "siyuanfoundation",
     "company": "Google",
-    "location": "London, UK",
-    "countryFlag": "🇬🇧",
+    "location": "Cantabria",
     "projects": [
       "Kubernetes Maintainers",
       "SIG Etcd"
@@ -2080,8 +2081,8 @@
     "name": "Tabitha Sable",
     "handle": "tabbysable",
     "company": "Datadog",
-    "location": "London, UK",
-    "countryFlag": "🇬🇧",
+    "location": "Lachen, Switzerland",
+    "countryFlag": "🇨🇭",
     "bio": "Hack the planet, make friends, hack the planet with your friends.",
     "projects": [
       "Kubernetes Maintainers"
@@ -2183,7 +2184,8 @@
     "name": "Walter Fender",
     "handle": "cheftako",
     "company": "Google",
-    "location": "Berlin",
+    "location": "France",
+    "countryFlag": "🇫🇷",
     "bio": "@kubernetes ",
     "projects": [
       "Kubernetes Maintainers"
@@ -2203,8 +2205,8 @@
     "name": "Wenjia Zhang",
     "handle": "wenjiaswe",
     "company": "Google",
-    "location": "Budapest, Hungary",
-    "countryFlag": "🇭🇺",
+    "location": "Chandigarh, India",
+    "countryFlag": "🇮🇳",
     "projects": [
       "Kubernetes Maintainers"
     ],
@@ -2225,7 +2227,7 @@
     "company": "Google",
     "location": "Poland",
     "countryFlag": "🇵🇱",
-    "bio": "🏺 porcelain punk | @kubernetes docs tech lead \u0026 v1.27 release lead",
+    "bio": "Chaos Enthusiast",
     "projects": [
       "Kubernetes Maintainers"
     ],
@@ -2284,8 +2286,7 @@
     "name": "Yuanliang Zhang",
     "handle": "zylxjtu",
     "company": "Microsoft",
-    "location": "Taipei, Taiwan",
-    "countryFlag": "🇹🇼",
+    "location": "Tokyo, Shibuya",
     "projects": [
       "Kubernetes Maintainers"
     ],
@@ -2648,7 +2649,7 @@
   {
     "name": "Conrad Hoffmann",
     "handle": "bitfehler",
-    "location": "Dubai",
+    "location": "Sant Quirze del Valles",
     "projects": [
       "Prometheus"
     ],
@@ -2708,9 +2709,9 @@
   {
     "name": "Daniel Swarbrick",
     "handle": "dswarbrick",
-    "location": "London, UK",
-    "countryFlag": "🇬🇧",
-    "bio": "Fascinated by challenging engineering problems \u0026 distributed systems. Go \u0026 OSS fan. \r\nPrometheus maintainer, Thanos co-author. CNCF Mentor.",
+    "location": "Berlin, Germany",
+    "countryFlag": "🇩🇪",
+    "bio": "Ceph storage engineer @ionos-cloud. Cisco / Juniper network engineer in a former life. Debian developer on the side.",
     "projects": [
       "Prometheus"
     ],
@@ -3037,8 +3038,8 @@
     "name": "Julien Pivotto",
     "handle": "roidelapluie",
     "company": "Grafana Labs",
-    "location": "Budapest, Hungary",
-    "countryFlag": "🇭🇺",
+    "location": "Kyoto, Japan",
+    "countryFlag": "🇯🇵",
     "bio": "@prometheus team member.",
     "projects": [
       "Prometheus"
@@ -3138,8 +3139,7 @@
     "name": "Max Inden",
     "handle": "mxinden",
     "company": "Protocol Labs",
-    "location": "Lyon, France",
-    "countryFlag": "🇫🇷",
+    "location": "Warsaw",
     "bio": "Networking (QUIC/http3) @mozilla, @Prometheus maintainer. Ex (rust-) @libp2p, @RedHatOfficial, @CoreOS.",
     "projects": [
       "Prometheus"
@@ -3266,8 +3266,7 @@
     "name": "Simon Pasquier",
     "handle": "simonpasquier",
     "company": "Red Hat",
-    "location": "Greater Boston, MA",
-    "countryFlag": "🇲🇦",
+    "location": "Cantabria",
     "bio": "Working on logging, monitoring, alerting.",
     "projects": [
       "Prometheus"
@@ -3387,7 +3386,7 @@
     "name": "Stephan Zuercher",
     "handle": "zuercher",
     "company": "Turbine Labs",
-    "location": "www",
+    "location": "Dubai",
     "projects": [
       "Envoy"
     ],
@@ -3425,8 +3424,7 @@
     "name": "Yan Avlasov",
     "handle": "yanavlasov",
     "company": "Google",
-    "location": "London",
-    "bio": "@grafana CTO, @prometheus maintainer \u0026 @cortexproject co-author. Previously @kausalco, @weaveworks, @google, @acunu",
+    "location": "Chengdu",
     "projects": [
       "Envoy"
     ],
@@ -3471,9 +3469,8 @@
     "name": "Ryan Northey",
     "handle": "phlax",
     "company": "CNCF",
-    "location": "Berlin, Germany",
-    "countryFlag": "🇩🇪",
-    "bio": "Passionate about new technologies and all things Observability. Prometheus and Thanos contributor.",
+    "location": "Cambridge, MA",
+    "countryFlag": "🇲🇦",
     "projects": [
       "Envoy"
     ],
@@ -3492,7 +3489,8 @@
     "name": "Ryan Hamilton",
     "handle": "ryantheoptimist",
     "company": "Google",
-    "location": "Bangalore",
+    "location": "Florianópolis, Brazil",
+    "countryFlag": "🇧🇷",
     "projects": [
       "Envoy"
     ],
@@ -3570,7 +3568,7 @@
     "name": "Baiping Wang",
     "handle": "wbpcode",
     "company": "NetEase",
-    "location": "www",
+    "location": "🌏",
     "bio": "Feel free to ping me at Envoy slack if I am unresponsive to your PR/issue.",
     "projects": [
       "Envoy"
@@ -3634,7 +3632,7 @@
     "name": "Raven Black",
     "handle": "ravenblackx",
     "company": "Dropbox",
-    "location": "Seattle, WA",
+    "location": "www",
     "projects": [
       "Envoy"
     ],
@@ -3770,8 +3768,8 @@
     "name": "Xunzhuo Liu",
     "handle": "xunzhuo",
     "company": "Tencent",
-    "location": "Greater Boston, MA",
-    "countryFlag": "🇲🇦",
+    "location": "Los Angeles, CA",
+    "countryFlag": "🇨🇦",
     "bio": "Intelligent Routing @vllm-project ",
     "projects": [
       "Envoy: Gateway (non-voting)",
@@ -4215,8 +4213,8 @@
   {
     "name": "Brad Beam",
     "handle": "bradbeam",
-    "location": "Mountain View, CA",
-    "countryFlag": "🇨🇦",
+    "location": "Richmond, KY",
+    "countryFlag": "🇰🇾",
     "projects": [
       "CoreDNS"
     ],
