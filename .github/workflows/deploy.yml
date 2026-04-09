@@ -79,10 +79,36 @@ jobs:
         with:
           path: dist
 
+  # Test gate (Gap G4 — SO-16):
+  # A bad sync (malformed JSON, missing data files) can produce a build that
+  # passes `astro build` yet serves broken data at runtime.  Running the full
+  # unit-test suite (290 tests) against the freshly-synced data gives us a
+  # structural/schema check for free: any malformed JSON causes an import
+  # error; any schema violation is caught by the schema tests.  Only when
+  # every test is green do we allow the deploy job to proceed.
+  test:
+    name: "Unit test gate"
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - run: npm ci
+      - name: Run unit tests
+        # Runs all vitest unit tests (npm run test = vitest run).
+        # Workflow exits non-zero here if any test fails; the deploy job
+        # is blocked by `needs: [test]` and will not run.
+        run: npm run test
+
   deploy:
     name: "Deploy to GitHub Pages"
     runs-on: ubuntu-latest
-    needs: [build]
+    needs: [test]
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
