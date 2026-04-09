@@ -16,6 +16,13 @@ on:
     - cron: '0 6 * * 1'     # Weekly Monday 06:00 UTC — includes enrich-projects (SO-68)
   workflow_dispatch:
 
+# Prevent concurrent runs from racing on data commits and git push.
+# cancel-in-progress: false ensures a queued run waits rather than being
+# dropped, preserving data integrity across cron + manual triggers.
+concurrency:
+  group: deploy-sync
+  cancel-in-progress: false
+
 permissions:
   contents: write
   pages: write
@@ -33,7 +40,7 @@ jobs:
         with:
           go-version: '1.22'
           cache-dependency-path: go/go.sum
-      - uses: extractions/setup-just@v2
+      - uses: extractions/setup-just@dd310ad5a97d8e7b41793f8ef055398d51ad4de6  # v2
       - name: Run sync-projects
         env:
           GITHUB_TOKEN: ${{ github.token }}
@@ -47,10 +54,19 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: cd go && go run ./cmd/sync-people/
       - name: Enrich project data (Scorecard + Adopters)
+        id: enrich_projects
         # Non-fatal: passes --best-effort so a Scorecard API outage or rate-limit
         # does not block the deploy.  Implemented by SO-60-A/SO-60-B (SO-66/SO-67).
         continue-on-error: true
         run: just enrich-projects
+      - name: Report enrichment status
+        if: always() && steps.enrich_projects.outcome == 'failure'
+        run: |
+          {
+            echo "## ⚠️ Enrichment degraded"
+            echo "The \`enrich-projects\` step failed (Scorecard API unavailable or rate-limited)."
+            echo "Deploy continued in best-effort mode — project Scorecard scores may be stale."
+          } >> "$GITHUB_STEP_SUMMARY"
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
