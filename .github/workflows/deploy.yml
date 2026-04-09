@@ -1,5 +1,15 @@
 name: Deploy
 
+# This is the single deployment workflow for the cncf-darkmode monorepo.
+# It deploys ALL THREE sections of the unified Astro site:
+#   - Projects  (src/pages/index.astro)
+#   - Members   (src/pages/members/index.astro)
+#   - People    (src/pages/people/index.astro)
+#
+# The legacy deploy-people.yml workflow was removed (SO-18, commit 7166a0f).
+# The sites/people/ path it referenced no longer exists after the monorepo
+# migration — People is served exclusively from this workflow.
+
 on:
   schedule:
     - cron: '0 7 * * *'
