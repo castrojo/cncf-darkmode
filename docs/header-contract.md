@@ -190,17 +190,22 @@ overrides. Section-specific tokens live in `src/styles/variables.css`.
 
 ## 6. Geometry Constraints
 
-These are the invariants enforced by `tests/cross-site/header-geometry.spec.ts`.
+These are the target invariants for `tests/cross-site/header-geometry.spec.ts`. All constraints
+listed below are the intended goals; see the status column for current conformance.
 
-| Constraint | Value | Tolerance |
-|------------|-------|-----------|
-| Logo size | 42 × 42 px | ± 3 px |
-| Site title height (single-line) | < 40 px | — |
-| `.header-left` width | 240 px | ± 10 px |
-| Header height parity across sites | — | < 5 px diff |
-| `#theme-toggle` X-position parity | — | < 10 px diff |
-| Header width ≤ viewport width | — | + 1 px overflow allowed |
-| `position` of `.site-header` | `sticky` | exact |
+| Constraint | Value | Tolerance | Status |
+|------------|-------|-----------|--------|
+| Logo size | 42 × 42 px | ± 3 px | Passing |
+| Site title height (single-line) | < 40 px | — | Passing |
+| `.header-left` width | 240 px | ± 10 px | Passing |
+| Header height parity across sites | — | ≤ 5 px diff | Passing |
+| `#theme-toggle` X-position parity | — | ≤ 10 px diff | **Unmet** — measured ~10.4 px (tracked) |
+| Header width ≤ viewport width | — | + 1 px overflow allowed | Passing |
+| `position` of `.site-header` | `sticky` | exact | Passing |
+
+> **Note:** The `#theme-toggle` X-position parity constraint is currently unmet (~10.4 px measured,
+> tolerance ≤ 10 px). The enforcing test (`header-geometry.spec.ts` line 129) is failing on both
+> `main` and this branch — this is a pre-existing condition, not introduced by this PR.
 
 ---
 
