@@ -12,7 +12,8 @@ name: Deploy
 
 on:
   schedule:
-    - cron: '0 7 * * *'
+    - cron: '0 7 * * *'     # Daily 07:00 UTC — data sync
+    - cron: '0 6 * * 1'     # Weekly Monday 06:00 UTC — includes enrich-projects (SO-68)
   workflow_dispatch:
 
 permissions:
@@ -32,6 +33,7 @@ jobs:
         with:
           go-version: '1.22'
           cache-dependency-path: go/go.sum
+      - uses: extractions/setup-just@v2
       - name: Run sync-projects
         env:
           GITHUB_TOKEN: ${{ github.token }}
@@ -44,6 +46,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: cd go && go run ./cmd/sync-people/
+      - name: Enrich project data (Scorecard + Adopters)
+        # Non-fatal: passes --best-effort so a Scorecard API outage or rate-limit
+        # does not block the deploy.  Implemented by SO-60-A/SO-60-B (SO-66/SO-67).
+        continue-on-error: true
+        run: just enrich-projects
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
