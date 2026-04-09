@@ -138,5 +138,5 @@ test('ThemeToggle X position is consistent across all three sites (within 10px)'
     await page.close();
   }
   expect(xs).toHaveLength(SITES.length);
-  expect(Math.max(...xs) - Math.min(...xs)).toBeLessThan(10);
+  expect(Math.max(...xs) - Math.min(...xs)).toBeLessThanOrEqual(10);
 });

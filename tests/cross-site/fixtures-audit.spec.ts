@@ -100,18 +100,20 @@ test('people/fixtures/changelog-seed.json contains no PII (email addresses)', as
 // we validate the files that are always present (committed to the repo) and
 // skip files that are generated only during the build (maintainers.json,
 // heroes.json) with a soft check.
+//
+// NOTE: leadership-roles.json and staff-support.json are keyed objects
+// (e.g. { toc: [...], tab: [...], "governing-board": [...] }) rather than
+// plain arrays — they are validated separately below via PEOPLE_OBJECT_REQUIREMENTS.
 
 const REPO_ROOT = join(__dirname, '../..');
 
 const PEOPLE_DATA_REQUIREMENTS = [
   { file: 'src/data/people/people-emeritus.json', minItems: 3,  required: true },
   { file: 'src/data/people/leadership.json',      minItems: 1,  required: true },
-  { file: 'src/data/people/leadership-roles.json', minItems: 1, required: true },
   { file: 'src/data/people/memorial.json',        minItems: 0,  required: true },
-  { file: 'src/data/people/staff-support.json',   minItems: 0,  required: true },
   // Go-generated files — present after build but not always committed
   { file: 'src/data/people/maintainers.json',     minItems: 1,  required: false },
-  { file: 'src/data/people/heroes.json',           minItems: 0,  required: false },
+  { file: 'src/data/people/heroes.json',          minItems: 0,  required: false },
 ];
 
 for (const req of PEOPLE_DATA_REQUIREMENTS) {
@@ -134,6 +136,51 @@ for (const req of PEOPLE_DATA_REQUIREMENTS) {
       expect(Array.isArray(data)).toBe(true);
       expect((data as unknown[]).length).toBeGreaterThanOrEqual(req.minItems);
     }
+  });
+}
+
+// ─── People keyed-object data files ───────────────────────────────────────────
+//
+// leadership-roles.json and staff-support.json use a keyed-object structure
+// (e.g. { toc: [...], tab: [...], "governing-board": [...] }) rather than
+// a flat array.  We validate that:
+//   1. The file exists and is valid JSON.
+//   2. The parsed value is a non-array object.
+//   3. At least one key contains a non-empty array.
+
+const PEOPLE_OBJECT_REQUIREMENTS = [
+  { file: 'src/data/people/leadership-roles.json', required: true },
+  { file: 'src/data/people/staff-support.json',    required: true },
+];
+
+for (const req of PEOPLE_OBJECT_REQUIREMENTS) {
+  test(`people: ${req.file} exists, is valid JSON keyed-object with >= 1 populated role`, async () => {
+    const path = join(REPO_ROOT, req.file);
+
+    if (!req.required && !existsSync(path)) {
+      console.log(`Skipping ${req.file} (not yet generated)`);
+      return;
+    }
+
+    expect(existsSync(path)).toBe(true);
+
+    const raw = readFileSync(path, 'utf-8');
+    let data: unknown;
+    expect(() => { data = JSON.parse(raw); }).not.toThrow();
+
+    // Must be a plain object (not an array, not null)
+    expect(typeof data).toBe('object');
+    expect(data).not.toBeNull();
+    expect(Array.isArray(data)).toBe(false);
+
+    // At least one key must contain a non-empty array
+    const keys = Object.keys(data as Record<string, unknown>);
+    expect(keys.length).toBeGreaterThan(0);
+    const nonEmptyArrayKeys = keys.filter(k => {
+      const v = (data as Record<string, unknown>)[k];
+      return Array.isArray(v) && (v as unknown[]).length > 0;
+    });
+    expect(nonEmptyArrayKeys.length).toBeGreaterThan(0);
   });
 }
 
