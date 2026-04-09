@@ -33,7 +33,7 @@ async function ensureLoaded(baseUrl: string): Promise<void> {
 /** Search all people; returns up to `limit` results sorted by relevance. Lazy-loads the index. */
 export async function searchPeople(query: string, baseUrl: string, limit = 50): Promise<SearchResult[]> {
   if (!query.trim()) return [];
-  await ensureLoaded(baseUrl);
+  try { await ensureLoaded(baseUrl); } catch { return []; }
   if (!miniSearch) return [];
   const raw = miniSearch.search(query);
   return raw.slice(0, limit).map(({ score, terms, category, ...rest }) => ({

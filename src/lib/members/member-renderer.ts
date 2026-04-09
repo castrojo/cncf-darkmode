@@ -1,3 +1,5 @@
+import { getAlpha2FromEnglishName } from '../i18n/locale-loader.js';
+
 export interface SafeMember {
   name: string; slug: string; description?: string; homepageUrl?: string;
   logoUrl: string; tier: string; isEndUser: boolean; joinedAt?: string;
@@ -59,7 +61,7 @@ export function renderCard(m: SafeMember): string {
   if (m.linkedInUrl) links.push(`<a class="card-link" href="${escapeHtml(m.linkedInUrl)}" target="_blank" rel="noopener">LinkedIn</a>`);
   if (m.twitterUrl) links.push(`<a class="card-link" href="${escapeHtml(m.twitterUrl)}" target="_blank" rel="noopener">Twitter</a>`);
 
-  const alpha2 = m.countryAlpha2 ?? '';
+  const alpha2 = m.countryAlpha2 ?? getAlpha2FromEnglishName(m.country ?? '') ?? '';
   const meta: string[] = [];
   if (location) meta.push(`<div class="card-meta-row"><svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" style="vertical-align:-2px;margin-right:3px;color:var(--color-text-muted)"><path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94ZM8 7.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/></svg><span${alpha2 ? ` data-country-alpha2="${escapeHtml(alpha2)}"` : ''}>${escapeHtml(location)}</span></div>`);
   if (m.region) meta.push(`<div class="card-meta-row card-region">${escapeHtml(m.region)}</div>`);
