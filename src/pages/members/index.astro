@@ -167,6 +167,7 @@ const staticArchitectures = includeEmbeddedData ? architectures : [];
   import { fireFountain, preloadOnHover, fireHearts } from '../../lib/confetti';
   import { openArchModal, initArchModal } from '../../lib/members/arch-modal';
   import type { TabId } from '../../lib/members/tabs';
+  import { localizeCountryNames } from '../../lib/members/country-localizer';
 
   const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   const noResults = document.getElementById('no-results')!;
@@ -280,6 +281,7 @@ const staticArchitectures = includeEmbeddedData ? architectures : [];
       grid.style.display = '';
       grid.innerHTML = filtered.map(renderCard).join('\n');
       wireCardEvents();
+      localizeCountryNames().catch(() => {/* non-critical */});
       statShowing.textContent = String(filtered.length);
       searchCount.textContent = currentQuery ? String(filtered.length) : '';
     }
