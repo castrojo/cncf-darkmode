@@ -1,14 +1,9 @@
 import { defineConfig, devices } from '@playwright/test';
-
-// In CI we run `astro preview` (against pre-built dist/ artifact).
-// Locally we run `astro dev` for a fast feedback loop.
-const serverCommand = process.env.CI ? 'npm run preview' : 'npm run dev';
-
 export default defineConfig({
   testDir: './tests/e2e',
   timeout: 60000,
   webServer: {
-    command: serverCommand,
+    command: 'npm run dev',
     url: 'http://localhost:4321/cncf-darkmode/members/',
     reuseExistingServer: !process.env.CI,
     timeout: 120000,
