@@ -15,11 +15,12 @@
     "graduatedDate": "2026-03-16",
     "devStatsUrl": "https://kyverno.devstats.cncf.io/",
     "slackUrl": "https://kubernetes.slack.com/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/kyverno",
     "lfxSlug": "kyverno",
     "cloMonitorName": "kyverno",
     "summary": "Pod security,Policy-as-code,Governance,Software supply chain",
     "stars": 7578,
-    "forks": 1296,
+    "forks": 1299,
     "contributors": 501,
     "lastCommitDate": "2026-04-03T09:33:05Z",
     "lastReleaseDate": "2026-02-19T11:56:20Z",
@@ -35,7 +36,7 @@
     ],
     "lastAuditDate": "2023-11-28",
     "lastAuditVendor": "Ada Logics",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "OpenEverest",
@@ -50,14 +51,14 @@
     "acceptedDate": "2026-03-15",
     "lfxSlug": "openeverest",
     "cloMonitorName": "openeverest",
-    "stars": 714,
-    "contributors": 33,
-    "lastCommitDate": "2026-04-01T09:06:20Z",
+    "stars": 717,
+    "contributors": 34,
+    "lastCommitDate": "2026-04-09T06:34:15Z",
     "lastReleaseDate": "2026-03-10T12:21:58Z",
     "firstCommitDate": "2024-02-12T19:17:34Z",
     "license": "Apache License 2.0",
     "primaryLanguage": "TypeScript",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Higress",
@@ -84,7 +85,7 @@
       "cloud-native",
       "envoy"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "NMstate",
@@ -99,11 +100,12 @@
     "acceptedDate": "2026-03-12",
     "devStatsUrl": "https://nmstate.devstats.cncf.io/",
     "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/nmstate",
+    "lfxSlug": "nmstate",
     "cloMonitorName": "nmstate",
-    "stars": 376,
+    "stars": 375,
     "forks": 115,
     "contributors": 62,
-    "lastCommitDate": "2026-03-30T13:40:56Z",
+    "lastCommitDate": "2026-04-01T11:58:49Z",
     "lastReleaseDate": "2026-02-28T06:43:11Z",
     "firstCommitDate": "2018-05-08T05:02:23Z",
     "license": "Apache License 2.0",
@@ -114,7 +116,7 @@
       "networking",
       "rust-lang"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Fluid",
@@ -128,6 +130,8 @@
     "subcategory": "Scheduling \u0026 Orchestration",
     "acceptedDate": "2021-04-28",
     "incubatingDate": "2026-01-08",
+    "devStatsUrl": "https://fluid.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/fluid",
     "lfxSlug": "fluid",
     "cloMonitorName": "fluid",
     "stars": 1903,
@@ -145,7 +149,7 @@
       "distributed-cache",
       "kubernetes"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "OpenChoreo",
@@ -162,9 +166,9 @@
     "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/openchoreo",
     "lfxSlug": "openchoreo",
     "cloMonitorName": "openchoreo",
-    "stars": 739,
+    "stars": 753,
     "contributors": 38,
-    "lastCommitDate": "2026-04-02T08:15:31Z",
+    "lastCommitDate": "2026-04-09T06:00:28Z",
     "lastReleaseDate": "2026-03-22T14:57:39Z",
     "firstCommitDate": "2025-01-08T10:15:34Z",
     "license": "Apache License 2.0",
@@ -175,7 +179,7 @@
       "internal-developer-platform",
       "openchoreo"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "KubeElasti",
@@ -191,10 +195,10 @@
     "devStatsUrl": "https://kubeelasti.devstats.cncf.io/",
     "lfxSlug": "kubeelasti",
     "cloMonitorName": "kubeelasti",
-    "stars": 231,
+    "stars": 232,
     "contributors": 17,
-    "lastCommitDate": "2026-04-01T16:37:00Z",
-    "lastReleaseDate": "2026-01-16T09:06:39Z",
+    "lastCommitDate": "2026-04-08T13:36:20Z",
+    "lastReleaseDate": "2026-04-04T12:59:49Z",
     "firstCommitDate": "2024-04-26T10:14:09Z",
     "license": "MIT License",
     "primaryLanguage": "Go",
@@ -204,7 +208,7 @@
       "scale-to-zero",
       "serverless"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "KAI Scheduler",
@@ -217,7 +221,9 @@
     "category": "Orchestration \u0026 Management",
     "subcategory": "Scheduling \u0026 Orchestration",
     "acceptedDate": "2025-12-21",
+    "devStatsUrl": "https://kaischeduler.devstats.cncf.io/",
     "lfxSlug": "kai-scheduler",
+    "cloMonitorName": "kai-scheduler",
     "stars": 1221,
     "contributors": 52,
     "lastCommitDate": "2026-04-06T07:55:22Z",
@@ -225,7 +231,7 @@
     "firstCommitDate": "2025-03-19T14:37:39Z",
     "license": "Apache License 2.0",
     "primaryLanguage": "Go",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Agones",
@@ -239,11 +245,13 @@
     "subcategory": "Scheduling \u0026 Orchestration",
     "twitterUrl": "https://twitter.com/agonesdev",
     "acceptedDate": "2025-12-21",
+    "devStatsUrl": "https://agones.devstats.cncf.io/",
     "lfxSlug": "agones",
-    "stars": 6771,
+    "cloMonitorName": "agones",
+    "stars": 6788,
     "contributors": 282,
-    "lastCommitDate": "2026-04-01T23:26:40Z",
-    "lastReleaseDate": "2026-02-26T17:16:40Z",
+    "lastCommitDate": "2026-04-09T04:43:12Z",
+    "lastReleaseDate": "2026-04-08T02:35:56Z",
     "firstCommitDate": "2017-10-22T04:13:06Z",
     "license": "Apache License 2.0",
     "primaryLanguage": "Go",
@@ -258,7 +266,7 @@
       "kubernetes",
       "multiplayer"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "CoHDI",
@@ -270,10 +278,11 @@
     "category": "Orchestration \u0026 Management",
     "subcategory": "Scheduling \u0026 Orchestration",
     "acceptedDate": "2025-12-19",
+    "devStatsUrl": "https://cohdi.devstats.cncf.io/",
     "lfxSlug": "cohdi",
     "cloMonitorName": "cohdi",
     "summary": "Bridge the gap between Kubernetes and disaggregated hardware to enable dynamic composability in cloud-native environments. Dynamically attach and detach PCIe/CXL devices (e.g., GPUs) to Kubernetes worker nodes on demand without OS reboots via software-defined hardware composition, allowing pods to trigger automatic device provisioning from a shared resource pool without manual intervention.",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "OpenFGA",
@@ -319,7 +328,7 @@
       "security",
       "zanzibar"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Crossplane",
@@ -362,7 +371,7 @@
     ],
     "lastAuditDate": "2023-07-27",
     "lastAuditVendor": "Ada Logics",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Dragonfly",
@@ -385,7 +394,7 @@
     "cloMonitorName": "dragonfly",
     "summary": "Provide efficient, stable, securefile distribution and image acceleration based on p2p technology to be the best practice and standard solution in cloud native architectures. It is widely used in the fields of image distribution, file distribution, log distribution, inference model distribution, etc.",
     "stars": 3111,
-    "forks": 388,
+    "forks": 389,
     "contributors": 102,
     "lastCommitDate": "2026-03-31T03:09:32Z",
     "lastReleaseDate": "2026-04-03T04:03:31Z",
@@ -401,7 +410,7 @@
       "p2p",
       "registry"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Lima",
@@ -435,7 +444,7 @@
       "qemu",
       "vm"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Cedar",
@@ -451,14 +460,14 @@
     "lfxSlug": "cedar",
     "cloMonitorName": "cedar",
     "stars": 1397,
-    "forks": 139,
+    "forks": 140,
     "contributors": 60,
     "lastCommitDate": "2026-04-03T21:18:07Z",
     "lastReleaseDate": "2026-02-27T16:18:13Z",
     "firstCommitDate": "2023-05-09T23:53:19Z",
     "license": "Apache License 2.0",
     "primaryLanguage": "Rust",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Dalec",
@@ -473,6 +482,7 @@
     "acceptedDate": "2025-10-08",
     "devStatsUrl": "https://dalec.devstats.cncf.io/",
     "slackUrl": "https://cloud-native.slack.com/archives/dalec",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/dalec",
     "lfxSlug": "dalec",
     "cloMonitorName": "dalec",
     "stars": 298,
@@ -504,7 +514,7 @@
       "ubuntu",
       "ubuntu-packages"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "HolmesGPT",
@@ -517,6 +527,8 @@
     "category": "Observability and Analysis",
     "subcategory": "Observability",
     "acceptedDate": "2025-10-08",
+    "devStatsUrl": "https://holmesgpt.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/holmesgpt",
     "lfxSlug": "holmesgpt",
     "cloMonitorName": "holmesgpt",
     "stars": 2153,
@@ -548,7 +560,7 @@
       "slack",
       "sre"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Oxia",
@@ -571,7 +583,7 @@
     "firstCommitDate": "2021-12-21T19:21:30Z",
     "license": "Apache License 2.0",
     "primaryLanguage": "Go",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "OAuth2 Proxy",
@@ -585,10 +597,11 @@
     "subcategory": "Security \u0026 Compliance",
     "acceptedDate": "2025-10-02",
     "devStatsUrl": "https://oauth2proxy.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/oauth2-proxy",
     "lfxSlug": "oauth2-proxy",
     "cloMonitorName": "oauth2-proxy",
     "stars": 14138,
-    "forks": 2087,
+    "forks": 2088,
     "contributors": 463,
     "lastCommitDate": "2026-03-23T15:05:54Z",
     "lastReleaseDate": "2026-03-23T14:52:05Z",
@@ -602,7 +615,7 @@
       "ssl",
       "sso"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "KServe",
@@ -619,7 +632,9 @@
     "devStatsUrl": "https://kserve.devstats.cncf.io/",
     "blogUrl": "https://kserve.github.io/website/blog",
     "slackUrl": "http://slack.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/kserve",
     "lfxSlug": "kserve",
+    "cloMonitorName": "kserve",
     "stars": 5291,
     "contributors": 343,
     "lastCommitDate": "2026-04-03T13:42:00Z",
@@ -649,7 +664,7 @@
       "vllm",
       "xgboost"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Pravega",
@@ -684,7 +699,7 @@
       "streaming",
       "streaming-data"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Xline",
@@ -713,7 +728,7 @@
       "distributed-systems",
       "high-availability"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Service Mesh Performance",
@@ -756,7 +771,7 @@
       "smp",
       "specifications"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Knative",
@@ -800,7 +815,7 @@
     ],
     "lastAuditDate": "2023-11-27",
     "lastAuditVendor": "Ada Logics",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Keptn",
@@ -835,7 +850,7 @@
       "kubernetes",
       "operator"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "metal3-io",
@@ -858,14 +873,14 @@
     "cloMonitorName": "metal3-io",
     "summary": "Provision bare metal hardware via k8s-native APIs, including integration with the Cluster API.",
     "stars": 734,
-    "forks": 303,
+    "forks": 304,
     "contributors": 151,
     "lastCommitDate": "2026-03-31T07:17:39Z",
     "lastReleaseDate": "2026-03-19T12:37:44Z",
     "firstCommitDate": "2019-01-23T01:35:46Z",
     "license": "Apache License 2.0",
     "primaryLanguage": "Go",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "xRegistry",
@@ -879,6 +894,7 @@
     "subcategory": "Application Definition \u0026 Image Build",
     "acceptedDate": "2025-06-05",
     "devStatsUrl": "https://xregistry.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/xregistry",
     "lfxSlug": "xregistry",
     "cloMonitorName": "xregistry",
     "stars": 13,
@@ -887,7 +903,7 @@
     "firstCommitDate": "2023-03-14T18:04:47Z",
     "license": "Apache License 2.0",
     "primaryLanguage": "Go",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "CNI-Genie",
@@ -920,7 +936,7 @@
       "multiple-network",
       "vnf"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "urunc",
@@ -935,7 +951,9 @@
     "acceptedDate": "2025-05-22",
     "devStatsUrl": "https://urunc.devstats.cncf.io/",
     "slackUrl": "https://slack.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/urunc",
     "lfxSlug": "urunc",
+    "cloMonitorName": "urunc",
     "stars": 199,
     "contributors": 27,
     "lastCommitDate": "2026-04-01T14:30:28Z",
@@ -948,7 +966,7 @@
       "oci",
       "unikernels"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "OpenELB",
@@ -983,7 +1001,7 @@
       "lb",
       "load-balancer"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "kagent",
@@ -997,11 +1015,12 @@
     "subcategory": "Automation \u0026 Configuration",
     "acceptedDate": "2025-05-22",
     "devStatsUrl": "https://kagent.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/kagent",
     "lfxSlug": "kagent",
     "cloMonitorName": "kagent",
     "summary": "Kagent brings Agentic AI to cloud native projects, helping users to learn, install, configure and troubleshoot cloud native projects.",
     "stars": 2524,
-    "forks": 502,
+    "forks": 504,
     "contributors": 118,
     "lastCommitDate": "2026-04-07T17:39:10Z",
     "lastReleaseDate": "2026-04-07T16:24:04Z",
@@ -1015,7 +1034,7 @@
       "devops",
       "mcp"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "DevStream",
@@ -1048,7 +1067,7 @@
       "devops",
       "devops-tools"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Cadence Workflow",
@@ -1063,6 +1082,7 @@
     "twitterUrl": "https://twitter.com/CloudNativeFdn",
     "acceptedDate": "2025-05-22",
     "devStatsUrl": "https://cadence.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/cadence",
     "lfxSlug": "cadence",
     "cloMonitorName": "cadence",
     "stars": 9245,
@@ -1086,7 +1106,7 @@
       "workflow-automation",
       "workflows"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "sealer",
@@ -1128,7 +1148,7 @@
       "package",
       "registry"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Teller",
@@ -1160,7 +1180,7 @@
       "secrets",
       "vault"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Merbridge",
@@ -1197,7 +1217,7 @@
       "osm",
       "service-mesh"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "ModelPack",
@@ -1205,12 +1225,15 @@
     "description": "An Open Standard for Packaging, Distributing and Running LLMs in Cloud-Native Environments",
     "homepageUrl": "https://github.com/modelpack/model-spec",
     "repoUrl": "https://github.com/modelpack/model-spec",
-    "logoUrl": "https://landscape.cncf.io/logos/2121ac233715cffe4a7d3c1debc815f2b3f2d6920ebd37be8a5b17298e4bd0a4.svg",
+    "logoUrl": "https://landscape.cncf.io/logos/fa04acc08179dba2cf0445597c7ed962152df50dadde4507f54247c3d77afeb5.svg",
     "maturity": "sandbox",
     "category": "App Definition and Development",
     "subcategory": "Application Definition \u0026 Image Build",
     "acceptedDate": "2025-05-13",
+    "devStatsUrl": "https://modelpack.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/modelpack",
     "lfxSlug": "modelpack",
+    "cloMonitorName": "modelpack",
     "stars": 194,
     "contributors": 17,
     "lastCommitDate": "2026-03-22T06:26:14Z",
@@ -1224,7 +1247,7 @@
       "oci-artifacts",
       "specification"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "OpenTofu",
@@ -1238,16 +1261,19 @@
     "subcategory": "Automation \u0026 Configuration",
     "twitterUrl": "https://twitter.com/opentofuorg",
     "acceptedDate": "2025-04-23",
+    "devStatsUrl": "https://opentofu.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/opentofu",
     "lfxSlug": "opentf",
+    "cloMonitorName": "opentofu",
     "stars": 28287,
-    "forks": 1204,
+    "forks": 1205,
     "contributors": 2335,
     "lastCommitDate": "2026-04-03T15:01:10Z",
     "lastReleaseDate": "2026-02-12T15:43:04Z",
     "firstCommitDate": "2014-05-21T23:28:53Z",
     "license": "Mozilla Public License 2.0",
     "primaryLanguage": "Go",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Nocalhost",
@@ -1280,7 +1306,7 @@
       "kubernetes",
       "microservices"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "KubeDL",
@@ -1316,7 +1342,7 @@
       "model",
       "scheduling"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "SuperEdge",
@@ -1349,7 +1375,7 @@
       "edge-computing",
       "kubernetes"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Cozystack",
@@ -1363,7 +1389,9 @@
     "subcategory": "Scheduling \u0026 Orchestration",
     "acceptedDate": "2025-03-04",
     "devStatsUrl": "https://cozystack.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/cozystack",
     "lfxSlug": "cozystack",
+    "cloMonitorName": "cozystack",
     "summary": "Provides users with managed services and ready-to-use dev environments.",
     "stars": 2021,
     "contributors": 45,
@@ -1382,7 +1410,7 @@
       "self-hosted",
       "talos"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Hyperlight",
@@ -1396,7 +1424,9 @@
     "subcategory": "Container Runtime",
     "acceptedDate": "2025-03-04",
     "devStatsUrl": "https://hyperlight.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/hyperlight",
     "lfxSlug": "hyperlight",
+    "cloMonitorName": "hyperlight",
     "stars": 4196,
     "contributors": 27,
     "lastCommitDate": "2026-04-07T04:49:57Z",
@@ -1404,7 +1434,7 @@
     "firstCommitDate": "2024-11-05T17:17:44Z",
     "license": "Apache License 2.0",
     "primaryLanguage": "Rust",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "KitOps",
@@ -1418,10 +1448,11 @@
     "subcategory": "Automation \u0026 Configuration",
     "acceptedDate": "2025-03-04",
     "devStatsUrl": "https://kitops.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/kitops",
     "lfxSlug": "kitops",
     "cloMonitorName": "kitops",
     "stars": 1331,
-    "forks": 172,
+    "forks": 171,
     "contributors": 39,
     "lastCommitDate": "2026-04-07T16:09:51Z",
     "lastReleaseDate": "2026-04-02T19:35:29Z",
@@ -1450,7 +1481,7 @@
       "sklearn",
       "tensorflow"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Cozystack",
@@ -1464,7 +1495,9 @@
     "subcategory": "PaaS/Container Service",
     "acceptedDate": "2025-03-04",
     "devStatsUrl": "https://cozystack.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/cozystack",
     "lfxSlug": "cozystack",
+    "cloMonitorName": "cozystack",
     "summary": "Provides users with managed services and ready-to-use dev environments.",
     "stars": 2021,
     "contributors": 45,
@@ -1483,7 +1516,7 @@
       "self-hosted",
       "talos"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Interlink",
@@ -1498,6 +1531,7 @@
     "acceptedDate": "2025-03-04",
     "devStatsUrl": "https://interlink.devstats.cncf.io/",
     "blogUrl": "https://intertwin-eu.github.io/interLink/blog/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/interlink",
     "lfxSlug": "interlink",
     "cloMonitorName": "interlink",
     "stars": 107,
@@ -1507,7 +1541,7 @@
     "firstCommitDate": "2023-07-05T13:18:17Z",
     "license": "Apache License 2.0",
     "primaryLanguage": "Go",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Kgateway",
@@ -1520,8 +1554,11 @@
     "category": "Orchestration \u0026 Management",
     "subcategory": "API Gateway",
     "acceptedDate": "2025-03-04",
+    "devStatsUrl": "https://kgateway.devstats.cncf.io/",
     "blogUrl": "https://kgateway.dev/blog",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/kgateway",
     "lfxSlug": "kgateway",
+    "cloMonitorName": "kgateway",
     "summary": "Kgateway is the most mature and widely deployed Envoy-based gateway in the market today. Built on open source  and open standards, kgateway integrates Kubernetes Gateway API with a control plane that scales from lightweight  microgateway deployments between services, to massively parallel centralized gateways handling billions of API calls,  to advanced AI gateway use cases for safety, security, and governance when integrating applications with third-party LLMs.  kgateway brings omni-directional API connectivity to any cloud and any environment. ",
     "stars": 5437,
     "contributors": 257,
@@ -1544,7 +1581,7 @@
       "microservices",
       "serverless"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "in-toto",
@@ -1579,7 +1616,7 @@
       "security",
       "supply-chain"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "CloudNativePG",
@@ -1626,7 +1663,7 @@
       "sql",
       "switchover"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "bootc",
@@ -1640,7 +1677,9 @@
     "subcategory": "Container Runtime",
     "acceptedDate": "2025-01-21",
     "devStatsUrl": "https://bootc.devstats.cncf.io",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/bootc",
     "lfxSlug": "bootc",
+    "cloMonitorName": "bootc",
     "stars": 1970,
     "contributors": 95,
     "lastCommitDate": "2026-04-03T03:51:57Z",
@@ -1648,7 +1687,7 @@
     "firstCommitDate": "2021-04-03T14:00:27Z",
     "license": "Apache License 2.0",
     "primaryLanguage": "Rust",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "container2wasm",
@@ -1661,7 +1700,10 @@
     "category": "Wasm",
     "subcategory": "Orchestration \u0026 Management",
     "acceptedDate": "2025-01-21",
+    "devStatsUrl": "https://container2wasm.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/container2wasm",
     "lfxSlug": "container2wasm",
+    "cloMonitorName": "container2wasm",
     "stars": 2638,
     "contributors": 8,
     "lastCommitDate": "2026-04-06T07:01:04Z",
@@ -1675,7 +1717,7 @@
       "wasm",
       "webassembly"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "SpinKube",
@@ -1689,6 +1731,8 @@
     "subcategory": "Orchestration \u0026 Management",
     "acceptedDate": "2025-01-21",
     "devStatsUrl": "https://spinkube.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/spinkube",
+    "cloMonitorName": "spinkube",
     "stars": 282,
     "contributors": 25,
     "lastCommitDate": "2026-03-30T20:52:09Z",
@@ -1701,7 +1745,7 @@
       "spin",
       "webassembly"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Runme Notebooks",
@@ -1709,12 +1753,13 @@
     "description": "DevOps Notebooks Built with Markdown",
     "homepageUrl": "https://runme.dev/",
     "repoUrl": "https://github.com/runmedev/runme",
-    "logoUrl": "https://landscape.cncf.io/logos/2121ac233715cffe4a7d3c1debc815f2b3f2d6920ebd37be8a5b17298e4bd0a4.svg",
+    "logoUrl": "https://landscape.cncf.io/logos/4d080e8e3c05893d3d6a468ab67e861ae365d41b53ff5b0c0afdaa6e537902cc.svg",
     "maturity": "sandbox",
     "category": "Provisioning",
     "subcategory": "Automation \u0026 Configuration",
     "acceptedDate": "2025-01-21",
     "devStatsUrl": "https://runmenotebooks.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/runme-notebooks",
     "lfxSlug": "runme-notebooks",
     "cloMonitorName": "runme",
     "summary": "Runme consolidates operational documentation and executable commands/code into interactive Notebooks or TUIs,  seamlessly integrating with cloud-native infrastructure. The toolchain empowers engineering teams to build  and maintain reliable, shareable documentation that can be tested in CI/CD.",
@@ -1733,7 +1778,7 @@
       "notebooks",
       "workflows"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Spin",
@@ -1747,7 +1792,9 @@
     "subcategory": "Application Frameworks",
     "acceptedDate": "2025-01-21",
     "devStatsUrl": "https://spin.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/spin",
     "lfxSlug": "spin",
+    "cloMonitorName": "spin",
     "stars": 6358,
     "contributors": 92,
     "lastCommitDate": "2026-04-02T21:05:13Z",
@@ -1760,7 +1807,7 @@
       "spin",
       "webassembly"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Podman Desktop",
@@ -1774,6 +1821,7 @@
     "subcategory": "Application Definition \u0026 Image Build",
     "acceptedDate": "2025-01-21",
     "devStatsUrl": "https://podmandesktop.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/podman-desktop",
     "lfxSlug": "podman-desktop",
     "cloMonitorName": "podman-desktop",
     "summary": "Podman Desktop provides a user-friendly interface for managing containers and working with Kubernetes from a local developer machine. It abstracts away the setup and configuration of container tooling on developer environments and provides developers a simplistic onboarding to go from containers up to Kubernetes.",
@@ -1796,7 +1844,7 @@
       "tray-application",
       "ui"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "SlimFaaS",
@@ -1809,7 +1857,10 @@
     "category": "Serverless",
     "subcategory": "Installable Platform",
     "acceptedDate": "2025-01-21",
+    "devStatsUrl": "https://slimfaas.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/slimfaas",
     "lfxSlug": "slimfaas",
+    "cloMonitorName": "slimfaas",
     "stars": 419,
     "contributors": 15,
     "lastCommitDate": "2026-04-03T11:47:35Z",
@@ -1826,7 +1877,7 @@
       "kubernetes",
       "library"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Podman Container Tools",
@@ -1840,6 +1891,7 @@
     "subcategory": "Container Runtime",
     "acceptedDate": "2025-01-21",
     "devStatsUrl": "https://podmancontainertools.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/podman-container-tools",
     "lfxSlug": "podman-container-tools",
     "cloMonitorName": "podman",
     "stars": 31217,
@@ -1856,7 +1908,7 @@
       "linux",
       "oci"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "KubeFleet",
@@ -1869,8 +1921,11 @@
     "category": "Orchestration \u0026 Management",
     "subcategory": "Scheduling \u0026 Orchestration",
     "acceptedDate": "2025-01-21",
+    "devStatsUrl": "https://kubefleet.devstats.cncf.io/",
     "slackUrl": "http://slack.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/kubefleet",
     "lfxSlug": "kubefleet",
+    "cloMonitorName": "kubefleet",
     "summary": "KubeFleet provides orchestration and coordination of applications across a fleet of Kubernetes clusters, enabling  users to create resources on a hub cluster and selectively propagate them to managed clusters based on various criteria.",
     "stars": 139,
     "contributors": 33,
@@ -1884,7 +1939,7 @@
       "kubernetes",
       "multi-cluster"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Drasi",
@@ -1896,8 +1951,11 @@
     "category": "App Definition and Development",
     "subcategory": "Streaming \u0026 Messaging",
     "acceptedDate": "2025-01-21",
+    "devStatsUrl": "https://drasi.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/drasi",
     "lfxSlug": "drasi",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "cloMonitorName": "drasi",
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Tokenetes",
@@ -1911,7 +1969,9 @@
     "subcategory": "Security \u0026 Compliance",
     "acceptedDate": "2025-01-21",
     "devStatsUrl": "https://tratteria.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/tokenetes",
     "lfxSlug": "tratteria",
+    "cloMonitorName": "tokenetes",
     "stars": 60,
     "contributors": 3,
     "lastCommitDate": "2025-07-21T23:24:06Z",
@@ -1919,7 +1979,7 @@
     "firstCommitDate": "2024-03-21T16:52:40Z",
     "license": "Apache License 2.0",
     "primaryLanguage": "Go",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "composefs",
@@ -1934,6 +1994,7 @@
     "acceptedDate": "2025-01-21",
     "devStatsUrl": "https://composefs.devstats.cncf.io/",
     "lfxSlug": "composefs",
+    "cloMonitorName": "composefs",
     "stars": 631,
     "contributors": 29,
     "lastCommitDate": "2026-01-15T12:04:15Z",
@@ -1948,7 +2009,7 @@
       "oci",
       "oci-image"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "k0s",
@@ -1962,8 +2023,10 @@
     "subcategory": "Scheduling \u0026 Orchestration",
     "twitterUrl": "https://x.com/k0sproject",
     "acceptedDate": "2025-01-19",
+    "devStatsUrl": "https://k0s.devstats.cncf.io/",
     "blogUrl": "https://medium.com/k0sproject",
     "slackUrl": "http://slack.k8s.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/k0s",
     "lfxSlug": "k0s",
     "cloMonitorName": "k0s",
     "stars": 5844,
@@ -1976,7 +2039,7 @@
     "topics": [
       "kubernetes"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Kubescape",
@@ -1993,6 +2056,7 @@
     "incubatingDate": "2025-01-13",
     "devStatsUrl": "https://kubescape.devstats.cncf.io/",
     "slackUrl": "https://cloud-native.slack.com/messages/kubescape",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/kubescape",
     "lfxSlug": "kubescape",
     "cloMonitorName": "kubescape",
     "summary": "Kubernetes security posutre, configuration posture, vulnerability posture, prioritization",
@@ -2013,7 +2077,7 @@
       "security",
       "vulnerability-detection"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "OpenYurt",
@@ -2028,6 +2092,7 @@
     "acceptedDate": "2020-09-08",
     "incubatingDate": "2025-01-10",
     "devStatsUrl": "https://openyurt.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/openyurt",
     "lfxSlug": "openyurt",
     "cloMonitorName": "openyurt",
     "stars": 1943,
@@ -2045,7 +2110,7 @@
       "k8s",
       "kubernetes"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "CubeFS",
@@ -2088,7 +2153,7 @@
       "kubernetes",
       "object-storage"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "wasmCloud",
@@ -2103,6 +2168,7 @@
     "twitterUrl": "https://twitter.com/wasmcloud",
     "acceptedDate": "2021-07-13",
     "incubatingDate": "2024-11-08",
+    "devStatsUrl": "https://wasmcloud.devstats.cncf.io/",
     "artworkUrl": "https://github.com/cncf/artwork/blob/master/examples/incubating.md#wasmcloud-logos",
     "lfxSlug": "wasmcloud",
     "cloMonitorName": "wasm-cloud",
@@ -2123,7 +2189,7 @@
       "wasm-native",
       "webassembly"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "FabEdge",
@@ -2160,7 +2226,7 @@
       "operator",
       "sdn"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Dapr",
@@ -2203,7 +2269,7 @@
     ],
     "lastAuditDate": "2023-09-05",
     "lastAuditVendor": "Ada Logics",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Curve",
@@ -2241,7 +2307,7 @@
       "storage",
       "storage-engine"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "OpenCost",
@@ -2255,7 +2321,9 @@
     "subcategory": "Continuous Optimization",
     "acceptedDate": "2022-06-17",
     "incubatingDate": "2024-10-25",
+    "devStatsUrl": "https://opencost.devstats.cncf.io/",
     "slackUrl": "https://slack.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/opencost",
     "lfxSlug": "opencost",
     "cloMonitorName": "opencost",
     "stars": 6463,
@@ -2279,7 +2347,7 @@
       "opencost",
       "prometheus"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Skooner",
@@ -2304,7 +2372,7 @@
     "topics": [
       "hacktoberfest"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Kmesh",
@@ -2318,7 +2386,9 @@
     "subcategory": "Service Mesh",
     "twitterUrl": "https://twitter.com/Kmesh_net",
     "acceptedDate": "2024-10-17",
+    "devStatsUrl": "https://kmesh.devstats.cncf.io/",
     "slackUrl": "https://slack.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/kmesh",
     "lfxSlug": "kmesh",
     "cloMonitorName": "kmesh",
     "stars": 708,
@@ -2340,7 +2410,7 @@
       "service-mesh",
       "traffic-management"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "youki",
@@ -2372,7 +2442,7 @@
       "oci",
       "rust"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "KAITO",
@@ -2386,7 +2456,9 @@
     "subcategory": "ML Serving",
     "acceptedDate": "2024-10-17",
     "devStatsUrl": "https://kaito.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/kaito",
     "lfxSlug": "kaito",
+    "cloMonitorName": "kaito",
     "stars": 912,
     "contributors": 58,
     "lastCommitDate": "2026-04-03T05:49:21Z",
@@ -2400,7 +2472,7 @@
       "kubernetes",
       "operator"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "OVN-Kubernetes",
@@ -2436,7 +2508,7 @@
       "sdn-controller",
       "sdn-network"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "OpenEBS",
@@ -2483,7 +2555,7 @@
       "storage",
       "storage-container"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Sermant",
@@ -2496,6 +2568,8 @@
     "category": "Orchestration \u0026 Management",
     "subcategory": "Service Mesh",
     "acceptedDate": "2024-10-09",
+    "devStatsUrl": "https://sermant.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/sermant",
     "lfxSlug": "sermant",
     "cloMonitorName": "sermant",
     "stars": 1354,
@@ -2515,7 +2589,7 @@
       "service-mesh",
       "springcloud"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Krustlet",
@@ -2547,7 +2621,7 @@
       "wasi",
       "wasm"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "cert-manager",
@@ -2565,11 +2639,12 @@
     "graduatedDate": "2024-09-29",
     "devStatsUrl": "https://certmanager.devstats.cncf.io/",
     "slackUrl": "https://kubernetes.slack.com/messages/cert-manager",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/cert-manager",
     "lfxSlug": "cert-manager",
     "cloMonitorName": "cert-manager",
     "summary": "cert-manager is a powerful and extensible X.509 certificate controller for Kubernetes and OpenShift workloads. It will obtain certificates from a variety of Issuers, both popular public Issuers as well as private Issuers, and ensure the certificates are valid and up-to-date, and will attempt to renew certificates at a configured time before expiry.",
     "stars": 13731,
-    "forks": 2358,
+    "forks": 2359,
     "contributors": 553,
     "lastCommitDate": "2026-04-03T11:40:51Z",
     "lastReleaseDate": "2026-03-27T19:13:14Z",
@@ -2584,7 +2659,7 @@
       "letsencrypt",
       "tls"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "KusionStack",
@@ -2598,10 +2673,12 @@
     "subcategory": "Automation \u0026 Configuration",
     "twitterUrl": "https://twitter.com/KusionStack",
     "acceptedDate": "2024-09-12",
+    "devStatsUrl": "https://kusionstack.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/kusionstack",
     "lfxSlug": "kusionstack",
     "cloMonitorName": "kusionstack",
     "stars": 1285,
-    "forks": 104,
+    "forks": 105,
     "contributors": 39,
     "lastCommitDate": "2026-01-04T06:01:34Z",
     "lastReleaseDate": "2025-06-30T09:20:16Z",
@@ -2624,7 +2701,7 @@
       "platform-engineering",
       "platform-orchestrator"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "KubeEdge",
@@ -2669,7 +2746,7 @@
     ],
     "lastAuditDate": "2022-07-11",
     "lastAuditVendor": "Ada Logics",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Ratify",
@@ -2684,6 +2761,7 @@
     "twitterUrl": "https://twitter.com/artifact_ratify",
     "acceptedDate": "2024-08-30",
     "devStatsUrl": "https://ratify.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/ratify",
     "lfxSlug": "ratify",
     "cloMonitorName": "ratify",
     "stars": 288,
@@ -2697,7 +2775,7 @@
       "kubernetes",
       "secure-supply-chain"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "LoxiLB",
@@ -2712,6 +2790,7 @@
     "acceptedDate": "2024-08-30",
     "devStatsUrl": "https://loxilb.devstats.cncf.io/",
     "slackUrl": "https://kubernetes.slack.com/messages/loxilb",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/loxilb",
     "lfxSlug": "loxilb",
     "cloMonitorName": "loxilb",
     "stars": 1837,
@@ -2743,7 +2822,7 @@
       "sctp",
       "service-loadbalancer"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Perses",
@@ -2777,7 +2856,7 @@
       "observability",
       "prometheus"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Cartography",
@@ -2791,6 +2870,7 @@
     "subcategory": "Security \u0026 Compliance",
     "acceptedDate": "2024-08-23",
     "devStatsUrl": "https://cartography.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/cartography",
     "lfxSlug": "cartography",
     "cloMonitorName": "cartography",
     "stars": 3809,
@@ -2801,7 +2881,7 @@
     "firstCommitDate": "2019-03-01T23:00:12Z",
     "license": "Apache License 2.0",
     "primaryLanguage": "Python",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "hami",
@@ -2814,6 +2894,8 @@
     "category": "Orchestration \u0026 Management",
     "subcategory": "Scheduling \u0026 Orchestration",
     "acceptedDate": "2024-08-21",
+    "devStatsUrl": "https://hami.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/hami",
     "lfxSlug": "hami",
     "cloMonitorName": "hami",
     "stars": 3213,
@@ -2842,7 +2924,7 @@
       "vgpu",
       "vgpu-hypervisor"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Shipwright",
@@ -2856,6 +2938,8 @@
     "subcategory": "Application Definition \u0026 Image Build",
     "twitterUrl": "https://twitter.com/shipwrightio",
     "acceptedDate": "2024-08-19",
+    "devStatsUrl": "https://shipwrightcncf.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/shipwright",
     "lfxSlug": "shipwright",
     "cloMonitorName": "shipwright",
     "stars": 808,
@@ -2870,7 +2954,7 @@
       "containers",
       "kubernetes"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Flatcar Container Linux",
@@ -2886,6 +2970,7 @@
     "acceptedDate": "2024-08-02",
     "incubatingDate": "2024-08-02",
     "devStatsUrl": "https://flatcar.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/flatcar",
     "lfxSlug": "flatcar",
     "cloMonitorName": "flatcar",
     "stars": 1123,
@@ -2899,7 +2984,7 @@
       "hacktoberfest",
       "kinvolk"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "openGemini",
@@ -2912,7 +2997,9 @@
     "category": "App Definition and Development",
     "subcategory": "Database",
     "acceptedDate": "2024-07-09",
+    "devStatsUrl": "https://opengemini.devstats.cncf.io/",
     "slackUrl": "https://cloud-native.slack.com/messages/open-gemini",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/openGemini",
     "lfxSlug": "opengemini",
     "cloMonitorName": "opengemini",
     "stars": 1146,
@@ -2930,7 +3017,7 @@
       "observability",
       "time-series-database"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Score",
@@ -2945,6 +3032,7 @@
     "acceptedDate": "2024-07-08",
     "devStatsUrl": "https://score.devstats.cncf.io/",
     "blogUrl": "https://score.dev/blog",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/score",
     "lfxSlug": "score",
     "cloMonitorName": "score",
     "summary": "Score is a developer-centric and platform-agnostic workload specification. It ensures consistent configuration between local and remote environments.",
@@ -2955,7 +3043,7 @@
     "firstCommitDate": "2022-10-31T16:17:29Z",
     "license": "Apache License 2.0",
     "primaryLanguage": "Makefile",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "OpenMetrics",
@@ -2982,7 +3070,7 @@
     "firstCommitDate": "2017-06-22T09:27:50Z",
     "license": "Apache License 2.0",
     "primaryLanguage": "Go",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Curiefense",
@@ -2999,7 +3087,7 @@
     "blogUrl": "https://www.curiefense.io/blog",
     "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/curiefense",
     "lfxSlug": "curiefense",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "OSCAL-COMPASS",
@@ -3012,8 +3100,10 @@
     "category": "Provisioning",
     "subcategory": "Security \u0026 Compliance",
     "acceptedDate": "2024-06-21",
+    "devStatsUrl": "https://trestlegrc.devstats.cncf.io/",
     "blogUrl": "https://dzone.com/articles/compass-compliance-part-1",
     "slackUrl": "https://cloud-native.slack.com/archives/C06F3PEPNBW",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/oscal-compass",
     "lfxSlug": "trestlegrc",
     "cloMonitorName": "oscal-compass",
     "stars": 243,
@@ -3029,7 +3119,7 @@
       "oscal",
       "pypi"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Kuadrant",
@@ -3042,6 +3132,8 @@
     "category": "Orchestration \u0026 Management",
     "subcategory": "API Gateway",
     "acceptedDate": "2024-06-19",
+    "devStatsUrl": "https://kuadrant.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/kuadrant",
     "lfxSlug": "kuadrant",
     "cloMonitorName": "kuadrant",
     "stars": 79,
@@ -3058,7 +3150,7 @@
       "kubernetes",
       "rate-limiting"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "bpfman",
@@ -3071,8 +3163,10 @@
     "category": "Provisioning",
     "subcategory": "Security \u0026 Compliance",
     "acceptedDate": "2024-06-19",
+    "devStatsUrl": "https://bpfman.devstats.cncf.io/",
     "blogUrl": "https://bpfman.io/main/blog/",
     "slackUrl": "https://kubernetes.slack.com/archives/C04UJBW2553",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/bpfman",
     "lfxSlug": "bpfman",
     "cloMonitorName": "bpfman",
     "stars": 727,
@@ -3089,7 +3183,7 @@
       "kubernetes-operator",
       "rust"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Stacker",
@@ -3102,6 +3196,8 @@
     "category": "App Definition and Development",
     "subcategory": "Application Definition \u0026 Image Build",
     "acceptedDate": "2024-06-19",
+    "devStatsUrl": "https://stacker.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/stacker",
     "lfxSlug": "stacker",
     "cloMonitorName": "stacker",
     "stars": 324,
@@ -3111,7 +3207,7 @@
     "firstCommitDate": "2017-11-30T00:42:50Z",
     "license": "Apache License 2.0",
     "primaryLanguage": "Go",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Atlantis",
@@ -3124,10 +3220,12 @@
     "category": "Provisioning",
     "subcategory": "Automation \u0026 Configuration",
     "acceptedDate": "2024-06-18",
+    "devStatsUrl": "https://atlantis.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/atlantis",
     "lfxSlug": "atlantis",
     "cloMonitorName": "atlantis",
     "stars": 8967,
-    "forks": 1257,
+    "forks": 1260,
     "contributors": 478,
     "lastCommitDate": "2026-04-04T01:02:14Z",
     "lastReleaseDate": "2026-03-27T14:50:01Z",
@@ -3145,7 +3243,7 @@
       "tacos",
       "terraform"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Bank-Vaults",
@@ -3191,7 +3289,7 @@
       "vault-operator",
       "vault-unsealing"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Artifact Hub",
@@ -3223,7 +3321,7 @@
       "kubernetes",
       "packages"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Kubean",
@@ -3237,6 +3335,7 @@
     "subcategory": "Automation \u0026 Configuration",
     "acceptedDate": "2024-04-16",
     "devStatsUrl": "https://kubean.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/kubean",
     "lfxSlug": "kubean",
     "cloMonitorName": "kubean",
     "stars": 524,
@@ -3254,7 +3353,7 @@
       "kubespray",
       "operator"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Radius",
@@ -3270,6 +3369,7 @@
     "acceptedDate": "2024-04-16",
     "devStatsUrl": "https://radius.devstats.cncf.io/",
     "blogUrl": "https://blog.radapp.io/posts",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/radius",
     "lfxSlug": "radius",
     "cloMonitorName": "radius",
     "stars": 1635,
@@ -3279,7 +3379,7 @@
     "firstCommitDate": "2021-02-20T00:25:53Z",
     "license": "Apache License 2.0",
     "primaryLanguage": "Go",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "KubeSlice",
@@ -3293,6 +3393,7 @@
     "subcategory": "Scheduling \u0026 Orchestration",
     "twitterUrl": "https://twitter.com/kubeslice",
     "acceptedDate": "2024-04-16",
+    "devStatsUrl": "https://kubeslice.devstats.cncf.io/",
     "slackUrl": "http://slack.k8s.io/",
     "artworkUrl": "https://github.com/cncf/artwork/blob/master/examples/sandbox_k.md#kubeslice-logos",
     "lfxSlug": "kubeslice",
@@ -3304,7 +3405,7 @@
     "firstCommitDate": "2022-04-22T05:05:43Z",
     "license": "Apache License 2.0",
     "primaryLanguage": "Mustache",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Koordinator",
@@ -3317,6 +3418,8 @@
     "category": "Orchestration \u0026 Management",
     "subcategory": "Scheduling \u0026 Orchestration",
     "acceptedDate": "2024-04-16",
+    "devStatsUrl": "https://koordinator.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/koordinator",
     "lfxSlug": "koordinator",
     "cloMonitorName": "koordinator",
     "stars": 1668,
@@ -3334,7 +3437,7 @@
       "scheduling",
       "workload-consolidation"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Kairos",
@@ -3348,13 +3451,15 @@
     "subcategory": "Automation \u0026 Configuration",
     "twitterUrl": "https://twitter.com/Kairos_OSS",
     "acceptedDate": "2024-04-13",
+    "devStatsUrl": "https://kairos.devstats.cncf.io/",
     "blogUrl": "https://kairos.io/blog/",
     "slackUrl": "https://cloud-native.slack.com/archives/C0707M8UEU8",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/kairos",
     "lfxSlug": "kairos",
     "cloMonitorName": "kairos",
     "summary": "Transform any Linux system into a secure, customizable, and easily managed platform for edge computing with or without Kubernetes.",
     "stars": 1693,
-    "forks": 132,
+    "forks": 133,
     "contributors": 59,
     "lastCommitDate": "2026-03-20T15:05:01Z",
     "lastReleaseDate": "2026-03-20T14:36:38Z",
@@ -3380,7 +3485,7 @@
       "vpn",
       "web3"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Connect RPC",
@@ -3413,7 +3518,7 @@
       "protobuf",
       "rpc"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Falco",
@@ -3457,7 +3562,7 @@
     ],
     "lastAuditDate": "2023-03-22",
     "lastAuditVendor": "OSTIF",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Strimzi",
@@ -3499,7 +3604,7 @@
       "messaging",
       "openshift"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Krator",
@@ -3529,7 +3634,7 @@
       "rust",
       "state-machine"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Fonio",
@@ -3558,7 +3663,7 @@
       "rust",
       "statsd-client"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "CloudEvents",
@@ -3593,7 +3698,7 @@
     ],
     "lastAuditDate": "2022-11-28",
     "lastAuditVendor": "Trail of Bits",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Easegress",
@@ -3607,6 +3712,8 @@
     "subcategory": "API Gateway",
     "twitterUrl": "https://twitter.com/megaease",
     "acceptedDate": "2023-12-19",
+    "devStatsUrl": "https://easegress.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/easegress",
     "lfxSlug": "easegress",
     "cloMonitorName": "easegress",
     "stars": 5870,
@@ -3637,7 +3744,7 @@
       "sidecar",
       "traffic"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "KubeStellar",
@@ -3651,6 +3758,7 @@
     "subcategory": "Scheduling \u0026 Orchestration",
     "twitterUrl": "https://twitter.com/kubestellar",
     "acceptedDate": "2023-12-19",
+    "devStatsUrl": "https://kubestellar.devstats.cncf.io/",
     "slackUrl": "http://slack.k8s.io/",
     "artworkUrl": "https://github.com/cncf/artwork/blob/master/examples/sandbox_k.md#kubestellar-logos",
     "lfxSlug": "kubestellar",
@@ -3677,7 +3785,7 @@
       "summarization",
       "synching"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Krkn",
@@ -3712,7 +3820,7 @@
       "scalability",
       "testing"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Kuasar",
@@ -3726,7 +3834,9 @@
     "subcategory": "Container Runtime",
     "twitterUrl": "https://twitter.com/Kuasar_io",
     "acceptedDate": "2023-12-19",
+    "devStatsUrl": "https://kuasar.devstats.cncf.io/",
     "slackUrl": "https://slack.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/kuasar",
     "lfxSlug": "kuasar",
     "cloMonitorName": "kuasar",
     "stars": 1406,
@@ -3752,7 +3862,7 @@
       "wasmedge",
       "webassembly"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Spiderpool",
@@ -3787,7 +3897,7 @@
       "kubernetes",
       "rdma"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "K8sGPT",
@@ -3800,6 +3910,8 @@
     "category": "Observability and Analysis",
     "subcategory": "Observability",
     "acceptedDate": "2023-12-19",
+    "devStatsUrl": "https://k8sgpt.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/k8sgpt",
     "lfxSlug": "k8sgpt",
     "cloMonitorName": "k8sgpt",
     "stars": 7628,
@@ -3818,7 +3930,7 @@
       "sre",
       "tooling"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Kube-burner",
@@ -3855,7 +3967,7 @@
       "prometheus",
       "scale"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Karmada",
@@ -3892,7 +4004,7 @@
       "multi-cluster",
       "multicloud"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "OpenFeature",
@@ -3910,6 +4022,7 @@
     "devStatsUrl": "https://openfeature.devstats.cncf.io/",
     "blogUrl": "https://docs.openfeature.dev/blog",
     "slackUrl": "https://cloud-native.slack.com/messages/openfeature",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/openfeature",
     "lfxSlug": "openfeature",
     "cloMonitorName": "openfeature",
     "stars": 1097,
@@ -3924,7 +4037,7 @@
       "openfeature",
       "specification"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Cilium",
@@ -3973,7 +4086,7 @@
     ],
     "lastAuditDate": "2023-02-13",
     "lastAuditVendor": "Ada Logics",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Service Mesh Interface (SMI)",
@@ -4002,7 +4115,7 @@
       "servicemesh",
       "smi"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Kanister",
@@ -4016,6 +4129,7 @@
     "subcategory": "Cloud Native Storage",
     "acceptedDate": "2023-09-20",
     "devStatsUrl": "https://kanister.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/kanister",
     "lfxSlug": "kanister",
     "cloMonitorName": "kanister",
     "stars": 868,
@@ -4032,7 +4146,7 @@
       "kubernetes",
       "operator"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "KCL",
@@ -4047,6 +4161,7 @@
     "twitterUrl": "https://twitter.com/kcl_language",
     "acceptedDate": "2023-09-20",
     "devStatsUrl": "https://kcl.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/kcl",
     "lfxSlug": "kcl",
     "cloMonitorName": "kcl",
     "stars": 2336,
@@ -4077,7 +4192,7 @@
       "shift-left",
       "validation"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Logging Operator (Kube Logging)",
@@ -4109,7 +4224,7 @@
       "logging",
       "operator"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "kcp",
@@ -4123,6 +4238,7 @@
     "subcategory": "Scheduling \u0026 Orchestration",
     "twitterUrl": "https://twitter.com/kcp",
     "acceptedDate": "2023-09-19",
+    "devStatsUrl": "https://kcp.devstats.cncf.io/",
     "slackUrl": "http://slack.k8s.io/",
     "artworkUrl": "https://github.com/cncf/artwork/blob/master/examples/sandbox_k.md#kcp-logos",
     "lfxSlug": "kcp",
@@ -4140,7 +4256,7 @@
       "kubernetes",
       "multitenancy"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Copa",
@@ -4183,7 +4299,7 @@
       "vulnerability",
       "vulnerability-management"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "KEDA",
@@ -4222,7 +4338,7 @@
     ],
     "lastAuditDate": "2023-02-02",
     "lastAuditVendor": "Trail of Bits",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Kubeflow",
@@ -4240,6 +4356,7 @@
     "devStatsUrl": "https://kubeflow.devstats.cncf.io/",
     "blogUrl": "https://blog.kubeflow.org",
     "slackUrl": "http://slack.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/kubeflow",
     "lfxSlug": "kubeflow",
     "cloMonitorName": "kubeflow",
     "stars": 15551,
@@ -4259,7 +4376,7 @@
       "notebook",
       "tensorflow"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "CRI-O",
@@ -4301,7 +4418,7 @@
     ],
     "lastAuditDate": "2022-06-06",
     "lastAuditVendor": "ADA Logics",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Istio",
@@ -4320,6 +4437,7 @@
     "devStatsUrl": "https://istio.devstats.cncf.io/",
     "blogUrl": "https://istio.io/blog/",
     "slackUrl": "https://slack.istio.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/istio",
     "lfxSlug": "istio",
     "cloMonitorName": "istio",
     "summary": "Istio addresses the challenges developers and operators face with a distributed or microservices architecture. Whether you're building from scratch or migrating existing applications to cloud native, Istio can help. Read more at: https://istio.io/latest/about/solutions/",
@@ -4350,7 +4468,7 @@
     ],
     "lastAuditDate": "2023-01-30",
     "lastAuditVendor": "ADA Logics",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "kpt",
@@ -4364,10 +4482,11 @@
     "subcategory": "Automation \u0026 Configuration",
     "acceptedDate": "2023-06-30",
     "devStatsUrl": "https://kpt.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/kpt",
     "lfxSlug": "kpt",
     "cloMonitorName": "kpt",
     "stars": 1869,
-    "forks": 258,
+    "forks": 257,
     "contributors": 121,
     "lastCommitDate": "2026-04-02T08:39:27Z",
     "lastReleaseDate": "2026-02-16T09:46:40Z",
@@ -4394,7 +4513,7 @@
       "shift-left",
       "validation"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Eraser",
@@ -4408,6 +4527,7 @@
     "subcategory": "Scheduling \u0026 Orchestration",
     "acceptedDate": "2023-06-30",
     "devStatsUrl": "https://eraser.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/eraser",
     "lfxSlug": "eraser",
     "cloMonitorName": "eraser",
     "stars": 584,
@@ -4430,7 +4550,7 @@
       "vulnerabilities",
       "vulnerability-scanner"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Open Service Mesh",
@@ -4460,7 +4580,7 @@
       "kubernetes",
       "service-mesh"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "KubeClipper",
@@ -4474,6 +4594,7 @@
     "subcategory": "Certified Kubernetes - Installer",
     "acceptedDate": "2023-06-30",
     "devStatsUrl": "https://kubeclipper.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/kubeclipper",
     "lfxSlug": "kubeclipper",
     "cloMonitorName": "kubeclipper",
     "stars": 428,
@@ -4491,7 +4612,7 @@
       "kubeclipper",
       "kubernetes"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Microcks",
@@ -4541,7 +4662,7 @@
       "swagger2",
       "testing"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "HwameiStor",
@@ -4574,7 +4695,7 @@
       "kubernetes",
       "storage"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Headlamp",
@@ -4591,6 +4712,7 @@
     "devStatsUrl": "https://headlamp.devstats.cncf.io/",
     "blogUrl": "https://headlamp.dev/blog",
     "slackUrl": "https://kubernetes.slack.com/messages/headlamp",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/headlamp",
     "lfxSlug": "headlamp",
     "cloMonitorName": "headlamp",
     "stars": 6129,
@@ -4616,7 +4738,7 @@
       "orchestration",
       "plugins"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "SOPS",
@@ -4631,6 +4753,7 @@
     "acceptedDate": "2023-05-17",
     "devStatsUrl": "https://sops.devstats.cncf.io/",
     "slackUrl": "https://cloud-native.slack.com",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/sops",
     "lfxSlug": "sops",
     "cloMonitorName": "sops",
     "stars": 21365,
@@ -4651,7 +4774,7 @@
       "security",
       "sops"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Kepler",
@@ -4665,6 +4788,7 @@
     "subcategory": "Observability",
     "acceptedDate": "2023-05-17",
     "devStatsUrl": "https://kepler.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/kepler",
     "lfxSlug": "kepler",
     "cloMonitorName": "kepler",
     "summary": "Enabling workload power monitoring for cloud-native systems.",
@@ -4684,7 +4808,7 @@
       "prometheus-exporter",
       "sustainability"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "PipeCD",
@@ -4701,6 +4825,7 @@
     "devStatsUrl": "https://pipecd.devstats.cncf.io/",
     "blogUrl": "https://pipecd.dev/blog/",
     "slackUrl": "https://cloud-native.slack.com/messages/pipecd",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/pipecd",
     "lfxSlug": "pipecd",
     "cloMonitorName": "pipecd",
     "stars": 1265,
@@ -4731,7 +4856,7 @@
       "serverless",
       "terraform"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "SlimToolkit",
@@ -4747,6 +4872,7 @@
     "acceptedDate": "2023-05-17",
     "devStatsUrl": "https://slimtoolkit.devstats.cncf.io/",
     "slackUrl": "https://cloud-native.slack.com/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/slimtoolkit",
     "lfxSlug": "slimtoolkit",
     "cloMonitorName": "slimtoolkit",
     "stars": 23120,
@@ -4770,7 +4896,7 @@
       "security",
       "slim"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Keycloak",
@@ -4791,7 +4917,7 @@
     "cloMonitorName": "keycloak",
     "summary": "Keycloak is an Open-Source Identity and Access Management Solution for Modern Applications and Services. The project is primarily designed to make it easy  for developers to secure their applications with minimal effort.\nKeycloak builds on top of industry security standard protocols supporting OAuth2, OpenID Connect, WebAuthn. It also empowers administrators and users,  providing an extensive and friendly interface to configure and manage Keycloak. Existing security infrastructure like SAML2 based IdPs, LDAP servers,  Kerberos/SPNEGO, custom user storage solutions are easy to integrate while making their presence transparent to applications and end users.\nKeycloak provides fully customizable login pages, strong authentication, support for password recovery, client secret rotation, recovery codes for 2FA,  terms and conditions, step-up authentication, and a lot more. All of this without any need for coding at all. All pages visible to users support custom themes, making  it easy to modify the look and feel of the pages to integrate with your corporate branding and existing applications.",
     "stars": 33703,
-    "forks": 8231,
+    "forks": 8234,
     "contributors": 1776,
     "lastCommitDate": "2026-04-02T12:18:35Z",
     "lastReleaseDate": "2026-04-02T14:47:13Z",
@@ -4803,7 +4929,7 @@
       "oidc",
       "saml"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Inspektor Gadget",
@@ -4817,6 +4943,7 @@
     "subcategory": "Observability",
     "acceptedDate": "2023-03-07",
     "devStatsUrl": "https://inspektorgadget.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/inspektor-gadget",
     "lfxSlug": "inspektorgadget",
     "cloMonitorName": "inspektor-gadget",
     "stars": 2771,
@@ -4838,7 +4965,7 @@
       "prometheus-exporter",
       "prometheus-metrics"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Clusternet",
@@ -4853,6 +4980,7 @@
     "acceptedDate": "2023-03-07",
     "devStatsUrl": "https://clusternet.devstats.cncf.io/",
     "slackUrl": "https://cloud-native.slack.com/messages/clusternet",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/clusternet",
     "lfxSlug": "clusternet",
     "cloMonitorName": "clusternet",
     "stars": 1429,
@@ -4875,7 +5003,7 @@
       "out-of-the-box",
       "public-cloud"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "OpenKruise",
@@ -4889,6 +5017,8 @@
     "subcategory": "Continuous Integration \u0026 Delivery",
     "acceptedDate": "2020-11-10",
     "incubatingDate": "2023-03-02",
+    "devStatsUrl": "https://openkruise.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/openkruise",
     "lfxSlug": "openkruise",
     "cloMonitorName": "open-kruise",
     "stars": 5207,
@@ -4910,7 +5040,7 @@
       "workload",
       "workloads"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "KubeVela",
@@ -4928,6 +5058,7 @@
     "devStatsUrl": "https://kubevela.devstats.cncf.io/",
     "blogUrl": "https://kubevela.io/blog",
     "slackUrl": "https://cloud-native.slack.com/archives/C01BLQ3HTJA",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/kubevela",
     "lfxSlug": "kubevela",
     "cloMonitorName": "kubevela",
     "summary": "KubeVela is a modern software delivery platform that makes deploying and operating applications across today's hybrid, multi-cloud environments easier, faster and more reliable.",
@@ -4958,7 +5089,7 @@
       "trait",
       "workloads"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Paralus",
@@ -4993,7 +5124,7 @@
       "zero-trust-security",
       "ztka"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Carina",
@@ -5029,7 +5160,7 @@
       "raw",
       "storage"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "ko",
@@ -5044,6 +5175,7 @@
     "acceptedDate": "2022-12-14",
     "devStatsUrl": "https://ko.devstats.cncf.io/",
     "slackUrl": "https://slack.k8s.io",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/ko",
     "lfxSlug": "ko",
     "cloMonitorName": "ko",
     "stars": 8386,
@@ -5062,7 +5194,7 @@
       "golang",
       "kubernetes"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "werf",
@@ -5079,6 +5211,7 @@
     "devStatsUrl": "https://werf.devstats.cncf.io/",
     "blogUrl": "https://blog.werf.io",
     "slackUrl": "https://cloud-native.slack.com/messages/werf",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/werf",
     "lfxSlug": "werf",
     "cloMonitorName": "werf",
     "stars": 4669,
@@ -5105,7 +5238,7 @@
       "kubernetes",
       "werf"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Open Policy Containers",
@@ -5137,7 +5270,7 @@
       "oci-image",
       "openpolicyagent"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Capsule",
@@ -5153,6 +5286,7 @@
     "acceptedDate": "2022-12-13",
     "devStatsUrl": "https://capsule.devstats.cncf.io/",
     "slackUrl": "https://kubernetes.slack.com/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/capsule",
     "lfxSlug": "capsule",
     "cloMonitorName": "capsule",
     "summary": "Cluster Multi-Tenancy,Policy-based tenancy",
@@ -5173,7 +5307,7 @@
       "operator",
       "tenant"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "DevSpace",
@@ -5187,7 +5321,9 @@
     "subcategory": "Application Definition \u0026 Image Build",
     "twitterUrl": "https://twitter.com/DevSpace",
     "acceptedDate": "2022-12-13",
+    "devStatsUrl": "https://devspace.devstats.cncf.io/",
     "slackUrl": "https://kubernetes.slack.com/messages/devspace",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/devspace",
     "lfxSlug": "devspace",
     "cloMonitorName": "devspace",
     "stars": 4950,
@@ -5219,7 +5355,7 @@
       "microservice",
       "minikube"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "zot",
@@ -5255,7 +5391,7 @@
       "opencontainers",
       "zot"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Argo",
@@ -5305,7 +5441,7 @@
     ],
     "lastAuditDate": "2022-07-18",
     "lastAuditVendor": "ADA Logics",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Flux",
@@ -5345,7 +5481,7 @@
     ],
     "lastAuditDate": "2021-11-10",
     "lastAuditVendor": "ADA Logics",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Brigade",
@@ -5374,7 +5510,7 @@
       "cncf",
       "kubernetes"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Carvel",
@@ -5415,7 +5551,7 @@
       "yaml-processor",
       "yml"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Serverless Devs",
@@ -5428,6 +5564,8 @@
     "category": "Orchestration \u0026 Management",
     "subcategory": "Scheduling \u0026 Orchestration",
     "acceptedDate": "2022-09-14",
+    "devStatsUrl": "https://serverlessdevs.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/serverless-devs",
     "lfxSlug": "serverlessdevs",
     "cloMonitorName": "serverless-devs",
     "stars": 1814,
@@ -5451,7 +5589,7 @@
       "serverless-tool",
       "tencent-serverless"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "ContainerSSH",
@@ -5470,7 +5608,7 @@
     "lfxSlug": "containerssh",
     "cloMonitorName": "containerssh",
     "stars": 3020,
-    "forks": 102,
+    "forks": 101,
     "contributors": 28,
     "lastCommitDate": "2026-03-26T10:27:41Z",
     "lastReleaseDate": "2026-03-23T13:20:05Z",
@@ -5486,7 +5624,7 @@
       "security-tools",
       "ssh"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Kured",
@@ -5517,7 +5655,7 @@
       "kured",
       "reboot"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Cloud Custodian",
@@ -5532,10 +5670,11 @@
     "acceptedDate": "2020-06-25",
     "incubatingDate": "2022-09-14",
     "devStatsUrl": "https://cloudcustodian.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/cloudcustodian",
     "lfxSlug": "c7n",
     "cloMonitorName": "cloud-custodian",
     "stars": 5959,
-    "forks": 1603,
+    "forks": 1604,
     "contributors": 548,
     "lastCommitDate": "2026-04-02T20:30:27Z",
     "lastReleaseDate": "2026-03-18T17:16:59Z",
@@ -5560,7 +5699,7 @@
     ],
     "lastAuditDate": "2024-04-19",
     "lastAuditVendor": "Ada Logics",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "SPIFFE",
@@ -5594,7 +5733,7 @@
       "identity",
       "spiffe"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "SPIRE",
@@ -5623,7 +5762,7 @@
     "firstCommitDate": "2017-03-23T07:01:54Z",
     "license": "Apache License 2.0",
     "primaryLanguage": "Go",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Konveyor",
@@ -5639,6 +5778,7 @@
     "acceptedDate": "2022-07-26",
     "devStatsUrl": "https://konveyor.devstats.cncf.io/",
     "slackUrl": "https://slack.k8s.io",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/konveyor",
     "lfxSlug": "konveyor",
     "cloMonitorName": "konveyor",
     "summary": "Konveyor is an open-source application modernization platform that helps organizations safely and predictably modernize applications to new technologies, with an initial focus on accelerating the adoption of legacy applications to Kubernetes.",
@@ -5655,7 +5795,7 @@
       "operator",
       "tackle"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Hexa",
@@ -5686,7 +5826,7 @@
       "policy-as-code",
       "security"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "external-secrets",
@@ -5701,11 +5841,12 @@
     "twitterUrl": "https://twitter.com/ExtSecretsOptr",
     "acceptedDate": "2022-07-26",
     "devStatsUrl": "https://externalsecretsoperator.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/external-secrets-operator",
     "lfxSlug": "externalsecretsoperator",
     "cloMonitorName": "external-secrets",
     "summary": "External Secrets Operator is a Kubernetes operator that integrates external secret management systems like AWS Secrets Manager, HashiCorp Vault, Google Secrets Manager, Azure Key Vault, IBM Cloud Secrets Manager, Akeyless, CyberArk Conjur and many more. The operator reads information from external APIs and automatically injects the values into a Kubernetes Secret. From there the secret can be consumed by a pod or used by other Kubernetes resources.",
     "stars": 6520,
-    "forks": 1258,
+    "forks": 1260,
     "contributors": 654,
     "lastCommitDate": "2026-04-03T14:34:57Z",
     "lastReleaseDate": "2026-03-20T16:41:33Z",
@@ -5719,7 +5860,7 @@
       "kubernetes-secrets",
       "secrets-manager"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Armada",
@@ -5735,6 +5876,7 @@
     "acceptedDate": "2022-07-25",
     "devStatsUrl": "https://armada.devstats.cncf.io/",
     "slackUrl": "http://slack.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/armada",
     "lfxSlug": "armada",
     "cloMonitorName": "armada",
     "stars": 587,
@@ -5748,7 +5890,7 @@
       "gr-oss",
       "kubernetes"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Clusterpedia",
@@ -5763,6 +5905,7 @@
     "acceptedDate": "2022-06-17",
     "devStatsUrl": "https://clusterpedia.devstats.cncf.io/",
     "slackUrl": "https://cloud-native.slack.com/messages/clusterpedia",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/clusterpedia",
     "lfxSlug": "clusterpedia",
     "cloMonitorName": "clusterpedia",
     "stars": 860,
@@ -5779,7 +5922,7 @@
       "multi-cloud-kubernetes",
       "multi-cluster"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Kubewarden",
@@ -5796,6 +5939,7 @@
     "devStatsUrl": "https://kubewarden.devstats.cncf.io/",
     "blogUrl": "https://kubewarden.io/blog",
     "slackUrl": "https://kubernetes.slack.com/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/kubewarden",
     "lfxSlug": "kubewarden",
     "cloMonitorName": "kubewarden",
     "summary": "Kubewarden is a Policy Engine powered by WebAssembly policies. Its policies can be written in CEL, Rego (OPA \u0026 Gatekeeper flavours), Rust, Go, YAML, and others. Kubewarden simplifies Policy-As-Code by allowing policy authors and consumers to use their preferred tooling and stack, develop and test policies out of cluster. ",
@@ -5814,7 +5958,7 @@
       "policy-as-code",
       "webassembly"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Aeraki Mesh",
@@ -5830,6 +5974,7 @@
     "devStatsUrl": "https://aerakimesh.devstats.cncf.io/",
     "blogUrl": "https://www.aeraki.net/blog/",
     "slackUrl": "https://cloud-native.slack.com/messages/aeraki-mesh",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/aerakimesh",
     "lfxSlug": "aerakimesh",
     "cloMonitorName": "aeraki-mesh",
     "summary": "Aeraki Mesh has been created to provide a non-intrusive, highly extendable way to manage any layer-7 traffic in a service mesh, including Dubbo, Thrift, bRPC, Redis, etc., and private protocols as well.",
@@ -5852,7 +5997,7 @@
       "thrift",
       "trpc"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "OpenFunction",
@@ -5869,6 +6014,7 @@
     "devStatsUrl": "https://openfunction.devstats.cncf.io/",
     "blogUrl": "https://openfunction.dev/blog/",
     "slackUrl": "https://slack.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/openfunction",
     "lfxSlug": "openfunction",
     "cloMonitorName": "openfunction",
     "summary": "Users can use OpenFunction in several different ways including building functions or applications only, running sync or async serverless functions or applications, building and then running serverless functions or applications, building and then running serverless wasm applications(In progress).  In all use cases, users can utilize Dapr to communicate with various backend services (BaaS).",
@@ -5887,7 +6033,7 @@
       "kubernetes",
       "serverless"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "KubeVirt",
@@ -5921,7 +6067,7 @@
       "virtualization",
       "vms"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Volcano",
@@ -5959,7 +6105,7 @@
       "serving",
       "training"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Backstage",
@@ -6000,7 +6146,7 @@
     ],
     "lastAuditDate": "2022-08-23",
     "lastAuditVendor": "X41 D-Sec",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Confidential Containers",
@@ -6026,7 +6172,7 @@
     "lastReleaseDate": "2026-03-30T13:35:51Z",
     "firstCommitDate": "2021-10-04T15:40:23Z",
     "license": "Apache License 2.0",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Chaos Mesh",
@@ -6070,7 +6216,7 @@
       "operator",
       "site-reliability-engineering"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Devfile",
@@ -6083,7 +6229,9 @@
     "category": "App Definition and Development",
     "subcategory": "Application Definition \u0026 Image Build",
     "acceptedDate": "2022-01-11",
+    "devStatsUrl": "https://devfile.devstats.cncf.io/",
     "slackUrl": "https://kubernetes.slack.com/messages/devfile",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/devfile",
     "lfxSlug": "devfile",
     "cloMonitorName": "devfile",
     "stars": 335,
@@ -6093,7 +6241,7 @@
     "firstCommitDate": "2019-12-05T11:17:23Z",
     "license": "Apache License 2.0",
     "primaryLanguage": "Go",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Litmus",
@@ -6110,6 +6258,7 @@
     "incubatingDate": "2022-01-11",
     "devStatsUrl": "https://litmuschaos.devstats.cncf.io/",
     "slackUrl": "https://kubernetes.slack.com/messages/CNXNB0ZTN",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/litmus",
     "lfxSlug": "litmuschaos",
     "cloMonitorName": "litmus-chaos",
     "stars": 5290,
@@ -6141,7 +6290,7 @@
       "resilience-testing",
       "site-reliability-engineering"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "K8up",
@@ -6177,7 +6326,7 @@
       "restic",
       "vshn-project-ignore"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "kube-rs",
@@ -6208,7 +6357,7 @@
       "runtime",
       "rust"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "KubeArmor",
@@ -6224,11 +6373,12 @@
     "devStatsUrl": "https://kubearmor.devstats.cncf.io/",
     "blogUrl": "https://kubearmor.io/blog",
     "slackUrl": "http://kubearmor.slack.com/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/kubearmor",
     "lfxSlug": "kubearmor",
     "cloMonitorName": "kubearmor",
     "summary": "Secure workloads at runtime.",
     "stars": 2073,
-    "forks": 455,
+    "forks": 457,
     "contributors": 137,
     "lastCommitDate": "2026-04-03T05:44:59Z",
     "lastReleaseDate": "2026-04-02T10:00:28Z",
@@ -6249,7 +6399,7 @@
       "system",
       "tool"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Open Cluster Management",
@@ -6263,6 +6413,7 @@
     "subcategory": "Scheduling \u0026 Orchestration",
     "twitterUrl": "https://twitter.com/ocm_io",
     "acceptedDate": "2021-11-09",
+    "devStatsUrl": "https://openclustermanagement.devstats.cncf.io/",
     "slackUrl": "https://kubernetes.slack.com/archives/C01GE7YSUUF",
     "artworkUrl": "https://github.com/cncf/artwork/blob/master/examples/sandbox_l-r.md#open-cluster-management-logos",
     "lfxSlug": "openclustermanagement",
@@ -6274,7 +6425,7 @@
     "firstCommitDate": "2020-03-30T20:00:32Z",
     "license": "Apache License 2.0",
     "primaryLanguage": "Go",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Visual Studio Code Kubernetes Tools",
@@ -6288,6 +6439,7 @@
     "subcategory": "Application Definition \u0026 Image Build",
     "acceptedDate": "2021-11-09",
     "devStatsUrl": "https://vscodek8stools.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/vs-code-kubernetes-tools",
     "lfxSlug": "vscodekubernetestools",
     "cloMonitorName": "vscode-kubernetes-tools",
     "stars": 754,
@@ -6297,7 +6449,7 @@
     "firstCommitDate": "2017-07-25T04:12:08Z",
     "license": "Apache License 2.0",
     "primaryLanguage": "TypeScript",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Longhorn",
@@ -6332,7 +6484,7 @@
       "longhorn",
       "storage"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "MetalLB",
@@ -6347,6 +6499,7 @@
     "acceptedDate": "2021-09-14",
     "devStatsUrl": "https://metallb.devstats.cncf.io/",
     "slackUrl": "https://slack.k8s.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/metallb",
     "lfxSlug": "metallb",
     "cloMonitorName": "metallb",
     "stars": 8131,
@@ -6367,7 +6520,7 @@
       "load-balancer",
       "vrrp"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Inclavare Containers",
@@ -6382,6 +6535,7 @@
     "acceptedDate": "2021-09-14",
     "devStatsUrl": "https://inclavarecontainers.devstats.cncf.io/",
     "slackUrl": "https://cloud-native.slack.com/archives/C02HJJ81BD5",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/inclavare",
     "lfxSlug": "inclavarecontainers",
     "cloMonitorName": "inclavare",
     "stars": 630,
@@ -6410,7 +6564,7 @@
       "tee",
       "trusted-applications"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Akri",
@@ -6437,7 +6591,7 @@
     "firstCommitDate": "2020-10-14T00:42:19Z",
     "license": "Apache License 2.0",
     "primaryLanguage": "Rust",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "OpenTelemetry",
@@ -6469,7 +6623,7 @@
       "community",
       "opentelemetry"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "OpenTracing",
@@ -6495,7 +6649,7 @@
     "firstCommitDate": "2015-11-26T06:23:17Z",
     "license": "Apache License 2.0",
     "primaryLanguage": "Go",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Linkerd",
@@ -6535,7 +6689,7 @@
     ],
     "lastAuditDate": "2022-06-28",
     "lastAuditVendor": "Trail of Bits",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "ORAS",
@@ -6569,7 +6723,7 @@
       "registry",
       "storage"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "kube-vip",
@@ -6606,7 +6760,7 @@
       "service-loadbalancer",
       "vip"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Pixie",
@@ -6623,6 +6777,7 @@
     "devStatsUrl": "https://pixie.devstats.cncf.io/",
     "blogUrl": "https://blog.px.dev/",
     "slackUrl": "https://slackin.px.dev/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/pixie",
     "lfxSlug": "pixie",
     "cloMonitorName": "pixie",
     "summary": "Pixie is an open source observability tool for Kubernetes applications. Pixie uses eBPF to automatically capture telemetry data without the need for manual instrumentation.\nDevelopers can use Pixie to view the high-level state of their cluster (service maps, cluster resources, application traffic) and also drill-down into more detailed views (pod state, flame graphs, individual full body application requests).\n",
@@ -6655,7 +6810,7 @@
       "px-run",
       "vega"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Meshery",
@@ -6677,7 +6832,7 @@
     "cloMonitorName": "meshery",
     "summary": "As a self-service engineering platform, Meshery enables collaborative design and operation of cloud and  cloud native infrastructure.",
     "stars": 10138,
-    "forks": 3228,
+    "forks": 3230,
     "contributors": 1841,
     "lastCommitDate": "2026-04-04T01:19:44Z",
     "lastReleaseDate": "2026-03-24T22:32:06Z",
@@ -6706,7 +6861,7 @@
       "visualization",
       "webassembly"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "WasmEdge Runtime",
@@ -6749,7 +6904,7 @@
       "wasm",
       "webassembly"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Vineyard",
@@ -6762,6 +6917,8 @@
     "category": "Runtime",
     "subcategory": "Cloud Native Storage",
     "acceptedDate": "2021-04-28",
+    "devStatsUrl": "https://vineyard.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/vineyard",
     "lfxSlug": "vineyard",
     "cloMonitorName": "vineyard",
     "summary": "- Vineyard is deployed as a daemon and used as shared storage between users for structural data objects.\n- Vineyard is used to sharing the common data structure between computing engines that runs in separate isolated processes and containers.\n- Vineyard is used to sharing the immediate data between upstream and downstream tasks within a data-analytical workflow on Kubernetes.",
@@ -6785,7 +6942,7 @@
       "sig-storage",
       "tag-storage"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Submariner",
@@ -6799,6 +6956,8 @@
     "subcategory": "Cloud Native Network",
     "twitterUrl": "https://twitter.com/submarinerio",
     "acceptedDate": "2021-04-28",
+    "devStatsUrl": "https://submariner.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/submariner",
     "lfxSlug": "submariner",
     "cloMonitorName": "submariner",
     "stars": 2629,
@@ -6808,7 +6967,7 @@
     "firstCommitDate": "2019-03-12T05:02:40Z",
     "license": "Apache License 2.0",
     "primaryLanguage": "Go",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Chaosblade",
@@ -6822,6 +6981,8 @@
     "subcategory": "Chaos Engineering",
     "twitterUrl": "https://twitter.com/ChaosbladeI",
     "acceptedDate": "2021-04-28",
+    "devStatsUrl": "https://chaosblade.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/chaosblade",
     "lfxSlug": "chaosblade",
     "cloMonitorName": "chaos-blade",
     "stars": 6312,
@@ -6841,7 +7002,7 @@
       "microservice",
       "site-reliability-engineering"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Antrea",
@@ -6855,6 +7016,8 @@
     "subcategory": "Cloud Native Network",
     "twitterUrl": "https://twitter.com/projectantrea",
     "acceptedDate": "2021-04-28",
+    "devStatsUrl": "https://antrea.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/antrea",
     "lfxSlug": "antrea",
     "cloMonitorName": "antrea",
     "stars": 1780,
@@ -6871,7 +7034,7 @@
       "networking",
       "security"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Emissary-Ingress",
@@ -6911,7 +7074,7 @@
       "kubernetes-ingress",
       "microservice"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Trickster",
@@ -6948,7 +7111,7 @@
       "reverse-proxy",
       "tsdb"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Kuberhealthy",
@@ -6961,6 +7124,8 @@
     "category": "Observability and Analysis",
     "subcategory": "Observability",
     "acceptedDate": "2021-03-30",
+    "devStatsUrl": "https://kuberhealthy.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/kuberhealthy",
     "lfxSlug": "kuberhealthy",
     "cloMonitorName": "kuberhealthy",
     "stars": 2231,
@@ -6981,7 +7146,7 @@
       "operator",
       "synthetic"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "k8gb",
@@ -7022,7 +7187,7 @@
       "kubernetes-operator",
       "kubernetes-services"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Open Policy Agent (OPA)",
@@ -7064,7 +7229,7 @@
     ],
     "lastAuditDate": "2018-08-30",
     "lastAuditVendor": "Cure53",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Athenz",
@@ -7102,7 +7267,7 @@
       "spiffe",
       "tls"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Distribution",
@@ -7115,6 +7280,8 @@
     "category": "Provisioning",
     "subcategory": "Container Registry",
     "acceptedDate": "2021-01-26",
+    "devStatsUrl": "https://distribution.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/distribution",
     "lfxSlug": "cncf-distribution",
     "cloMonitorName": "distribution",
     "stars": 10340,
@@ -7133,7 +7300,7 @@
       "oci-specification",
       "registry"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "OpenGitOps",
@@ -7147,6 +7314,8 @@
     "subcategory": "Continuous Integration \u0026 Delivery",
     "twitterUrl": "https://twitter.com/opengitops",
     "acceptedDate": "2021-01-26",
+    "devStatsUrl": "https://gitopswg.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/opengitops",
     "lfxSlug": "gitops-wg",
     "cloMonitorName": "open-gitops",
     "stars": 1151,
@@ -7158,7 +7327,7 @@
       "cncf",
       "gitops"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Kube-OVN",
@@ -7172,7 +7341,9 @@
     "subcategory": "Cloud Native Network",
     "twitterUrl": "https://twitter.com/KubeOvn",
     "acceptedDate": "2021-01-26",
+    "devStatsUrl": "https://kubeovn.devstats.cncf.io/",
     "slackUrl": "https://communityinviter.com/apps/kube-ovn/kube-ovn",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/kube-ovn",
     "lfxSlug": "kube-ovn",
     "cloMonitorName": "kube-ovn",
     "stars": 2309,
@@ -7194,7 +7365,7 @@
       "ovs",
       "sdn"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Piraeus Datastore",
@@ -7207,6 +7378,7 @@
     "category": "Runtime",
     "subcategory": "Cloud Native Storage",
     "acceptedDate": "2021-01-26",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/piraeus-datastore",
     "lfxSlug": "piraeus-datastore",
     "cloMonitorName": "piraeus",
     "stars": 525,
@@ -7221,7 +7393,7 @@
       "kubernetes-operator",
       "linstor"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "etcd",
@@ -7264,7 +7436,7 @@
     ],
     "lastAuditDate": "2022-03-11",
     "lastAuditVendor": "ADA Logics",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Buildpacks",
@@ -7296,7 +7468,7 @@
       "cloud-native-buildpacks",
       "cncf"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "CDK for Kubernetes (CDK8s)",
@@ -7321,7 +7493,7 @@
     "firstCommitDate": "2019-07-25T12:45:22Z",
     "license": "Apache License 2.0",
     "primaryLanguage": "JavaScript",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "SchemaHero",
@@ -7356,7 +7528,7 @@
       "kubernetes-operator",
       "manage-databases"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Tinkerbell",
@@ -7372,6 +7544,7 @@
     "acceptedDate": "2020-11-10",
     "devStatsUrl": "https://tinkerbell.devstats.cncf.io/",
     "slackUrl": "https://app.slack.com/client/T08PSQ7BQ/C01SRB41GMT",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/tinkerbell",
     "lfxSlug": "tinkerbell",
     "cloMonitorName": "tinkerbell",
     "stars": 236,
@@ -7398,7 +7571,7 @@
       "redfish",
       "tinkerbell"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Rook",
@@ -7440,7 +7613,7 @@
     ],
     "lastAuditDate": "2019-12-01",
     "lastAuditVendor": "Trail of Bits",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Keylime",
@@ -7457,6 +7630,7 @@
     "devStatsUrl": "https://keylime.devstats.cncf.io/",
     "blogUrl": "https://keylime.dev/blog",
     "slackUrl": "https://cloud-native.slack.com/messages/keylime",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/keylime",
     "lfxSlug": "keylime",
     "cloMonitorName": "keylime",
     "stars": 524,
@@ -7478,7 +7652,7 @@
       "tpm",
       "virtualization"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Porter",
@@ -7511,7 +7685,7 @@
       "hacktoberfest",
       "porter"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Tremor",
@@ -7526,6 +7700,7 @@
     "twitterUrl": "https://twitter.com/TremorDEBS",
     "acceptedDate": "2020-09-08",
     "devStatsUrl": "https://tremor.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/tremor",
     "lfxSlug": "tremor",
     "cloMonitorName": "tremor",
     "stars": 928,
@@ -7545,7 +7720,7 @@
       "tremor-runtime",
       "tremor-script"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "TiKV",
@@ -7588,7 +7763,7 @@
     ],
     "lastAuditDate": "2020-03-05",
     "lastAuditVendor": "Cure53",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Cortex",
@@ -7623,7 +7798,7 @@
       "monitoring",
       "prometheus"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Thanos",
@@ -7668,7 +7843,7 @@
       "storage",
       "thanos"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "k3s",
@@ -7697,7 +7872,7 @@
       "k8s",
       "kubernetes"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Serverless Workflow",
@@ -7712,6 +7887,7 @@
     "twitterUrl": "https://twitter.com/CNCFWorkflow",
     "acceptedDate": "2020-07-14",
     "devStatsUrl": "https://serverlessworkflow.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/serverlessworkflow",
     "lfxSlug": "serverlessworkflow",
     "cloMonitorName": "serverless-workflow",
     "stars": 881,
@@ -7727,7 +7903,7 @@
       "specification",
       "workflow"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Operator Framework",
@@ -7742,6 +7918,7 @@
     "acceptedDate": "2020-07-09",
     "incubatingDate": "2020-07-09",
     "devStatsUrl": "https://operatorframework.devstats.cncf.io/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/operatorframework",
     "lfxSlug": "operator-sdk",
     "cloMonitorName": "operator-framework",
     "stars": 7622,
@@ -7756,7 +7933,7 @@
       "operator",
       "sdk"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Contour",
@@ -7773,6 +7950,7 @@
     "incubatingDate": "2020-07-07",
     "devStatsUrl": "https://contour.devstats.cncf.io/",
     "slackUrl": "https://kubernetes.slack.com/messages/contour",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/contour",
     "lfxSlug": "contour",
     "cloMonitorName": "contour",
     "stars": 3927,
@@ -7794,7 +7972,7 @@
     ],
     "lastAuditDate": "2021-12-01",
     "lastAuditVendor": "Cure53",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "BFE",
@@ -7826,7 +8004,7 @@
       "load-balancer",
       "reverse-proxy"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Dex",
@@ -7844,7 +8022,7 @@
     "lfxSlug": "dex",
     "cloMonitorName": "dex",
     "stars": 10701,
-    "forks": 1918,
+    "forks": 1920,
     "contributors": 296,
     "lastCommitDate": "2026-04-03T07:23:53Z",
     "lastReleaseDate": "2026-03-03T13:43:12Z",
@@ -7858,7 +8036,7 @@
       "kubernetes",
       "oidc"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Parsec",
@@ -7882,7 +8060,7 @@
     "firstCommitDate": "2019-06-07T20:44:01Z",
     "license": "Apache License 2.0",
     "primaryLanguage": "Rust",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Kuma",
@@ -7898,6 +8076,7 @@
     "acceptedDate": "2020-06-25",
     "devStatsUrl": "https://kuma.devstats.cncf.io/",
     "blogUrl": "https://kuma.io/blog/",
+    "artworkUrl": "https://github.com/cncf/artwork/tree/master/projects/kuma",
     "lfxSlug": "kuma",
     "cloMonitorName": "kuma",
     "summary": "Kuma is a service mesh that combines the extensibility and performance of Envoy proxy with great UX and a powerful, yet flexible set of policies. It was built from the ground up to support Kubernetes, Docker, and VM environments seamlessly in a single deployment.",
@@ -7928,7 +8107,7 @@
       "servicemesh",
       "sidecar-proxy"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "KUDO",
@@ -7970,7 +8149,7 @@
       "sdk",
       "zookeeper"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Harbor",
@@ -7993,7 +8172,7 @@
     "cloMonitorName": "harbor",
     "summary": "Harbor is an open source registry that secures artifacts with policies and role-based access control,  ensures images are scanned and free from vulnerabilities, and signs images as trusted. Can be installed on any Kubernetes environment or on a system with Docker support.",
     "stars": 27892,
-    "forks": 5183,
+    "forks": 5188,
     "contributors": 448,
     "lastCommitDate": "2026-04-03T08:11:59Z",
     "lastReleaseDate": "2026-03-20T04:36:02Z",
@@ -8016,7 +8195,7 @@
     ],
     "lastAuditDate": "2019-10-01",
     "lastAuditVendor": "Cure53",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Helm",
@@ -8053,7 +8232,7 @@
     ],
     "lastAuditDate": "2023-03-31",
     "lastAuditVendor": "Ada Logics",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "The Update Framework (TUF)",
@@ -8093,7 +8272,7 @@
     ],
     "lastAuditDate": "2018-08-07",
     "lastAuditVendor": "Cure53",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Vitess",
@@ -8132,7 +8311,7 @@
     ],
     "lastAuditDate": "2023-06-05",
     "lastAuditVendor": "Ada Logics",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Jaeger",
@@ -8173,7 +8352,7 @@
     ],
     "lastAuditDate": "2019-05-04",
     "lastAuditVendor": "Cure53",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "rkt",
@@ -8203,7 +8382,7 @@
       "pods",
       "rkt"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Network Service Mesh",
@@ -8231,7 +8410,7 @@
     "topics": [
       "networkservicemesh"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Fluentd",
@@ -8269,7 +8448,7 @@
     ],
     "lastAuditDate": "2020-12-15",
     "lastAuditVendor": "Ada Logics",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "containerd",
@@ -8310,7 +8489,7 @@
     ],
     "lastAuditDate": "2023-03-02",
     "lastAuditVendor": "Ada Logics",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "CoreDNS",
@@ -8349,7 +8528,7 @@
     ],
     "lastAuditDate": "2018-02-03",
     "lastAuditVendor": "Cure53",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Virtual Kubelet",
@@ -8378,7 +8557,7 @@
       "cncf",
       "kubernetes"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Envoy",
@@ -8418,7 +8597,7 @@
     ],
     "lastAuditDate": "2021-05-15",
     "lastAuditVendor": "Ada Logics",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Prometheus",
@@ -8459,7 +8638,7 @@
     ],
     "lastAuditDate": "2020-07-21",
     "lastAuditVendor": "Cure53",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Telepresence",
@@ -8494,7 +8673,7 @@
       "tunnel",
       "vpn"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "NATS",
@@ -8541,7 +8720,7 @@
     ],
     "lastAuditDate": "2019-02-06",
     "lastAuditVendor": "Cure53",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Kubernetes",
@@ -8578,7 +8757,7 @@
     ],
     "lastAuditDate": "2023-04-19",
     "lastAuditVendor": "NCC Group",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Notary Project",
@@ -8614,7 +8793,7 @@
     ],
     "lastAuditDate": "2023-07-06",
     "lastAuditVendor": "Ada Logics",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "Container Network Interface (CNI)",
@@ -8646,7 +8825,7 @@
       "kubernetes",
       "networking"
     ],
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   },
   {
     "name": "gRPC",
@@ -8675,6 +8854,6 @@
     "primaryLanguage": "C++",
     "lastAuditDate": "2019-10-29",
     "lastAuditVendor": "Cure53",
-    "updatedAt": "2026-04-09T07:40:07Z"
+    "updatedAt": "2026-04-10T07:40:49Z"
   }
 ]
