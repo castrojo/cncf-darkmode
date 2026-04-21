@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.18",
-    "astro": "^6.0.5",
+    "astro": "^6.1.6",
     "canvas-confetti": "^1.9.4",
     "i18n-iso-countries": "^7.14.0",
     "minisearch": "^7.2.0"
