@@ -301,7 +301,7 @@ func Sync() error {
 					}
 					defer semM.Release(1)
 					time.Sleep(100 * time.Millisecond)
-					stats := ghClient.EnrichProfile(gMctx, t.handle, apiCache)
+					stats := ghClient.Enrich(gMctx, t.handle, apiCache)
 					if stats.AvatarURL != "" {
 						muM.Lock()
 						maintainers[t.idx].Location = stats.Location
