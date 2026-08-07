@@ -338,6 +338,31 @@
   text-decoration: none;
 }
 
+/* ─── OpenSSF Scorecard badge + failing checks ───────────────────────────── */
+:global(.plb2-scorecard-badge) {
+  border-color: color-mix(in srgb, var(--plb2-score-color, #57606a) 45%, transparent);
+  color: var(--plb2-score-color, inherit);
+}
+:global(.plb2-scorecard-badge:hover) {
+  border-color: var(--plb2-score-color, #0969da);
+  background: color-mix(in srgb, var(--plb2-score-color, #888) 10%, transparent);
+}
+
+:global(.plb2-scorecard-checks) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+:global(.plb2-scorecard-check) {
+  font-size: 0.6875rem;
+  padding: 0.15rem 0.45rem;
+  background: var(--color-bg-tertiary, #eaeef2);
+  color: var(--color-text-secondary, #57606a);
+  border-radius: 10px;
+  border: 1px solid var(--color-border-default, #d0d7de);
+}
+
 /* ─── Contributor minicards ──────────────────────────────────────────────── */
 :global(.plb2-minicards) {
   display: flex;

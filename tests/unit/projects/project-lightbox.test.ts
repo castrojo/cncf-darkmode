@@ -18,6 +18,7 @@ import {
   formatNumber,
   formatDate,
   type Maintainer,
+  type ScorecardEntry,
 } from '../../../src/lib/projects/project-lightbox';
 import type { SafeProject } from '../../../src/lib/projects/project-renderer';
 
@@ -374,5 +375,75 @@ describe('renderProjectLightboxContent — maturity badge colors', () => {
     const html = renderProjectLightboxContent(p, [], NOW);
     expect(html).toContain('#57606a');
     expect(html).toContain('Sandbox');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// OpenSSF Scorecard enrichment
+// ---------------------------------------------------------------------------
+
+describe('renderProjectLightboxContent — OpenSSF Scorecard', () => {
+  const HIGH_SCORE: ScorecardEntry = {
+    repo: 'github.com/kyverno/kyverno',
+    score: 8.4,
+    date: '2026-01-01',
+    checks: [
+      { name: 'Maintained', score: 10, reason: 'active' },
+      { name: 'Fuzzing', score: 10, reason: 'fuzzed' },
+    ],
+  };
+
+  const LOW_SCORE: ScorecardEntry = {
+    repo: 'github.com/kyverno/kyverno',
+    score: 3.2,
+    date: '2026-01-01',
+    checks: [
+      { name: 'Fuzzing', score: 0, reason: 'no fuzzing detected' },
+      { name: 'Security-Policy', score: 2, reason: 'no policy found' },
+      { name: 'Maintained', score: 10, reason: 'active' },
+    ],
+  };
+
+  it('falls back to a plain scorecard link when no entry is provided', () => {
+    const html = renderProjectLightboxContent(FULL_PROJECT, [], NOW);
+    expect(html).toContain('scorecard.dev');
+    expect(html).not.toContain('plb2-scorecard-badge');
+  });
+
+  it('renders the numeric score when a scorecard entry is provided', () => {
+    const html = renderProjectLightboxContent(FULL_PROJECT, [], NOW, HIGH_SCORE);
+    expect(html).toContain('plb2-scorecard-badge');
+    expect(html).toContain('8.4');
+    expect(html).toContain('/10');
+  });
+
+  it('uses a green color for high scores (>= 7)', () => {
+    const html = renderProjectLightboxContent(FULL_PROJECT, [], NOW, HIGH_SCORE);
+    expect(html).toContain('#22863a');
+  });
+
+  it('uses a red color for low scores (< 4)', () => {
+    const html = renderProjectLightboxContent(FULL_PROJECT, [], NOW, LOW_SCORE);
+    expect(html).toContain('#cb2431');
+  });
+
+  it('surfaces the lowest-scoring failing checks', () => {
+    const html = renderProjectLightboxContent(FULL_PROJECT, [], NOW, LOW_SCORE);
+    expect(html).toContain('plb2-scorecard-check');
+    expect(html).toContain('Fuzzing: 0/10');
+    expect(html).toContain('Security-Policy: 2/10');
+    // Maintained scored 10, above the "failing" threshold — should not show.
+    expect(html).not.toContain('Maintained: 10/10');
+  });
+
+  it('does not render check chips when there are no low-scoring checks', () => {
+    const html = renderProjectLightboxContent(FULL_PROJECT, [], NOW, HIGH_SCORE);
+    expect(html).not.toContain('plb2-scorecard-check');
+  });
+
+  it('does not render a scorecard badge when repoUrl is absent', () => {
+    const p: SafeProject = { ...BASE_PROJECT, repoUrl: undefined };
+    const html = renderProjectLightboxContent(p, [], NOW, HIGH_SCORE);
+    expect(html).not.toContain('plb2-scorecard-badge');
   });
 });
