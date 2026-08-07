@@ -1,5 +1,6 @@
 ---
 import ProjectsLayout from '../components/ProjectsLayout.astro';
+import ProjectLightbox from '../components/projects/ProjectLightbox.astro';
 import { formatRelativeDate } from '../lib/projects/project-renderer';
 import type { SafeProject } from '../lib/projects/project-renderer';
 import { selectHeroSets } from '../lib/projects/heroes';
@@ -183,6 +184,7 @@ function formatNumber(n: number): string {
   {includeEmbeddedData && (
     <script slot="body-end" type="application/json" id="initial-changelog-data" set:html={JSON.stringify(changelogEvents.slice(0, 100))}></script>
   )}
+  <ProjectLightbox />
 </ProjectsLayout>
 
 <script>
@@ -194,6 +196,7 @@ function formatNumber(n: number): string {
   import { initSearch, searchProjects } from '../lib/projects/search';
   import { initKeyboard } from '../lib/keyboard';
   import { fireFountain, preloadOnHover, fireHearts } from '../lib/confetti';
+  import { initProjectLightbox, openProjectLightbox } from '../lib/projects/project-lightbox';
 
   const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   let allProjects: SafeProject[] = [];
@@ -346,7 +349,13 @@ function formatNumber(n: number): string {
       if (card.dataset.eventsWired === '1') return;
       card.dataset.eventsWired = '1';
       preloadOnHover(card);
-      card.addEventListener('click', () => fireHearts(card));
+      card.addEventListener('click', (e) => {
+        // Don't open lightbox if user clicked a link inside the card
+        if ((e.target as HTMLElement).closest('a')) return;
+        fireHearts(card);
+        const slug = card.dataset.slug ?? '';
+        if (slug) openProjectLightbox(slug, base);
+      });
     });
   }
 
@@ -377,6 +386,7 @@ function formatNumber(n: number): string {
   }
 
   hydrateEmbeddedData();
+  initProjectLightbox();
   renderCurrentView();
   const isLocalDev = window.location.hostname === 'localhost';
   if (!isLocalDev || allProjects.length === 0) {
