@@ -1,5 +1,351 @@
 [
   {
+    "name": "Stéphane Erbrech",
+    "handle": "serbrech",
+    "company": "Microsoft",
+    "bio": "Work at @microsoft on Kubernetes and @Azure things",
+    "projects": [
+      "KubeFleet"
+    ],
+    "projectDetails": [
+      {
+        "name": "KubeFleet",
+        "maturity": "Sandbox"
+      }
+    ],
+    "maturity": "Sandbox",
+    "avatarUrl": "https://avatars.githubusercontent.com/serbrech",
+    "logoUrl": "https://landscape.cncf.io/logos/26deccd15dfef9b5878217767670ecaf50b66be199b451c1bb4caf2ab5a801f9.svg",
+    "updatedAt": "2026-04-15T07:41:11.553671532Z",
+    "yearsContributing": 9
+  },
+  {
+    "name": "Steven Jin",
+    "handle": "stevenjin8",
+    "company": "Microsoft",
+    "location": "Los Angeles, CA",
+    "countryFlag": "🇨🇦",
+    "projects": [
+      "Istio: Maintainers"
+    ],
+    "projectDetails": [
+      {
+        "name": "Istio: Maintainers",
+        "maturity": "Graduated"
+      }
+    ],
+    "maturity": "Graduated",
+    "avatarUrl": "https://avatars.githubusercontent.com/stevenjin8",
+    "logoUrl": "https://landscape.cncf.io/logos/2d881599f6faed0a16840a675049bd10ce7096134d93df3f533aaf91972a9689.svg",
+    "updatedAt": "2026-04-15T07:41:11.553671532Z",
+    "yearsContributing": 2
+  },
+  {
+    "name": "Simon Waight",
+    "handle": "sjwaight",
+    "company": "Microsoft",
+    "location": "Sydney, Australia",
+    "countryFlag": "🇦🇺",
+    "bio": "Cloud Native Product Management with a focus on Azure-managed Kubernetes.",
+    "projects": [
+      "KubeFleet"
+    ],
+    "projectDetails": [
+      {
+        "name": "KubeFleet",
+        "maturity": "Sandbox"
+      }
+    ],
+    "maturity": "Sandbox",
+    "avatarUrl": "https://avatars.githubusercontent.com/sjwaight",
+    "logoUrl": "https://landscape.cncf.io/logos/26deccd15dfef9b5878217767670ecaf50b66be199b451c1bb4caf2ab5a801f9.svg",
+    "updatedAt": "2026-04-15T07:41:11.553671532Z",
+    "yearsContributing": 2
+  },
+  {
+    "name": "Yetkin Timocin",
+    "handle": "ytimocin",
+    "company": "Microsoft",
+    "location": "Los Angeles, CA",
+    "countryFlag": "🇨🇦",
+    "projects": [
+      "KubeFleet"
+    ],
+    "projectDetails": [
+      {
+        "name": "KubeFleet",
+        "maturity": "Sandbox"
+      }
+    ],
+    "maturity": "Sandbox",
+    "avatarUrl": "https://avatars.githubusercontent.com/ytimocin",
+    "logoUrl": "https://landscape.cncf.io/logos/26deccd15dfef9b5878217767670ecaf50b66be199b451c1bb4caf2ab5a801f9.svg",
+    "updatedAt": "2026-04-15T07:41:11.553671532Z"
+  },
+  {
+    "name": "Wei Weng",
+    "handle": "weng271190436",
+    "company": "Microsoft",
+    "location": "Secaucus",
+    "projects": [
+      "KubeFleet"
+    ],
+    "projectDetails": [
+      {
+        "name": "KubeFleet",
+        "maturity": "Sandbox"
+      }
+    ],
+    "maturity": "Sandbox",
+    "avatarUrl": "https://avatars.githubusercontent.com/weng271190436",
+    "logoUrl": "https://landscape.cncf.io/logos/26deccd15dfef9b5878217767670ecaf50b66be199b451c1bb4caf2ab5a801f9.svg",
+    "updatedAt": "2026-04-15T07:41:11.553671532Z"
+  },
+  {
+    "name": "Vicente Ferrara",
+    "handle": "vicentefb",
+    "company": "Google",
+    "location": "Sydney, Australia",
+    "countryFlag": "🇦🇺",
+    "projects": [
+      "Agones"
+    ],
+    "projectDetails": [
+      {
+        "name": "Agones",
+        "maturity": "Sandbox"
+      }
+    ],
+    "maturity": "Sandbox",
+    "avatarUrl": "https://avatars.githubusercontent.com/vicentefb",
+    "logoUrl": "https://landscape.cncf.io/logos/2121ac233715cffe4a7d3c1debc815f2b3f2d6920ebd37be8a5b17298e4bd0a4.svg",
+    "updatedAt": "2026-04-14T07:41:48.743591237Z"
+  },
+  {
+    "name": "Mark Schlachter",
+    "handle": "the-wondersmith",
+    "location": "East Coast, United States",
+    "countryFlag": "🇺🇸",
+    "bio": "Doin' it to 'em since 1967 [citation needed]",
+    "projects": [
+      "Emissary-ingress"
+    ],
+    "projectDetails": [
+      {
+        "name": "Emissary-ingress",
+        "maturity": "Incubating"
+      }
+    ],
+    "maturity": "Incubating",
+    "avatarUrl": "https://avatars.githubusercontent.com/the-wondersmith",
+    "logoUrl": "https://landscape.cncf.io/logos/19518469b70b8e3e3789e07a400f80d60e89bdb23c8017b04515515bbda4f64e.svg",
+    "updatedAt": "2026-04-14T07:41:48.743591237Z"
+  },
+  {
+    "name": "Ivy Gooch",
+    "handle": "igooch",
+    "company": "Google",
+    "location": "East Coast, United States",
+    "countryFlag": "🇺🇸",
+    "projects": [
+      "Agones"
+    ],
+    "projectDetails": [
+      {
+        "name": "Agones",
+        "maturity": "Sandbox"
+      }
+    ],
+    "maturity": "Sandbox",
+    "avatarUrl": "https://avatars.githubusercontent.com/igooch",
+    "logoUrl": "https://landscape.cncf.io/logos/2121ac233715cffe4a7d3c1debc815f2b3f2d6920ebd37be8a5b17298e4bd0a4.svg",
+    "updatedAt": "2026-04-14T07:41:48.743591237Z"
+  },
+  {
+    "name": "Mark Mandel",
+    "handle": "markmandel",
+    "company": "Discord",
+    "location": "San Francisco, California",
+    "bio": "Staff Developer Advocate, Games.\r\nFounder on Agones and Quilkin.\r\nWas at Google Cloud for a long time.",
+    "projects": [
+      "Agones"
+    ],
+    "projectDetails": [
+      {
+        "name": "Agones",
+        "maturity": "Sandbox"
+      }
+    ],
+    "maturity": "Sandbox",
+    "avatarUrl": "https://avatars.githubusercontent.com/markmandel",
+    "ownersUrl": "https://github.com/agones-dev/agones/blob/main/docs/governance/community_membership.md",
+    "logoUrl": "https://landscape.cncf.io/logos/2121ac233715cffe4a7d3c1debc815f2b3f2d6920ebd37be8a5b17298e4bd0a4.svg",
+    "updatedAt": "2026-04-14T07:41:48.743591237Z"
+  },
+  {
+    "name": "Rafael Schloming",
+    "handle": "rhs",
+    "location": "Portland, OR",
+    "bio": "Kubernetes SIG Autoscaling Tech Lead | Maintainer of Cluster API Provider Azure",
+    "projects": [
+      "Emissary-ingress"
+    ],
+    "projectDetails": [
+      {
+        "name": "Emissary-ingress",
+        "maturity": "Incubating"
+      }
+    ],
+    "maturity": "Incubating",
+    "avatarUrl": "https://avatars.githubusercontent.com/rhs",
+    "logoUrl": "https://landscape.cncf.io/logos/19518469b70b8e3e3789e07a400f80d60e89bdb23c8017b04515515bbda4f64e.svg",
+    "updatedAt": "2026-04-14T07:41:48.743591237Z"
+  },
+  {
+    "name": "Thomas Lacroix",
+    "handle": "lacroixthomas",
+    "company": "Ubisoft",
+    "location": "Montreal, Canada",
+    "countryFlag": "🇨🇦",
+    "projects": [
+      "Agones"
+    ],
+    "projectDetails": [
+      {
+        "name": "Agones",
+        "maturity": "Sandbox"
+      }
+    ],
+    "maturity": "Sandbox",
+    "avatarUrl": "https://avatars.githubusercontent.com/lacroixthomas",
+    "logoUrl": "https://landscape.cncf.io/logos/2121ac233715cffe4a7d3c1debc815f2b3f2d6920ebd37be8a5b17298e4bd0a4.svg",
+    "updatedAt": "2026-04-14T07:41:48.743591237Z"
+  },
+  {
+    "name": "Alice Wasko",
+    "handle": "aliceproxy",
+    "company": "ngrok",
+    "projects": [
+      "Emissary-ingress"
+    ],
+    "projectDetails": [
+      {
+        "name": "Emissary-ingress",
+        "maturity": "Incubating"
+      }
+    ],
+    "maturity": "Incubating",
+    "avatarUrl": "https://avatars.githubusercontent.com/aliceproxy",
+    "ownersUrl": "https://github.com/emissary-ingress/emissary/blob/main/Community/MAINTAINERS.md",
+    "logoUrl": "https://landscape.cncf.io/logos/19518469b70b8e3e3789e07a400f80d60e89bdb23c8017b04515515bbda4f64e.svg",
+    "updatedAt": "2026-04-14T07:41:48.743591237Z"
+  },
+  {
+    "name": "David Dymko",
+    "handle": "ddymko",
+    "company": "CoreWeave",
+    "location": "NYC",
+    "bio": "It writes the code in the IDE or else it gets the hose again",
+    "projects": [
+      "Emissary-ingress"
+    ],
+    "projectDetails": [
+      {
+        "name": "Emissary-ingress",
+        "maturity": "Incubating"
+      }
+    ],
+    "maturity": "Incubating",
+    "avatarUrl": "https://avatars.githubusercontent.com/ddymko",
+    "logoUrl": "https://landscape.cncf.io/logos/19518469b70b8e3e3789e07a400f80d60e89bdb23c8017b04515515bbda4f64e.svg",
+    "updatedAt": "2026-04-14T07:41:48.743591237Z",
+    "yearsContributing": 7
+  },
+  {
+    "name": "Niki Manoledaki",
+    "handle": "nikimanoledaki",
+    "company": "Grafana Labs",
+    "location": "NYC",
+    "bio": "Senior Software Engineer @grafana | @cncf Ambassador / project lead / OSS contributor",
+    "projects": [
+      "Kepler"
+    ],
+    "projectDetails": [
+      {
+        "name": "Kepler",
+        "maturity": "Sandbox"
+      }
+    ],
+    "maturity": "Sandbox",
+    "avatarUrl": "https://avatars.githubusercontent.com/nikimanoledaki",
+    "logoUrl": "https://landscape.cncf.io/logos/6df80d6b2985ade2f7bf259fb8cb1c9379ef50ae6ecdea6a5763b0b1db2d6437.svg",
+    "updatedAt": "2026-04-14T07:41:48.743591237Z",
+    "yearsContributing": 6
+  },
+  {
+    "name": "Hamzah Qudsi",
+    "handle": "haq204",
+    "company": "Antimetal",
+    "location": "NYC",
+    "projects": [
+      "Emissary-ingress"
+    ],
+    "projectDetails": [
+      {
+        "name": "Emissary-ingress",
+        "maturity": "Incubating"
+      }
+    ],
+    "maturity": "Incubating",
+    "avatarUrl": "https://avatars.githubusercontent.com/haq204",
+    "logoUrl": "https://landscape.cncf.io/logos/19518469b70b8e3e3789e07a400f80d60e89bdb23c8017b04515515bbda4f64e.svg",
+    "updatedAt": "2026-04-14T07:41:48.743591237Z",
+    "yearsContributing": 4
+  },
+  {
+    "name": "Phil Peble",
+    "handle": "ppeble",
+    "company": "ActiveCampaign",
+    "location": "Chicago, IL",
+    "countryFlag": "🇮🇱",
+    "bio": "dev @activecampaign, formerly @sittercity. Maintainer of @holidays @emissary-ingress. He/him.",
+    "projects": [
+      "Emissary-ingress"
+    ],
+    "projectDetails": [
+      {
+        "name": "Emissary-ingress",
+        "maturity": "Incubating"
+      }
+    ],
+    "maturity": "Incubating",
+    "avatarUrl": "https://avatars.githubusercontent.com/ppeble",
+    "logoUrl": "https://landscape.cncf.io/logos/19518469b70b8e3e3789e07a400f80d60e89bdb23c8017b04515515bbda4f64e.svg",
+    "updatedAt": "2026-04-14T07:41:48.743591237Z",
+    "yearsContributing": 8
+  },
+  {
+    "name": "Victor Nicolet",
+    "handle": "victornicolet",
+    "company": "Amazon",
+    "location": "Canada",
+    "countryFlag": "🇨🇦",
+    "bio": "\r\n",
+    "projects": [
+      "Cedar"
+    ],
+    "projectDetails": [
+      {
+        "name": "Cedar",
+        "maturity": "Sandbox"
+      }
+    ],
+    "maturity": "Sandbox",
+    "avatarUrl": "https://avatars.githubusercontent.com/victornicolet",
+    "logoUrl": "https://landscape.cncf.io/logos/86477490a2670f3b7cb7e89ac64d76e66bf7c4516daf3e69c8cf742632d0f664.svg",
+    "updatedAt": "2026-04-07T17:30:09.369357183Z"
+  },
+  {
     "name": "Pritesh Kiri",
     "handle": "priteshkiri",
     "company": "Harness",
@@ -24,8 +370,8 @@
     "name": "Charlie Murphy",
     "handle": "chaluli",
     "company": "Montana State University",
-    "location": "Bozeman, MT",
-    "countryFlag": "🇲🇹",
+    "location": "Mountain View, CA",
+    "countryFlag": "🇨🇦",
     "bio": "Assistant Professor, MSU-Bozeman\r\nCedar Maintainer",
     "projects": [
       "Cedar"
@@ -45,7 +391,7 @@
     "name": "Ali Dowair",
     "handle": "adowair",
     "company": "Delinea",
-    "location": "Seattle, WA",
+    "location": "Seattle",
     "bio": "Cloud Software Engineer | Kubernetes, Databases, Storage",
     "projects": [
       "Cedar"
@@ -65,8 +411,8 @@
     "name": "Patrick Jakubowski",
     "handle": "patjakdev",
     "company": "Delinea",
-    "location": "Germany",
-    "countryFlag": "🇩🇪",
+    "location": "San Francisco, CA",
+    "countryFlag": "🇨🇦",
     "projects": [
       "Cedar"
     ],
@@ -85,8 +431,6 @@
     "name": "Yanran Zeng",
     "handle": "yanranzeng1",
     "company": "Delinea",
-    "location": "Germany",
-    "countryFlag": "🇩🇪",
     "projects": [
       "Cedar"
     ],
@@ -105,8 +449,8 @@
     "name": "Julian Lovelock",
     "handle": "iamatjlovelock",
     "company": "Amazon",
-    "location": "Germany",
-    "countryFlag": "🇩🇪",
+    "location": "Los Angeles, CA",
+    "countryFlag": "🇨🇦",
     "projects": [
       "Cedar"
     ],
@@ -122,425 +466,43 @@
     "updatedAt": "2026-04-07T17:30:09.369357183Z"
   },
   {
-    "name": "Victor Nicolet",
-    "handle": "victornicolet",
-    "company": "Amazon",
-    "location": "Canada",
-    "countryFlag": "🇨🇦",
-    "bio": "\r\n",
-    "projects": [
-      "Cedar"
-    ],
-    "projectDetails": [
-      {
-        "name": "Cedar",
-        "maturity": "Sandbox"
-      }
-    ],
-    "maturity": "Sandbox",
-    "avatarUrl": "https://avatars.githubusercontent.com/victornicolet",
-    "logoUrl": "https://landscape.cncf.io/logos/86477490a2670f3b7cb7e89ac64d76e66bf7c4516daf3e69c8cf742632d0f664.svg",
-    "updatedAt": "2026-04-07T17:30:09.369357183Z"
-  },
-  {
-    "name": "Weibin Zeng",
-    "handle": "acezen",
+    "name": "Camix",
+    "handle": "mandsss",
     "company": "Alibaba",
-    "location": "China",
-    "countryFlag": "🇨🇳",
+    "location": "hangzhou",
+    "bio": "Senior Software Engineer | Maintainer @chaosblade-io(CNCF Sandbox) | Java | Golang | Kubernetes",
     "projects": [
-      "Vineyard"
+      "ChaosBlade"
     ],
     "projectDetails": [
       {
-        "name": "Vineyard",
+        "name": "ChaosBlade",
         "maturity": "Sandbox"
       }
     ],
     "maturity": "Sandbox",
-    "avatarUrl": "https://avatars.githubusercontent.com/acezen",
-    "logoUrl": "https://landscape.cncf.io/logos/56b0b5b743b3ef7b5366e800c6ce92d935aa8a7cede0f69e0cd89425d098b438.svg",
+    "avatarUrl": "https://avatars.githubusercontent.com/mandsss",
+    "logoUrl": "https://landscape.cncf.io/logos/caa1f058080a24732f722144452f3a67dcb0dd541457197ef20b523321a74f30.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
-    "name": "Lidi Zheng",
-    "handle": "lidizheng",
-    "company": "Google",
-    "location": "Canada",
-    "countryFlag": "🇨🇦",
-    "projects": [
-      "GRPC"
-    ],
-    "projectDetails": [
-      {
-        "name": "GRPC",
-        "maturity": "Incubating"
-      }
-    ],
-    "maturity": "Incubating",
-    "avatarUrl": "https://avatars.githubusercontent.com/lidizheng",
-    "logoUrl": "https://landscape.cncf.io/logos/91304b6bc0ca2e9107c18c43a5732879d478909b6d2761b62af2beb445829d48.svg",
-    "updatedAt": "2026-04-06T19:20:27.880551642Z"
-  },
-  {
-    "name": "Paco Xu 徐俊杰",
-    "handle": "pacoxu",
-    "company": "DaoCloud",
-    "location": "Shanghai, China ",
-    "countryFlag": "🇨🇳",
-    "bio": "Kubernetes Contributor, Football Fan(Valencia and Liverpool), a Go enthusiast (both Golang and Weiqi/Go)",
-    "projects": [
-      "Kubernetes Steering"
-    ],
-    "projectDetails": [
-      {
-        "name": "Kubernetes Steering",
-        "maturity": "Graduated"
-      }
-    ],
-    "maturity": "Graduated",
-    "avatarUrl": "https://avatars.githubusercontent.com/pacoxu",
-    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
-    "updatedAt": "2026-04-06T19:20:27.880551642Z",
-    "yearsContributing": 5
-  },
-  {
-    "name": "Patrick Ohly",
-    "handle": "pohly",
-    "company": "Intel",
-    "location": "Germany",
-    "countryFlag": "🇩🇪",
-    "bio": "Senior Software Engineer at Intel",
-    "projects": [
-      "Kubernetes Steering",
-      "Kubernetes Maintainers"
-    ],
-    "projectDetails": [
-      {
-        "name": "Kubernetes Steering",
-        "maturity": "Graduated"
-      },
-      {
-        "name": "Kubernetes Maintainers",
-        "maturity": "Graduated"
-      }
-    ],
-    "maturity": "Graduated",
-    "avatarUrl": "https://avatars.githubusercontent.com/pohly",
-    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
-    "updatedAt": "2026-04-06T19:20:27.880551642Z",
-    "yearsContributing": 9
-  },
-  {
-    "name": "Rita Zhang",
-    "handle": "ritazh",
-    "company": "Microsoft",
-    "location": "San Francisco",
-    "bio": "Kubernetes SIG Auth co-chair | Kubernetes Security Response Committee | Maintainer of Secrets Store CSI Driver | Maintainer of OPA Gatekeeper",
-    "projects": [
-      "Kubernetes Steering",
-      "Open Policy Agent"
-    ],
-    "projectDetails": [
-      {
-        "name": "Kubernetes Steering",
-        "maturity": "Graduated"
-      },
-      {
-        "name": "Open Policy Agent",
-        "maturity": "Graduated"
-      }
-    ],
-    "maturity": "Graduated",
-    "avatarUrl": "https://avatars.githubusercontent.com/ritazh",
-    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
-    "updatedAt": "2026-04-06T19:20:27.880551642Z",
-    "yearsContributing": 4
-  },
-  {
-    "name": "Sascha Grunert",
-    "handle": "saschagrunert",
-    "company": "Red Hat",
-    "location": "I’m on earth right now, sometimes in the air.",
-    "bio": "The difference between fine and great software is listening to people.",
-    "projects": [
-      "Kubernetes Steering",
-      "CRI-O",
-      "Youki"
-    ],
-    "projectDetails": [
-      {
-        "name": "Kubernetes Steering",
-        "maturity": "Graduated"
-      },
-      {
-        "name": "CRI-O",
-        "maturity": "Graduated"
-      },
-      {
-        "name": "Youki",
-        "maturity": "Sandbox"
-      }
-    ],
-    "maturity": "Graduated",
-    "avatarUrl": "https://avatars.githubusercontent.com/saschagrunert",
-    "logoUrl": "https://landscape.cncf.io/logos/710f6a5529c3084bf79e0584c92e2334ffd011714df93de4beb6de5af7f7b3ee.svg",
-    "updatedAt": "2026-04-06T19:20:27.880551642Z",
-    "yearsContributing": 6
-  },
-  {
-    "name": "Adolfo García Veytia",
-    "handle": "puerco",
-    "company": "Carabiner Systems, Inc",
-    "location": "Seattle, WA",
-    "bio": "⎈ @Kubernetes SIG Release Technical Lead\r\n🔗 Software Engineer \r\n💡Founder @uServers @carabiner-dev \r\n:feather: Prev @mattermost @chainguard-dev @stacklok",
-    "projects": [
-      "Kubernetes Maintainers"
-    ],
-    "projectDetails": [
-      {
-        "name": "Kubernetes Maintainers",
-        "maturity": "Graduated"
-      }
-    ],
-    "maturity": "Graduated",
-    "avatarUrl": "https://avatars.githubusercontent.com/puerco",
-    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
-    "updatedAt": "2026-04-06T19:20:27.880551642Z",
-    "yearsContributing": 5
-  },
-  {
-    "name": "Anish Ramasekar",
-    "handle": "aramase",
-    "company": "Microsoft",
-    "location": "Seattle, WA",
-    "bio": "Kubernetes SIG Auth co-chair | Maintainer of Secrets Store CSI Driver",
-    "projects": [
-      "Kubernetes Maintainers"
-    ],
-    "projectDetails": [
-      {
-        "name": "Kubernetes Maintainers",
-        "maturity": "Graduated"
-      }
-    ],
-    "maturity": "Graduated",
-    "avatarUrl": "https://avatars.githubusercontent.com/aramase",
-    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
-    "updatedAt": "2026-04-06T19:20:27.880551642Z",
-    "yearsContributing": 8
-  },
-  {
-    "name": "Aravindh Puthiyaparambil",
-    "handle": "aravindhp",
-    "company": "Softdrive Technologies Group Inc.",
-    "location": "Seattle, WA",
-    "projects": [
-      "Kubernetes Maintainers"
-    ],
-    "projectDetails": [
-      {
-        "name": "Kubernetes Maintainers",
-        "maturity": "Graduated"
-      }
-    ],
-    "maturity": "Graduated",
-    "avatarUrl": "https://avatars.githubusercontent.com/aravindhp",
-    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
-    "updatedAt": "2026-04-06T19:20:27.880551642Z"
-  },
-  {
-    "name": "Arda Guclu",
-    "handle": "ardaguclu",
-    "company": "Red Hat",
-    "location": "Türkiye",
-    "countryFlag": "🇹🇷",
-    "projects": [
-      "Kubernetes Maintainers"
-    ],
-    "projectDetails": [
-      {
-        "name": "Kubernetes Maintainers",
-        "maturity": "Graduated"
-      }
-    ],
-    "maturity": "Graduated",
-    "avatarUrl": "https://avatars.githubusercontent.com/ardaguclu",
-    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
-    "updatedAt": "2026-04-06T19:20:27.880551642Z"
-  },
-  {
-    "name": "Arnaud Meukam",
-    "handle": "ameukam",
+    "name": "Tobias Schmidt",
+    "handle": "grobie",
     "company": "Independent",
-    "location": "I’m on earth right now, sometimes in the air.",
-    "projects": [
-      "Kubernetes Maintainers"
-    ],
-    "projectDetails": [
-      {
-        "name": "Kubernetes Maintainers",
-        "maturity": "Graduated"
-      }
-    ],
-    "maturity": "Graduated",
-    "avatarUrl": "https://avatars.githubusercontent.com/ameukam",
-    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
-    "updatedAt": "2026-04-06T19:20:27.880551642Z"
-  },
-  {
-    "name": "Benjamin Wang",
-    "handle": "ahrtr",
-    "company": "Broadcom",
-    "location": "London, UK",
-    "countryFlag": "🇬🇧",
-    "bio": "sig-etcd tech lead",
-    "projects": [
-      "Kubernetes Maintainers",
-      "Etcd"
-    ],
-    "projectDetails": [
-      {
-        "name": "Kubernetes Maintainers",
-        "maturity": "Graduated"
-      },
-      {
-        "name": "Etcd",
-        "maturity": "Graduated"
-      }
-    ],
-    "maturity": "Graduated",
-    "avatarUrl": "https://avatars.githubusercontent.com/ahrtr",
-    "ownersUrl": "https://github.com/etcd-io/etcd/blob/main/OWNERS",
-    "logoUrl": "https://landscape.cncf.io/logos/0d8c081f2c074582caafefe4b135388d3e62c6e64ca1faf2058743c9d784f14f.svg",
-    "updatedAt": "2026-04-06T19:20:27.880551642Z"
-  },
-  {
-    "name": "Brady Pratt",
-    "handle": "jbpratt",
-    "company": "Red Hat",
-    "location": "Minneapolis, Minnesota",
-    "projects": [
-      "Kubernetes Maintainers"
-    ],
-    "projectDetails": [
-      {
-        "name": "Kubernetes Maintainers",
-        "maturity": "Graduated"
-      }
-    ],
-    "maturity": "Graduated",
-    "avatarUrl": "https://avatars.githubusercontent.com/jbpratt",
-    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
-    "updatedAt": "2026-04-06T19:20:27.880551642Z"
-  },
-  {
-    "name": "Bridget Kromhout",
-    "handle": "bridgetkromhout",
-    "company": "Microsoft",
-    "location": "Minneapolis, Minnesota",
-    "bio": "bridgetkromhout.com",
-    "projects": [
-      "Kubernetes Maintainers",
-      "Hyperlight"
-    ],
-    "projectDetails": [
-      {
-        "name": "Kubernetes Maintainers",
-        "maturity": "Graduated"
-      },
-      {
-        "name": "Hyperlight",
-        "maturity": "Sandbox"
-      }
-    ],
-    "maturity": "Graduated",
-    "avatarUrl": "https://avatars.githubusercontent.com/bridgetkromhout",
-    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
-    "updatedAt": "2026-04-06T19:20:27.880551642Z"
-  },
-  {
-    "name": "Brian McQueen",
-    "handle": "xmcqueen",
-    "company": "LinkedIn",
-    "location": "Germany",
-    "countryFlag": "🇩🇪",
-    "projects": [
-      "Kubernetes Maintainers"
-    ],
-    "projectDetails": [
-      {
-        "name": "Kubernetes Maintainers",
-        "maturity": "Graduated"
-      }
-    ],
-    "maturity": "Graduated",
-    "avatarUrl": "https://avatars.githubusercontent.com/xmcqueen",
-    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
-    "updatedAt": "2026-04-06T19:20:27.880551642Z"
-  },
-  {
-    "name": "Cailyn Edwards",
-    "handle": "cailyn-codes",
-    "company": "Okta",
-    "location": "Canada",
-    "countryFlag": "🇨🇦",
-    "bio": "Senior Security Engineer\r\nKubernetes Org Member",
-    "projects": [
-      "Kubernetes Maintainers"
-    ],
-    "projectDetails": [
-      {
-        "name": "Kubernetes Maintainers",
-        "maturity": "Graduated"
-      }
-    ],
-    "maturity": "Graduated",
-    "avatarUrl": "https://avatars.githubusercontent.com/cailyn-codes",
-    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
-    "updatedAt": "2026-04-06T19:20:27.880551642Z"
-  },
-  {
-    "name": "Carlos Tadeu Panato Jr.",
-    "handle": "cpanato",
-    "company": "Chainguard, Inc",
     "location": "Berlin",
+    "bio": "Engineering @gigs",
     "projects": [
-      "Kubernetes Maintainers",
-      "Falco"
+      "Prometheus"
     ],
     "projectDetails": [
       {
-        "name": "Kubernetes Maintainers",
-        "maturity": "Graduated"
-      },
-      {
-        "name": "Falco",
+        "name": "Prometheus",
         "maturity": "Graduated"
       }
     ],
     "maturity": "Graduated",
-    "avatarUrl": "https://avatars.githubusercontent.com/cpanato",
-    "logoUrl": "https://landscape.cncf.io/logos/4b03a845c7d926abfb00df4ed9c16fc5a024b700fa1aea4984b1d8393550d46d.svg",
-    "updatedAt": "2026-04-06T19:20:27.880551642Z"
-  },
-  {
-    "name": "Ciprian Hacman",
-    "handle": "hakman",
-    "company": "Microsoft",
-    "location": "Europe",
-    "projects": [
-      "Kubernetes Maintainers"
-    ],
-    "projectDetails": [
-      {
-        "name": "Kubernetes Maintainers",
-        "maturity": "Graduated"
-      }
-    ],
-    "maturity": "Graduated",
-    "avatarUrl": "https://avatars.githubusercontent.com/hakman",
-    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
+    "avatarUrl": "https://avatars.githubusercontent.com/grobie",
+    "logoUrl": "https://landscape.cncf.io/logos/a96d48cc7f1c91de940dacbf30581850fd2c0ed4afaf1b0b94fb86eb1d0aef6e.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
@@ -549,6 +511,7 @@
     "company": "Cloudbase Solutions",
     "location": "Timisoara, Romania",
     "countryFlag": "🇷🇴",
+    "bio": "Kubernetes SIG Autoscaling Tech Lead | Maintainer of Cluster API Provider Azure",
     "projects": [
       "Kubernetes Maintainers"
     ],
@@ -655,8 +618,8 @@
     "name": "David Ashpole",
     "handle": "dashpole",
     "company": "Google",
-    "location": "Lyon, France",
-    "countryFlag": "🇫🇷",
+    "location": "United States",
+    "countryFlag": "🇺🇸",
     "projects": [
       "Kubernetes Maintainers",
       "Prometheus"
@@ -682,7 +645,7 @@
     "company": "Red Hat",
     "location": "Raleigh, NC",
     "countryFlag": "🇳🇨",
-    "bio": "Distinguished Engineer at Grafana Labs.\r\nPrometheus Team member.",
+    "bio": "Assistant Professor, MSU-Bozeman\r\nCedar Maintainer",
     "projects": [
       "Kubernetes Maintainers",
       "Open Cluster Management"
@@ -728,7 +691,7 @@
     "company": "Red Hat",
     "location": "Raleigh, NC",
     "countryFlag": "🇳🇨",
-    "bio": "@prometheus developer working at @grafana. Alumnus of @soundcloud and @google.\r\n\r\nHope is not a strategy – but it springs eternal.",
+    "bio": "Assistant Professor, MSU-Bozeman\r\nCedar Maintainer",
     "projects": [
       "Kubernetes Maintainers"
     ],
@@ -773,8 +736,7 @@
     "name": "Dominik Marciński",
     "handle": "dom4ha",
     "company": "Google",
-    "location": "Sweden",
-    "countryFlag": "🇸🇪",
+    "location": "Colorado",
     "projects": [
       "Kubernetes Maintainers"
     ],
@@ -835,8 +797,8 @@
     "name": "Federico Bongiovanni",
     "handle": "fedebongio",
     "company": "Google",
-    "location": "India",
-    "countryFlag": "🇮🇳",
+    "location": "Milano, Italy",
+    "countryFlag": "🇮🇹",
     "projects": [
       "Kubernetes Maintainers"
     ],
@@ -896,8 +858,7 @@
     "name": "Ivan Valdes",
     "handle": "ivanvc",
     "company": "Inmar Intelligence",
-    "location": "United Kingdom",
-    "countryFlag": "🇬🇧",
+    "location": "Schirnding",
     "bio": "Coding for the fun of coding.",
     "projects": [
       "Kubernetes Maintainers",
@@ -995,7 +956,7 @@
     "company": "Google",
     "location": "Mountain View, CA",
     "countryFlag": "🇨🇦",
-    "bio": "@kubernetes maintainer, SIG Apps lead, Kubernetes AI Conformance lead",
+    "bio": "Assistant Professor, MSU-Bozeman\r\nCedar Maintainer",
     "projects": [
       "Kubernetes Maintainers"
     ],
@@ -1083,7 +1044,8 @@
     "name": "Joel Speed",
     "handle": "joelspeed",
     "company": "Red Hat",
-    "location": "Berlin",
+    "location": "India",
+    "countryFlag": "🇮🇳",
     "bio": "Senior Principal Software Engineer, Red Hat @openshift",
     "projects": [
       "Kubernetes Maintainers",
@@ -1108,7 +1070,8 @@
     "name": "John Belamaric",
     "handle": "johnbelamaric",
     "company": "Google",
-    "location": "Berlin",
+    "location": "India",
+    "countryFlag": "🇮🇳",
     "projects": [
       "Kubernetes Maintainers",
       "CoreDNS"
@@ -1254,7 +1217,8 @@
     "name": "Lubomir Ivanov",
     "handle": "neolit123",
     "company": "Independent",
-    "location": "Dubai",
+    "location": "Australia",
+    "countryFlag": "🇦🇺",
     "bio": "k8s maintainer and SIG Cluster Lifecycle chair\r\n",
     "projects": [
       "Kubernetes Maintainers"
@@ -1274,7 +1238,8 @@
     "name": "Maciej Skoczeń",
     "handle": "macsko",
     "company": "Google",
-    "location": "Dubai",
+    "location": "United States",
+    "countryFlag": "🇺🇸",
     "bio": "Software Engineer at Google | Kubernetes SIG Scheduling Chair \u0026 Approver",
     "projects": [
       "Kubernetes Maintainers"
@@ -1565,8 +1530,7 @@
     "name": "Michelle Au",
     "handle": "msau42",
     "company": "Google",
-    "location": "Florianópolis, Brazil",
-    "countryFlag": "🇧🇷",
+    "location": "Earth",
     "projects": [
       "Kubernetes Maintainers"
     ],
@@ -1624,8 +1588,8 @@
     "name": "Mrunal Patel",
     "handle": "mrunalp",
     "company": "Red Hat",
-    "location": "Raleigh, NC",
-    "countryFlag": "🇳🇨",
+    "location": "Raleigh, NC, USA",
+    "countryFlag": "🇺🇸",
     "projects": [
       "Kubernetes Maintainers",
       "CRI-O"
@@ -1695,8 +1659,7 @@
     "name": "Nir Rozenbaum",
     "handle": "nirrozenbaum",
     "company": "Red Hat",
-    "location": "Denver, CO",
-    "countryFlag": "🇨🇴",
+    "location": "Seattle, WA",
     "bio": "Maintainer @kubernetes-sigs Inference Gateway | Chair @kubernetes AI Gateway WG | Maintainer @llm-d | Senior Principal Software Engineer @ Red Hat AI",
     "projects": [
       "Kubernetes Maintainers"
@@ -1716,7 +1679,7 @@
     "name": "Peter Hunt",
     "handle": "haircommander",
     "company": "Red Hat",
-    "location": "Berlin",
+    "location": "Seattle, WA",
     "projects": [
       "Kubernetes Maintainers",
       "CRI-O"
@@ -1800,8 +1763,7 @@
     "name": "Ray Wainman",
     "handle": "raywainman",
     "company": "Google",
-    "location": "Berlin, Germany",
-    "countryFlag": "🇩🇪",
+    "location": "San Jose",
     "bio": "Kubernetes Autoscaling",
     "projects": [
       "Kubernetes Maintainers"
@@ -1980,7 +1942,7 @@
     "name": "Siyuan Zhang",
     "handle": "siyuanfoundation",
     "company": "Google",
-    "location": "Berlin",
+    "location": "Michigan",
     "projects": [
       "Kubernetes Maintainers",
       "SIG Etcd"
@@ -2075,8 +2037,8 @@
     "name": "Tabitha Sable",
     "handle": "tabbysable",
     "company": "Datadog",
-    "location": "Sweden",
-    "countryFlag": "🇸🇪",
+    "location": "Poland",
+    "countryFlag": "🇵🇱",
     "bio": "Hack the planet, make friends, hack the planet with your friends.",
     "projects": [
       "Kubernetes Maintainers"
@@ -2178,8 +2140,8 @@
     "name": "Walter Fender",
     "handle": "cheftako",
     "company": "Google",
-    "location": "Poland",
-    "countryFlag": "🇵🇱",
+    "location": "Yokohama, Japan",
+    "countryFlag": "🇯🇵",
     "bio": "@kubernetes ",
     "projects": [
       "Kubernetes Maintainers"
@@ -2199,8 +2161,7 @@
     "name": "Wenjia Zhang",
     "handle": "wenjiaswe",
     "company": "Google",
-    "location": "Poland",
-    "countryFlag": "🇵🇱",
+    "location": "Redmond, WA",
     "projects": [
       "Kubernetes Maintainers"
     ],
@@ -2221,7 +2182,6 @@
     "company": "Google",
     "location": "Poland",
     "countryFlag": "🇵🇱",
-    "bio": "Doing Stuff @kubermatic \r\n on a farm in the middle of nowhere -\r\n@cncf TAG Operational Resilience Co Chair\r\n@kubernetes SIG ContribEx Co Chair",
     "projects": [
       "Kubernetes Maintainers"
     ],
@@ -2280,7 +2240,7 @@
     "name": "Yuanliang Zhang",
     "handle": "zylxjtu",
     "company": "Microsoft",
-    "location": "Woodinville, WA",
+    "location": "Earth",
     "projects": [
       "Kubernetes Maintainers"
     ],
@@ -2643,8 +2603,7 @@
   {
     "name": "Conrad Hoffmann",
     "handle": "bitfehler",
-    "location": "London, UK",
-    "countryFlag": "🇬🇧",
+    "location": "new york",
     "projects": [
       "Prometheus"
     ],
@@ -3033,8 +2992,8 @@
     "name": "Julien Pivotto",
     "handle": "roidelapluie",
     "company": "Grafana Labs",
-    "location": "Spain",
-    "countryFlag": "🇪🇸",
+    "location": "London, UK",
+    "countryFlag": "🇬🇧",
     "bio": "@prometheus team member.",
     "projects": [
       "Prometheus"
@@ -3134,8 +3093,8 @@
     "name": "Max Inden",
     "handle": "mxinden",
     "company": "Protocol Labs",
-    "location": "Poland",
-    "countryFlag": "🇵🇱",
+    "location": "Somerville, MA",
+    "countryFlag": "🇲🇦",
     "bio": "Networking (QUIC/http3) @mozilla, @Prometheus maintainer. Ex (rust-) @libp2p, @RedHatOfficial, @CoreOS.",
     "projects": [
       "Prometheus"
@@ -3262,8 +3221,8 @@
     "name": "Simon Pasquier",
     "handle": "simonpasquier",
     "company": "Red Hat",
-    "location": " Bengaluru, India",
-    "countryFlag": "🇮🇳",
+    "location": "Spain",
+    "countryFlag": "🇪🇸",
     "bio": "Working on logging, monitoring, alerting.",
     "projects": [
       "Prometheus"
@@ -3319,23 +3278,23 @@
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
-    "name": "Tobias Schmidt",
-    "handle": "grobie",
-    "company": "Independent",
-    "location": "Berlin",
-    "bio": "Engineering @gigs",
+    "name": "Mike Kolesnik",
+    "handle": "mkolesnik",
+    "company": "Red Hat",
+    "location": "Budapest, Hungary",
+    "countryFlag": "🇭🇺",
     "projects": [
-      "Prometheus"
+      "Submariner"
     ],
     "projectDetails": [
       {
-        "name": "Prometheus",
-        "maturity": "Graduated"
+        "name": "Submariner",
+        "maturity": "Sandbox"
       }
     ],
-    "maturity": "Graduated",
-    "avatarUrl": "https://avatars.githubusercontent.com/grobie",
-    "logoUrl": "https://landscape.cncf.io/logos/a96d48cc7f1c91de940dacbf30581850fd2c0ed4afaf1b0b94fb86eb1d0aef6e.svg",
+    "maturity": "Sandbox",
+    "avatarUrl": "https://avatars.githubusercontent.com/mkolesnik",
+    "logoUrl": "https://landscape.cncf.io/logos/58ee5bb2fb1d6492724bbc8926162b64c52a7d05d539733affdbec839da55c0b.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
@@ -3383,7 +3342,8 @@
     "name": "Stephan Zuercher",
     "handle": "zuercher",
     "company": "Turbine Labs",
-    "location": "Bengaluru",
+    "location": "Raleigh, NC, USA",
+    "countryFlag": "🇺🇸",
     "projects": [
       "Envoy"
     ],
@@ -3421,7 +3381,7 @@
     "name": "Yan Avlasov",
     "handle": "yanavlasov",
     "company": "Google",
-    "location": "Chicago",
+    "location": "Seattle, WA",
     "projects": [
       "Envoy"
     ],
@@ -3466,8 +3426,8 @@
     "name": "Ryan Northey",
     "handle": "phlax",
     "company": "CNCF",
-    "location": "Cambridge, MA",
-    "countryFlag": "🇲🇦",
+    "location": "::1",
+    "bio": "Technical Architect, Office of the CTO @bloomberg // Black engineer // Open source governance: @ossf, @kubernetes, @todogroup",
     "projects": [
       "Envoy"
     ],
@@ -3486,8 +3446,7 @@
     "name": "Ryan Hamilton",
     "handle": "ryantheoptimist",
     "company": "Google",
-    "location": "Taipei, Taiwan",
-    "countryFlag": "🇹🇼",
+    "location": "Seattle, WA",
     "projects": [
       "Envoy"
     ],
@@ -3565,8 +3524,7 @@
     "name": "Baiping Wang",
     "handle": "wbpcode",
     "company": "NetEase",
-    "location": "Los Angeles, CA",
-    "countryFlag": "🇨🇦",
+    "location": "www",
     "bio": "Feel free to ping me at Envoy slack if I am unresponsive to your PR/issue.",
     "projects": [
       "Envoy"
@@ -3630,7 +3588,7 @@
     "name": "Raven Black",
     "handle": "ravenblackx",
     "company": "Dropbox",
-    "location": "www",
+    "location": "Chicago",
     "projects": [
       "Envoy"
     ],
@@ -3766,8 +3724,7 @@
     "name": "Xunzhuo Liu",
     "handle": "xunzhuo",
     "company": "Tencent",
-    "location": "France",
-    "countryFlag": "🇫🇷",
+    "location": "🌏",
     "bio": "Intelligent Routing @vllm-project ",
     "projects": [
       "Envoy: Gateway (non-voting)",
@@ -3951,23 +3908,23 @@
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
-    "name": "Yi-Ying He",
-    "handle": "q82419",
-    "company": "Second State",
-    "location": "Taipei, Taiwan",
-    "countryFlag": "🇹🇼",
+    "name": "Isaac Wilson",
+    "handle": "jukie",
+    "company": "TheTradeDesk",
+    "location": "Cambridge, MA",
+    "countryFlag": "🇲🇦",
     "projects": [
-      "WasmEdge Runtime"
+      "Envoy: Gateway (non-voting)"
     ],
     "projectDetails": [
       {
-        "name": "WasmEdge Runtime",
-        "maturity": "Sandbox"
+        "name": "Envoy: Gateway (non-voting)",
+        "maturity": "Graduated"
       }
     ],
-    "maturity": "Sandbox",
-    "avatarUrl": "https://avatars.githubusercontent.com/q82419",
-    "logoUrl": "https://landscape.cncf.io/logos/6cdfd38b5fb9f4a31370a6ad4cd495c875775e018c371b6d598114174371fbb3.svg",
+    "maturity": "Graduated",
+    "avatarUrl": "https://avatars.githubusercontent.com/jukie",
+    "logoUrl": "https://landscape.cncf.io/logos/1cb1ec893e39b60f7d14dc76c6cc1e597b24be0161c0bdf9f97442fcb8d331f9.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
@@ -4172,8 +4129,7 @@
   {
     "name": "Miek Gieben",
     "handle": "miekg",
-    "location": "India",
-    "countryFlag": "🇮🇳",
+    "location": "🌏",
     "projects": [
       "CoreDNS"
     ],
@@ -4211,8 +4167,7 @@
   {
     "name": "Brad Beam",
     "handle": "bradbeam",
-    "location": "Mountain View, CA",
-    "countryFlag": "🇨🇦",
+    "location": "Munich",
     "projects": [
       "CoreDNS"
     ],
@@ -4325,21 +4280,21 @@
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
-    "name": "Michael Grosser",
-    "handle": "stp-ip",
-    "location": "San Francisco",
+    "name": "Maayan Friedman",
+    "handle": "maayanf24",
+    "company": "Red Hat",
     "projects": [
-      "CoreDNS"
+      "Submariner"
     ],
     "projectDetails": [
       {
-        "name": "CoreDNS",
-        "maturity": "Graduated"
+        "name": "Submariner",
+        "maturity": "Sandbox"
       }
     ],
-    "maturity": "Graduated",
-    "avatarUrl": "https://avatars.githubusercontent.com/stp-ip",
-    "logoUrl": "https://landscape.cncf.io/logos/9f366c2d009f0fc6fa4dd5fbfc4dbb462f3d20a09c534d3e4ced67dcb9b092b1.svg",
+    "maturity": "Sandbox",
+    "avatarUrl": "https://avatars.githubusercontent.com/maayanf24",
+    "logoUrl": "https://landscape.cncf.io/logos/58ee5bb2fb1d6492724bbc8926162b64c52a7d05d539733affdbec839da55c0b.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
@@ -5500,26 +5455,23 @@
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
-    "name": "Hung-Ying Tai",
-    "handle": "hydai",
-    "company": "Second State",
+    "name": "Lidi Zheng",
+    "handle": "lidizheng",
+    "company": "Google",
+    "location": "Mountain View, CA",
+    "countryFlag": "🇨🇦",
     "projects": [
-      "WasmEdge Runtime",
-      "Kuasar"
+      "GRPC"
     ],
     "projectDetails": [
       {
-        "name": "WasmEdge Runtime",
-        "maturity": "Sandbox"
-      },
-      {
-        "name": "Kuasar",
-        "maturity": "Sandbox"
+        "name": "GRPC",
+        "maturity": "Incubating"
       }
     ],
-    "maturity": "Sandbox",
-    "avatarUrl": "https://avatars.githubusercontent.com/hydai",
-    "logoUrl": "https://landscape.cncf.io/logos/4bd193701e529754d6eb52cdae5e9adca6b1e8d2b5e54e5ae92cfb6789c888fa.svg",
+    "maturity": "Incubating",
+    "avatarUrl": "https://avatars.githubusercontent.com/lidizheng",
+    "logoUrl": "https://landscape.cncf.io/logos/91304b6bc0ca2e9107c18c43a5732879d478909b6d2761b62af2beb445829d48.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
@@ -5757,27 +5709,21 @@
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
-    "name": "Michael Yuan",
-    "handle": "juntao",
-    "company": "Second State",
+    "name": "Sanjay Pujare",
+    "handle": "sanjaypujare",
+    "company": "Google",
     "projects": [
-      "WasmEdge Runtime",
-      "Kuasar"
+      "GRPC"
     ],
     "projectDetails": [
       {
-        "name": "WasmEdge Runtime",
-        "maturity": "Sandbox"
-      },
-      {
-        "name": "Kuasar",
-        "maturity": "Sandbox"
+        "name": "GRPC",
+        "maturity": "Incubating"
       }
     ],
-    "maturity": "Sandbox",
-    "avatarUrl": "https://avatars.githubusercontent.com/juntao",
-    "ownersUrl": "https://github.com/WasmEdge/WasmEdge/blob/master/docs/OWNER.md",
-    "logoUrl": "https://landscape.cncf.io/logos/4bd193701e529754d6eb52cdae5e9adca6b1e8d2b5e54e5ae92cfb6789c888fa.svg",
+    "maturity": "Incubating",
+    "avatarUrl": "https://avatars.githubusercontent.com/sanjaypujare",
+    "logoUrl": "https://landscape.cncf.io/logos/91304b6bc0ca2e9107c18c43a5732879d478909b6d2761b62af2beb445829d48.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
@@ -17837,7 +17783,7 @@
     ],
     "maturity": "Sandbox",
     "avatarUrl": "https://avatars.githubusercontent.com/jacobweinstock",
-    "ownersUrl": "https://github.com/tinkerbell/org/blob/main/ADMINS.md",
+    "ownersUrl": "https://github.com/tinkerbell/org/blob/main/GOVERNANCE.md",
     "logoUrl": "https://landscape.cncf.io/logos/e4bfbb052ae2cfb520110a83ffa06c8e8850c04663634e0718dc2637d7657b96.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
@@ -18606,6 +18552,51 @@
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
+    "name": "Carlos Tadeu Panato Jr.",
+    "handle": "cpanato",
+    "company": "Chainguard, Inc",
+    "location": "Berlin",
+    "projects": [
+      "Kubernetes Maintainers",
+      "Falco"
+    ],
+    "projectDetails": [
+      {
+        "name": "Kubernetes Maintainers",
+        "maturity": "Graduated"
+      },
+      {
+        "name": "Falco",
+        "maturity": "Graduated"
+      }
+    ],
+    "maturity": "Graduated",
+    "avatarUrl": "https://avatars.githubusercontent.com/cpanato",
+    "logoUrl": "https://landscape.cncf.io/logos/4b03a845c7d926abfb00df4ed9c16fc5a024b700fa1aea4984b1d8393550d46d.svg",
+    "updatedAt": "2026-04-06T19:20:27.880551642Z"
+  },
+  {
+    "name": "Cailyn Edwards",
+    "handle": "cailyn-codes",
+    "company": "Okta",
+    "location": "Canada",
+    "countryFlag": "🇨🇦",
+    "bio": "Senior Security Engineer\r\nKubernetes Org Member",
+    "projects": [
+      "Kubernetes Maintainers"
+    ],
+    "projectDetails": [
+      {
+        "name": "Kubernetes Maintainers",
+        "maturity": "Graduated"
+      }
+    ],
+    "maturity": "Graduated",
+    "avatarUrl": "https://avatars.githubusercontent.com/cailyn-codes",
+    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
+    "updatedAt": "2026-04-06T19:20:27.880551642Z"
+  },
+  {
     "name": "Jake Nichols",
     "handle": "jnichols-git",
     "company": "Argano",
@@ -18624,60 +18615,6 @@
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
-    "name": "Aidan Hahn",
-    "handle": "aidanhahn",
-    "projects": [
-      "Emissary-ingress"
-    ],
-    "projectDetails": [
-      {
-        "name": "Emissary-ingress",
-        "maturity": "Incubating"
-      }
-    ],
-    "maturity": "Incubating",
-    "avatarUrl": "https://avatars.githubusercontent.com/aidanhahn",
-    "ownersUrl": "https://github.com/emissary-ingress/emissary/blob/master/MAINTAINERS.md",
-    "logoUrl": "https://landscape.cncf.io/logos/19518469b70b8e3e3789e07a400f80d60e89bdb23c8017b04515515bbda4f64e.svg",
-    "updatedAt": "2026-04-06T19:20:27.880551642Z"
-  },
-  {
-    "name": "Alex Gervais",
-    "handle": "alexgervais",
-    "company": "Ambassador Labs",
-    "projects": [
-      "Emissary-ingress"
-    ],
-    "projectDetails": [
-      {
-        "name": "Emissary-ingress",
-        "maturity": "Incubating"
-      }
-    ],
-    "maturity": "Incubating",
-    "avatarUrl": "https://avatars.githubusercontent.com/alexgervais",
-    "logoUrl": "https://landscape.cncf.io/logos/19518469b70b8e3e3789e07a400f80d60e89bdb23c8017b04515515bbda4f64e.svg",
-    "updatedAt": "2026-04-06T19:20:27.880551642Z"
-  },
-  {
-    "name": "Alice Wasko",
-    "handle": "aliceproxy",
-    "company": "Ambassador Labs",
-    "projects": [
-      "Emissary-ingress"
-    ],
-    "projectDetails": [
-      {
-        "name": "Emissary-ingress",
-        "maturity": "Incubating"
-      }
-    ],
-    "maturity": "Incubating",
-    "avatarUrl": "https://avatars.githubusercontent.com/aliceproxy",
-    "logoUrl": "https://landscape.cncf.io/logos/19518469b70b8e3e3789e07a400f80d60e89bdb23c8017b04515515bbda4f64e.svg",
-    "updatedAt": "2026-04-06T19:20:27.880551642Z"
-  },
-  {
     "name": "Flynn",
     "handle": "kflynn",
     "company": "Buoyant",
@@ -18692,60 +18629,6 @@
     ],
     "maturity": "Incubating",
     "avatarUrl": "https://avatars.githubusercontent.com/kflynn",
-    "logoUrl": "https://landscape.cncf.io/logos/19518469b70b8e3e3789e07a400f80d60e89bdb23c8017b04515515bbda4f64e.svg",
-    "updatedAt": "2026-04-06T19:20:27.880551642Z"
-  },
-  {
-    "name": "Lance Austin",
-    "handle": "lanceea",
-    "company": "Ambassador Labs",
-    "projects": [
-      "Emissary-ingress"
-    ],
-    "projectDetails": [
-      {
-        "name": "Emissary-ingress",
-        "maturity": "Incubating"
-      }
-    ],
-    "maturity": "Incubating",
-    "avatarUrl": "https://avatars.githubusercontent.com/lanceea",
-    "logoUrl": "https://landscape.cncf.io/logos/19518469b70b8e3e3789e07a400f80d60e89bdb23c8017b04515515bbda4f64e.svg",
-    "updatedAt": "2026-04-06T19:20:27.880551642Z"
-  },
-  {
-    "name": "Luke Shumaker",
-    "handle": "lukeshu",
-    "company": "Ambassador Labs",
-    "projects": [
-      "Emissary-ingress"
-    ],
-    "projectDetails": [
-      {
-        "name": "Emissary-ingress",
-        "maturity": "Incubating"
-      }
-    ],
-    "maturity": "Incubating",
-    "avatarUrl": "https://avatars.githubusercontent.com/lukeshu",
-    "logoUrl": "https://landscape.cncf.io/logos/19518469b70b8e3e3789e07a400f80d60e89bdb23c8017b04515515bbda4f64e.svg",
-    "updatedAt": "2026-04-06T19:20:27.880551642Z"
-  },
-  {
-    "name": "Rafael Schloming",
-    "handle": "rhs",
-    "company": "Ambassador Labs",
-    "projects": [
-      "Emissary-ingress"
-    ],
-    "projectDetails": [
-      {
-        "name": "Emissary-ingress",
-        "maturity": "Incubating"
-      }
-    ],
-    "maturity": "Incubating",
-    "avatarUrl": "https://avatars.githubusercontent.com/rhs",
     "logoUrl": "https://landscape.cncf.io/logos/19518469b70b8e3e3789e07a400f80d60e89bdb23c8017b04515515bbda4f64e.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
@@ -19634,26 +19517,24 @@
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
-    "name": "Kat Cosgrove",
-    "handle": "katcosgrove",
-    "company": "Minimus",
-    "location": "Colorado Springs, CO",
-    "countryFlag": "🇨🇴",
-    "bio": "Head of Developer Advocacy at Minimus, \r\n\r\n@kubernetes Steering Committee + Release Team Subproject Lead, SIG Docs Tech Lead, Kubernetes v1.30 Release Lead",
+    "name": "Weibin Zeng",
+    "handle": "acezen",
+    "company": "Alibaba",
+    "location": "China",
+    "countryFlag": "🇨🇳",
     "projects": [
-      "Kubernetes Steering"
+      "Vineyard"
     ],
     "projectDetails": [
       {
-        "name": "Kubernetes Steering",
-        "maturity": "Graduated"
+        "name": "Vineyard",
+        "maturity": "Sandbox"
       }
     ],
-    "maturity": "Graduated",
-    "avatarUrl": "https://avatars.githubusercontent.com/katcosgrove",
-    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
-    "updatedAt": "2026-04-06T19:20:27.880551642Z",
-    "yearsContributing": 6
+    "maturity": "Sandbox",
+    "avatarUrl": "https://avatars.githubusercontent.com/acezen",
+    "logoUrl": "https://landscape.cncf.io/logos/56b0b5b743b3ef7b5366e800c6ce92d935aa8a7cede0f69e0cd89425d098b438.svg",
+    "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
     "name": "Siyuan Zhang",
@@ -19692,68 +19573,78 @@
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
-    "name": "Sanjay Pujare",
-    "handle": "sanjaypujare",
-    "company": "Google",
+    "name": "Michael Yuan",
+    "handle": "juntao",
+    "company": "Second State",
     "projects": [
-      "GRPC"
+      "WasmEdge Runtime",
+      "Kuasar"
     ],
     "projectDetails": [
       {
-        "name": "GRPC",
-        "maturity": "Incubating"
+        "name": "WasmEdge Runtime",
+        "maturity": "Sandbox"
+      },
+      {
+        "name": "Kuasar",
+        "maturity": "Sandbox"
       }
     ],
-    "maturity": "Incubating",
-    "avatarUrl": "https://avatars.githubusercontent.com/sanjaypujare",
-    "logoUrl": "https://landscape.cncf.io/logos/91304b6bc0ca2e9107c18c43a5732879d478909b6d2761b62af2beb445829d48.svg",
+    "maturity": "Sandbox",
+    "avatarUrl": "https://avatars.githubusercontent.com/juntao",
+    "ownersUrl": "https://github.com/WasmEdge/WasmEdge/blob/master/docs/OWNER.md",
+    "logoUrl": "https://landscape.cncf.io/logos/4bd193701e529754d6eb52cdae5e9adca6b1e8d2b5e54e5ae92cfb6789c888fa.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
-    "name": "Maciej Szulik",
-    "handle": "soltysh",
-    "company": "Defense Unicorns",
-    "location": "Poland",
-    "countryFlag": "🇵🇱",
-    "bio": "Kubernout by day, Pythonista by night, open source enthusiast and amateur photographer.",
+    "name": "Hung-Ying Tai",
+    "handle": "hydai",
+    "company": "Second State",
     "projects": [
-      "Kubernetes Steering"
+      "WasmEdge Runtime",
+      "Kuasar"
     ],
     "projectDetails": [
       {
-        "name": "Kubernetes Steering",
-        "maturity": "Graduated"
+        "name": "WasmEdge Runtime",
+        "maturity": "Sandbox"
+      },
+      {
+        "name": "Kuasar",
+        "maturity": "Sandbox"
       }
     ],
-    "maturity": "Graduated",
-    "avatarUrl": "https://avatars.githubusercontent.com/soltysh",
-    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
-    "updatedAt": "2026-04-06T19:20:27.880551642Z",
-    "yearsContributing": 5
+    "maturity": "Sandbox",
+    "avatarUrl": "https://avatars.githubusercontent.com/hydai",
+    "logoUrl": "https://landscape.cncf.io/logos/4bd193701e529754d6eb52cdae5e9adca6b1e8d2b5e54e5ae92cfb6789c888fa.svg",
+    "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
-    "name": "Isaac Wilson",
-    "handle": "jukie",
-    "company": "TheTradeDesk",
-    "location": "Stockholm",
+    "name": "Yi-Ying He",
+    "handle": "q82419",
+    "company": "Second State",
+    "location": "Taipei, Taiwan",
+    "countryFlag": "🇹🇼",
     "projects": [
-      "Envoy: Gateway (non-voting)"
+      "WasmEdge Runtime"
     ],
     "projectDetails": [
       {
-        "name": "Envoy: Gateway (non-voting)",
-        "maturity": "Graduated"
+        "name": "WasmEdge Runtime",
+        "maturity": "Sandbox"
       }
     ],
-    "maturity": "Graduated",
-    "avatarUrl": "https://avatars.githubusercontent.com/jukie",
-    "logoUrl": "https://landscape.cncf.io/logos/1cb1ec893e39b60f7d14dc76c6cc1e597b24be0161c0bdf9f97442fcb8d331f9.svg",
+    "maturity": "Sandbox",
+    "avatarUrl": "https://avatars.githubusercontent.com/q82419",
+    "logoUrl": "https://landscape.cncf.io/logos/6cdfd38b5fb9f4a31370a6ad4cd495c875775e018c371b6d598114174371fbb3.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
     "name": "Shen-Ta Hsieh(BestSteve)",
     "handle": "ibmibmibm",
     "company": "Second State",
+    "location": "Taipei, Taiwan",
+    "countryFlag": "🇹🇼",
     "projects": [
       "WasmEdge Runtime"
     ],
@@ -19788,21 +19679,23 @@
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
-    "name": "Camix",
-    "handle": "mandsss",
-    "company": "Alibaba",
+    "name": "Brian McQueen",
+    "handle": "xmcqueen",
+    "company": "LinkedIn",
+    "location": "Raleigh, NC",
+    "countryFlag": "🇳🇨",
     "projects": [
-      "ChaosBlade"
+      "Kubernetes Maintainers"
     ],
     "projectDetails": [
       {
-        "name": "ChaosBlade",
-        "maturity": "Sandbox"
+        "name": "Kubernetes Maintainers",
+        "maturity": "Graduated"
       }
     ],
-    "maturity": "Sandbox",
-    "avatarUrl": "https://avatars.githubusercontent.com/mandsss",
-    "logoUrl": "https://landscape.cncf.io/logos/caa1f058080a24732f722144452f3a67dcb0dd541457197ef20b523321a74f30.svg",
+    "maturity": "Graduated",
+    "avatarUrl": "https://avatars.githubusercontent.com/xmcqueen",
+    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
@@ -19905,6 +19798,8 @@
     "name": "Zhihao Xu",
     "handle": "trafalgarzzz",
     "company": "Nanjing University",
+    "location": "Beijing, China",
+    "countryFlag": "🇨🇳",
     "projects": [
       "Fluid"
     ],
@@ -19923,6 +19818,8 @@
     "name": "Kai Zhang",
     "handle": "wsxiaozhang",
     "company": "Alibaba",
+    "location": "Beijing, China",
+    "countryFlag": "🇨🇳",
     "projects": [
       "Fluid"
     ],
@@ -19994,57 +19891,58 @@
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
-    "name": "Maayan Friedman",
-    "handle": "maayanf24",
-    "company": "Red Hat",
+    "name": "Michael Grosser",
+    "handle": "stp-ip",
+    "location": "San Francisco",
     "projects": [
-      "Submariner"
+      "CoreDNS"
     ],
     "projectDetails": [
       {
-        "name": "Submariner",
-        "maturity": "Sandbox"
+        "name": "CoreDNS",
+        "maturity": "Graduated"
       }
     ],
-    "maturity": "Sandbox",
-    "avatarUrl": "https://avatars.githubusercontent.com/maayanf24",
-    "logoUrl": "https://landscape.cncf.io/logos/58ee5bb2fb1d6492724bbc8926162b64c52a7d05d539733affdbec839da55c0b.svg",
+    "maturity": "Graduated",
+    "avatarUrl": "https://avatars.githubusercontent.com/stp-ip",
+    "logoUrl": "https://landscape.cncf.io/logos/9f366c2d009f0fc6fa4dd5fbfc4dbb462f3d20a09c534d3e4ced67dcb9b092b1.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
-    "name": "Mike Kolesnik",
-    "handle": "mkolesnik",
-    "company": "Red Hat",
+    "name": "Ciprian Hacman",
+    "handle": "hakman",
+    "company": "Microsoft",
+    "location": "Europe",
     "projects": [
-      "Submariner"
+      "Kubernetes Maintainers"
     ],
     "projectDetails": [
       {
-        "name": "Submariner",
-        "maturity": "Sandbox"
+        "name": "Kubernetes Maintainers",
+        "maturity": "Graduated"
       }
     ],
-    "maturity": "Sandbox",
-    "avatarUrl": "https://avatars.githubusercontent.com/mkolesnik",
-    "logoUrl": "https://landscape.cncf.io/logos/58ee5bb2fb1d6492724bbc8926162b64c52a7d05d539733affdbec839da55c0b.svg",
+    "maturity": "Graduated",
+    "avatarUrl": "https://avatars.githubusercontent.com/hakman",
+    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
-    "name": "Sridhar Gaddam",
-    "handle": "sridhargaddam",
-    "company": "Red Hat",
+    "name": "Mike Spreitzer",
+    "handle": "mikespreitzer",
+    "company": "IBM",
     "projects": [
-      "Submariner"
+      "KubeStellar"
     ],
     "projectDetails": [
       {
-        "name": "Submariner",
+        "name": "KubeStellar",
         "maturity": "Sandbox"
       }
     ],
     "maturity": "Sandbox",
-    "avatarUrl": "https://avatars.githubusercontent.com/sridhargaddam",
-    "logoUrl": "https://landscape.cncf.io/logos/58ee5bb2fb1d6492724bbc8926162b64c52a7d05d539733affdbec839da55c0b.svg",
+    "avatarUrl": "https://avatars.githubusercontent.com/mikespreitzer",
+    "logoUrl": "https://landscape.cncf.io/logos/e99ca164b6ec177f6e5f447e7e45918ffee752f0985e4fff60fcde5f1b57cc3b.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
@@ -21032,7 +20930,7 @@
     "maturity": "Sandbox",
     "avatarUrl": "https://avatars.githubusercontent.com/sabre1041",
     "ownersUrl": "https://github.com/oras-project/community/blob/main/OWNERS.md",
-    "logoUrl": "https://landscape.cncf.io/logos/2121ac233715cffe4a7d3c1debc815f2b3f2d6920ebd37be8a5b17298e4bd0a4.svg",
+    "logoUrl": "https://landscape.cncf.io/logos/fa04acc08179dba2cf0445597c7ed962152df50dadde4507f54247c3d77afeb5.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
@@ -21109,7 +21007,7 @@
     ],
     "maturity": "Incubating",
     "avatarUrl": "https://avatars.githubusercontent.com/brooksmtownsend",
-    "ownersUrl": "https://github.com/wasmCloud/wasmCloud/blob/main/MAINTAINERS.md",
+    "ownersUrl": "https://github.com/wasmCloud/wasmCloud/blob/main/.github/CODEOWNERS",
     "logoUrl": "https://landscape.cncf.io/logos/2db2c27b8fd1ce0818a450bd1952c18b2ca72ca8f7c47e06c426f676e9094b17.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
@@ -22701,7 +22599,7 @@
     ],
     "maturity": "Sandbox",
     "avatarUrl": "https://avatars.githubusercontent.com/clux",
-    "ownersUrl": "https://github.com/kube-rs/.github/blob/main/maintainers.md",
+    "ownersUrl": "https://github.com/kube-rs/website/blob/main/docs/maintainers.md",
     "logoUrl": "https://landscape.cncf.io/logos/3fd24fb604916cf198ce47b362d659c36b3836a7d0652c88cf19f4a6abac3516.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
@@ -26315,6 +26213,31 @@
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
+    "name": "Bridget Kromhout",
+    "handle": "bridgetkromhout",
+    "company": "Microsoft",
+    "location": "Minneapolis, Minnesota",
+    "bio": "bridgetkromhout.com",
+    "projects": [
+      "Kubernetes Maintainers",
+      "Hyperlight"
+    ],
+    "projectDetails": [
+      {
+        "name": "Kubernetes Maintainers",
+        "maturity": "Graduated"
+      },
+      {
+        "name": "Hyperlight",
+        "maturity": "Sandbox"
+      }
+    ],
+    "maturity": "Graduated",
+    "avatarUrl": "https://avatars.githubusercontent.com/bridgetkromhout",
+    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
+    "updatedAt": "2026-04-06T19:20:27.880551642Z"
+  },
+  {
     "name": "Tong Li",
     "handle": "litong01",
     "company": "IBM",
@@ -28311,25 +28234,6 @@
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
-    "name": "Sunil Thaha",
-    "handle": "sthaha",
-    "company": "Red Hat",
-    "projects": [
-      "Kepler"
-    ],
-    "projectDetails": [
-      {
-        "name": "Kepler",
-        "maturity": "Sandbox"
-      }
-    ],
-    "maturity": "Sandbox",
-    "avatarUrl": "https://avatars.githubusercontent.com/sthaha",
-    "ownersUrl": "https://github.com/sustainable-computing-io/kepler/blob/main/MAINTAINERS.md",
-    "logoUrl": "https://landscape.cncf.io/logos/6df80d6b2985ade2f7bf259fb8cb1c9379ef50ae6ecdea6a5763b0b1db2d6437.svg",
-    "updatedAt": "2026-04-06T19:20:27.880551642Z"
-  },
-  {
     "name": "Vimal Kumar",
     "handle": "vimalk78",
     "company": "Red Hat",
@@ -28344,6 +28248,7 @@
     ],
     "maturity": "Sandbox",
     "avatarUrl": "https://avatars.githubusercontent.com/vimalk78",
+    "ownersUrl": "https://github.com/sustainable-computing-io/kepler/blob/main/MAINTAINERS.md",
     "logoUrl": "https://landscape.cncf.io/logos/6df80d6b2985ade2f7bf259fb8cb1c9379ef50ae6ecdea6a5763b0b1db2d6437.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
@@ -28384,6 +28289,24 @@
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
+    "name": "Sunil Thaha",
+    "handle": "sthaha",
+    "company": "Red Hat",
+    "projects": [
+      "Kepler"
+    ],
+    "projectDetails": [
+      {
+        "name": "Kepler",
+        "maturity": "Sandbox"
+      }
+    ],
+    "maturity": "Sandbox",
+    "avatarUrl": "https://avatars.githubusercontent.com/sthaha",
+    "logoUrl": "https://landscape.cncf.io/logos/6df80d6b2985ade2f7bf259fb8cb1c9379ef50ae6ecdea6a5763b0b1db2d6437.svg",
+    "updatedAt": "2026-04-06T19:20:27.880551642Z"
+  },
+  {
     "name": "Peng Hui Jiang",
     "handle": "jiangphcn",
     "company": "cogiot",
@@ -28420,23 +28343,6 @@
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
-    "name": "Qi Feng Huo",
-    "handle": "huoqifeng",
-    "projects": [
-      "Kepler"
-    ],
-    "projectDetails": [
-      {
-        "name": "Kepler",
-        "maturity": "Sandbox"
-      }
-    ],
-    "maturity": "Sandbox",
-    "avatarUrl": "https://avatars.githubusercontent.com/huoqifeng",
-    "logoUrl": "https://landscape.cncf.io/logos/6df80d6b2985ade2f7bf259fb8cb1c9379ef50ae6ecdea6a5763b0b1db2d6437.svg",
-    "updatedAt": "2026-04-06T19:20:27.880551642Z"
-  },
-  {
     "name": "Yi Yuan",
     "handle": "samyuan1990",
     "projects": [
@@ -28469,6 +28375,26 @@
     "maturity": "Sandbox",
     "avatarUrl": "https://avatars.githubusercontent.com/sunya-ch",
     "logoUrl": "https://landscape.cncf.io/logos/6df80d6b2985ade2f7bf259fb8cb1c9379ef50ae6ecdea6a5763b0b1db2d6437.svg",
+    "updatedAt": "2026-04-06T19:20:27.880551642Z"
+  },
+  {
+    "name": "Brady Pratt",
+    "handle": "jbpratt",
+    "company": "Red Hat",
+    "location": "United States",
+    "countryFlag": "🇺🇸",
+    "projects": [
+      "Kubernetes Maintainers"
+    ],
+    "projectDetails": [
+      {
+        "name": "Kubernetes Maintainers",
+        "maturity": "Graduated"
+      }
+    ],
+    "maturity": "Graduated",
+    "avatarUrl": "https://avatars.githubusercontent.com/jbpratt",
+    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
@@ -30684,21 +30610,21 @@
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
-    "name": "Mike Spreitzer",
-    "handle": "mikespreitzer",
-    "company": "IBM",
+    "name": "Sridhar Gaddam",
+    "handle": "sridhargaddam",
+    "company": "Red Hat",
     "projects": [
-      "KubeStellar"
+      "Submariner"
     ],
     "projectDetails": [
       {
-        "name": "KubeStellar",
+        "name": "Submariner",
         "maturity": "Sandbox"
       }
     ],
     "maturity": "Sandbox",
-    "avatarUrl": "https://avatars.githubusercontent.com/mikespreitzer",
-    "logoUrl": "https://landscape.cncf.io/logos/e99ca164b6ec177f6e5f447e7e45918ffee752f0985e4fff60fcde5f1b57cc3b.svg",
+    "avatarUrl": "https://avatars.githubusercontent.com/sridhargaddam",
+    "logoUrl": "https://landscape.cncf.io/logos/58ee5bb2fb1d6492724bbc8926162b64c52a7d05d539733affdbec839da55c0b.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
@@ -35439,7 +35365,7 @@
     ],
     "maturity": "Sandbox",
     "avatarUrl": "https://avatars.githubusercontent.com/ryanzhang-oss",
-    "ownersUrl": "https://github.com/Azure/fleet/blob/main/MAINTAINERS.md",
+    "ownersUrl": "https://github.com/kubefleet-dev/kubefleet/blob/main/MAINTAINERS.md",
     "logoUrl": "https://landscape.cncf.io/logos/26deccd15dfef9b5878217767670ecaf50b66be199b451c1bb4caf2ab5a801f9.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
@@ -35477,6 +35403,91 @@
     "maturity": "Sandbox",
     "avatarUrl": "https://avatars.githubusercontent.com/michaelawyu",
     "logoUrl": "https://landscape.cncf.io/logos/26deccd15dfef9b5878217767670ecaf50b66be199b451c1bb4caf2ab5a801f9.svg",
+    "updatedAt": "2026-04-06T19:20:27.880551642Z"
+  },
+  {
+    "name": "Benjamin Wang",
+    "handle": "ahrtr",
+    "company": "Broadcom",
+    "location": "London, UK",
+    "countryFlag": "🇬🇧",
+    "bio": "sig-etcd tech lead",
+    "projects": [
+      "Kubernetes Maintainers",
+      "Etcd"
+    ],
+    "projectDetails": [
+      {
+        "name": "Kubernetes Maintainers",
+        "maturity": "Graduated"
+      },
+      {
+        "name": "Etcd",
+        "maturity": "Graduated"
+      }
+    ],
+    "maturity": "Graduated",
+    "avatarUrl": "https://avatars.githubusercontent.com/ahrtr",
+    "ownersUrl": "https://github.com/etcd-io/etcd/blob/main/OWNERS",
+    "logoUrl": "https://landscape.cncf.io/logos/0d8c081f2c074582caafefe4b135388d3e62c6e64ca1faf2058743c9d784f14f.svg",
+    "updatedAt": "2026-04-06T19:20:27.880551642Z"
+  },
+  {
+    "name": "Arnaud Meukam",
+    "handle": "ameukam",
+    "company": "Independent",
+    "location": "Earth",
+    "projects": [
+      "Kubernetes Maintainers"
+    ],
+    "projectDetails": [
+      {
+        "name": "Kubernetes Maintainers",
+        "maturity": "Graduated"
+      }
+    ],
+    "maturity": "Graduated",
+    "avatarUrl": "https://avatars.githubusercontent.com/ameukam",
+    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
+    "updatedAt": "2026-04-06T19:20:27.880551642Z"
+  },
+  {
+    "name": "Arda Guclu",
+    "handle": "ardaguclu",
+    "company": "Red Hat",
+    "location": "Türkiye",
+    "countryFlag": "🇹🇷",
+    "projects": [
+      "Kubernetes Maintainers"
+    ],
+    "projectDetails": [
+      {
+        "name": "Kubernetes Maintainers",
+        "maturity": "Graduated"
+      }
+    ],
+    "maturity": "Graduated",
+    "avatarUrl": "https://avatars.githubusercontent.com/ardaguclu",
+    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
+    "updatedAt": "2026-04-06T19:20:27.880551642Z"
+  },
+  {
+    "name": "Aravindh Puthiyaparambil",
+    "handle": "aravindhp",
+    "company": "Softdrive Technologies Group Inc.",
+    "location": "www",
+    "projects": [
+      "Kubernetes Maintainers"
+    ],
+    "projectDetails": [
+      {
+        "name": "Kubernetes Maintainers",
+        "maturity": "Graduated"
+      }
+    ],
+    "maturity": "Graduated",
+    "avatarUrl": "https://avatars.githubusercontent.com/aravindhp",
+    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
@@ -36032,7 +36043,7 @@
     "maturity": "Sandbox",
     "avatarUrl": "https://avatars.githubusercontent.com/gorkem",
     "ownersUrl": "https://github.com/kitops-ml/kitops/blob/main/MAINTAINERS.md",
-    "logoUrl": "https://landscape.cncf.io/logos/2121ac233715cffe4a7d3c1debc815f2b3f2d6920ebd37be8a5b17298e4bd0a4.svg",
+    "logoUrl": "https://landscape.cncf.io/logos/fa04acc08179dba2cf0445597c7ed962152df50dadde4507f54247c3d77afeb5.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
@@ -36055,7 +36066,7 @@
     ],
     "maturity": "Sandbox",
     "avatarUrl": "https://avatars.githubusercontent.com/bmicklea",
-    "logoUrl": "https://landscape.cncf.io/logos/2121ac233715cffe4a7d3c1debc815f2b3f2d6920ebd37be8a5b17298e4bd0a4.svg",
+    "logoUrl": "https://landscape.cncf.io/logos/fa04acc08179dba2cf0445597c7ed962152df50dadde4507f54247c3d77afeb5.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
@@ -36621,7 +36632,7 @@
     ],
     "maturity": "Sandbox",
     "avatarUrl": "https://avatars.githubusercontent.com/raravena80",
-    "logoUrl": "https://landscape.cncf.io/logos/2121ac233715cffe4a7d3c1debc815f2b3f2d6920ebd37be8a5b17298e4bd0a4.svg",
+    "logoUrl": "https://landscape.cncf.io/logos/fa04acc08179dba2cf0445597c7ed962152df50dadde4507f54247c3d77afeb5.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
@@ -36638,7 +36649,7 @@
     ],
     "maturity": "Sandbox",
     "avatarUrl": "https://avatars.githubusercontent.com/aftersnow",
-    "logoUrl": "https://landscape.cncf.io/logos/2121ac233715cffe4a7d3c1debc815f2b3f2d6920ebd37be8a5b17298e4bd0a4.svg",
+    "logoUrl": "https://landscape.cncf.io/logos/fa04acc08179dba2cf0445597c7ed962152df50dadde4507f54247c3d77afeb5.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
@@ -36656,7 +36667,7 @@
     "maturity": "Sandbox",
     "avatarUrl": "https://avatars.githubusercontent.com/sourishkrout",
     "ownersUrl": "https://github.com/runmedev/runme/blob/main/MAINTAINERS.md",
-    "logoUrl": "https://landscape.cncf.io/logos/2121ac233715cffe4a7d3c1debc815f2b3f2d6920ebd37be8a5b17298e4bd0a4.svg",
+    "logoUrl": "https://landscape.cncf.io/logos/4d080e8e3c05893d3d6a468ab67e861ae365d41b53ff5b0c0afdaa6e537902cc.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
@@ -36673,7 +36684,7 @@
     ],
     "maturity": "Sandbox",
     "avatarUrl": "https://avatars.githubusercontent.com/adambabik",
-    "logoUrl": "https://landscape.cncf.io/logos/2121ac233715cffe4a7d3c1debc815f2b3f2d6920ebd37be8a5b17298e4bd0a4.svg",
+    "logoUrl": "https://landscape.cncf.io/logos/4d080e8e3c05893d3d6a468ab67e861ae365d41b53ff5b0c0afdaa6e537902cc.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
@@ -36690,7 +36701,7 @@
     ],
     "maturity": "Sandbox",
     "avatarUrl": "https://avatars.githubusercontent.com/pastuxso",
-    "logoUrl": "https://landscape.cncf.io/logos/2121ac233715cffe4a7d3c1debc815f2b3f2d6920ebd37be8a5b17298e4bd0a4.svg",
+    "logoUrl": "https://landscape.cncf.io/logos/4d080e8e3c05893d3d6a468ab67e861ae365d41b53ff5b0c0afdaa6e537902cc.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
@@ -36707,7 +36718,7 @@
     ],
     "maturity": "Sandbox",
     "avatarUrl": "https://avatars.githubusercontent.com/peraltafederico",
-    "logoUrl": "https://landscape.cncf.io/logos/2121ac233715cffe4a7d3c1debc815f2b3f2d6920ebd37be8a5b17298e4bd0a4.svg",
+    "logoUrl": "https://landscape.cncf.io/logos/4d080e8e3c05893d3d6a468ab67e861ae365d41b53ff5b0c0afdaa6e537902cc.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
@@ -36724,7 +36735,7 @@
     ],
     "maturity": "Sandbox",
     "avatarUrl": "https://avatars.githubusercontent.com/admc",
-    "logoUrl": "https://landscape.cncf.io/logos/2121ac233715cffe4a7d3c1debc815f2b3f2d6920ebd37be8a5b17298e4bd0a4.svg",
+    "logoUrl": "https://landscape.cncf.io/logos/4d080e8e3c05893d3d6a468ab67e861ae365d41b53ff5b0c0afdaa6e537902cc.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
@@ -36741,7 +36752,7 @@
     ],
     "maturity": "Sandbox",
     "avatarUrl": "https://avatars.githubusercontent.com/jlewi",
-    "logoUrl": "https://landscape.cncf.io/logos/2121ac233715cffe4a7d3c1debc815f2b3f2d6920ebd37be8a5b17298e4bd0a4.svg",
+    "logoUrl": "https://landscape.cncf.io/logos/4d080e8e3c05893d3d6a468ab67e861ae365d41b53ff5b0c0afdaa6e537902cc.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
@@ -37485,6 +37496,27 @@
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
+    "name": "Anish Ramasekar",
+    "handle": "aramase",
+    "company": "Microsoft",
+    "location": "Seattle, WA",
+    "bio": "Kubernetes SIG Auth co-chair | Maintainer of Secrets Store CSI Driver",
+    "projects": [
+      "Kubernetes Maintainers"
+    ],
+    "projectDetails": [
+      {
+        "name": "Kubernetes Maintainers",
+        "maturity": "Graduated"
+      }
+    ],
+    "maturity": "Graduated",
+    "avatarUrl": "https://avatars.githubusercontent.com/aramase",
+    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
+    "updatedAt": "2026-04-06T19:20:27.880551642Z",
+    "yearsContributing": 8
+  },
+  {
     "name": "Katherine Hough",
     "handle": "katherine-hough",
     "company": "Amazon",
@@ -37519,6 +37551,85 @@
     "avatarUrl": "https://avatars.githubusercontent.com/lianah",
     "logoUrl": "https://landscape.cncf.io/logos/86477490a2670f3b7cb7e89ac64d76e66bf7c4516daf3e69c8cf742632d0f664.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
+  },
+  {
+    "name": "Adolfo García Veytia",
+    "handle": "puerco",
+    "company": "Carabiner Systems, Inc",
+    "location": "United States",
+    "countryFlag": "🇺🇸",
+    "bio": "⎈ @Kubernetes SIG Release Technical Lead\r\n🔗 Software Engineer \r\n💡Founder @uServers @carabiner-dev \r\n:feather: Prev @mattermost @chainguard-dev @stacklok",
+    "projects": [
+      "Kubernetes Maintainers"
+    ],
+    "projectDetails": [
+      {
+        "name": "Kubernetes Maintainers",
+        "maturity": "Graduated"
+      }
+    ],
+    "maturity": "Graduated",
+    "avatarUrl": "https://avatars.githubusercontent.com/puerco",
+    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
+    "updatedAt": "2026-04-06T19:20:27.880551642Z",
+    "yearsContributing": 5
+  },
+  {
+    "name": "Sascha Grunert",
+    "handle": "saschagrunert",
+    "company": "Red Hat",
+    "location": "I’m on earth right now, sometimes in the air.",
+    "bio": "The difference between fine and great software is listening to people.",
+    "projects": [
+      "Kubernetes Steering",
+      "CRI-O",
+      "Youki"
+    ],
+    "projectDetails": [
+      {
+        "name": "Kubernetes Steering",
+        "maturity": "Graduated"
+      },
+      {
+        "name": "CRI-O",
+        "maturity": "Graduated"
+      },
+      {
+        "name": "Youki",
+        "maturity": "Sandbox"
+      }
+    ],
+    "maturity": "Graduated",
+    "avatarUrl": "https://avatars.githubusercontent.com/saschagrunert",
+    "logoUrl": "https://landscape.cncf.io/logos/710f6a5529c3084bf79e0584c92e2334ffd011714df93de4beb6de5af7f7b3ee.svg",
+    "updatedAt": "2026-04-06T19:20:27.880551642Z",
+    "yearsContributing": 6
+  },
+  {
+    "name": "Rita Zhang",
+    "handle": "ritazh",
+    "company": "Microsoft",
+    "location": "San Francisco",
+    "bio": "Kubernetes SIG Auth co-chair | Kubernetes Security Response Committee | Maintainer of Secrets Store CSI Driver | Maintainer of OPA Gatekeeper",
+    "projects": [
+      "Kubernetes Steering",
+      "Open Policy Agent"
+    ],
+    "projectDetails": [
+      {
+        "name": "Kubernetes Steering",
+        "maturity": "Graduated"
+      },
+      {
+        "name": "Open Policy Agent",
+        "maturity": "Graduated"
+      }
+    ],
+    "maturity": "Graduated",
+    "avatarUrl": "https://avatars.githubusercontent.com/ritazh",
+    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
+    "updatedAt": "2026-04-06T19:20:27.880551642Z",
+    "yearsContributing": 4
   },
   {
     "name": "Eitan Revach",
@@ -37557,34 +37668,39 @@
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
   },
   {
-    "name": "Benjamin Elder",
-    "handle": "bentheelder",
-    "company": "Google",
-    "location": "Sunnyvale, CA",
-    "countryFlag": "🇨🇦",
-    "bio": "Maintaining @kubernetes things. Kubernetes Steering Committee, SIG Testing TL, sigs.k8s.io/kind creator / maintainer ...",
+    "name": "Patrick Ohly",
+    "handle": "pohly",
+    "company": "Intel",
+    "location": "Germany",
+    "countryFlag": "🇩🇪",
+    "bio": "Senior Software Engineer at Intel",
     "projects": [
-      "Kubernetes Steering"
+      "Kubernetes Steering",
+      "Kubernetes Maintainers"
     ],
     "projectDetails": [
       {
         "name": "Kubernetes Steering",
         "maturity": "Graduated"
+      },
+      {
+        "name": "Kubernetes Maintainers",
+        "maturity": "Graduated"
       }
     ],
     "maturity": "Graduated",
-    "avatarUrl": "https://avatars.githubusercontent.com/bentheelder",
+    "avatarUrl": "https://avatars.githubusercontent.com/pohly",
     "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z",
-    "yearsContributing": 3
+    "yearsContributing": 9
   },
   {
-    "name": "Antonio Ojea",
-    "handle": "aojea",
-    "company": "Google",
-    "location": "Sunnyvale, CA",
-    "countryFlag": "🇨🇦",
-    "bio": "The Network is reliable, Latency is zero, Bandwidth is infinite, ...",
+    "name": "Paco Xu 徐俊杰",
+    "handle": "pacoxu",
+    "company": "DaoCloud",
+    "location": "Shanghai, China ",
+    "countryFlag": "🇨🇳",
+    "bio": "Kubernetes Contributor, Football Fan(Valencia and Liverpool), a Go enthusiast (both Golang and Weiqi/Go)",
     "projects": [
       "Kubernetes Steering"
     ],
@@ -37595,8 +37711,7 @@
       }
     ],
     "maturity": "Graduated",
-    "avatarUrl": "https://avatars.githubusercontent.com/aojea",
-    "ownersUrl": "https://git.k8s.io/steering#members",
+    "avatarUrl": "https://avatars.githubusercontent.com/pacoxu",
     "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z",
     "yearsContributing": 5
@@ -38569,5 +38684,94 @@
     "avatarUrl": "https://avatars.githubusercontent.com/qinqon",
     "logoUrl": "https://landscape.cncf.io/logos/a01fd73cf6d58d88f34aaa7c485a0778e529396256286c4b4b2fb2e4f2590c00.svg",
     "updatedAt": "2026-04-06T19:20:27.880551642Z"
+  },
+  {
+    "name": "Maciej Szulik",
+    "handle": "soltysh",
+    "company": "Defense Unicorns",
+    "location": "Poland",
+    "countryFlag": "🇵🇱",
+    "bio": "Kubernout by day, Pythonista by night, open source enthusiast and amateur photographer.",
+    "projects": [
+      "Kubernetes Steering"
+    ],
+    "projectDetails": [
+      {
+        "name": "Kubernetes Steering",
+        "maturity": "Graduated"
+      }
+    ],
+    "maturity": "Graduated",
+    "avatarUrl": "https://avatars.githubusercontent.com/soltysh",
+    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
+    "updatedAt": "2026-04-06T19:20:27.880551642Z",
+    "yearsContributing": 5
+  },
+  {
+    "name": "Kat Cosgrove",
+    "handle": "katcosgrove",
+    "company": "Minimus",
+    "location": "Colorado Springs, CO",
+    "countryFlag": "🇨🇴",
+    "bio": "Head of Developer Advocacy at Minimus, \r\n\r\n@kubernetes Steering Committee + Release Team Subproject Lead, SIG Docs Tech Lead, Kubernetes v1.30 Release Lead",
+    "projects": [
+      "Kubernetes Steering"
+    ],
+    "projectDetails": [
+      {
+        "name": "Kubernetes Steering",
+        "maturity": "Graduated"
+      }
+    ],
+    "maturity": "Graduated",
+    "avatarUrl": "https://avatars.githubusercontent.com/katcosgrove",
+    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
+    "updatedAt": "2026-04-06T19:20:27.880551642Z",
+    "yearsContributing": 6
+  },
+  {
+    "name": "Benjamin Elder",
+    "handle": "bentheelder",
+    "company": "Google",
+    "location": "Sunnyvale, CA",
+    "countryFlag": "🇨🇦",
+    "bio": "Maintaining @kubernetes things. Kubernetes Steering Committee, SIG Testing TL, sigs.k8s.io/kind creator / maintainer ...",
+    "projects": [
+      "Kubernetes Steering"
+    ],
+    "projectDetails": [
+      {
+        "name": "Kubernetes Steering",
+        "maturity": "Graduated"
+      }
+    ],
+    "maturity": "Graduated",
+    "avatarUrl": "https://avatars.githubusercontent.com/bentheelder",
+    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
+    "updatedAt": "2026-04-06T19:20:27.880551642Z",
+    "yearsContributing": 3
+  },
+  {
+    "name": "Antonio Ojea",
+    "handle": "aojea",
+    "company": "Google",
+    "location": "Sunnyvale, CA",
+    "countryFlag": "🇨🇦",
+    "bio": "The Network is reliable, Latency is zero, Bandwidth is infinite, ...",
+    "projects": [
+      "Kubernetes Steering"
+    ],
+    "projectDetails": [
+      {
+        "name": "Kubernetes Steering",
+        "maturity": "Graduated"
+      }
+    ],
+    "maturity": "Graduated",
+    "avatarUrl": "https://avatars.githubusercontent.com/aojea",
+    "ownersUrl": "https://git.k8s.io/steering#members",
+    "logoUrl": "https://landscape.cncf.io/logos/e0303fdc381c96c1b4461ad1a2437c8f050cfb856fcb8710c9104367ca60f316.svg",
+    "updatedAt": "2026-04-06T19:20:27.880551642Z",
+    "yearsContributing": 5
   }
 ]

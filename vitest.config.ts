@@ -9,5 +9,12 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     include: ['tests/unit/**/*.test.ts'],
+    coverage: {
+      include: ['src/lib/people/**'],
+      thresholds: {
+        statements: 70,
+        functions: 70,
+      },
+    },
   },
 });

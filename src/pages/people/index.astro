@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 import PeopleLayout from '../../components/PeopleLayout.astro';
+import PeopleLightbox from '../../components/people/PeopleLightbox.astro';
 import PersonCard from '../../components/people/PersonCard.astro';
 import HeroCard from '../../components/people/HeroCard.astro';
 import MaintainerCard from '../../components/people/MaintainerCard.astro';
@@ -759,6 +760,7 @@ for (const m of maintainerList) {
       </div>
     </div>
   </div>
+  <PeopleLightbox />
 </PeopleLayout>
 
 <style>
@@ -1021,6 +1023,7 @@ for (const m of maintainerList) {
   import { searchPeople, preloadSearchIndex } from '../../lib/people/search';
   import { applyTab } from '../../lib/people/tabs';
   import { initKeyboard } from '../../lib/keyboard';
+  import { initPersonLightbox, openPersonLightbox } from '../../lib/people/person-lightbox';
 
   function escapeHtml(s: string): string {
     return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -1054,6 +1057,9 @@ for (const m of maintainerList) {
     const activeTab = document.querySelector<HTMLButtonElement>('.section-link.active')?.dataset.tab ?? 'everyone';
     applyTab(activeTab);
   }
+
+  // Wire up person lightbox (dialog shell already in DOM via <PeopleLightbox />).
+  initPersonLightbox();
 
   // Kick off infinite scroll for the main timeline feed immediately — no logo gate.
   // changelog.json (4.1MB) takes longer than logos (476KB) so they arrive in parallel.
@@ -1111,17 +1117,27 @@ for (const m of maintainerList) {
     card.classList.add('pressing');
     setTimeout(() => card.classList.remove('pressing'), 200);
     const isMemorial = (card as HTMLElement).dataset.category === 'Memorial';
-    import('../../lib/people/hero-confetti').then(({ fireConfetti, fireHearts }) => {
+    import('../../lib/confetti').then(({ fireConfetti, fireHearts }) => {
       if (isMemorial) fireHearts(card);
       else fireConfetti(card);
     });
+    // Open person lightbox with person data embedded in data-person attribute.
+    const personJson = (card as HTMLElement).dataset.person;
+    if (personJson) {
+      try {
+        const person = JSON.parse(personJson);
+        openPersonLightbox(person, [], base);
+      } catch {
+        // ignore parse errors — lightbox just won't open
+      }
+    }
   });
 
   // Preload confetti logos on first hover over any hero card (improves logo burst on click).
   document.addEventListener('mouseover', (e: MouseEvent) => {
     const card = (e.target as Element)?.closest('.hero-card');
     if (card) {
-      import('../../lib/people/hero-confetti').then(({ preloadOnHover }) => preloadOnHover(card));
+      import('../../lib/confetti').then(({ preloadOnHover }) => preloadOnHover(card));
     }
   }, { once: true });
 
@@ -1129,7 +1145,7 @@ for (const m of maintainerList) {
   document.addEventListener('click', (e: MouseEvent) => {
     const card = (e.target as Element)?.closest('.staff-support-card');
     if (!card) return;
-    import('../../lib/people/hero-confetti').then(({ fireStarburst }) => fireStarburst(card));
+    import('../../lib/confetti').then(({ fireStarburst }) => fireStarburst(card));
   });
 
   // PersonCard / MaintainerCard: fountain using the card's accent color.
@@ -1137,7 +1153,7 @@ for (const m of maintainerList) {
     const card = (e.target as Element)?.closest('.person-card, .maintainer-card');
     if (!card) return;
     // Let normal link navigation happen (name, handle, company) — confetti fires alongside.
-    import('../../lib/people/hero-confetti').then(({ fireFountain }) => fireFountain(card));
+    import('../../lib/confetti').then(({ fireFountain }) => fireFountain(card));
   });
   const searchInput = document.getElementById('search-input') as HTMLInputElement;
   const typeFilter  = document.getElementById('type-filter') as HTMLSelectElement;
