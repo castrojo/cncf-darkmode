@@ -60,6 +60,7 @@ copy-data-to-public:
     @mkdir -p public/data/projects public/data/members public/data/people
     @cp src/data/projects/projects.json public/data/projects/ 2>/dev/null || true
     @cp src/data/projects/changelog.json public/data/projects/ 2>/dev/null || true
+    @cp src/data/projects/openssf-scores.json public/data/projects/ 2>/dev/null || true
     @cp src/data/members/members.json public/data/members/ 2>/dev/null || true
     @cp src/data/members/changelog.json public/data/members/ 2>/dev/null || true
     @cp src/data/members/architectures.json public/data/members/ 2>/dev/null || true

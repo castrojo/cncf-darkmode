@@ -31,6 +31,28 @@ export interface Maintainer {
   location?: string;
 }
 
+/** A single OpenSSF Scorecard check result (mirrors go/internal/scorecard). */
+export interface ScorecardCheck {
+  name: string;
+  score: number;
+  reason?: string;
+}
+
+/**
+ * A project's enriched OpenSSF Scorecard entry, as written to
+ * src/data/projects/openssf-scores.json by `go run ./cmd/enrich`.
+ * The map is keyed by project slug.
+ */
+export interface ScorecardEntry {
+  repo: string;
+  score: number;
+  date?: string;
+  checks?: ScorecardCheck[];
+  fetchedAt?: string;
+}
+
+export type ScorecardMap = Record<string, ScorecardEntry>;
+
 // ---------------------------------------------------------------------------
 // Utilities
 // ---------------------------------------------------------------------------
@@ -171,19 +193,47 @@ function renderStatsRow(p: SafeProject): string {
   return `<div class="plb2-stats-row">${items.join('')}</div>`;
 }
 
-function renderSecurityLinks(p: SafeProject): string {
+/**
+ * Colour for an OpenSSF Scorecard score (0–10 scale).
+ * Mirrors the upstream scorecard.dev viewer's traffic-light convention.
+ */
+function scorecardColor(score: number): string {
+  if (score >= 7) return '#22863a';
+  if (score >= 4) return '#e36209';
+  return '#cb2431';
+}
+
+function renderSecurityLinks(p: SafeProject, scorecard?: ScorecardEntry): string {
   const links: string[] = [];
   if (p.repoUrl) {
     const ghPath = p.repoUrl.replace(/^https?:\/\/github\.com\//, '');
-    links.push(`<a class="plb2-security-link" href="https://scorecard.dev/viewer/?uri=github.com/${escapeHtml(ghPath)}" target="_blank" rel="noopener noreferrer">🔐 OpenSSF Scorecard</a>`);
+    const scorecardHref = `https://scorecard.dev/viewer/?uri=github.com/${escapeHtml(ghPath)}`;
+    if (scorecard && typeof scorecard.score === 'number') {
+      const color = scorecardColor(scorecard.score);
+      links.push(`<a class="plb2-security-link plb2-scorecard-badge" style="--plb2-score-color:${color}" href="${scorecardHref}" target="_blank" rel="noopener noreferrer">🔐 OpenSSF Scorecard: <strong>${scorecard.score.toFixed(1)}</strong>/10</a>`);
+    } else {
+      links.push(`<a class="plb2-security-link" href="${scorecardHref}" target="_blank" rel="noopener noreferrer">🔐 OpenSSF Scorecard</a>`);
+    }
   }
   if (p.cloMonitorName) {
     links.push(`<a class="plb2-security-link" href="https://clomonitor.io/projects/cncf/${escapeHtml(p.cloMonitorName)}" target="_blank" rel="noopener noreferrer">🛡️ CLO Monitor</a>`);
   }
   if (links.length === 0) return '';
+
+  const lowChecks = (scorecard?.checks ?? [])
+    .filter(c => typeof c.score === 'number' && c.score >= 0 && c.score < 7)
+    .sort((a, b) => a.score - b.score)
+    .slice(0, 4);
+  const checksHtml = lowChecks.length
+    ? `<div class="plb2-scorecard-checks">${lowChecks.map(c =>
+        `<span class="plb2-scorecard-check" title="${escapeHtml(c.reason || '')}">${escapeHtml(c.name)}: ${c.score}/10</span>`
+      ).join('')}</div>`
+    : '';
+
   return `<div class="plb2-security-links">
   <div class="plb2-section-label">Security</div>
   <div class="plb2-link-chips">${links.join('')}</div>
+  ${checksHtml}
 </div>`;
 }
 
@@ -284,12 +334,13 @@ export function renderProjectLightboxContent(
   project: SafeProject,
   maintainers: Maintainer[] = [],
   now = new Date(),
+  scorecard?: ScorecardEntry,
 ): string {
   return `<div class="plb2-content" data-slug="${escapeHtml(project.slug)}">
   ${renderHeader(project)}
   ${renderHealthBar(project, now)}
   ${renderStatsRow(project)}
-  ${renderSecurityLinks(project)}
+  ${renderSecurityLinks(project, scorecard)}
   ${renderContributorMinicards(project, maintainers)}
   ${renderEndUsers(project)}
   ${renderTopics(project)}
@@ -304,6 +355,7 @@ export function renderProjectLightboxContent(
 
 let _projectsCache: SafeProject[] | null = null;
 let _maintainersCache: Maintainer[] | null = null;
+let _scorecardCache: ScorecardMap | null = null;
 
 async function fetchProjects(base: string): Promise<SafeProject[]> {
   if (_projectsCache) return _projectsCache;
@@ -325,6 +377,24 @@ async function fetchMaintainers(base: string): Promise<Maintainer[]> {
   }
 }
 
+/**
+ * Fetch the OpenSSF Scorecard enrichment map (openssf-scores.json), keyed by
+ * project slug. Written by `just enrich-projects` / `go run ./cmd/enrich`.
+ * Missing or unreadable file is not an error — the lightbox degrades to
+ * showing a plain link instead of a numeric score.
+ */
+async function fetchScorecard(base: string): Promise<ScorecardMap> {
+  if (_scorecardCache) return _scorecardCache;
+  try {
+    const res = await fetch(`${base}/data/projects/openssf-scores.json`);
+    if (!res.ok) return {};
+    _scorecardCache = (await res.json()) as ScorecardMap;
+    return _scorecardCache;
+  } catch {
+    return {};
+  }
+}
+
 function getDialog(): HTMLDialogElement | null {
   return document.getElementById('project-modal') as HTMLDialogElement | null;
 }
@@ -342,7 +412,8 @@ export function closeProjectLightbox(): void {
 
 /**
  * Open the project lightbox for the given slug.
- * Lazily fetches projects.json and maintainers.json on first call.
+ * Lazily fetches projects.json, maintainers.json, and openssf-scores.json
+ * on first call.
  */
 export async function openProjectLightbox(slug: string, base = ''): Promise<void> {
   const dialog = getDialog();
@@ -357,9 +428,10 @@ export async function openProjectLightbox(slug: string, base = ''): Promise<void
   dialog.showModal();
 
   try {
-    const [projects, maintainers] = await Promise.all([
+    const [projects, maintainers, scorecardMap] = await Promise.all([
       fetchProjects(base),
       fetchMaintainers(base),
+      fetchScorecard(base),
     ]);
 
     const project = projects.find(p => p.slug === slug);
@@ -368,7 +440,7 @@ export async function openProjectLightbox(slug: string, base = ''): Promise<void
       return;
     }
 
-    content.innerHTML = renderProjectLightboxContent(project, maintainers);
+    content.innerHTML = renderProjectLightboxContent(project, maintainers, new Date(), scorecardMap[slug]);
   } catch (err) {
     content.innerHTML = `<p class="plb2-error">Failed to load project data. Please try again.</p>`;
     console.error('[project-lightbox] fetch error:', err);
