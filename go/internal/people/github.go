@@ -82,10 +82,8 @@ cache.Set(handle, stats)
 return stats
 }
 
-// EnrichProfile is an alias for Enrich, used for maintainer profile enrichment.
-func (c *GitHubClient) EnrichProfile(ctx context.Context, handle string, cache *APICache) UserStats {
-return c.Enrich(ctx, handle, cache)
-}
+
+
 
 // EnrichCNCFYears searches for the user's earliest commit in CNCF orgs and
 // sets YearsContributing on the cached stats.

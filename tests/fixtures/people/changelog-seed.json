@@ -1,0 +1,52 @@
+[
+  {
+    "id": "86997117-0927-4395-ae87-0c78c978c2e9",
+    "type": "added",
+    "timestamp": "2026-04-08T17:20:26.810235514Z",
+    "person": {
+      "name": "Ben Kooijman",
+      "handle": "benkoben",
+      "github": "https://github.com/benkoben"
+    }
+  },
+  {
+    "id": "0efa8984-fd7a-4403-9a98-6b956d2e79a7",
+    "type": "added",
+    "timestamp": "2026-04-08T17:20:26.810235514Z",
+    "person": {
+      "name": "Taylor Thomas",
+      "handle": "thomastaylor312",
+      "github": "https://github.com/thomastaylor312"
+    }
+  },
+  {
+    "id": "823e0e43-b610-4c21-9648-78a707d4ca77",
+    "type": "added",
+    "timestamp": "2026-04-08T17:20:26.810235514Z",
+    "person": {
+      "name": "Anil Yadav",
+      "handle": "Anil-YadavK8s",
+      "github": "https://github.com/Anil-YadavK8s"
+    }
+  },
+  {
+    "id": "d4fd5aea-6590-4429-ac6c-2d041e7b09d8",
+    "type": "added",
+    "timestamp": "2026-04-08T17:20:26.810235514Z",
+    "person": {
+      "name": "Anton Murashka",
+      "handle": "amurashka",
+      "github": "https://github.com/amurashka"
+    }
+  },
+  {
+    "id": "e1f20abc-1234-5678-90ab-cdef01234567",
+    "type": "added",
+    "timestamp": "2026-04-07T10:00:00.000000000Z",
+    "person": {
+      "name": "Priya Sharma",
+      "handle": "priyasharma",
+      "github": "https://github.com/priyasharma"
+    }
+  }
+]

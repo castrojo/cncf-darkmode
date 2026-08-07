@@ -134,29 +134,6 @@ export async function fetchBannersConfig(): Promise<RawBanner[]> {
   }
 }
 
-/**
- * Parse banners YAML and extract banner objects
- *
- * Returns empty array on parse errors
- */
-export function parseBannersYaml(yamlText: string): RawBanner[] {
-  return parseBannersYamlInline(yamlText);
-}
-
-/**
- * Get active KubeCon banner from CNCF configuration
- * 
- * Strategy:
- * - Filter to KubeCon/CloudNativeCon events (name includes "KubeCon")
- * - Return first banner (following Artifact Hub pattern)
- * - CNCF controls which banners are active and their order
- * 
- * Returns null if no active KubeCon banners
- */
-export async function getActiveBanner(): Promise<BannerConfig | null> {
-  const banners = await getActiveBanners();
-  return banners.length > 0 ? banners[0] : null;
-}
 
 /**
  * Get all active KubeCon banners from CNCF configuration

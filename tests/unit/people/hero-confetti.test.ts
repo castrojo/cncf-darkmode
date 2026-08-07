@@ -36,7 +36,7 @@ import {
   fireStarburst,
   fireFountain,
   fireConfetti,
-} from '../../../src/lib/people/hero-confetti';
+} from '../../../src/lib/confetti';
 
 // ---------------------------------------------------------------------------
 // tryDebounce()

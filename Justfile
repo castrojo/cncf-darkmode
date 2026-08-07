@@ -30,6 +30,13 @@ check:
 sync: sync-projects sync-endusers sync-people
     @just copy-data-to-public
 
+# Enrich project data with OpenSSF Scorecard scores and Adopters.md counts.
+# Reads/writes src/data/projects/projects.json in-place.
+# Passes --best-effort so the step is non-fatal when the Scorecard API is
+# unreachable (e.g. rate-limited or offline).  Safe to run after `sync`.
+enrich-projects:
+    cd go && go run ./cmd/enrich/... --best-effort
+
 push:
     just verify
     git add -A
