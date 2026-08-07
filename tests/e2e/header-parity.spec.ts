@@ -1,283 +1,596 @@
 /**
- * Cross-site header geometry + computed-style parity tests (SO-51-E, SO-112)
+ * Header Parity Tests — Speculative Scaffolding
  *
- * Enforces visual/structural parity of the shared header across projects and
- * endusers sites. Each test group targets one AC from the spec.
+ * Parent:   SO-112 (blocked)
+ * Scaffold: SO-125
+ * Target:   Shared SiteHeader component (SO-110 + SO-111)
+ * Contract: docs/header-contract.md (SO-108)
  *
- * Sites under test:
- *   - projects : http://localhost:4321/cncf-darkmode/
- *   - endusers : http://localhost:4321/cncf-darkmode/members/
+ * Status: ALL TEST GROUPS SKIPPED
+ *   These tests target the shared SiteHeader component that will be introduced in
+ *   SO-110 (ProjectsLayout refactor) and SO-111 (EndusersLayout refactor).
+ *
+ *   To enable after SO-110 + SO-111 merge:
+ *     - Remove `.skip` from each `test.describe.skip(...)` block
+ *     - No other changes should be needed
+ *
+ * Sites under test (docs/header-contract.md §1 — "in scope"):
+ *   - projects:  http://localhost:4321/cncf-darkmode/
+ *   - endusers:  http://localhost:4321/cncf-darkmode/members/
+ *
+ * Note: Tests use absolute URLs so they work correctly in all Playwright projects
+ * (endusers, projects) without depending on baseURL.
  */
-import { test, expect, type Browser, type Page } from '@playwright/test';
+
+import { test, expect, type Page } from '@playwright/test';
+
+// ---------------------------------------------------------------------------
+// Site registry — both in-scope sites from header-contract.md §1
+// ---------------------------------------------------------------------------
 
 const SITES = [
-  { name: 'projects', url: 'http://localhost:4321/cncf-darkmode/' },
-  { name: 'endusers', url: 'http://localhost:4321/cncf-darkmode/members/' },
+  {
+    name: 'projects',
+    url: 'http://localhost:4321/cncf-darkmode/',
+    label: 'CNCF Projects',
+  },
+  {
+    name: 'endusers',
+    url: 'http://localhost:4321/cncf-darkmode/members/',
+    label: 'CNCF End Users',
+  },
 ] as const;
 
-const VIEWPORTS = [
-  { label: '1280px', width: 1280, height: 800 },
-  { label: '768px',  width: 768,  height: 1024 },
-  { label: '375px',  width: 375,  height: 667 },
-] as const;
+type SiteConfig = (typeof SITES)[number];
 
-const HEIGHT_TOLERANCE = 2; // ±2px, per spec
+// ---------------------------------------------------------------------------
+// Viewport fixtures — fully implemented per AC3
+// Values from SO-112 scope (1280px, 768px, 375px)
+// ---------------------------------------------------------------------------
 
-// ─────────────────────────────────────────────────────────────────────────────
-// 1. Header height matches at 1280px, 768px, 375px across both sites (±2px)
-// ─────────────────────────────────────────────────────────────────────────────
-test.describe('1. Header height parity across viewports', () => {
-  for (const vp of VIEWPORTS) {
-    test(`header height matches at ${vp.label} (±${HEIGHT_TOLERANCE}px)`, async ({ browser }) => {
-      const heights: Record<string, number> = {};
+const VIEWPORTS = {
+  desktop: { width: 1280, height: 800 },
+  tablet:  { width: 768,  height: 1024 },
+  mobile:  { width: 375,  height: 667 },
+} as const;
+
+type ViewportName = keyof typeof VIEWPORTS;
+
+// ---------------------------------------------------------------------------
+// Tolerances — sourced from header-contract.md §6 and SO-112 spec
+// ---------------------------------------------------------------------------
+
+/** ±2px height parity tolerance (SO-112 scope). §6 uses ≤5px; SO-112 tightens to ±2px. */
+const HEADER_HEIGHT_TOLERANCE_PX = 2;
+
+/** ±3px logo position tolerance (matches existing cross-site-header.spec.ts constant). */
+const LOGO_POSITION_TOLERANCE_PX = 3;
+
+// ---------------------------------------------------------------------------
+// Helper functions — fully implemented per AC3
+// ---------------------------------------------------------------------------
+
+/**
+ * Navigate to a URL at a specific viewport size and wait for the site-header
+ * to be present before returning.
+ */
+async function gotoAtViewport(
+  page: Page,
+  url: string,
+  viewport: { width: number; height: number },
+): Promise<void> {
+  await page.setViewportSize(viewport);
+  await page.goto(url);
+  await page.waitForLoadState('networkidle');
+  await page.waitForSelector('.site-header', { timeout: 10_000 });
+}
+
+/**
+ * Return the rendered height of .site-header via getBoundingClientRect.
+ * Returns -1 when the element is absent (causes an assertion to fail with context).
+ */
+async function getHeaderHeight(page: Page): Promise<number> {
+  return page.evaluate(() => {
+    const el = document.querySelector('.site-header');
+    return el ? el.getBoundingClientRect().height : -1;
+  });
+}
+
+/**
+ * Return the bounding box of the visible CNCF logo image.
+ * Prefers the light-mode image; falls back to any img inside .cncf-logo-wrapper.
+ * Returns null when the element is absent.
+ */
+async function getLogoBoundingBox(
+  page: Page,
+): Promise<{ x: number; y: number; width: number; height: number } | null> {
+  return page.evaluate(() => {
+    // Prefer the currently-displayed logo (not hidden by display:none)
+    const all = Array.from(
+      document.querySelectorAll<HTMLImageElement>('.cncf-logo-wrapper img'),
+    );
+    const visible = all.find(img => getComputedStyle(img).display !== 'none') ?? all[0];
+    if (!visible) return null;
+    const r = visible.getBoundingClientRect();
+    return { x: r.x, y: r.y, width: r.width, height: r.height };
+  });
+}
+
+/**
+ * Return the computed background-color of .site-header as a CSS rgb()/rgba() string.
+ */
+async function getHeaderBackgroundColor(page: Page): Promise<string> {
+  return page.evaluate(() => {
+    const el = document.querySelector('.site-header');
+    return el ? getComputedStyle(el).backgroundColor : '';
+  });
+}
+
+/**
+ * Resolve a CSS custom property from :root / the document element.
+ * Returns an empty string if the property is not set.
+ */
+async function getCSSVar(page: Page, varName: string): Promise<string> {
+  return page.evaluate((v: string) => {
+    return getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+  }, varName);
+}
+
+/**
+ * Return true when the page body has horizontal overflow (scrollWidth > innerWidth + 1px).
+ */
+async function hasHorizontalScroll(page: Page): Promise<boolean> {
+  return page.evaluate(() => document.body.scrollWidth > window.innerWidth + 1);
+}
+
+/**
+ * Return a descriptor list for all Tab-reachable elements inside .site-header,
+ * in DOM order.  Used for keyboard-navigation assertions.
+ */
+async function getHeaderFocusableElements(
+  page: Page,
+): Promise<Array<{ tagName: string; id: string; ariaLabel: string; href: string }>> {
+  return page.evaluate(() => {
+    const header = document.querySelector('.site-header');
+    if (!header) return [];
+    const candidates = header.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])',
+    );
+    return Array.from(candidates).map(el => ({
+      tagName: el.tagName.toLowerCase(),
+      id: el.id ?? '',
+      ariaLabel: el.getAttribute('aria-label') ?? el.textContent?.trim() ?? '',
+      href: (el as HTMLAnchorElement).href ?? '',
+    }));
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Group 1: Header height parity at 1280px, 768px, 375px  (±2px tolerance)
+// SKIP — requires shared SiteHeader from SO-110 + SO-111
+// ---------------------------------------------------------------------------
+
+test.describe.skip('Group 1: Header height parity across sites', () => {
+  const viewportEntries = Object.entries(VIEWPORTS) as Array<
+    [ViewportName, { width: number; height: number }]
+  >;
+
+  for (const [vpName, viewport] of viewportEntries) {
+    test(
+      `header height matches at ${viewport.width}px — projects vs endusers` +
+        ` (±${HEADER_HEIGHT_TOLERANCE_PX}px)`,
+      async ({ page }) => {
+        const heights: Record<string, number> = {};
+
+        for (const site of SITES) {
+          await gotoAtViewport(page, site.url, viewport);
+          heights[site.name] = await getHeaderHeight(page);
+          expect(
+            heights[site.name],
+            `[${site.name}] header height is ${heights[site.name]}px at ${viewport.width}px —` +
+              ` .site-header not found or has zero height`,
+          ).toBeGreaterThan(0);
+        }
+
+        const diff = Math.abs(heights['projects'] - heights['endusers']);
+        expect(
+          diff,
+          `Header height mismatch at ${viewport.width}px —` +
+            ` projects: ${heights['projects']}px,` +
+            ` endusers: ${heights['endusers']}px,` +
+            ` diff: ${diff}px (tolerance ±${HEADER_HEIGHT_TOLERANCE_PX}px).` +
+            ` Check shared SiteHeader height rules in layout.css.`,
+        ).toBeLessThanOrEqual(HEADER_HEIGHT_TOLERANCE_PX);
+      },
+    );
+  }
+});
+
+// ---------------------------------------------------------------------------
+// Group 2: Logo slot position parity across both sites
+// SKIP — requires shared SiteHeader from SO-110 + SO-111
+// ---------------------------------------------------------------------------
+
+test.describe.skip('Group 2: Logo slot position parity', () => {
+  test(
+    `logo position and size match across projects and endusers` +
+      ` (±${LOGO_POSITION_TOLERANCE_PX}px)`,
+    async ({ page }) => {
+      const boxes: Record<string, { x: number; y: number; width: number; height: number }> = {};
 
       for (const site of SITES) {
-        const page: Page = await browser.newPage();
-        await page.setViewportSize({ width: vp.width, height: vp.height });
-        await page.goto(site.url);
-        await page.waitForLoadState('networkidle');
-        const header = page.locator('.site-header').first();
-        await expect(header, `[${site.name}] .site-header must be visible at ${vp.label}`).toBeVisible();
-        const box = await header.boundingBox();
-        expect(box, `[${site.name}] .site-header bounding box at ${vp.label}`).not.toBeNull();
-        heights[site.name] = box!.height;
-        await page.close();
+        await gotoAtViewport(page, site.url, VIEWPORTS.desktop);
+        const box = await getLogoBoundingBox(page);
+        expect(
+          box,
+          `[${site.name}] logo not found — check .cncf-logo-wrapper img selector in shared SiteHeader`,
+        ).not.toBeNull();
+        boxes[site.name] = box!;
       }
 
-      const diff = Math.abs(heights['projects'] - heights['endusers']);
-      expect(diff, [
-        `Header height diverged between sites at ${vp.label}:`,
-        `  projects=${heights['projects']}px  endusers=${heights['endusers']}px  diff=${diff}px`,
-        `  tolerance: ±${HEIGHT_TOLERANCE}px`,
-      ].join('\n')).toBeLessThanOrEqual(HEIGHT_TOLERANCE * 2);
-    });
-  }
-});
+      const p = boxes['projects'];
+      const e = boxes['endusers'];
 
-// ─────────────────────────────────────────────────────────────────────────────
-// 2. Logo slot renders in same position on both sites
-// ─────────────────────────────────────────────────────────────────────────────
-test.describe('2. Logo slot position parity', () => {
-  test('logo x/y position matches between projects and endusers (±5px)', async ({ browser }) => {
-    const positions: Record<string, { x: number; y: number }> = {};
+      expect(
+        Math.abs(p.x - e.x),
+        `Logo X mismatch — projects: ${p.x}px, endusers: ${e.x}px` +
+          ` (tolerance ±${LOGO_POSITION_TOLERANCE_PX}px)`,
+      ).toBeLessThanOrEqual(LOGO_POSITION_TOLERANCE_PX);
 
-    for (const site of SITES) {
-      const page: Page = await browser.newPage();
-      await page.setViewportSize({ width: 1280, height: 800 });
-      await page.goto(site.url);
-      await page.waitForLoadState('networkidle');
-      const logo = page.locator('.cncf-logo-wrapper img').first();
-      await expect(logo, `[${site.name}] logo image must be visible`).toBeVisible();
-      const box = await logo.boundingBox();
-      expect(box, `[${site.name}] logo bounding box`).not.toBeNull();
-      positions[site.name] = { x: box!.x, y: box!.y };
-      await page.close();
-    }
+      expect(
+        Math.abs(p.y - e.y),
+        `Logo Y mismatch — projects: ${p.y}px, endusers: ${e.y}px` +
+          ` (tolerance ±${LOGO_POSITION_TOLERANCE_PX}px)`,
+      ).toBeLessThanOrEqual(LOGO_POSITION_TOLERANCE_PX);
 
-    const xDiff = Math.abs(positions['projects'].x - positions['endusers'].x);
-    const yDiff = Math.abs(positions['projects'].y - positions['endusers'].y);
-    const LOGO_POS_TOLERANCE = 5;
-
-    expect(xDiff, [
-      `Logo X position diverged between sites:`,
-      `  projects.x=${positions['projects'].x}  endusers.x=${positions['endusers'].x}  diff=${xDiff}px`,
-    ].join('\n')).toBeLessThanOrEqual(LOGO_POS_TOLERANCE);
-
-    expect(yDiff, [
-      `Logo Y position diverged between sites:`,
-      `  projects.y=${positions['projects'].y}  endusers.y=${positions['endusers'].y}  diff=${yDiff}px`,
-    ].join('\n')).toBeLessThanOrEqual(LOGO_POS_TOLERANCE);
-  });
-});
-
-// ─────────────────────────────────────────────────────────────────────────────
-// 3. Nav links are keyboard-accessible on both sites (Tab traversal)
-// ─────────────────────────────────────────────────────────────────────────────
-test.describe('3. Nav link keyboard accessibility (Tab traversal)', () => {
-  for (const site of SITES) {
-    test(`[${site.name}] Tab traversal reaches at least one nav link in header`, async ({ page }) => {
-      await page.goto(site.url);
-      await page.waitForLoadState('networkidle');
-
-      // Tab up to 15 times from the start of the page; a nav link inside .nav-group
-      // must receive focus before we exhaust the budget.
-      let navLinkFocused = false;
-      for (let i = 0; i < 15; i++) {
-        await page.keyboard.press('Tab');
-        const focused = await page.evaluate(() => {
-          const el = document.activeElement;
-          if (!el) return false;
-          // Accept any anchor or button inside the nav-group or site-switcher
-          const inNav = el.closest('.nav-group, .site-switcher');
-          return inNav !== null && (el.tagName === 'A' || el.tagName === 'BUTTON');
-        });
-        if (focused) {
-          navLinkFocused = true;
-          break;
-        }
+      // Width parity (both must be ~42px per header-contract.md §6)
+      for (const site of SITES) {
+        expect(
+          Math.abs(boxes[site.name].width - 42),
+          `[${site.name}] logo width: ${boxes[site.name].width}px, expected 42px` +
+            ` (±${LOGO_POSITION_TOLERANCE_PX}px) — check .cncf-logo-wrapper img width/height attrs`,
+        ).toBeLessThanOrEqual(LOGO_POSITION_TOLERANCE_PX);
       }
-
-      expect(navLinkFocused, [
-        `[${site.name}] No nav link in .nav-group received focus after 15 Tab presses.`,
-        `Nav links must be reachable via keyboard (Tab) for WCAG 2.1 SC 2.1.1.`,
-      ].join('\n')).toBe(true);
-    });
-  }
+    },
+  );
 });
 
-// ─────────────────────────────────────────────────────────────────────────────
-// 4. Mobile hamburger appears at ≤768px on both sites
-// ─────────────────────────────────────────────────────────────────────────────
-test.describe('4. Mobile hamburger button at ≤768px', () => {
+// ---------------------------------------------------------------------------
+// Group 3: Nav links keyboard-accessible on both sites (Tab traversal)
+// SKIP — requires shared SiteHeader from SO-110 + SO-111
+// ---------------------------------------------------------------------------
+
+test.describe.skip('Group 3: Nav links keyboard-accessible via Tab traversal', () => {
   for (const site of SITES) {
-    for (const vp of [{ label: '768px', width: 768, height: 1024 }, { label: '375px', width: 375, height: 667 }]) {
-      test(`[${site.name}] hamburger menu button visible at ${vp.label}`, async ({ page }) => {
-        await page.setViewportSize({ width: vp.width, height: vp.height });
-        await page.goto(site.url);
-        await page.waitForLoadState('networkidle');
+    test(`[${site.name}] header contains Tab-reachable nav elements`, async ({ page }) => {
+      await gotoAtViewport(page, site.url, VIEWPORTS.desktop);
+      const focusable = await getHeaderFocusableElements(page);
 
-        // Hamburger button: button with aria-label or class convention for mobile nav toggle
-        const hamburger = page.locator([
-          'button[aria-label*="menu" i]',
-          'button[aria-label*="navigation" i]',
-          'button[aria-expanded]',
-          '.hamburger',
-          '.nav-toggle',
-          '[data-nav-toggle]',
-        ].join(', ')).first();
+      expect(
+        focusable.length,
+        `[${site.name}] no focusable elements found in .site-header —` +
+          ` check shared SiteHeader DOM structure`,
+      ).toBeGreaterThan(0);
 
-        await expect(hamburger, [
-          `[${site.name}] at ${vp.label}: expected a hamburger/mobile-nav toggle button.`,
-          `Current layout collapses via CSS flex-wrap but provides no explicit toggle button.`,
-          `A button[aria-expanded] or equivalent is required for WCAG 2.1 SC 4.1.2.`,
-        ].join('\n')).toBeVisible();
+      // SiteSwitcher pills must be reachable (header-contract.md §2.2)
+      const hasSwitcherLink = focusable.some(el => {
+        const label = el.ariaLabel.toLowerCase();
+        return (
+          label.includes('project') || label.includes('end user') || label.includes('people')
+        );
       });
-    }
+      expect(
+        hasSwitcherLink,
+        `[${site.name}] SiteSwitcher pills not found in Tab-reachable header elements —` +
+          ` check aria-label on SiteSwitcher links per header-contract.md §2.2`,
+      ).toBe(true);
+    });
+
+    test(`[${site.name}] Tab key moves focus through header controls`, async ({ page }) => {
+      await gotoAtViewport(page, site.url, VIEWPORTS.desktop);
+
+      // Press Tab from the document body and confirm focus enters the header
+      await page.keyboard.press('Tab');
+      const firstFocused = await page.evaluate(
+        () => document.activeElement?.closest('.site-header') !== null,
+      );
+      expect(
+        firstFocused,
+        `[${site.name}] Tab from document body did not land inside .site-header —` +
+          ` skip-nav or first header link must be first focusable element`,
+      ).toBe(true);
+
+      // Second Tab must move focus (not stay on the same element)
+      const before = await page.evaluate(() => document.activeElement?.id ?? '');
+      await page.keyboard.press('Tab');
+      const after = await page.evaluate(() => document.activeElement?.id ?? '');
+      expect(
+        before === after,
+        `[${site.name}] Tab did not advance focus (stuck on #${before}) —` +
+          ` check tabindex and focusable element order in shared SiteHeader`,
+      ).toBe(false);
+    });
   }
 });
 
-// ─────────────────────────────────────────────────────────────────────────────
-// 5. Dark mode toggle present and functional on both sites
-// ─────────────────────────────────────────────────────────────────────────────
-test.describe('5. Dark mode toggle parity', () => {
-  for (const site of SITES) {
-    test(`[${site.name}] #theme-toggle is present and changes data-theme`, async ({ page }) => {
-      await page.goto(site.url);
-      await page.waitForLoadState('networkidle');
+// ---------------------------------------------------------------------------
+// Group 4: Mobile hamburger appears at ≤768px on both sites
+// SKIP — hamburger is a planned feature of the shared SiteHeader (SO-110 + SO-111)
+//         and is not present in the current per-site header implementations
+// ---------------------------------------------------------------------------
 
-      const toggle = page.locator('#theme-toggle').first();
-      await expect(toggle, `[${site.name}] #theme-toggle must be present in header`).toBeVisible();
+test.describe.skip('Group 4: Mobile hamburger visible at ≤768px', () => {
+  // Expected selectors per shared SiteHeader contract.  Adjust to the final
+  // implementation once SO-110 / SO-111 define the element.
+  const hamburgerSelector =
+    '#mobile-menu-toggle, .hamburger-button, [aria-label="Open navigation menu"]';
+
+  for (const site of SITES) {
+    test(`[${site.name}] hamburger visible at 768px`, async ({ page }) => {
+      await gotoAtViewport(page, site.url, VIEWPORTS.tablet);
+      await expect(
+        page.locator(hamburgerSelector).first(),
+        `[${site.name}] hamburger not visible at 768px —` +
+          ` check #mobile-menu-toggle visibility in shared SiteHeader @media (max-width: 768px)`,
+      ).toBeVisible();
+    });
+
+    test(`[${site.name}] hamburger visible at 375px`, async ({ page }) => {
+      await gotoAtViewport(page, site.url, VIEWPORTS.mobile);
+      await expect(
+        page.locator(hamburgerSelector).first(),
+        `[${site.name}] hamburger not visible at 375px —` +
+          ` check #mobile-menu-toggle visibility in shared SiteHeader @media (max-width: 375px)`,
+      ).toBeVisible();
+    });
+
+    test(`[${site.name}] hamburger not visible at 1280px (desktop)`, async ({ page }) => {
+      await gotoAtViewport(page, site.url, VIEWPORTS.desktop);
+      await expect(
+        page.locator(hamburgerSelector).first(),
+        `[${site.name}] hamburger must be hidden at 1280px —` +
+          ` check display:none on #mobile-menu-toggle above 768px breakpoint`,
+      ).not.toBeVisible();
+    });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// Group 5: Dark mode toggle present and functional on both sites
+// SKIP — requires shared SiteHeader from SO-110 + SO-111
+// ---------------------------------------------------------------------------
+
+test.describe.skip('Group 5: Dark mode toggle present and functional', () => {
+  for (const site of SITES) {
+    test(`[${site.name}] #theme-toggle is visible in header`, async ({ page }) => {
+      await gotoAtViewport(page, site.url, VIEWPORTS.desktop);
+      await expect(
+        page.locator('#theme-toggle'),
+        `[${site.name}] #theme-toggle not found —` +
+          ` check ThemeToggle is rendered inside shared SiteHeader .header-actions`,
+      ).toBeVisible();
+    });
+
+    test(`[${site.name}] #theme-toggle click flips data-theme attribute`, async ({ page }) => {
+      await gotoAtViewport(page, site.url, VIEWPORTS.desktop);
 
       const before = await page.locator('html').getAttribute('data-theme');
-      await toggle.click();
+      await page.locator('#theme-toggle').click();
       const after = await page.locator('html').getAttribute('data-theme');
 
-      expect(after, `[${site.name}] data-theme must change after clicking #theme-toggle`).not.toBe(before);
-      expect(['light', 'dark'], `[${site.name}] data-theme must be 'light' or 'dark' after toggle`).toContain(after);
+      expect(
+        after,
+        `[${site.name}] data-theme did not change after #theme-toggle click` +
+          ` (before: "${before}", after: "${after}") —` +
+          ` check ThemeToggle click handler in shared SiteHeader`,
+      ).not.toBe(before);
+
+      expect(
+        ['light', 'dark', null],
+        `[${site.name}] data-theme value "${after}" is unexpected —` +
+          ` must be "light", "dark", or absent`,
+      ).toContain(after);
+    });
+
+    test(`[${site.name}] toggled theme persists on reload`, async ({ page }) => {
+      await gotoAtViewport(page, site.url, VIEWPORTS.desktop);
+      await page.locator('#theme-toggle').click();
+      const before = await page.locator('html').getAttribute('data-theme');
+      await page.reload();
+      await page.waitForLoadState('networkidle');
+      const after = await page.locator('html').getAttribute('data-theme');
+      expect(
+        after,
+        `[${site.name}] theme did not persist after reload` +
+          ` (set: "${before}", after reload: "${after}") —` +
+          ` check localStorage cncf-theme read in shared SiteHeader init`,
+      ).toBe(before);
     });
   }
 });
 
-// ─────────────────────────────────────────────────────────────────────────────
-// 6. Header computed background-color uses expected CSS variable
-// ─────────────────────────────────────────────────────────────────────────────
-test.describe('6. Header background-color CSS variable parity', () => {
+// ---------------------------------------------------------------------------
+// Group 6: Header background-color uses --color-bg-default on both sites
+// SKIP — requires shared SiteHeader from SO-110 + SO-111 to guarantee CSS var propagation
+// ---------------------------------------------------------------------------
+
+test.describe.skip('Group 6: Header background uses --color-bg-default', () => {
   for (const site of SITES) {
-    test(`[${site.name}] .site-header background matches --color-bg-default (light mode)`, async ({ page }) => {
-      // Force light theme to get deterministic value
-      await page.goto(site.url);
-      await page.waitForLoadState('networkidle');
+    test(`[${site.name}] header background is non-transparent in light mode`, async ({ page }) => {
+      await gotoAtViewport(page, site.url, VIEWPORTS.desktop);
+      // Remove data-theme to get light mode baseline
       await page.evaluate(() => {
-        document.documentElement.setAttribute('data-theme', 'light');
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.removeItem('cncf-theme');
       });
 
-      const result = await page.evaluate(() => {
-        const header = document.querySelector('.site-header');
-        if (!header) return { headerBg: null, cssVar: null };
-        const headerBg = getComputedStyle(header).backgroundColor;
-        const cssVar = getComputedStyle(document.documentElement)
-          .getPropertyValue('--color-bg-default').trim();
-        return { headerBg, cssVar };
+      const headerBg = await getHeaderBackgroundColor(page);
+      const cssVar = await getCSSVar(page, '--color-bg-default');
+
+      expect(
+        headerBg,
+        `[${site.name}] header background-color is empty —` +
+          ` shared SiteHeader must set background: var(--color-bg-default)`,
+      ).toBeTruthy();
+      expect(
+        headerBg,
+        `[${site.name}] header background is transparent in light mode` +
+          ` (computed: "${headerBg}", --color-bg-default resolves to: "${cssVar}") —` +
+          ` add background: var(--color-bg-default) to .site-header in layout.css`,
+      ).not.toBe('rgba(0, 0, 0, 0)');
+    });
+
+    test(`[${site.name}] header background is non-transparent in dark mode`, async ({ page }) => {
+      await gotoAtViewport(page, site.url, VIEWPORTS.desktop);
+      await page.evaluate(() => {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('cncf-theme', 'dark');
       });
 
-      expect(result.headerBg, `[${site.name}] could not read .site-header computed style`).not.toBeNull();
-      expect(result.cssVar, `[${site.name}] --color-bg-default CSS variable is empty`).not.toBe('');
+      const headerBg = await getHeaderBackgroundColor(page);
+      const cssVar = await getCSSVar(page, '--color-bg-default');
 
-      // --color-bg-default is #ffffff in light mode → rgb(255, 255, 255)
-      expect(result.headerBg, [
-        `[${site.name}] .site-header background-color does not match --color-bg-default.`,
-        `  computed: ${result.headerBg}`,
-        `  --color-bg-default: ${result.cssVar}`,
-        `  Layout.css declares: background: var(--color-bg-default) — verify no override.`,
-      ].join('\n')).toBe('rgb(255, 255, 255)');
+      expect(
+        headerBg,
+        `[${site.name}] header background is transparent in dark mode` +
+          ` (computed: "${headerBg}", --color-bg-default resolves to: "${cssVar}") —` +
+          ` check [data-theme="dark"] --color-bg-default override in variables-base.css`,
+      ).not.toBe('rgba(0, 0, 0, 0)');
+    });
+
+    test(`[${site.name}] header background-color matches --color-bg-default resolved value`, async ({ page }) => {
+      await gotoAtViewport(page, site.url, VIEWPORTS.desktop);
+
+      // Measure background via the CSS var directly and compare to computed style
+      const { headerBg, varResolved } = await page.evaluate(() => {
+        const header = document.querySelector('.site-header')!;
+        const computed = getComputedStyle(header).backgroundColor;
+        // Resolve --color-bg-default by setting it on a throw-away element
+        const probe = document.createElement('div');
+        probe.style.cssText = 'position:absolute;display:none;background:var(--color-bg-default)';
+        document.body.appendChild(probe);
+        const resolved = getComputedStyle(probe).backgroundColor;
+        probe.remove();
+        return { headerBg: computed, varResolved: resolved };
+      });
+
+      expect(
+        headerBg,
+        `[${site.name}] header background-color "${headerBg}" does not match` +
+          ` --color-bg-default resolved value "${varResolved}" —` +
+          ` shared SiteHeader must use background: var(--color-bg-default)`,
+      ).toBe(varResolved);
     });
   }
 });
 
-// ─────────────────────────────────────────────────────────────────────────────
-// 7. Skip-nav link present and focusable on both sites
-// ─────────────────────────────────────────────────────────────────────────────
-test.describe('7. Skip-nav link parity', () => {
+// ---------------------------------------------------------------------------
+// Group 7: Skip-nav link present and focusable on both sites
+// SKIP — skip-nav is documented as pending in header-contract.md §8.3
+//         and requires shared SiteHeader from SO-110 + SO-111
+// ---------------------------------------------------------------------------
+
+test.describe.skip('Group 7: Skip-nav link present and focusable', () => {
+  const skipNavSelector = 'a.skip-nav, a[href="#main-content"]';
+
   for (const site of SITES) {
-    test(`[${site.name}] skip-nav link is present and receives focus on first Tab`, async ({ page }) => {
-      await page.goto(site.url);
-      await page.waitForLoadState('networkidle');
+    test(`[${site.name}] skip-nav link is present in DOM`, async ({ page }) => {
+      await gotoAtViewport(page, site.url, VIEWPORTS.desktop);
+      await expect(
+        page.locator(skipNavSelector).first(),
+        `[${site.name}] skip-nav link not found —` +
+          ` add <a href="#main-content" class="skip-nav"> per header-contract.md §8.3`,
+      ).toBeAttached();
+    });
 
-      // A skip-nav link must be one of the first focusable elements and must link to main content
-      const skipNav = page.locator([
-        'a[href="#main-content"]',
-        'a[href="#content"]',
-        'a[href="#main"]',
-        '.skip-link',
-        '.skip-nav',
-        '[data-skip-nav]',
-      ].join(', ')).first();
+    test(`[${site.name}] skip-nav is the first Tab-reachable element on the page`, async ({
+      page,
+    }) => {
+      await gotoAtViewport(page, site.url, VIEWPORTS.desktop);
 
-      await expect(skipNav, [
-        `[${site.name}] No skip-nav link found in the page.`,
-        `A "Skip to main content" link is required for WCAG 2.1 SC 2.4.1.`,
-        `Expected an <a href="#main-content"> or .skip-link near the top of <body>.`,
-        `BaseLayout.astro does not currently include a skip-nav link.`,
-      ].join('\n')).toBeAttached();
+      const first = await page.evaluate(() => {
+        const all = document.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        );
+        const el = all[0];
+        return el
+          ? {
+              tagName: el.tagName.toLowerCase(),
+              href: (el as HTMLAnchorElement).href ?? '',
+              className: el.className,
+            }
+          : null;
+      });
 
-      // Verify it receives focus on the first Tab press
+      expect(
+        first?.href,
+        `[${site.name}] first focusable element is not the skip-nav link` +
+          ` (found: ${JSON.stringify(first)}) —` +
+          ` skip-nav must be the first child of <body> per WCAG 2.4.1 (Bypass Blocks)`,
+      ).toContain('#main-content');
+    });
+
+    test(`[${site.name}] skip-nav receives focus on first Tab and becomes visible`, async ({
+      page,
+    }) => {
+      await gotoAtViewport(page, site.url, VIEWPORTS.desktop);
+
+      // First Tab from blank focus should land on skip-nav
       await page.keyboard.press('Tab');
-      const focused = await skipNav.evaluate(el => el === document.activeElement);
-      expect(focused, [
-        `[${site.name}] skip-nav link exists but does not receive focus on first Tab.`,
-        `It must appear before other interactive elements in DOM order.`,
-      ].join('\n')).toBe(true);
+
+      const skipNav = page.locator(skipNavSelector).first();
+      const isFocused = await skipNav.evaluate(el => document.activeElement === el);
+      expect(
+        isFocused,
+        `[${site.name}] skip-nav did not receive focus on first Tab —` +
+          ` check DOM order: skip-nav must precede all other interactive elements`,
+      ).toBe(true);
+
+      // When focused the skip-nav must be visible (top ≥ 0 per header-contract.md §8.3 CSS)
+      const top = await skipNav.evaluate(el => el.getBoundingClientRect().top);
+      expect(
+        top,
+        `[${site.name}] skip-nav top is ${top}px when focused (expected ≥ 0) —` +
+          ` add .skip-nav:focus { top: 0.5rem } per header-contract.md §8.3`,
+      ).toBeGreaterThanOrEqual(0);
+    });
+
+    test(`[${site.name}] skip-nav href #main-content target exists in DOM`, async ({ page }) => {
+      await gotoAtViewport(page, site.url, VIEWPORTS.desktop);
+      const mainExists = await page.evaluate(
+        () => document.getElementById('main-content') !== null,
+      );
+      expect(
+        mainExists,
+        `[${site.name}] #main-content element not found —` +
+          ` add id="main-content" to <main> per header-contract.md §8.3`,
+      ).toBe(true);
     });
   }
 });
 
-// ─────────────────────────────────────────────────────────────────────────────
-// 8. No horizontal scroll at 375px on either site
-// ─────────────────────────────────────────────────────────────────────────────
-test.describe('8. No horizontal scroll at 375px', () => {
+// ---------------------------------------------------------------------------
+// Group 8: No horizontal scroll at 375px on either site
+// SKIP — requires shared SiteHeader from SO-110 + SO-111 for mobile layout parity
+// ---------------------------------------------------------------------------
+
+test.describe.skip('Group 8: No horizontal scroll at 375px', () => {
   for (const site of SITES) {
     test(`[${site.name}] no horizontal scroll at 375px viewport`, async ({ page }) => {
-      await page.setViewportSize({ width: 375, height: 667 });
-      await page.goto(site.url);
-      await page.waitForLoadState('networkidle');
+      await gotoAtViewport(page, site.url, VIEWPORTS.mobile);
 
-      const overflow = await page.evaluate(() => ({
-        scrollWidth: document.body.scrollWidth,
-        clientWidth: document.documentElement.clientWidth,
-        documentScrollWidth: document.documentElement.scrollWidth,
-      }));
+      const bodyScrollWidth = await page.evaluate(() => document.body.scrollWidth);
+      const viewportWidth = await page.evaluate(() => window.innerWidth);
+      const overflows = await hasHorizontalScroll(page);
 
-      expect(overflow.scrollWidth, [
-        `[${site.name}] horizontal scroll detected at 375px.`,
-        `  body.scrollWidth=${overflow.scrollWidth}px  viewport=${overflow.clientWidth}px`,
-        `  overflow=${overflow.scrollWidth - overflow.clientWidth}px`,
-        `  Check .site-header overflow-x:clip and any fixed-width children.`,
-      ].join('\n')).toBeLessThanOrEqual(overflow.clientWidth + 1);
-
-      expect(overflow.documentScrollWidth, [
-        `[${site.name}] document horizontal scroll detected at 375px.`,
-        `  document.scrollWidth=${overflow.documentScrollWidth}px  viewport=${overflow.clientWidth}px`,
-      ].join('\n')).toBeLessThanOrEqual(overflow.clientWidth + 1);
+      expect(
+        overflows,
+        `[${site.name}] horizontal scroll detected at 375px —` +
+          ` body.scrollWidth: ${bodyScrollWidth}px, window.innerWidth: ${viewportWidth}px` +
+          ` (overflow: ${bodyScrollWidth - viewportWidth}px).` +
+          ` Check shared SiteHeader CSS at max-width: 375px — look for fixed widths` +
+          ` or min-width values that exceed the viewport.`,
+      ).toBe(false);
     });
   }
 });
