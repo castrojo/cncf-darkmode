@@ -18,6 +18,7 @@ import {
   formatNumber,
   formatDate,
   type Maintainer,
+  type ReferenceArchitecture,
 } from '../../../src/lib/projects/project-lightbox';
 import type { SafeProject } from '../../../src/lib/projects/project-renderer';
 
@@ -354,6 +355,99 @@ describe('renderProjectLightboxContent — contributor minicards', () => {
     const p: SafeProject = { ...BASE_PROJECT, logoUrl: '' };
     const html = renderProjectLightboxContent(p, [], NOW);
     expect(html).toContain('plb2-logo-placeholder');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Reference Architecture cross-linking (GH #29)
+// ---------------------------------------------------------------------------
+
+const ARCH_KYVERNO: ReferenceArchitecture = {
+  slug: 'swisscom-kubernetes-service',
+  title: 'A modern and sovereign Private Cloud «Kubernetes Service»',
+  orgName: 'Swisscom',
+  orgLogoUrl: 'https://raw.githubusercontent.com/cncf/architecture/main/swisscom-logo.svg',
+  archUrl: 'https://architecture.cncf.io/architectures/swisscom-kubernetes-service/',
+  projects: [{ name: 'Kubernetes' }, { name: 'Kyverno' }, { name: 'Helm' }],
+};
+
+const ARCH_OTHER: ReferenceArchitecture = {
+  slug: 'zeiss',
+  title: 'ZEISS Vision Care - Order Fulfillment',
+  orgName: 'ZEISS',
+  archUrl: 'https://architecture.cncf.io/architectures/zeiss/',
+  projects: [{ name: 'Kubernetes' }, { name: 'Dapr' }],
+};
+
+describe('renderProjectLightboxContent — reference architecture cross-links', () => {
+  it('shows matching reference architecture card', () => {
+    const html = renderProjectLightboxContent(FULL_PROJECT, [], NOW, [ARCH_KYVERNO]);
+    expect(html).toContain('plb2-refarchs');
+    expect(html).toContain('Swisscom');
+    expect(html).toContain('architecture.cncf.io/architectures/swisscom-kubernetes-service/');
+  });
+
+  it('does not show architectures that do not use this project', () => {
+    const html = renderProjectLightboxContent(FULL_PROJECT, [], NOW, [ARCH_OTHER]);
+    expect(html).not.toContain('plb2-refarchs');
+    expect(html).not.toContain('ZEISS');
+  });
+
+  it('renders no section when architectures array is empty', () => {
+    const html = renderProjectLightboxContent(FULL_PROJECT, [], NOW, []);
+    expect(html).not.toContain('plb2-refarchs');
+  });
+
+  it('renders no section when architectures param is omitted', () => {
+    const html = renderProjectLightboxContent(FULL_PROJECT, [], NOW);
+    expect(html).not.toContain('plb2-refarchs');
+  });
+
+  it('matches project name case-insensitively', () => {
+    const arch: ReferenceArchitecture = {
+      ...ARCH_KYVERNO,
+      projects: [{ name: 'KYVERNO' }],
+    };
+    const html = renderProjectLightboxContent(FULL_PROJECT, [], NOW, [arch]);
+    expect(html).toContain('plb2-refarchs');
+  });
+
+  it('shows count and multiple cards when several architectures match', () => {
+    const arch2: ReferenceArchitecture = {
+      slug: 'adobe',
+      title: "Scaling Adobe's Service Delivery Foundation",
+      orgName: 'Adobe',
+      archUrl: 'https://architecture.cncf.io/architectures/adobe/',
+      projects: [{ name: 'Kyverno' }],
+    };
+    const html = renderProjectLightboxContent(FULL_PROJECT, [], NOW, [ARCH_KYVERNO, arch2]);
+    expect(html).toContain('Reference Architectures (2)');
+    expect(html).toContain('Swisscom');
+    expect(html).toContain('Adobe');
+  });
+
+  it('renders logo placeholder when orgLogoUrl is absent', () => {
+    const arch: ReferenceArchitecture = { ...ARCH_KYVERNO, orgLogoUrl: undefined };
+    const html = renderProjectLightboxContent(FULL_PROJECT, [], NOW, [arch]);
+    expect(html).toContain('plb2-refarch-logo-placeholder');
+    expect(html).toContain('>S<'); // first letter of "Swisscom"
+  });
+
+  it('escapes XSS in architecture title and org name', () => {
+    const arch: ReferenceArchitecture = {
+      ...ARCH_KYVERNO,
+      title: '<script>alert(1)</script>',
+      orgName: '<img onerror=alert(1)>',
+    };
+    const html = renderProjectLightboxContent(FULL_PROJECT, [], NOW, [arch]);
+    expect(html).not.toContain('<script>');
+    expect(html).not.toContain('<img onerror');
+  });
+
+  it('sanitizes unsafe archUrl protocol', () => {
+    const arch: ReferenceArchitecture = { ...ARCH_KYVERNO, archUrl: 'javascript:alert(1)' };
+    const html = renderProjectLightboxContent(FULL_PROJECT, [], NOW, [arch]);
+    expect(html).toContain('href="#"');
   });
 });
 
