@@ -149,7 +149,7 @@ export function renderPersonCard(e: PersonEvent, landscapeLogos: Record<string, 
   const formattedDate = date ? date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : '';
   const formattedTime = date ? date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC', timeZoneName: 'short' }) : '';
 
-  return `<article class="person-card" data-id="${esc(e.id)}" data-type="${esc(e.type)}" data-category="${esc(primaryCat.toLowerCase())}" data-categories="${esc(cats.map(c => c.toLowerCase()).join('|'))}" style="--card-accent:${catInfo.color}">` +
+  return `<article class="person-card" data-id="${esc(e.id)}" data-type="${esc(e.type)}" data-category="${esc(primaryCat.toLowerCase())}" data-categories="${esc(cats.map(c => c.toLowerCase()).join('|'))}" data-person="${esc(JSON.stringify(p))}" style="--card-accent:${catInfo.color}">` +
     `<div class="card-accent-bar"></div>` +
     `<div class="card-body"><div class="card-main"><div class="card-identity">` +
     `<a href="${esc(safeHref(profileUrl))}" target="_blank" rel="noopener noreferrer" class="avatar-link">${avatarHtml}</a>` +

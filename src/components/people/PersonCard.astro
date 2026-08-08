@@ -71,7 +71,40 @@ const formattedDate = date.toLocaleDateString('en-US', { year: 'numeric', month:
 const formattedTime = date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC', timeZoneName: 'short' });
 ---
 
-<article class="person-card" data-id={id} data-type={type} data-category={primaryCategory.toLowerCase()} data-categories={(person.category ?? []).map(c => c.toLowerCase()).join('|')} style={`--card-accent: ${categoryInfo.color}`}>
+<article
+  class="person-card"
+  data-id={id}
+  data-type={type}
+  data-category={primaryCategory.toLowerCase()}
+  data-categories={(person.category ?? []).map(c => c.toLowerCase()).join('|')}
+  data-person={JSON.stringify({
+    name: person.name,
+    handle: person.handle,
+    github: person.github,
+    imageUrl: person.imageUrl,
+    avatarUrl: person.avatarUrl,
+    bio: person.bio,
+    pronouns: person.pronouns,
+    company: person.company,
+    companyLandscapeUrl: person.companyLandscapeUrl,
+    location: person.location,
+    linkedin: person.linkedin,
+    twitter: person.twitter,
+    youtube: person.youtube,
+    website: person.website,
+    bluesky: person.bluesky,
+    mastodon: person.mastodon,
+    certDirectory: person.certDirectory,
+    category: person.category,
+    projects: person.projects,
+    contributions: person.contributions,
+    publicRepos: person.publicRepos,
+    yearsContributing: person.yearsContributing,
+    countryFlag: person.countryFlag,
+    primaryBadge: person.primaryBadge,
+  })}
+  style={`--card-accent: ${categoryInfo.color}`}
+>
   <div class="card-accent-bar"></div>
 
   <div class="card-body">
@@ -215,6 +248,7 @@ const formattedTime = date.toLocaleTimeString('en-US', { hour: '2-digit', minute
     overflow: hidden;
     transition: box-shadow 0.2s ease, border-color 0.2s ease;
     margin-bottom: 1rem;
+    cursor: pointer;
   }
   .person-card:hover {
     box-shadow: 0 2px 12px rgba(0,0,0,0.08);

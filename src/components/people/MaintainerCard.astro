@@ -57,7 +57,23 @@ function resolveChipLogo(project: string, logos: Record<string, string> | undefi
 }
 ---
 
-<article class="maintainer-card" style={`--card-accent: ${accentColor}`}>
+<article
+  class="maintainer-card"
+  data-person={JSON.stringify({
+    name: maintainer.name,
+    handle: maintainer.handle,
+    github: profileUrl,
+    avatarUrl: maintainer.avatarUrl,
+    bio: maintainer.bio,
+    company: maintainer.company,
+    location: maintainer.location,
+    countryFlag: maintainer.countryFlag,
+    category: ['Maintainer'],
+    projects: maintainer.projects,
+    yearsContributing: maintainer.yearsContributing,
+  })}
+  style={`--card-accent: ${accentColor}`}
+>
   <div class="card-accent-bar"></div>
   <div class="card-body">
     <a href={profileUrl} class="avatar-link" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
@@ -124,6 +140,7 @@ function resolveChipLogo(project: string, logos: Record<string, string> | undefi
     overflow: hidden;
     transition: box-shadow 0.2s ease, border-color 0.2s ease;
     margin-bottom: 1rem;
+    cursor: pointer;
   }
   .maintainer-card:hover {
     box-shadow: 0 2px 12px rgba(0,0,0,0.08);
