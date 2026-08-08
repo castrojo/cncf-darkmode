@@ -1155,6 +1155,24 @@ for (const m of maintainerList) {
     // Let normal link navigation happen (name, handle, company) — confetti fires alongside.
     import('../../lib/confetti').then(({ fireFountain }) => fireFountain(card));
   });
+
+  // PersonCard / MaintainerCard: open the person lightbox when the click isn't on a
+  // link (avatar, name, handle, social icons, project chip) — those should navigate
+  // normally, everything else on the card (bio, badges, empty space) opens the modal.
+  document.addEventListener('click', (e: MouseEvent) => {
+    const target = e.target as Element;
+    if (target.closest('a')) return;
+    const card = target.closest<HTMLElement>('.person-card, .maintainer-card');
+    if (!card) return;
+    const personJson = card.dataset.person;
+    if (!personJson) return;
+    try {
+      const person = JSON.parse(personJson);
+      openPersonLightbox(person, [], base);
+    } catch {
+      // ignore parse errors — lightbox just won't open
+    }
+  });
   const searchInput = document.getElementById('search-input') as HTMLInputElement;
   const typeFilter  = document.getElementById('type-filter') as HTMLSelectElement;
   const catFilter   = document.getElementById('category-filter') as HTMLSelectElement;
