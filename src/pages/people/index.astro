@@ -1023,7 +1023,7 @@ for (const m of maintainerList) {
   import { searchPeople, preloadSearchIndex } from '../../lib/people/search';
   import { applyTab } from '../../lib/people/tabs';
   import { initKeyboard } from '../../lib/keyboard';
-  import { initPersonLightbox, openPersonLightbox } from '../../lib/people/person-lightbox';
+  import { initPersonLightbox, openPersonLightbox, matchProjectDetails, type ProjectSource } from '../../lib/people/person-lightbox';
 
   function escapeHtml(s: string): string {
     return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -1049,6 +1049,17 @@ for (const m of maintainerList) {
       .then(r => r.json())
       .then((resolved: Record<string, string>) => { Object.assign(logos, resolved); })
       .catch(() => {/* logos stay empty — onerror handlers hide broken imgs */});
+
+  // Fetch the projects dataset once — used to cross-reference a person's
+  // `projects` name list with real logo/maturity/slug data in the lightbox,
+  // so project chips link to the correct project and show its real logo
+  // and maturity level instead of a bare-name fallback.
+  let projectsData: ProjectSource[] = [];
+  const projectsPromise: Promise<void> =
+    fetch(`${baseUrl}/data/projects/projects.json`)
+      .then(r => r.json())
+      .then((resolved: ProjectSource[]) => { projectsData = resolved; })
+      .catch(() => {/* projectsData stays empty — chips fall back to bare names */});
 
   // After each batch loads, re-apply both the search/type/cat filters AND the active tab
   // filter so dynamically loaded cards respect the currently visible tab.
@@ -1126,7 +1137,22 @@ for (const m of maintainerList) {
     if (personJson) {
       try {
         const person = JSON.parse(personJson);
-        openPersonLightbox(person, [], base);
+        // Show the lightbox immediately with a best-effort project match
+        // (projectsData is usually already resolved by the time a user
+        // clicks, since the fetch kicks off on page load). Once the
+        // projects dataset resolves, re-render in place so chips upgrade
+        // to real logos/maturity/slugs even on a very fast first click.
+        openPersonLightbox(person, matchProjectDetails(person.projects, projectsData), base);
+        if (person.projects?.length && projectsData.length === 0) {
+          projectsPromise.then(() => {
+            const dialog = document.getElementById('person-modal') as HTMLDialogElement | null;
+            const title = document.getElementById('person-modal-title');
+            // Only re-render if this same person's lightbox is still open.
+            if (dialog?.open && title?.textContent === person.name) {
+              openPersonLightbox(person, matchProjectDetails(person.projects, projectsData), base);
+            }
+          });
+        }
       } catch {
         // ignore parse errors — lightbox just won't open
       }

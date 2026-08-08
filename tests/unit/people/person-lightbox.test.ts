@@ -20,8 +20,10 @@ import {
   openPersonLightbox,
   closePersonLightbox,
   initPersonLightbox,
+  matchProjectDetails,
   type ProjectDetail,
   type PersonLightboxData,
+  type ProjectSource,
 } from '../../../src/lib/people/person-lightbox';
 import type { Person } from '../../../src/lib/people/person-renderer';
 
@@ -553,5 +555,74 @@ describe('initPersonLightbox()', () => {
   it('does nothing when dialog element is missing', () => {
     document.body.innerHTML = '';
     expect(() => initPersonLightbox()).not.toThrow();
+  });
+});
+
+// ---------------------------------------------------------------------------
+// matchProjectDetails — cross-referencing person.projects with projects.json
+// ---------------------------------------------------------------------------
+
+describe('matchProjectDetails', () => {
+  const PROJECTS: ProjectSource[] = [
+    { name: 'Kubernetes', slug: 'kubernetes', logoUrl: 'https://example.com/k8s.svg', maturity: 'graduated' },
+    { name: 'Kyverno', slug: 'kyverno', logoUrl: 'https://example.com/kyverno.svg', maturity: 'graduated' },
+    { name: 'KubeFleet', slug: 'kubefleet', maturity: 'sandbox' },
+  ];
+
+  it('returns an empty array when projectNames is undefined', () => {
+    expect(matchProjectDetails(undefined, PROJECTS)).toEqual([]);
+  });
+
+  it('returns an empty array when projectNames is empty', () => {
+    expect(matchProjectDetails([], PROJECTS)).toEqual([]);
+  });
+
+  it('cross-references a matching project with full detail', () => {
+    const result = matchProjectDetails(['Kubernetes'], PROJECTS);
+    expect(result).toEqual([
+      { name: 'Kubernetes', logoUrl: 'https://example.com/k8s.svg', maturity: 'graduated', slug: 'kubernetes' },
+    ]);
+  });
+
+  it('matches case-insensitively', () => {
+    const result = matchProjectDetails(['KUBERNETES'], PROJECTS);
+    expect(result[0].slug).toBe('kubernetes');
+    expect(result[0].logoUrl).toBe('https://example.com/k8s.svg');
+  });
+
+  it('preserves the original casing of the requested name in the output', () => {
+    const result = matchProjectDetails(['kubernetes'], PROJECTS);
+    expect(result[0].name).toBe('kubernetes');
+  });
+
+  it('falls back to name-only detail when no match is found', () => {
+    const result = matchProjectDetails(['UnknownProject'], PROJECTS);
+    expect(result).toEqual([{ name: 'UnknownProject' }]);
+  });
+
+  it('handles projects with missing logoUrl gracefully', () => {
+    const result = matchProjectDetails(['KubeFleet'], PROJECTS);
+    expect(result[0]).toEqual({ name: 'KubeFleet', logoUrl: undefined, maturity: 'sandbox', slug: 'kubefleet' });
+  });
+
+  it('preserves order and handles a mix of matched and unmatched projects', () => {
+    const result = matchProjectDetails(['Kyverno', 'Nope', 'Kubernetes'], PROJECTS);
+    expect(result.map(d => d.name)).toEqual(['Kyverno', 'Nope', 'Kubernetes']);
+    expect(result[0].slug).toBe('kyverno');
+    expect(result[1]).toEqual({ name: 'Nope' });
+    expect(result[2].slug).toBe('kubernetes');
+  });
+
+  it('returns name-only details for every project when the projects dataset is empty', () => {
+    const result = matchProjectDetails(['Kubernetes', 'Kyverno'], []);
+    expect(result).toEqual([{ name: 'Kubernetes' }, { name: 'Kyverno' }]);
+  });
+
+  it('feeds directly into renderProjectChip / renderPersonLightboxContent for real logos', () => {
+    const details = matchProjectDetails(['Kubernetes'], PROJECTS);
+    const html = renderPersonLightboxContent(makePerson({ projects: ['Kubernetes'] }), details, '/cncf-darkmode/');
+    expect(html).toContain('example.com/k8s.svg');
+    expect(html).toContain('plb-project-chip--graduated');
+    expect(html).toContain('?project=kubernetes');
   });
 });
