@@ -34,6 +34,43 @@ export interface PersonLightboxData extends Person {
   projectDetails?: ProjectDetail[];
 }
 
+/**
+ * Minimal shape of a projects.json entry needed to cross-reference a
+ * person's project chips with real logo/maturity/slug data.
+ * Mirrors (a subset of) SafeProject from ../projects/project-renderer.
+ */
+export interface ProjectSource {
+  name: string;
+  slug: string;
+  logoUrl?: string;
+  maturity?: string;
+}
+
+/**
+ * Build a ProjectDetail[] for a person's `projects` name list by cross-
+ * referencing the full projects.json dataset (case-insensitive match on
+ * project name). Projects with no match are returned with just their name
+ * so renderProjectChip() still falls back gracefully (letter avatar, no
+ * maturity dot, best-effort slug guess).
+ */
+export function matchProjectDetails(
+  projectNames: string[] | undefined,
+  projects: ProjectSource[],
+): ProjectDetail[] {
+  if (!projectNames?.length) return [];
+  const bySlug = new Map(projects.map(p => [p.name.toLowerCase(), p]));
+  return projectNames.map(name => {
+    const match = bySlug.get(name.toLowerCase());
+    if (!match) return { name };
+    return {
+      name,
+      logoUrl: match.logoUrl,
+      maturity: match.maturity,
+      slug: match.slug,
+    };
+  });
+}
+
 // ---------------------------------------------------------------------------
 // Maturity color helpers (mirrors arch-modal palette)
 // ---------------------------------------------------------------------------
