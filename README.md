@@ -75,3 +75,7 @@ cp sites/projects/src/data/changelog.json sites/projects/public/data/
 ## Scope Rule for Agents
 
 When working this project, treat it as **one unified site product**. Do not split planning or implementation across deprecated `*-website` repos.
+
+## License
+
+This project is licensed under the [Apache License 2.0](LICENSE).
