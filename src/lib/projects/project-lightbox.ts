@@ -8,10 +8,16 @@
  *
  * Exports
  * ───────
- *  renderProjectLightboxContent(project, maintainers?, now?)  – pure renderer (testable)
- *  openProjectLightbox(slug, base?)                           – lazy fetch + showModal
- *  closeProjectLightbox()                                     – close dialog
- *  initProjectLightbox()                                      – wire close/backdrop/Escape
+ *  renderProjectLightboxContent(project, maintainers?, now?, architectures?) – pure renderer (testable)
+ *  openProjectLightbox(slug, base?)                                          – lazy fetch + showModal
+ *  closeProjectLightbox()                                                    – close dialog
+ *  initProjectLightbox()                                                     – wire close/backdrop/Escape
+ *
+ * GH #29: Reference Architecture cross-linking — cross-refs the project against
+ * src/data/members/architectures.json (by project name, case-insensitive) so a
+ * project's lightbox shows every CNCF Reference Architecture that uses it, linking
+ * out to architecture.cncf.io. Strengthens the projects ↔ members/architectures
+ * relationship requested in GH #29 ("cross seed projects, people, and organizations").
  */
 
 import type { SafeProject } from './project-renderer';
@@ -29,6 +35,20 @@ export interface Maintainer {
   projectDetails?: Array<{ name: string; maturity?: string }>;
   company?: string;
   location?: string;
+}
+
+/**
+ * Minimal shape consumed from src/data/members/architectures.json.
+ * Mirrors (a subset of) SafeArchitecture from src/lib/members/architecture-renderer.ts —
+ * duplicated here (rather than imported) to keep the projects/members boundary clean.
+ */
+export interface ReferenceArchitecture {
+  slug: string;
+  title: string;
+  orgName: string;
+  orgLogoUrl?: string;
+  archUrl: string;
+  projects?: Array<{ name: string }>;
 }
 
 // ---------------------------------------------------------------------------
@@ -230,6 +250,41 @@ function renderContributorMinicards(p: SafeProject, maintainers: Maintainer[]): 
 </div>`;
 }
 
+/**
+ * Cross-link projects to CNCF Reference Architectures that use them.
+ * Matches by project name (case-insensitive) against each architecture's
+ * `projects[]` list — the same data used to render project ribbons on the
+ * architecture cards/modal in the End Users section.
+ */
+function renderReferenceArchitectures(p: SafeProject, architectures: ReferenceArchitecture[]): string {
+  const projectName = p.name.toLowerCase();
+  const matched = architectures.filter(a =>
+    a.projects?.some(proj => proj.name.toLowerCase() === projectName)
+  );
+
+  if (matched.length === 0) return '';
+
+  const cards = matched.map(a => {
+    const title = escapeHtml(a.title);
+    const org = escapeHtml(a.orgName);
+    const logo = a.orgLogoUrl
+      ? `<img class="plb2-refarch-logo" src="${escapeHtml(a.orgLogoUrl)}" alt="${org} logo" width="28" height="28" loading="lazy" />`
+      : `<div class="plb2-refarch-logo-placeholder">${org.charAt(0)}</div>`;
+    return `<a class="plb2-refarch-card" href="${safeHref(a.archUrl)}" target="_blank" rel="noopener noreferrer">
+  ${logo}
+  <div class="plb2-refarch-info">
+    <span class="plb2-refarch-title">${title}</span>
+    <span class="plb2-refarch-org">${org}</span>
+  </div>
+</a>`;
+  }).join('');
+
+  return `<div class="plb2-refarchs">
+  <div class="plb2-section-label">Used in Reference Architectures (${matched.length})</div>
+  <div class="plb2-refarch-cards">${cards}</div>
+</div>`;
+}
+
 function renderEndUsers(p: SafeProject): string {
   const slug = escapeHtml(p.cloMonitorName || p.slug || '');
   const endUsersHref = `https://www.cncf.io/enduser/`;
@@ -284,6 +339,7 @@ export function renderProjectLightboxContent(
   project: SafeProject,
   maintainers: Maintainer[] = [],
   now = new Date(),
+  architectures: ReferenceArchitecture[] = [],
 ): string {
   return `<div class="plb2-content" data-slug="${escapeHtml(project.slug)}">
   ${renderHeader(project)}
@@ -291,6 +347,7 @@ export function renderProjectLightboxContent(
   ${renderStatsRow(project)}
   ${renderSecurityLinks(project)}
   ${renderContributorMinicards(project, maintainers)}
+  ${renderReferenceArchitectures(project, architectures)}
   ${renderEndUsers(project)}
   ${renderTopics(project)}
   ${renderExternalLinks(project)}
@@ -304,6 +361,7 @@ export function renderProjectLightboxContent(
 
 let _projectsCache: SafeProject[] | null = null;
 let _maintainersCache: Maintainer[] | null = null;
+let _architecturesCache: ReferenceArchitecture[] | null = null;
 
 async function fetchProjects(base: string): Promise<SafeProject[]> {
   if (_projectsCache) return _projectsCache;
@@ -320,6 +378,18 @@ async function fetchMaintainers(base: string): Promise<Maintainer[]> {
     if (!res.ok) return [];
     _maintainersCache = (await res.json()) as Maintainer[];
     return _maintainersCache;
+  } catch {
+    return [];
+  }
+}
+
+async function fetchArchitectures(base: string): Promise<ReferenceArchitecture[]> {
+  if (_architecturesCache) return _architecturesCache;
+  try {
+    const res = await fetch(`${base}/data/members/architectures.json`);
+    if (!res.ok) return [];
+    _architecturesCache = (await res.json()) as ReferenceArchitecture[];
+    return _architecturesCache;
   } catch {
     return [];
   }
@@ -357,9 +427,10 @@ export async function openProjectLightbox(slug: string, base = ''): Promise<void
   dialog.showModal();
 
   try {
-    const [projects, maintainers] = await Promise.all([
+    const [projects, maintainers, architectures] = await Promise.all([
       fetchProjects(base),
       fetchMaintainers(base),
+      fetchArchitectures(base),
     ]);
 
     const project = projects.find(p => p.slug === slug);
@@ -368,7 +439,7 @@ export async function openProjectLightbox(slug: string, base = ''): Promise<void
       return;
     }
 
-    content.innerHTML = renderProjectLightboxContent(project, maintainers);
+    content.innerHTML = renderProjectLightboxContent(project, maintainers, new Date(), architectures);
   } catch (err) {
     content.innerHTML = `<p class="plb2-error">Failed to load project data. Please try again.</p>`;
     console.error('[project-lightbox] fetch error:', err);
