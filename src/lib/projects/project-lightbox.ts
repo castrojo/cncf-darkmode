@@ -72,6 +72,22 @@ export function formatNumber(n: number): string {
   return String(n);
 }
 
+/**
+ * Format the age of a project (time since its first commit) as a short,
+ * human-readable string, e.g. "5.3 yrs" or "8 mo". Returns '' for missing
+ * or invalid dates.
+ */
+export function formatAge(iso: string | undefined, now = new Date()): string {
+  if (!iso) return '';
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return '';
+  const days = (now.getTime() - d.getTime()) / 86_400_000;
+  if (days < 0) return '';
+  if (days < 30) return `${Math.round(days)} d`;
+  if (days < 365) return `${Math.round(days / 30)} mo`;
+  return `${(days / 365).toFixed(1)} yrs`;
+}
+
 // ---------------------------------------------------------------------------
 // Maturity badge colours
 // ---------------------------------------------------------------------------
@@ -153,7 +169,7 @@ function renderHealthBar(p: SafeProject, now: Date): string {
 </div>`;
 }
 
-function renderStatsRow(p: SafeProject): string {
+function renderStatsRow(p: SafeProject, now: Date): string {
   const items: string[] = [];
   if (p.stars !== undefined && p.stars > 0)
     items.push(`<div class="plb2-stat"><span class="plb2-stat-icon">⭐</span><span class="plb2-stat-val">${formatNumber(p.stars)}</span><span class="plb2-stat-label">Stars</span></div>`);
@@ -163,6 +179,13 @@ function renderStatsRow(p: SafeProject): string {
     items.push(`<div class="plb2-stat"><span class="plb2-stat-icon">👥</span><span class="plb2-stat-val">${formatNumber(p.contributors)}</span><span class="plb2-stat-label">Contributors</span></div>`);
   if (p.lastCommitDate)
     items.push(`<div class="plb2-stat"><span class="plb2-stat-icon">📅</span><span class="plb2-stat-val" style="font-size:0.75rem">${escapeHtml(formatDate(p.lastCommitDate))}</span><span class="plb2-stat-label">Last Commit</span></div>`);
+  if (p.lastReleaseDate)
+    items.push(`<div class="plb2-stat"><span class="plb2-stat-icon">🚀</span><span class="plb2-stat-val" style="font-size:0.75rem">${escapeHtml(formatDate(p.lastReleaseDate))}</span><span class="plb2-stat-label">Last Release</span></div>`);
+  if (p.firstCommitDate) {
+    const age = formatAge(p.firstCommitDate, now);
+    if (age)
+      items.push(`<div class="plb2-stat"><span class="plb2-stat-icon">🕰️</span><span class="plb2-stat-val" style="font-size:0.8125rem">${escapeHtml(age)}</span><span class="plb2-stat-label">Project Age</span></div>`);
+  }
   if (p.primaryLanguage)
     items.push(`<div class="plb2-stat"><span class="plb2-stat-icon">💻</span><span class="plb2-stat-val" style="font-size:0.8125rem">${escapeHtml(p.primaryLanguage)}</span><span class="plb2-stat-label">Language</span></div>`);
   if (p.license)
@@ -288,7 +311,7 @@ export function renderProjectLightboxContent(
   return `<div class="plb2-content" data-slug="${escapeHtml(project.slug)}">
   ${renderHeader(project)}
   ${renderHealthBar(project, now)}
-  ${renderStatsRow(project)}
+  ${renderStatsRow(project, now)}
   ${renderSecurityLinks(project)}
   ${renderContributorMinicards(project, maintainers)}
   ${renderEndUsers(project)}

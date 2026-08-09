@@ -17,6 +17,7 @@ import {
   safeHref,
   formatNumber,
   formatDate,
+  formatAge,
   type Maintainer,
 } from '../../../src/lib/projects/project-lightbox';
 import type { SafeProject } from '../../../src/lib/projects/project-renderer';
@@ -59,6 +60,7 @@ const FULL_PROJECT: SafeProject = {
   contributors: 501,
   lastCommitDate: '2026-01-01T00:00:00Z',
   lastReleaseDate: '2025-12-01T00:00:00Z',
+  firstCommitDate: '2019-06-15T00:00:00Z',
   license: 'Apache License 2.0',
   primaryLanguage: 'Go',
   topics: ['kubernetes', 'policy-as-code', 'security'],
@@ -179,6 +181,35 @@ describe('formatDate', () => {
   });
 });
 
+describe('formatAge', () => {
+  it('returns empty string when date is undefined', () => {
+    expect(formatAge(undefined, NOW)).toBe('');
+  });
+
+  it('returns empty string for invalid dates', () => {
+    expect(formatAge('not-a-date', NOW)).toBe('');
+  });
+
+  it('returns empty string for future dates', () => {
+    expect(formatAge('2027-01-01T00:00:00Z', NOW)).toBe('');
+  });
+
+  it('formats sub-month ages in days', () => {
+    // NOW = 2026-01-01; 10 days earlier
+    expect(formatAge('2025-12-22T00:00:00Z', NOW)).toBe('10 d');
+  });
+
+  it('formats sub-year ages in months', () => {
+    // ~6 months before NOW
+    expect(formatAge('2025-07-01T00:00:00Z', NOW)).toBe('6 mo');
+  });
+
+  it('formats multi-year ages in years with one decimal', () => {
+    // 2019-06-15 → NOW (2026-01-01) is ~6.5 yrs
+    expect(formatAge('2019-06-15T00:00:00Z', NOW)).toMatch(/^\d+\.\d yrs$/);
+  });
+});
+
 // ---------------------------------------------------------------------------
 // renderProjectLightboxContent — structural checks
 // ---------------------------------------------------------------------------
@@ -238,6 +269,24 @@ describe('renderProjectLightboxContent', () => {
     expect(html).toContain('plb2-stats-row');
     // 7578 stars → 7.6k
     expect(html).toContain('7.6k');
+  });
+
+  it('renders last release date stat when lastReleaseDate present', () => {
+    const html = renderProjectLightboxContent(FULL_PROJECT, [], NOW);
+    expect(html).toContain('Last Release');
+    expect(html).toContain('Dec');
+  });
+
+  it('renders project age stat when firstCommitDate present', () => {
+    const html = renderProjectLightboxContent(FULL_PROJECT, [], NOW);
+    expect(html).toContain('Project Age');
+    expect(html).toMatch(/\d+\.\d yrs/);
+  });
+
+  it('omits last release and project age stats when dates are absent', () => {
+    const html = renderProjectLightboxContent(BASE_PROJECT, [], NOW);
+    expect(html).not.toContain('Last Release');
+    expect(html).not.toContain('Project Age');
   });
 
   it('renders topics chips when topics array is non-empty', () => {
